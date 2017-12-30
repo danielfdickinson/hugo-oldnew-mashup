@@ -1,0 +1,4 @@
+[submodule "src/styling/yahoo-pure"]
+	path = src/styling/yahoo-pure
+	url = git@github.com:cshoredaniel/yahoo-pure.git
+	branch = pr-gulp
