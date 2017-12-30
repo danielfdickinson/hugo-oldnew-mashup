@@ -1,0 +1,6 @@
+npm_modules
+theme-build
+*.swp
+*~
+*.bak
+#*#
