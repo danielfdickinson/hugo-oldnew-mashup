@@ -1,3 +1,7 @@
 [submodule "modules/cshore-styling-tools"]
 	path = modules/cshore-styling-tools
 	url = git@github.com:cshoredaniel/cshore-styling-tools
+[submodule "modules/yahoo-pure"]
+	path = modules/yahoo-pure
+	url = git@github.com:cshoredaniel/yahoo-pure
+	branch = working-daniel
