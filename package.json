@@ -1,0 +1,30 @@
+{
+  "name": "hugo-pure-oldnew-mashup",
+  "version": "0.1.0",
+  "description": "Hugo theme combining old school design elements and new-era Pure CSS and others",
+  "main": "index.js",
+  "repository": "https://github.com/cshoredaniel/hugo.pure-oldnew-mashup",
+  "author": "Daniel F. Dickinson <cshored@thecshore.com>",
+  "license": "CC-BY-SA-4.0",
+  "private": false,
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-minify": "^0.2.0",
+    "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-minify": "^0.2.0",
+    "babel-register": "^6.26.0",
+    "child_process": "^1.0.2",
+    "graceful-fs": "^4.1.11",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-cli": "^2.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.2",
+    "process": "^0.11.10",
+    "require-dir": "^0.3.2",
+    "run-sequence": "^2.2.0"
+  }
+}

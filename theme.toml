@@ -2,7 +2,7 @@
 
 name = "Pure OldNew Mashup"
 license = "MIT"
-licenselink = "https://github.com/cshoredaniel/pure-oldnew-mashup/blob/master/LICENSE.md"
+licenselink = "https://github.com/cshoredaniel/hugo-pure-oldnew-mashup/blob/master/LICENSE.md"
 description = "Hugo Theme mixing old school design elements with new-era Pure CSS and others"
 homepage = "https://www.thecshore.com/hugo-themes"
 tags = ['hugo', 'pure', 'old-school']
