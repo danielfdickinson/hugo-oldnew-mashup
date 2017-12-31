@@ -16,6 +16,7 @@
     "babel-preset-minify": "^0.2.0",
     "babel-register": "^6.26.0",
     "child_process": "^1.0.2",
+    "glob": "^7.1.2",
     "graceful-fs": "^4.1.11",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.0",

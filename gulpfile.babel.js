@@ -9,45 +9,52 @@ var process = require("process");
 import { execSync } from 'child_process';
 var runSequence = require('run-sequence');
 var rename = require('gulp-rename');
+var glob = require('glob');
 
 gulp.task("build_modules", function(done) {
   var moduleDirs;
   var moduleDir;
   var err = null;
-  var errOut = null;
+  var err2 = null;
   var olddir;
+  var files;
   moduleDirs = fs.readdirSync("./modules");
   if (moduleDirs) {
-    errOut = moduleDirs.forEach(function(moduleDir, index) {
+    var errOut = moduleDirs.forEach(function(moduleDir, index) {
       olddir = process.cwd();
       try {
-        process.chdir("./modules/" + moduleDir.toString());
-        fs.accessSync('package.json')
-        execSync("yarn install");
-        try {
-          fs.accessSync('gulpfile*.js');
-          err = execSync("gulp");
-        } catch (err) {
-           errOut = err
-        }
-        if (errOut) {
-          try {
-            errOut = null;
-            fs.accessSync('Gruntfile.js');
-            err = execSync("grunt");
-          } catch (err) {
-            errOut = "Neither gulpfile*.js nor Gruntfile.js accessible";
+        process.chdir("./modules/" + moduleDirs.toString());
+        files = glob.sync('package.json');
+        if (typeof files!= "undefined" && files != null && files.length > 0) {
+          execSync("yarn install");
+          files = glob.sync('gulpfile*.js');
+          if (typeof files!= "undefined" && files != null && files.length > 0) {
+            errOut = execSync("gulp");
+          } else {
+            files = glob.sync('Gruntfile*.js');
+            if (typeof files!= "undefined" && files != null && files.length > 0) {
+              errOut = execSync("grunt");
+            } else {
+              errOut = "Neither gulpfile*.js not Gruntfile.js exist";
+            }
+            err = errOut;
           }
-          err = errOut;
+        } else {
+          console.log("Didn't find package.json");
         }
         if (err) {
-          errOut = err.toString();
-          return errOut;
+          err2 = err.toString();
         }
+        console.log(err2);
       } catch (err) {
-        errOut = err.toString();
+        err2= err.toString();
       }
       process.chdir(olddir);
+      if (err2) {
+        return err2;
+      } else {
+        return null;
+      }
     });
     done(errOut);
   } else {
