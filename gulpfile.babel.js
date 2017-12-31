@@ -18,15 +18,18 @@ gulp.task("build_modules", function(done) {
   var err2 = null;
   var olddir;
   var files;
-  moduleDirs = fs.readdirSync("./modules");
+  moduleDirs = glob.sync("./modules/yahoo-pure");
   if (moduleDirs) {
     var errOut = moduleDirs.forEach(function(moduleDir, index) {
       olddir = process.cwd();
       try {
-        process.chdir("./modules/" + moduleDirs.toString());
+        process.chdir(moduleDir);
         files = glob.sync('package.json');
         if (typeof files!= "undefined" && files != null && files.length > 0) {
-          execSync("yarn install");
+          try {
+            execSync("yarn install");
+          } catch (err) {
+          }
           files = glob.sync('gulpfile*.js');
           if (typeof files!= "undefined" && files != null && files.length > 0) {
             errOut = execSync("gulp");
@@ -45,7 +48,6 @@ gulp.task("build_modules", function(done) {
         if (err) {
           err2 = err.toString();
         }
-        console.log(err2);
       } catch (err) {
         err2= err.toString();
       }
@@ -64,7 +66,7 @@ gulp.task("build_modules", function(done) {
 
 gulp.task("js", function () {
   runSequence
-  return gulp.src(["src/**/*.js","modules/*/src/**/*.js","modules/*/modules/*/src/*.js","!**/*.min.js","!**/*-min.js"])
+  return gulp.src(["src/**/*.js","modules/*/src/*.js","modules/*/modules/*/src/*.js","!**/*.min.js","!**/*-min.js"])
     .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(concat("all.js"))
