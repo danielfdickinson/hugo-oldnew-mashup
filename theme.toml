@@ -5,8 +5,8 @@ license = "MIT"
 licenselink = "https://github.com/cshoredaniel/hugo-pure-oldnew-mashup/blob/master/LICENSE.md"
 description = "Hugo Theme mixing old school design elements with new-era Pure CSS and others"
 homepage = "https://www.thecshore.com/hugo-themes"
-tags = ['hugo', 'pure', 'old-school']
-features = ['blog']
+keywords = ['hugo', 'pure', 'old-school']
+features = ['blog', 'responsive', 'rwd']
 min_version = "0.31.1"
 
 [author]
