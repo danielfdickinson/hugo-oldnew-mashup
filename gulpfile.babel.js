@@ -34,16 +34,48 @@ gulp.task("yarn", function(done) {
 
 gulp.task("js", ['yarn'], function (done) {
   return evstr.concat(
-    gulp.src(["src/**/*.js","local-modules/src/**/*.js","local-modules/node_modules/*/src/**/*.js","!**/*.min.js","!**/*-min.js"])
-     .pipe(sourcemaps.init())
-     .pipe(babel())
-     .pipe(concat("all.js"))
-     .pipe(gulp.dest("static"))
-     .pipe(babel({ "presets": ['minify'] }))
-     .pipe(rename({extname: '-min.js'}))
-     .pipe(sourcemaps.write("."))
-     .pipe(gulp.dest("static"))
-  )
+    gulp.src([
+      "src/**/*.js",
+      "local-modules/src/**/*.js",
+      "local-modules/*/modules/node_modules/**/*js",
+      "!**/*.min.js",
+      "!**/*-min.js"
+     ])
+      .pipe(sourcemaps.init())
+      .pipe(babel())
+      .pipe(concat("all.js"))
+      .pipe(gulp.dest("dist/js"))
+      .pipe(babel({ "presets": ['minify'] }))
+      .pipe(rename({extname: '-min.js'}))
+      .pipe(sourcemaps.write("."))
+      .pipe(gulp.dest("dist/js"))
+  );
 });
 
-gulp.task("default", ['js','css']);
+gulp.task("build", ["js"], function (done) {
+  var pkg = JSON.parse(fs.readFileSync('./package.json'));
+  return evstr.concat(
+    gulp.src([
+      "dist/**/*.css",
+      "dist/**/*.js",
+      "!dist/**/*.min.*",
+      "!dist/**/*-min.*"
+   ])
+    .pipe(gulp.dest('static/'))
+    .pipe(rename({basename: pkg.name + "-" + pkg.version}))
+    .pipe(gulp.dest('release/' + pkg.name + "-" + pkg.version + "/")),
+   gulp.src([
+      "dist/**/*.min.*",
+      "dist/**/*-min.*"
+   ])
+    .pipe(rename({basename: pkg.name + "-" + pkg.version + "-min"}))
+    .pipe(gulp.dest('release/' + pkg.name + "-" + pkg.version + "/")),
+   gulp.src([
+      "static-src/**",
+   ])
+    .pipe(gulp.dest('static'))
+    .pipe(gulp.dest('release/' + pkg.name + "-" + pkg.version + "/")),
+ );
+});
+
+gulp.task("default", ['build']);
