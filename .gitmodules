@@ -1,3 +1,9 @@
 [submodule "local-modules/cshore-styling-tools"]
 	path = local-modules/cshore-styling-tools
 	url = git@github.com:cshoredaniel/cshore-styling-tools
+[submodule "local-modules/yahoo-pure"]
+	path = local-modules/yahoo-pure
+	url = git@github.com:cshoredaniel/yahoo-pure
+[submodule "local-modules/necolas-normalize.css"]
+	path = local-modules/necolas-normalize.css
+	url = git@github.com:cshoredaniel/necolas-normalize.css
