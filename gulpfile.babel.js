@@ -35,7 +35,7 @@ gulp.task("yarn", function(done) {
 gulp.task("js", ['yarn'], function (done) {
   return evstr.concat(
     gulp.src([
-      "src/**/.js",
+      "src/**/*.js",
       "static-src/**/*.js",
       "local-modules/*/src/**/*.js",
       "local-modules/*/modules/node_modules/**/*.js",
