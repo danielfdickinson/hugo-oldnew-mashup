@@ -1,5 +1,47 @@
-{{ partial "header" . }}
+{{ define "title" }}
+  {{.Title}}
+{{ end }}
+{{ define "header" }}
+  <header>
+  <nav class="utility-nav-skipto-anchor">
+    <a id="skipto-top" title="Top" class="utility-skipto-anchor">
+        &nbsp;
+    </a>
+  </nav>{{ partial "nav-skipto-links.html" }}
+  <div class="wrapper-section wrapper-box wrapper-utility" id="section-visual-id">
+     <a href="{{ relref . "/" }}">{{ partial "site-id-graphics.html" . }}</a>
+     <div>{{.Site.Params.siteid}}</div>
+  </div>
+  <h1>{{.Site.Title}}</h1>
+  <nav class="utility-nav-skipto-anchor">
+    <a id="skipto-menubar" title="Menubar" class="utility-skipto-anchor">
+         &nbsp;
+    </a>
+  </nav>{{ partial "nav-skipto-links.html" }}
+  </header>
+{{ end }}
+{{ define "main" }}
+  <main>
+  <aside>
+    {{ markdownify .Params.aside}}
+  </aside>
+  <div>
+    <section class="homepage-purpose">
+      <h2 class="homepage-oneliner">
+        {{.Params.oneliner}}
+      </h2>
+      <h3 class="homepage-subliner">
+        {{.Params.subliner}}
+      </h3>
+    </section>
+    <section class="homepage-screenshots">
+      [Screenshots]
 
-{{ .Content }}
-
-{{ partial "footer" . }}
+    </section>
+  </div>
+  <hr>
+  <aside>
+    {{ markdownify .Params.asidefooter }}
+  </aside>
+  </main>
+{{ end }}

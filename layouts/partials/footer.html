@@ -1,2 +1,45 @@
-  </body>
-</html>
+   <footer>
+    <hr class="separator-footer" />
+    <p clas="hoversite-footer-rollup">Hover here for copyright, licensing, and other document information.</p>
+    <div class="wrapper-footer-rollup">
+      <div class="wrapper-copyrightnotice">
+        <p>
+<!--
+          <% if context.node.meta_info.has_key?('license') then
+               case context.node.meta_info['license']
+               when 'Expat' %>
+            {rights: }.  See <a 
+            href="{relocatable: /other/MIT.html}">
+            Copyright and licensing information</a> for information on how you can use this document.
+            <%   when 'MIT' %>
+            {rights: }.  See <a 
+            href="{relocatable: /other/MIT.html}">
+            Copyright and licensing information</a> for information on how you can use this document.
+          <%   when 'GPLv2' %>
+            {rights: }.  See <a 
+            href="{relocatable: /other/GPLv2.html}">
+            Copyright and licensing information</a> for information on how you can use this document.
+          <%   when 'CC-BY-SA-4.0' %>
+            {rights: }.  See <a 
+            href="{relocatable: /other/CC-BY-SA-4_0.html}">
+            Copyright and licensing information</a> for information on how you can use this document.
+          <%   else %>
+            {rights: }.
+          <%   end %>
+          <% end %>
+-->
+        </p>
+      </div>
+      <div class="wrapper-datefooter">
+        <div>
+          Content created: {{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}
+        </div>
+        <div>
+          Content last modified: {{ .Lastmod.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}
+        </div>
+        <div>
+          Full page last generated: {{ now.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}
+        </div>
+      </div>
+    </div>
+  </footer>

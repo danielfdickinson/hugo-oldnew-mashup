@@ -1,0 +1,13 @@
+{{ define "title" }}
+  {{.Title}}
+{{ end }}
+{{ define "main" }}
+<main>
+  <article>
+    {{.Content}}
+  </article>
+  <aside>
+    {{ markdownify .Params.aside}}
+  </aside>
+</main>
+{{ end }}

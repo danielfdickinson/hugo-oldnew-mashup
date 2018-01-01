@@ -1,0 +1,11 @@
+{{ block "metadata" . }}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{{ end }}
+{{ block "links" . }}
+    <base href="{{ $.Site.BaseURL }}">
+    <link rel="stylesheet" href="css/default.css"/>
+{{ end }}
+{{ block "scripts" . }}
+    <script src="{{ "/js/all.js"|relURL }}"></script>
+{{ end }}
