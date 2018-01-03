@@ -35,10 +35,10 @@ gulp.task("yarn", function(done) {
 gulp.task("js", ['yarn'], function (done) {
   return evstr.concat(
     gulp.src([
+      "local-modules/*/modules/node_modules/js-cookie/**/*.js",
       "src/**/*.js",
       "static-src/**/*.js",
       "local-modules/*/src/**/*.js",
-      "local-modules/*/modules/node_modules/**/*.js",
       "!**/*.min.js",
       "!**/*-min.js"
      ])
@@ -57,7 +57,7 @@ gulp.task("build", ["js"], function (done) {
   var pkg = JSON.parse(fs.readFileSync('./package.json'));
   return evstr.concat(
     gulp.src([
-      "dist/**/*.css",
+      "static-src/**/*.js",
       "dist/**/*.js",
       "!dist/**/*.min.*",
       "!dist/**/*-min.*"
@@ -66,17 +66,29 @@ gulp.task("build", ["js"], function (done) {
     .pipe(rename({basename: pkg.name + "-" + pkg.version}))
     .pipe(gulp.dest('release/' + pkg.name + "-" + pkg.version + "/")),
    gulp.src([
-      "dist/**/*.min.*",
-      "dist/**/*-min.*"
+      "dist/**/*.min.js",
+      "dist/**/*-min.js"
    ])
     .pipe(rename({basename: pkg.name + "-" + pkg.version + "-min"}))
     .pipe(gulp.dest('release/' + pkg.name + "-" + pkg.version + "/")),
-   gulp.src([
-      "static-src/**",
+    gulp.src([
+      "dist/**/*.css",
+      "local-modules/cshore-styling-tools/dist/**/*.css",
+      "static-src/**/*.css",
+      "!dist/**/*.min.css",
+      "!dist/**/*-min.css"
    ])
     .pipe(gulp.dest('static'))
+    .pipe(rename({basename: pkg.name + "-" + pkg.version}))
     .pipe(gulp.dest('release/' + pkg.name + "-" + pkg.version + "/")),
+   gulp.src([
+      "dist/**/*.min.css",
+      "dist/**/*-min.css"
+   ])
+    .pipe(rename({basename: pkg.name + "-" + pkg.version + "-min"}))
+    .pipe(gulp.dest('release/' + pkg.name + "-" + pkg.version + "/"))
  );
 });
 
 gulp.task("default", ['build']);
+gulp.task("release", ['build']);
