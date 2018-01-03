@@ -6,7 +6,9 @@
     {{ end }}</title>
     {{ partial "head.html" . }}
   </head>
+  {{ block "bodytag" .}}
   <body>
+  {{ end }}
     {{ block "header" . }}
       {{ partial "header.html" . }}
     {{ end }}
@@ -14,6 +16,6 @@
     {{ end }}
     {{ block "footer" . }}
       {{ partial "footer.html" . }}
-    {{ end }}
+     {{ end }}
   </body>
 </html>

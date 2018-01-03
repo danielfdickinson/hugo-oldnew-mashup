@@ -1,47 +1,72 @@
 {{ define "title" }}
   {{.Title}}
 {{ end }}
+{{ define "bodytag" }}
+  <body class="homepage">
+{{ end }}
 {{ define "header" }}
-  <header>
-  <nav class="utility-nav-skipto-anchor">
-    <a id="skipto-top" title="Top" class="utility-skipto-anchor">
+  <header class="pure pure-g wrapper-topbar wrapper-homepage-header">
+   <nav class="utility-nav-skipto-anchor">
+     <a id="skipto-top" title="Top" class="utility-nav-skipto-anchor">
+       &nbsp;
+     </a>
+   </nav>{{ partial "nav-skipto-links.html" }}
+   <div class="pure-u-1 pure-u-sm-1-3">
+     <div class="pure-g">
+       <div><div class="image-row"><a href="{{ "/" | relURL }}">{{ partial "site-id-graphics.html" . }}</a></div></div>
+       <div class="wrapper-siteid">
+         <div class="siteid">{{.Site.Params.siteid}}</div>
+      </div>
+     </div>
+    </div>
+    <nav class="utility-nav-skipto-anchor">
+      <a id="skipto-menubar" title="Menubar" class="utility-nav-skipto-anchor">
         &nbsp;
-    </a>
-  </nav>{{ partial "nav-skipto-links.html" }}
-  <div class="wrapper-section wrapper-box wrapper-utility" id="section-visual-id">
-     <a href="{{ relref . "/" }}">{{ partial "site-id-graphics.html" . }}</a>
-     <div>{{.Site.Params.siteid}}</div>
-  </div>
-  <h1>{{.Site.Title}}</h1>
-  <nav class="utility-nav-skipto-anchor">
-    <a id="skipto-menubar" title="Menubar" class="utility-skipto-anchor">
-         &nbsp;
-    </a>
-  </nav>{{ partial "nav-skipto-links.html" }}
+      </a>
+    </nav>{{ partial "nav-skipto-links.html" }}
+    <nav class="pure-u-1 pure-u-sm-2-3">
+      <div class="wrapper-menubar">
+        [Placeholder]
+      </div>
+    </nav>
   </header>
 {{ end }}
 {{ define "main" }}
-  <main>
-  <aside>
-    {{ markdownify .Params.aside}}
-  </aside>
-  <div>
-    <section class="homepage-purpose">
-      <h2 class="homepage-oneliner">
-        {{.Params.oneliner}}
-      </h2>
-      <h3 class="homepage-subliner">
-        {{.Params.subliner}}
-      </h3>
+  <main class="pure homepage">
+    <div class="wrapper-homepage-purpose">
+      <section class="homepage-purpose pure-g">
+        <div class="pure-u-md-1-6"></div>
+        <h1 class="homepage-title pure-u-1 pure-u-md-3-4">{{.Page.Title}}</h1>
+        <div class="pure-u-md-1-4"></div>
+        <div class="pure-u-1 homepage-taglines pure-u-md-7-12 pure-g pure-g-inner">
+          <h2 class="homepage-oneliner pure-u-1">
+            {{.Params.oneliner}}
+          </h2>
+          <div class="pure-u-1 pure-u-sm-1-6"></div>
+          <h3 class="homepage-subliner pure-u-1 pure-u-sm-2-3">
+            {{.Params.subliner}}
+          </h3>
+          <div class="pure-u-1 pure-u-sm-1-6"></div>
+          <div class="pure-u-1 pure-u-sm-1-3"></div>
+          <div class="homepage-enter-button pure-u-1 pure-u-sm-1-4">
+             <a href="{{ "/about/index.html" | relURL }}">Enter Site</a>
+          <div>
+        </div>
+      </section>
+    </div>
+    <aside class="homepage-aside">
+      {{ markdownify .Params.aside}}
+    </aside>
+    <section class="homepage-screenshots pure-g">
+      <div class="screenshot-wrapper pure-u-1 pure-u-sm-1-2">
+        <img class="pure-img homepage-screenshot" alt="[Screenshot of Daniel's GitHub Profile]" src="{{ "/images/github-screenshot.png" | relURL }}" width="80%" />
+      </div>
+      <div class="screenshot-wrapper pure-u-1 pure-u-sm-5-12">
+        <img class="pure-img homepage-screenshot" alt="[Screenshot of the old www.thecshore.om]" src="{{ "/images/thecshore-screenshot.png" | relURL }}" width="100%" />
+      </div>
     </section>
-    <section class="homepage-screenshots">
-      [Screenshots]
-
-    </section>
-  </div>
-  <hr>
-  <aside>
-    {{ markdownify .Params.asidefooter }}
-  </aside>
+    <aside class="homepage-asidefooter">
+      {{ markdownify .Params.asidefooter }}
+    </aside>
   </main>
 {{ end }}

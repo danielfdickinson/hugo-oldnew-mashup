@@ -4,7 +4,7 @@
 {{ end }}
 {{ block "links" . }}
     <base href="{{ $.Site.BaseURL }}">
-    <link rel="stylesheet" href="css/default.css"/>
+    <link rel="stylesheet" href="{{ "/css/default.css" | relURL}}"/>
 {{ end }}
 {{ block "scripts" . }}
     <script src="{{ "/js/all.js"|relURL }}"></script>
