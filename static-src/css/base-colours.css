@@ -1,0 +1,66 @@
+/*
+  The C Shore default colour settings
+  Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@cshore.theshore.com>
+
+  Released under the Creative Commons Share-Alike By Attribution 4.0 License
+*/
+
+/* grey background for all elements, by default */
+#all { background-color: #bbbbbb; }
+
+BODY {
+    background-color : #bbbbbb;
+    /* grey background */
+
+    color : #000020;
+    /* Blue font */
+
+    background-image : url("/images/default_background.png");
+/* This file contains background image url; CSS2 starts from directory of the .css */
+}
+
+body.homepage {
+  background-image: none;
+
+  background-color : #bbbbbb;
+  /* grey background */
+}
+
+
+/* Change the colour links to match our colour scheme */
+A:link {
+    color : #0000ff;
+/* bright blue font (links) */
+}
+
+A:Visited {
+    color : #772277;
+/* purple font (visited links) */
+}
+
+A:Active, A:Hover  {
+    color : #ff0000; /* red font (hover/active links) */
+    background-color : #888888; /* light gray background */
+}
+
+PRE, CODE, {
+    background-color : #777777;
+    /* Light grey */
+}
+
+/* For non-CSS3+ we set the font differently than with CSS3 */
+/* (however if Javascript is enabled, the auto-size logic */
+/* will override all the <html> tag font settings (base font) */
+
+html {
+  font-size: 20px;
+}
+footer p.hoversite-footer-rollup:active + div.wrapper-footer-rollup,
+footer p.hoversite-footer-rollup:hover + div.wrapper-footer-rollup {                                          
+  background-color: #777777;
+}
+
+footer > p:first-child {
+  padding-left: 1em;
+  padding-right: 1em;
+}  
