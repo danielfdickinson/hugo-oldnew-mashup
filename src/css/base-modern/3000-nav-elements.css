@@ -1,0 +1,213 @@
+/*  The C Shore Base Styles for Modern CSS (CSS3/HTML5)
+    Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@thecshore.com>
+
+    Released under the Creative Commons Share-Alike By-Attribution 4.0 License
+*/
+
+/* Remember, for the level of specifity last rule wins, hence
+ *  most import rules are last
+ */
+
+/* Setting for printing only */
+/* Don't print navigation items hidden on most browsers */
+@media print {
+  .NavSkiptoAnchor
+  .NavSkiptoLinks {
+    display: none;
+    font-size: 0pt;
+  }
+}
+
+/* Base styles for when we have CSS3 (e.g. flexbox), which
+ * we know because of media queries work
+ * The following settings exist in the base settings for browsers
+ * not supporting flexbox,
+ * so we have to undo these settings for flexbox.
+ */
+
+@media screen {
+
+   /* Don't display navigation menus only intended
+    * for use when 'display' is slow
+    * (e.g. a screenreader) 
+    */
+   .NavSkiptoAnchor,
+   .NavSkiptoLinks {
+      @include flex(0 10 0px);
+      float: left;
+      font-size: 0pt;
+      visibility: hidden;
+      display: none;
+      a, span {
+        @include flex(0 10 0px);
+        float: left;
+        font-size: 0pt;
+        visibility: hidden;
+        display: none;
+      }
+    }
+  }
+
+ .Menubar {
+   position: initial;
+   left: initial;
+   top: initial;
+   flex: 1 100%;
+   margin-top: 0px;
+ 
+   & > ul {
+    width: initial;
+    flex: 1 1 15em;
+  }
+
+  & > UL > LI {
+    width: initial;
+    flex: 1 1 15em;
+    display: inline-block;
+  }
+
+  & > UL > LI > A {
+    width: initial;
+    @include flex(1 1 15em);
+  }
+
+  .Menubar {
+    display: inline-flex;
+    flex: 1 1 100%;
+
+    & > UL {
+      display: inline-flex;
+      flex: 1 1 100%;
+ 
+      & > LI {
+        flex: 1 1 100%;
+        display: inline-block;
+        position: relative;
+        clear: none;
+
+        & UL {
+          display: none;
+
+          & LI {
+            display: none;
+          }
+        }
+      }
+
+      & LI:hover > UL {
+        display: block;
+
+        & LI {
+          display: block;
+        }
+      }
+
+      & LI UL UL {
+        display: none;
+      }
+
+      & LI LI {
+        display: none;
+      }
+
+      & > LI:hover > UL > LI:hover UL {
+        display: block;
+      }
+
+      & > LI:hover UL > LI:active UL {
+        display: block;
+      }
+
+      & > LI:active > UL
+      {
+        & > LI:hover UL 
+        {
+          display: block;
+        }
+      }
+
+      & > LI:active UL {
+         display: block;
+      }
+
+      & > LI:hover > UL > LI {
+        display: block;
+      }
+    }
+  }
+  & > LI:active > UL > LI {
+    display: block;
+  }
+
+  & > UL > LI > UL UL {
+    width: 80%;
+  }
+
+  & > UL > LI > UL > LI > UL {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 28em) {
+
+  .Menubar {
+    flex: 1 1 15em;
+
+    & > UL {
+      display: inline-flex;
+      flex: 1 1 auto;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-content: flex-start;
+      align-items: flex-start;
+      @include alignitems(space-around);
+    }
+
+    & > UL > LI {
+      flex: 1 1 auto;
+      display: inline-block;
+      clear: none;
+      margin-left: .2em;
+      margin-right: .2em;
+
+      & UL {
+        display: none;
+        right: 0;
+        width: auto;
+
+        & UL {
+          min-width: 12em;
+          width: auto;
+          display: none;
+        }
+
+        & LI {
+          display: none;
+        }
+      }
+      & > UL > LI > UL {
+        top: 0;
+        right: 100%;
+
+        & > LI > UL > LI > UL {
+          top: 0;
+          left: 100%;
+        }
+      }
+    }
+  }  
+}
+
+@media screen and (min-width: 36em) {
+  .Menubar {
+    align-content: initial;
+    flex: initial;
+    align-content: initial;
+    display: block;
+    position: fixed;
+    top: 1em;
+    z-index: 12;
+    right: 0;
+    max-width: 63%;
+  }
+}

@@ -1,0 +1,37 @@
+/*
+  The C Shore Plain Elements Structure Stylesheet
+  Copyright 2007-2009,2017-2018 Daniel F. Dickinson (<thecshore.thecshore.com>)
+
+  Released under the Creative Commons Share-Alike By Attribution 4.0 License
+*/
+
+:root {
+  --sans: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  --serif: Georgia, serif;
+  --monospace: "Lucida Console", Monaco, monospace;
+  --hrefTextDecoration: underline;
+  --hrefPadding: 0;
+  --preformattedTextBorder: dashed 1px;
+  --imageBorder: none;
+  --shortformPopupCursor: help;
+  --shortformBorderBottom: 1px dashed;
+  --unorderedListItemPaddingBottom: 3px;
+  --horizontalRuleSurroundSpace: 0px;
+  --baseFontSize: 20px;
+  --semiBlockIndent: 5%;
+  --footNoteFontSize: smaller;
+  --utilityBoxBorderWidth: 4px;
+  --utilityBoxBorderStyle: solid;
+  --utilityBoxBorderColor: black;
+  --utilityBoxPadding: inherit .2em inherit .2em;
+  --topBarBorderTop: none;
+  --topBarBorderLeft: none;
+  --topBarBorderRight: none;
+  --topBarBorderBottom: 1px solid;
+  --topBarBorderBottomColor: black;
+  --topBarBorderTopColor: none;
+  --topBarBorderLeftColor: none;
+  --topBarBorderRightColor: none;
+  --topbarPadding: .3em inherit .2em inherit;
+  --utilityBoxWrapperDisplay: inline-block;
+}

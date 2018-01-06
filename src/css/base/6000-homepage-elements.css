@@ -1,0 +1,61 @@
+/*
+  The C Shore Homepage Elements Stylesheet
+  Copyright 2007-2009,2017-2018 Daniel F. Dickinson <thecshore.thecshore.com>
+
+  Released under the Creative Commons Share-Alike By Attribute 4.0 License
+*/
+
+/* Remember, for the level of specifity last rule wins, hence
+ *   most important rules are last
+*/
+/* Defines semi-block style paragraphs (initial indent) */
+
+@import "custom-properties.css";
+
+header.Homepage .SiteId {
+  font-size: 1.4em;
+  padding: .2em;
+}
+
+.Homepage {
+  & .Title {
+    text-align: center;
+  }
+
+  & .Oneliner {
+    text-align: center;
+  }
+
+  & .homepage-subliner {
+    text-align: center;
+  }
+
+  & .Button-EnterSite {
+     padding: 1em;
+     border-radius: 8px;
+     border: 2px solid;
+     text-align: center;
+  }
+
+  & .Taglines {
+    padding-bottom: 1.6em;
+  }
+
+  & .Aside {
+    padding: 2em;
+    font-size: .8em;
+    font-style: italic;
+    width: 80%;
+  }
+
+  & .Asidefooter {
+    padding: 2em;
+    font-size: .8em;
+    font-style: italic;
+  }
+
+  & .Screenshots {
+    padding-left: 1em;
+    padding-bottom: 1em;
+  }
+}

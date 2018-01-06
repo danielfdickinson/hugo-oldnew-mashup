@@ -1,0 +1,47 @@
+/*
+  The C Shore Accessibliity Navigation Stylesheet
+  Copyright 2007-2009,2017-2018 Daniel F. Dickinson <thecshore.thecshore.com>
+
+  Released under the Creative Commons Share-Alike By Attribute 4.0 License
+*/
+
+/* Remember, for the level of specifity last rule wins, hence
+ *   most important rules are last
+*/
+/* Defines semi-block style paragraphs (initial indent) */
+
+/* Note: skipto links are only displayed when no CSS3 styles, but 
+ * the following styles help with layout despite that, by making
+ * sure that the non-visible elements are not included in the
+ * CSS Box model
+ */
+.NavSkiptoLinks {
+   text-align: center;
+   display: inline-block;
+}
+
+.NavSkiptoAnchor {
+  visibility: hidden;
+  font-size: 0pt;
+  display: inline-block;
+}
+
+.NavSkiptoLinks,
+.NavSkiptoAnchor {
+  & div {
+    font-size: 0pt;
+    margin: 0;
+    padding: 0;
+    float: left;
+
+    a,
+    span {
+      & {
+        font-size: 0pt;
+        margin: 0;
+        padding: 0;
+        float: left;
+      }
+    }
+  }
+}

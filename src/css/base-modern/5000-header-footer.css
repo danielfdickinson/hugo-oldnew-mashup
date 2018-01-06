@@ -1,0 +1,72 @@
+/*  The C Shore CSS3 Header and Footer Elements
+    Copyright 2007-2009,2017-2018 Daniel F. Dickinson <thecshore.thecshore.com>
+
+    Released under the Creative Commons Share-Alike By-Attribution 4.0 License
+*/
+
+@media screen {
+  header {
+    margin-top: 1.7em;
+  }
+
+  footer {
+    margin-top: 0px;
+  }
+
+  /* Undo fallback for non-CSS3/Flexbox */
+  .SiteId {
+    text-align: left;
+  }
+
+  .SiteBadge {
+    text-align: center;
+  }
+
+  .NoticeHeader {
+    vertical-align: initial;
+    width: auto;
+    float: none;
+  }
+
+  .SiteBadge {
+    flex: 1 100%;
+  }
+
+  .SiteId {
+    flex: 1 100%;
+    margin-top: .2em;
+    alig-nself: center;
+  }
+
+  .SiteGraphics {
+    align-content: flex-start;
+  }
+
+  .NoticeHeader {
+    flex: 1 1 100%;
+    aligncontent: flex-start;
+    margin-top: .2em;
+  }
+}
+
+@media screen and (min-width: 28em) {
+  .SiteGraphics {
+    @include flex(1 1 12em);
+  }
+}
+
+@media screen and (min-width: 36em) {
+  .SiteBadge {
+    align-content: initial;
+    flex: initial;
+    display: block;
+    text-align: center;
+    vertical-align: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 12;
+    min-width: 12em;
+    width: 33%;
+  }
+}

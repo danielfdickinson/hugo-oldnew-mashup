@@ -1,0 +1,388 @@
+/*  The C Shore Base Styles for Modern CSS (CSS3/HTML5)
+    Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@thecshore.com>
+
+    Released under the Creative Commons Share-Alike By-Attribution 4.0 License
+*/
+
+/* Remember, for the level of specifity last rule wins, hence
+ *  most import rules are last
+ */
+
+ /* New settings only for CSS3 */
+@-ms-viewport {
+  width: device-width;
+}
+
+/* Setting for printing only */
+/* Don't print navigation items hidden on most browsers */
+@media print {
+  .NavSkiptoAnchor
+  .NavSkiptoLinks {
+    display: none;
+    font-size: 0pt;
+  }
+
+  /* Do print full footer */
+  .RollupElement {
+    display: block;
+  }
+}
+
+/* Base styles for when we have CSS3 (e.g. flexbox), which
+ * we know because of media queries work
+ * The following settings exist in the base settings for browsers
+ * not supporting flexbox,
+ * so we have to undo these settings for flexbox.
+ */
+
+@media screen {
+
+   /* Don't display navigation menus only intended
+    * for use when 'display' is slow
+    * (e.g. a screenreader) 
+    */
+   .NavSkiptoAnchor,
+   .NavSkiptoLinks {
+      @include flex(0 10 0px);
+      float: left;
+      font-size: 0pt;
+      visibility: hidden;
+      display: none;
+      a, span {
+        @include flex(0 10 0px);
+        float: left;
+        font-size: 0pt;
+        visibility: hidden;
+        display: none;
+    }
+  }
+
+  DIV#section-header {
+    margin-top: 1.7em;
+  }
+
+  // Undo fallback for non-CSS2/Flexbox
+  DIV#section-subtitle, .wrapper-box {
+    text-align: left;
+  }
+
+  DIV#section-visual-id {
+    text-align: center;
+  }
+
+  DIV#section-nav-breadcrumb, DIV#section-footer, DIV#section-nav-menubar {
+    margin-top: 0px;
+  }
+
+  DIV#section-necromancy-notice {
+    vertical-align: initial;
+    width: auto;
+    float: none;
+  }
+
+  DIV#section-nav-menubar{
+    position: initial;
+    left: initial;
+    top: initial;
+  }
+
+  DIV#section-main {
+    width: auto;
+  }
+
+  .wrapper-parent-box {
+    @include flexbox();
+    @include aligncontent(flex-start);
+    @include alignitems(center);
+    @include justifycontent(space-between);
+    @include flow(row wrap);
+  }
+
+  .wrapper-box.wrapper-parent-box {
+    @include inlineflex();
+  }
+
+  .wrapper-box {
+    @include flex(1 100%);
+  }
+
+  DIV#section-visual-id {
+    @include flex(1 1 100%);
+  }
+
+  DIV#section-subtitle {
+    @include flex(1 100%);
+    margin-top: .2em;
+  }
+
+  .wrapper-box.wrapper-section {
+    @include flex(1 100%);
+    @include aligncontent(flex-start);
+  }
+
+  DIV#section-nav-menubar {
+    @include order(3);
+    @include flex(1 1 100%);
+  }
+
+  DIV#section-nav-menubar > UL {
+    width: initial;
+    @include flex(1 1 15em);
+  }
+
+  DIV#section-nav-menubar > UL > LI {
+    width: initial;
+    @include flex(1 1 15em);
+    display: inline-block;
+  }
+
+  DIV#section-nav-menubar > UL > LI > A {
+    width: initial;
+    @include flex(1 1 15em);
+  }
+
+  DIV#section-visual-id {
+    @include order(1);
+    @include aligncontent(flex-start);
+  }
+
+  DIV#section-subtitle {
+    @include order(3);
+    @include alignself(center);
+  }
+
+  DIV#section-main {
+    @include order(6);
+    @include flex(1 1 100%);
+  }
+
+  DIV#section-footer {
+    @include order(7);
+  }
+
+  #section-subtitle {
+    margin-top: .2em;
+  }
+
+  .wrapper-section.wrapper-box#section-necromancy-notice {
+    @include order(5);
+    @include flex(1 1 100%);
+    @include aligncontent(flex-start);
+    margin-top: .2em;
+  }
+
+  DIV#section-nav-menubar {
+    @include inlineflex();
+    @include flex(1 1 100%);
+  }
+
+  DIV#section-nav-menubar > UL {
+    @include inlineflex();
+    @include flex(1 1 100%);
+  }
+
+  DIV#section-nav-menubar > UL > LI {
+    @include flex(1 1 100%);
+    display: inline-block;
+    position: relative;
+    clear: none;
+  }
+
+  DIV#section-nav-menubar > UL > LI UL {
+    display: none;
+  }
+
+  DIV#section-nav-menubar > UL >LI UL LI {
+    display: none;
+  }
+
+  DIV#section-nav-menubar LI:hover > UL {
+    display: block;
+  }
+
+  DIV#section-nav-menubar LI:hover > UL LI {
+    display: block;
+  }
+
+  DIV#section-nav-menubar LI UL UL {
+    display: none;
+  }
+
+  DIV#section-nav-menubar LI LI {
+    display: none;
+  }
+
+  DIV#section-nav-menubar > LI:hover > UL > LI:hover UL {
+    display: block;
+  }
+
+  DIV#section-nav-menubar > LI:hover UL > LI:active UL {
+    display: block;
+  }
+
+  DIV#section-nav-menubar > LI:active > UL > LI:hover UL {
+    display: block;
+  }
+
+  DIV#section-nav-menubar > LI:active > UL > LI:active UL {
+    display: block;
+  }
+
+  DIV#section-nav-menubar > LI:hover > UL > LI {
+    display: block;
+  }
+
+  DIV#section-nav-menubar > LI:active > UL > LI {
+    display: block;
+  }
+
+  UL.toc LI.wrapper-box.wrapper-parent-box {
+    display: block;
+  }
+
+  DIV#section-nav-menubar > UL > LI > UL UL {
+    width: 80%;
+  }
+
+  DIV#section-nav-menubar > UL > LI > UL > LI > UL {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 28em) {
+  DIV#section-subtitle {
+    @include order(3);
+  }
+  DIV#section-visual-id {
+    @include flex(1 1 12em);
+  }
+
+  DIV#section-nav-menubar {
+    @include order(2);
+    @include flex(1 1 15em);
+  }
+
+  DIV#section-nav-menubar > UL {
+    @include inlineflex();
+    @include flex(1 1 auto);
+    @include flow(row wrap);
+    @include justifycontent(space-between);
+    @include aligncontent(flex-start);
+    @include alignitems(space-around);
+  }
+
+  DIV#section-nav-menubar > UL > LI {
+    @include flex(1 1 auto);
+    display: inline-block;
+    clear: none;
+    margin-left: .2em;
+    margin-right: .2em;
+  }
+
+  DIV#section-nav-menubar > UL > LI UL {
+    display: none;
+    right: 0;
+    width: auto;
+  }
+
+  DIV#section-nav-menubar > UL >LI UL LI {
+    display: none;
+  }
+
+  DIV#section-nav-menubar > UL > LI UL UL {
+    min-width: 12em;
+    width: auto;
+    display: none;
+  }
+
+  DIV#section-nav-menubar > UL > LI > UL > LI > UL {
+    top: 0;
+    right: 100%;
+  }
+
+  DIV#section-nav-menubar > UL > LI > UL > LI > UL > LI > UL {
+    top: 0;
+    left: 100%;
+  }
+}
+
+@media screen and (min-width: 36em) {
+  DIV#page-body {
+    margin-top: 5.9em;
+  }
+
+  DIV#section-visual-id {
+    @include aligncontent(initial);
+    @include flex(initial);
+    display: block;
+    text-align: center;
+    vertical-align: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 12;
+    min-width: 12em;
+    width: 33%;
+  }
+
+  DIV#section-nav-menubar {
+    @include aligncontent(initial);
+    @include flex(initial);
+    display: block;
+    position: fixed;
+    top: 1em;
+    z-index: 12;
+    right: 0;
+    max-width: 63%;
+  }
+}
+
+DIV#tipue_search_foot > UL#tipue_search_foot_boxes {
+  display: block;
+  padding: 0;
+  margin: 0;
+  font: 12px/1 'open sans', sans-serif;
+  position: fixed;
+  bottom: 1em;
+  right: 2em;
+}
+
+DIV#tipue_search_foot > UL#tipue_search_foot_boxes li
+{
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   display: inline;
+}
+
+DIV#tipue_search_foot > UL#tipue_search_foot_boxes li a
+{
+     padding: 7px 13px 8px 13px;
+     background-color: #f1f1f1;
+     border: 1px solid #dcdcdc;
+     border-radius: 1px;
+     color: #333;
+     margin-right: 7px;
+     text-decoration: none;
+     text-align: center;
+     display: inline;
+}
+
+DIV#tipue_search_foot > UL#tipue_search_foot_boxes li.current
+{
+     padding: 7px 13px 8px 13px;
+     background: #fff;
+     border: 1px solid #dcdcdc;
+     border-radius: 1px;
+     color: #333;
+     margin-right: 7px;
+     text-align: center;
+     display: inline;
+}
+
+DIV#tipue_searh_foot > UL#tipue_search_foot_boxes li a:hover
+{
+    border: 1px solid #ccc;
+    background-color: #f3f3f3;
+    display: inline;
+}
