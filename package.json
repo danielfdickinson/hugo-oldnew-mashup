@@ -7,7 +7,16 @@
   "author": "Daniel F. Dickinson <cshored@thecshore.com>",
   "license": "CC-BY-SA-4.0",
   "private": false,
-  "dependencies": {},
+  "dependencies": {
+    "csslint": "^1.0.5",
+    "gulp-csslint": "^1.0.0",
+    "gulp-eslint": "^4.0.1",
+    "gulp-jshint": "^2.1.0",
+    "gulp-postcss": "^7.0.1",
+    "jshint": "^2.9.5",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-minify": "^0.2.0",
@@ -21,8 +30,11 @@
     "gulp-babel": "^7.0.0",
     "gulp-cli": "^2.0.0",
     "gulp-concat": "^2.6.1",
+    "gulp-gzip": "^1.4.1",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^2.6.2",
-    "gulp-yarn": "^1.0.1"
+    "gulp-tar": "^2.1.0",
+    "gulp-yarn": "^1.0.1",
+    "gulp-zip": "^4.1.0"
   }
 }

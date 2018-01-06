@@ -14,7 +14,6 @@ var gzip = require('gulp-gzip');
 var zip = require('gulp-zip');
 var jshint= require('gulp-jshint');
 var eslint = require('gulp-eslint');
-var sass = require('gulp-sass');
 var csslint = require('gulp-csslint');
 var postcss = require('gulp-postcss');
 var cssImport = require('postcss-import');
@@ -83,7 +82,7 @@ gulp.task('release', ['js'], function() {
 
 gulp.task('css', ['css-test'], function(done) {
   var plugins = [
-     cssImport({path: ["src/imports/css"]}),
+     cssImport({path: ["src/css/imports"]}),
      cssnext()
   ]
   return evstr.concat(
@@ -124,7 +123,7 @@ gulp.task('js-test', function(done) {
 
 gulp.task('css-test', ['yarn'], function(done) {
   var plugins = [
-     cssImport({path: ["src/imports/css"]}),
+     cssImport({path: ["src/css/imports"]}),
      cssnext()
   ]
   return evstr.concat(
