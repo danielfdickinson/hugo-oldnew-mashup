@@ -91,15 +91,12 @@ gulp.task('css', ['css-test'], function(done) {
       "src/css/base/**/*.css",
       "src/css/base-modern/**/*.css"
    ])
-    .pipe(sourcemaps.init())
     .pipe(postcss(plugins,{
        browsers: ['>1%']
      }))
     .pipe(gulp.dest('dist/separated/css'))
-    .pipe(sourcemaps.write("."))
     .pipe(concat("base.css"))
     .pipe(gulp.dest("dist/css/"))
-    .pipe(sourcemaps.write("."))
   );
 });
 
