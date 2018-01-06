@@ -8,6 +8,7 @@ homepage = "https://www.thecshore.com/hugo-themes"
 keywords = ['hugo', 'pure', 'old-school']
 features = ['blog', 'responsive', 'rwd']
 min_version = "0.31.1"
+staticDir = ['static-dir','dist']
 
 [author]
   name = "Daniel F. Dickinson"
