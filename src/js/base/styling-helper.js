@@ -129,7 +129,7 @@
     // Some magic numbers that worked for me.
     // It is basically intuitive approach involving trial and error.
     // The basic idea was to shift and apply constants multipliers
-    // to a base 2 logarithmic scale to get the scaling to 'play nicely'.
+    // to a natural logarithmic scale to get the scaling to 'play nicely'.
     // (Meaning that at small pixel counts font size changes are fast relative
     // to pixel count but deaccelerate as pixel counts go up (but still end up
     // being larger increments on larger displays due to the larger initial value).
