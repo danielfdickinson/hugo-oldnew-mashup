@@ -26,6 +26,19 @@
   z-index: 10;
 }
 
+.Homepage header {
+  border-top: var(--TopBar-borderTop, var(--topBarBorderTop)) var(--TopBar-borderTopColor, var(--topBarBorderTopColor));
+  border-bottom: var(--TopBar-borderBottom, var(--topBarBorderBottom)) var(--TopBar-borderBottomColor, var(--topBarBorderBottomColor));
+  border-left: var(--TopBar-borderLeft var(--topBarBorderLeft)) var(--TopBar-borderLeftColor, var(--topBarBorderLeftColor));
+  border-right: var(--TopBar-borderRight, var(--topBarBorderRight)) var(--TopBar-borderRightColor, var(--topBarBorderRightColor));
+  padding: var(--Topbar-padding, var(--topbarPadding));
+  position: relative;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  left: 0;
+}
+
 /* Without Flex get the Topbar's Menubar to the right */
 .TopBar .MenuBar {
   text-align: right;

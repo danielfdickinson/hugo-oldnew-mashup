@@ -3,7 +3,7 @@ languageCode = "en-ca"
 languageLang = "en"
 title = "CShore OldNew Mashup Theme Test Site"
 enableGitInfo = true
-staticDir = ["static","ist"]
+staticDir = ["static","dist"]
 
 [params]
   siteid = "OldNew Theme Test"
