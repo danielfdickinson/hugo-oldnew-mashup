@@ -7,6 +7,11 @@
   "author": "Daniel F. Dickinson <cshored@thecshore.com>",
   "license": "CC-BY-SA-4.0",
   "private": false,
+   "scripts": {
+     "release": "gulp release",
+     "build": "gulp build",
+     "test": "gulp test"
+  },
   "dependencies": {
     "csslint": "^1.0.5",
     "gulp-csslint": "^1.0.0",
