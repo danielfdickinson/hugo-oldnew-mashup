@@ -89,14 +89,26 @@ gulp.task('css', ['css-test'], function(done) {
     gulp.src([
       "modules/node_modules/normalize.css/normalize.css",
       "src/css/base/**/*.css",
-      "src/css/base-modern/**/*.css"
    ])
+    .pipe(sourcemaps.init())
     .pipe(postcss(plugins,{
        browsers: ['>1%']
      }))
     .pipe(gulp.dest('dist/separated/css'))
     .pipe(concat("base.css"))
     .pipe(gulp.dest("dist/css/"))
+    .pipe(sourcemaps.write(".")),
+  gulp.src([
+      "src/css/base-modern/**/*.css",
+   ])
+    .pipe(sourcemaps.init())
+    .pipe(postcss(plugins,{
+       browsers: ['>1%']
+     }))
+    .pipe(gulp.dest('dist/separated/css'))
+    .pipe(concat("base-modern.css"))
+    .pipe(gulp.dest("dist/css/"))
+    .pipe(sourcemaps.write("."))
   );
 });
 
