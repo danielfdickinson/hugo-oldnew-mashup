@@ -85,3 +85,11 @@ main, header, footer {
 html {
   font-size: var(--BaseFontSize, var(--baseFontSize));
 }
+
+.Label {
+  font-weight: bold;
+}
+
+label {
+   font-weight: bold;
+}

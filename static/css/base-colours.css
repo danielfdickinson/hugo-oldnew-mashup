@@ -19,13 +19,17 @@ BODY {
 /* This file contains background image url; CSS2 starts from directory of the .css */
 }
 
-body.homepage {
+.Homepage {
   background-image: none;
 
   background-color : #bbbbbb;
   /* grey background */
 }
 
+.Topbar {
+  background-color : #777777;
+  /* grey background */
+}
 
 /* Change the colour links to match our colour scheme */
 A:link {
@@ -48,19 +52,12 @@ PRE, CODE, {
     /* Light grey */
 }
 
-/* For non-CSS3+ we set the font differently than with CSS3 */
-/* (however if Javascript is enabled, the auto-size logic */
-/* will override all the <html> tag font settings (base font) */
-
-html {
-  font-size: 20px;
-}
-footer p.hoversite-footer-rollup:active + div.wrapper-footer-rollup,
-footer p.hoversite-footer-rollup:hover + div.wrapper-footer-rollup {                                          
-  background-color: #777777;
+.RollupHoversite:active + .RollupBlock,
+.RollupHoversite:hover + .RollupBlock {
+  background-color: #aaaaaa;
 }
 
-footer > p:first-child {
-  padding-left: 1em;
-  padding-right: 1em;
-}  
+.Taglines {
+  color: #bbbbbb;
+  background-color: #000000;
+}

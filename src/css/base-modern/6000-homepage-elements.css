@@ -1,0 +1,69 @@
+@import 'custom-properties.css';
+
+@media screen {
+  .Homepage .Main {
+     margin-top: 2em;
+     flex: 1 1 100%;
+     display: inline-flex;
+     align-content: space-between;
+     justtify-content: space-between;
+     flex-flow: row wrap;
+   }
+ 
+  .Homepage .Taglines {
+     flex: 1 1 70%;
+     display: inline-flex;
+     align-content: space-between;
+     justtify-content: space-between;
+     flex-flow: row wrap;
+  }
+
+  .Homepage .TaglinesSpacingBefore,
+  .Homepage .TaglinesSpacingAfter {
+     flex: 1 1 12%;
+     display: block;
+  }
+
+  .Homepage .Title {
+    flex: 1 1 100%;
+  }
+
+  .Taglines .OnelinerSpacingBefore,
+  .Taglines .OnelinerSpacingAfter {
+    flex: 1 1 15%;
+  }
+  .Taglines .Oneliner {
+    flex: 1 1 60%;
+  }
+  .Taglines .SublinerSpacingBefore,
+  .Taglines .SublinerSpacingAfter {
+    flex: 1 1 20%;
+  }
+
+  .Taglines .Subliner {
+    flex: 1 1 50%;
+  }
+  .Taglines .EnterButtonSpacingBefore,
+  .Taglines .EnterButtonSpacingAfter {
+    flex: 1 1 25%;
+  }
+
+  .Taglines .EnterButton {
+    flex: 1 1 20%;
+    display: block;
+    text-align: center;
+    border: 2px solid;
+    padding: .2em;
+    border-radius: 8px;
+  }
+  .Homepage .Aside {
+     flex: 1 1 100%;
+  }
+  .Homepage .Splash {
+     flex: 1 1 100%;
+     display: inline-flex;
+  }
+  .Homepage .AsideFooter {
+     flex: 1 1 100%;
+  }
+}

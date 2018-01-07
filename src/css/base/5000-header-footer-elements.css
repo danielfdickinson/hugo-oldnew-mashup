@@ -18,65 +18,73 @@
   border-left: var(--TopBar-borderLeft var(--topBarBorderLeft)) var(--TopBar-borderLeftColor, var(--topBarBorderLeftColor));
   border-right: var(--TopBar-borderRight, var(--topBarBorderRight)) var(--TopBar-borderRightColor, var(--topBarBorderRightColor));
   padding: var(--Topbar-padding, var(--topbarPadding));
-  position: relative;
-  position: sticky;
-  position: -webkit-sticky;
+  float: left;
+  display: block;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
+  width: 100%;
+  opacity: 1.0;
+  filter: (opacity=100);
 }
 
-.Homepage header {
-  border-top: var(--TopBar-borderTop, var(--topBarBorderTop)) var(--TopBar-borderTopColor, var(--topBarBorderTopColor));
-  border-bottom: var(--TopBar-borderBottom, var(--topBarBorderBottom)) var(--TopBar-borderBottomColor, var(--topBarBorderBottomColor));
-  border-left: var(--TopBar-borderLeft var(--topBarBorderLeft)) var(--TopBar-borderLeftColor, var(--topBarBorderLeftColor));
-  border-right: var(--TopBar-borderRight, var(--topBarBorderRight)) var(--TopBar-borderRightColor, var(--topBarBorderRightColor));
-  padding: var(--Topbar-padding, var(--topbarPadding));
+.Topbar::after {
+  clear: both;
+}
+
+/* Without Flex get the Topbar's Menubar to the right */
+.Menubar {
+  display: block;
+  text-align: right;
+}
+
+/* must be immediately above RollupBlock */
+.SiteBadge {
+  display: block;
   position: relative;
-  position: sticky;
-  position: -webkit-sticky;
   top: 0;
   left: 0;
 }
 
-/* Without Flex get the Topbar's Menubar to the right */
-.TopBar .MenuBar {
-  text-align: right;
+.SiteId {
+  display: block;
+  padding-left: .2em;
+  padding-right: .2em;
+  font-family: var(--serif);
+  position: absolute; 
+  top: .5em;
+  left: 2em;
 }
 
+.SiteBadgeGraphic {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+}
 
-/* must be above Rollup */
-footer .RollupHoversite {
+.GraphicsRow {
+  display: inline-block;
+}
+
+.RollupHoversite {
   font-size: smaller;
   font-style: italic;
 }
 
-footer .RollupElement {
+.RollupBlock {
   display: none;
   z-index: 100;
   position: fixed;
   bottom: 0;
 }
 
-footer .RollupHoversite:active + .RollupElement,
-footer .RollupHoverSite:hover + .RollupElement {
+.RollupHoversite:Active + .RollupBlock,
+.RollupHoversite:Hover + .RollupBlock {
   display: block;
+  opacity: 1.0;
+  filter: alpha(opacity=100);
 }
 
 /* If we don't have CSS3 */
-.SiteBadge div {
-  display: inline-block;
-}
-
-.SiteId {
-  display: inline-block;
-  vertical-align: middle;
-  padding-left: .2em;
-  padding-right: .2em;
-  font-family: var(--serif);
-}
-
-/* Should be wrapped around the SiteBadge graphis */
-.SiteGraphicWrapper {
-  display: inline-block;
-}

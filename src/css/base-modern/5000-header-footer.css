@@ -5,44 +5,46 @@
 */
 
 @media screen {
-  header {
-    margin-top: 1.7em;
+  .Footer {
+    margin-top: 0px;
   }
 
-  footer {
-    margin-top: 0px;
+ .Topbar {
+    display: flex;
+    align-content: flex-start;
+    align-items: center;
+    justify-content: space-between;
+    flow: row wrap;
   }
 
   /* Undo fallback for non-CSS3/Flexbox */
   .SiteId {
     text-align: left;
+    flex: 1 100%;
+    margin-top: .2em;
+    align-self: flex-start;
   }
 
   .SiteBadge {
-    text-align: center;
+    text-align: left;
+    display: inline-flex;
+    flex: 1 100%;
+    align-content: flex-start;
+    flow: row wrap;
+    justify-content: flex-start;
   }
 
-  .NoticeHeader {
+  .Notice {
     vertical-align: initial;
     width: auto;
     float: none;
   }
 
-  .SiteBadge {
-    flex: 1 100%;
-  }
-
-  .SiteId {
-    flex: 1 100%;
-    margin-top: .2em;
-    alig-nself: center;
-  }
-
-  .SiteGraphics {
+  .GraphicsRow {
     align-content: flex-start;
   }
 
-  .NoticeHeader {
+  .Notice {
     flex: 1 1 100%;
     aligncontent: flex-start;
     margin-top: .2em;
@@ -56,17 +58,4 @@
 }
 
 @media screen and (min-width: 36em) {
-  .SiteBadge {
-    align-content: initial;
-    flex: initial;
-    display: block;
-    text-align: center;
-    vertical-align: center;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 12;
-    min-width: 12em;
-    width: 33%;
-  }
 }

@@ -2,63 +2,49 @@
   {{.Title}}
 {{ end }}
 {{ define "bodytag" }}
-  <body class="Homepage">
+  <body>
 {{ end }}
 {{ define "header" }}
-  <header class="Header">
-   <nav class="NavSkiptoAnchor"><a id="skipto-top" title="Top">&nbsp;</a></nav>{{ partial "nav-skipto-links.html" }}
+  <div class="Homepage">
+    <header class="Header Topbar">
+     <nav class="NavSkiptoAnchor"><a id="skipto-top" title="Top">&nbsp;</a></nav>{{ partial "nav-skipto-links.html" }}
    <div class="SiteBadge">
-     <div><a href="{{ "/" | relURL }}">{{ partial "site-id-graphics.html" . }}</a></div>
-     <div class="wrapper-siteid">
-       <div class="siteid">{{.Site.Params.siteid}}</div>
+       <a class="GraphicsRow" href="{{ "/" | relURL }}">{{ partial "site-id-graphics.html" . }}</a><div class="SiteId"><div>{{.Site.Params.siteid}}</div>
+       </div>
      </div>
-   </div>
-   <nav class="utility-nav-skipto-anchor">
-     <a id="skipto-menubar" title="Menubar" class="utility-nav-skipto-anchor">
-       &nbsp;
-     </a>
-   </nav>{{ partial "nav-skipto-links.html" }}
-   <nav class="wrapper-menubar">
-     [Placeholder]
-   </nav>
-  </header>
+     <nav class="NavSkiptoAnchor">
+       <a id="skipto-menubar" title="Menubar" class="utility-nav-skipto-anchor">&nbsp;</a></nav>{{ partial "nav-skipto-links.html" }}
+     <nav class="Menubar">[Placeholder]</nav>
+    </header>
 {{ end }}
 {{ define "main" }}
-  <main class="wrapper-homepage-main">
-    <div class="wrapper-homepage-purpose">
-      <section class="homepage-purpose pure-g">
-        <div class="pure-u-md-1-6"></div>
-        <h1 class="homepage-title pure-u-1 pure-u-md-3-4">{{.Page.Title}}</h1>
-        <div class="pure-u-md-1-4"></div>
-        <div class="pure-u-1 homepage-taglines pure-u-md-7-12 pure-g pure-g-inner">
-          <h2 class="homepage-oneliner pure-u-1">
-            {{.Params.oneliner}}
-          </h2>
-          <div class="pure-u-1 pure-u-sm-1-6"></div>
-          <h3 class="homepage-subliner pure-u-1 pure-u-sm-2-3">
-            {{.Params.subliner}}
-          </h3>
-          <div class="pure-u-1 pure-u-sm-1-6"></div>
-          <div class="pure-u-1 pure-u-sm-1-3"></div>
-          <div class="homepage-enter-button pure-u-1 pure-u-sm-1-4">
-             <a href="{{ "/about/index.html" | relURL }}">Enter Site</a>
-          <div>
-        </div>
+    <main class="Main">
+      <h1 class="Title">{{.Page.Title}}</h1>
+      <div class="TaglinesSpacingBefore"></div>
+      <section class="Taglines">
+        <div class="OnelinerSpacingBefore"></div>
+        <h2 class="Oneliner">{{.Params.oneliner}}</h2>
+        <div class="OnelinerSpacingAfter"></div>
+        <div class="SublinerSpacingBefore"></div>
+        <h3 class="Subliner">{{.Params.subliner}}</h3>
+        <div class="SublinerSpacingAfter"></div>
+        <div class="EnterButtonSpacingBefore"></div>
+        <a class="EnterButton" href="{{ "/about/index.html" | relURL }}">Enter Site</a>
+        <div class="EnterButtonSpacingAfter"></div>
       </section>
-    </div>
-    <aside class="homepage-aside">
-      {{ markdownify .Params.aside}}
-    </aside>
-    <section class="homepage-screenshots pure-g">
-      <div class="screenshot-wrapper pure-u-1 pure-u-sm-1-2">
-        <img class="pure-img homepage-screenshot" alt="[Screenshot of Daniel's GitHub Profile]" src="{{ "/images/github-screenshot.png" | relURL }}" width="80%" />
-      </div>
-      <div class="screenshot-wrapper pure-u-1 pure-u-sm-5-12">
-        <img class="pure-img homepage-screenshot" alt="[Screenshot of the old www.thecshore.om]" src="{{ "/images/thecshore-screenshot.png" | relURL }}" width="100%" />
-      </div>
-    </section>
-    <aside class="homepage-asidefooter">
-      {{ markdownify .Params.asidefooter }}
-    </aside>
-  </main>
+      <div class="TaglinesSpacingAfter"></div>
+      <aside class="Aside">
+        {{ markdownify .Params.aside}}
+      </aside>
+      <section class="Splash">
+        {{ partial "splash-screenshots.html" . }}
+      </section>
+      <aside class="AsideFooter">
+        {{ markdownify .Params.asidefooter }}
+      </aside>
+    </main>
+{{ end }}
+{{ define "footer" }}
+  {{ partial "footer.html" . }}
+</div>
 {{ end }}
