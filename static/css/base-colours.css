@@ -8,7 +8,7 @@
 /* grey background for all elements, by default */
 #all { background-color: #bbbbbb; }
 
-BODY {
+body {
     background-color : #bbbbbb;
     /* grey background */
 
@@ -32,22 +32,22 @@ BODY {
 }
 
 /* Change the colour links to match our colour scheme */
-A:link {
+a:link {
     color : #0000ff;
 /* bright blue font (links) */
 }
 
-A:Visited {
+a:Visited {
     color : #772277;
 /* purple font (visited links) */
 }
 
-A:Active, A:Hover  {
+a:Active, a:Hover  {
     color : #ff0000; /* red font (hover/active links) */
     background-color : #888888; /* light gray background */
 }
 
-PRE, CODE, {
+pre, code, {
     background-color : #777777;
     /* Light grey */
 }
