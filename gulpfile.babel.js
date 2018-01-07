@@ -36,8 +36,8 @@ gulp.task('js', ['js-test'], function () {
   var pkg = JSON.parse(fs.readFileSync('./package.json'));
   return evstr.concat(
     gulp.src([
-      "modules/node_modules/js-cookie/src/**/*.js",
-      "src/**/*.js",
+      "src/base/*.js",
+      "src/modules/*/src/**/*.js",
       "!**/*.min.js",
       "!**/*-min.js"
     ])
