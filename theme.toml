@@ -1,6 +1,6 @@
 # See https://github.com/gohugoio/hugoThemes#themetoml for an example
 
-name = "Pure OldNew Mashup"
+name = "OldNew Mashup"
 license = "MIT"
 licenselink = "https://github.com/cshoredaniel/hugo-pure-oldnew-mashup/blob/master/LICENSE.md"
 description = "Hugo Theme mixing old school design elements with new-era Pure CSS and others"

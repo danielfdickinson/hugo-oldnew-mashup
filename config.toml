@@ -6,7 +6,7 @@ enableGitInfo = true
 staticDir = ["static","dist"]
 
 [params]
-  siteid = "OldNew Theme Test"
+  siteid = "OldNew Theme"
 
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details:

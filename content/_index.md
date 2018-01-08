@@ -1,6 +1,5 @@
 ---
 date: 2018-01-06T14:23:41-05:00
-title: "CShore Old New Mashup Theme"
 copyright: 2018 Daniel Dickinson
 license: MIT
 author: Daniel F. Dickinson
