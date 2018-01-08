@@ -92,7 +92,7 @@ gulp.task('css', ['css-test'], function(done) {
    ])
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins,{
-       browsers: ['>1%']
+       browsers: ['>0%']
      }))
     .pipe(gulp.dest('dist/separated/css'))
     .pipe(concat("base.css"))
@@ -103,12 +103,21 @@ gulp.task('css', ['css-test'], function(done) {
    ])
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins,{
-       browsers: ['>1%']
+       browsers: ['>5%']
      }))
     .pipe(gulp.dest('dist/separated/css'))
     .pipe(concat("base-modern.css"))
     .pipe(gulp.dest("dist/css/"))
-    .pipe(sourcemaps.write("."))
+    .pipe(sourcemaps.write(".")),
+  gulp.src([
+      "src/css/base-ie8/**/*.css",
+   ])
+    .pipe(postcss(plugins,{
+       browsers: ['>0%']
+     }))
+    .pipe(gulp.dest('dist/separated/css'))
+    .pipe(concat("base-ie8.css"))
+    .pipe(gulp.dest("dist/css/"))
   );
 });
 

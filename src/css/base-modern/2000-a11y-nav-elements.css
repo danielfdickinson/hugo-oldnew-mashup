@@ -11,7 +11,7 @@
 /* Setting for printing only */
 /* Don't print navigation items hidden on most browsers */
 @media print {
-  .NavSkiptoAnchor
+  .NavSkiptoAnchor,
   .NavSkiptoLinks {
     display: none;
     visibility: hidden;
