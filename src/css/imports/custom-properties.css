@@ -25,14 +25,15 @@
   --utilityBoxBorderStyle: solid;
   --utilityBoxBorderColor: black;
   --utilityBoxPadding: inherit .2em inherit .2em;
-  --topBarBorderTop: none;
-  --topBarBorderLeft: none;
-  --topBarBorderRight: none;
-  --topBarBorderBottom: 1px solid;
-  --topBarBorderBottomColor: black;
-  --topBarBorderTopColor: none;
-  --topBarBorderLeftColor: none;
-  --topBarBorderRightColor: none;
-  --topbarPadding: .3em inherit .2em inherit;
+  --topbarBorderTop: none;
+  --topbarBorderLeft: none;
+  --topbarBorderRight: none;
+  --topbarBorderBottom: 1px solid;
+  --topbarBorderBottomColor: black;
+  --topbarBorderTopColor: none;
+  --topbarBorderLeftColor: none;
+  --topbarBorderRightColor: none;
+  --topbarPadding: .3em;
+  --topbarMargin: 0px;
   --utilityBoxWrapperDisplay: inline-block;
 }

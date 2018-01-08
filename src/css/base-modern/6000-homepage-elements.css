@@ -1,14 +1,17 @@
 @import 'custom-properties.css';
 
 @media screen {
-  .Homepage .Main {
-     margin-top: 2em;
-     flex: 1 1 100%;
-     display: inline-flex;
-     align-content: space-between;
-     justtify-content: space-between;
-     flex-flow: row wrap;
-   }
+  .Homepage {
+    & .Main {
+      flex: 1 1 100%;
+      display: inline-flex;
+      align-content: space-between;
+      justtify-content: space-between;
+      flex-flow: row wrap;
+      position: static;
+      top: 0;
+      margin-top: .4em;
+    }
  
   .Homepage .Taglines {
      flex: 1 1 70%;
@@ -48,20 +51,43 @@
     flex: 1 1 25%;
   }
 
-  .Taglines .EnterButton {
-    flex: 1 1 20%;
-    display: block;
-    text-align: center;
-    border: 2px solid;
-    padding: .2em;
-    border-radius: 8px;
-  }
-  .Homepage .Aside {
-     flex: 1 1 100%;
-  }
-  .Homepage .Splash {
-     flex: 1 1 100%;
-     display: inline-flex;
+      & .Subliner {
+        flex: 1 1 50%;
+      }
+
+      & .EnterButtonSpacingBefore,
+      & .EnterButtonSpacingAfter {
+        flex: 1 1 35%;
+         display: inline-block;
+      }
+
+      & .EnterButton {
+        flex: 0 0 10em;
+         display: inline-block;
+        text-align: center;
+        border: 2px solid;
+        padding: .5em;
+        border-radius: 8px;
+      }
+    }
+
+    & .Aside {
+      flex: 1 1 100%;
+    }
+
+    & .Splash {
+      flex: 1 1 100%;
+      display: inline-flex;
+    }
+
+    & .AsideFooter {
+      flex: 1 1 100%;
+    }
+
+    & .Footer {
+      position: static;
+      top: 0;
+    }
   }
   .Homepage .AsideFooter {
      flex: 1 1 100%;

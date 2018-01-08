@@ -87,5 +87,10 @@
       padding-left: 1em;
       padding-bottom: 1em;
     }
+
+    & .Footer {
+      position: relative;
+      top: 7.4em;
+    }
   }
 }

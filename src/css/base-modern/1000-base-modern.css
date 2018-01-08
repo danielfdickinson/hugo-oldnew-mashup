@@ -20,7 +20,23 @@
   .RollupElement {
     display: block;
   }
+
+  .Homepage {
+    height: initial;
+    position: relative;
+
+    & .Topbar {
+      height: initial;
+      position: relative;
+    }
+
+   & .Footer {
+      height: initial;
+      posiition: relative;
+    }
+  }
 }
+
 
 /* Base styles for when we have CSS3 (e.g. flexbox), which
  * we know because of media queries work
