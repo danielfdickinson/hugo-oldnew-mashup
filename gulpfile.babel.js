@@ -87,7 +87,7 @@ gulp.task('css', ['css-test'], function(done) {
   ]
   return evstr.concat(
     gulp.src([
-      "modules/node_modules/normalize.css/normalize.css",
+      "sr/css/modules/normalize.css/normalize.css",
       "src/css/base/**/*.css",
    ])
     .pipe(sourcemaps.init())
