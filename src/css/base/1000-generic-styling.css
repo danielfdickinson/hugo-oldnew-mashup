@@ -59,3 +59,12 @@
   width: 100%;
   z-index: 0;
 }
+
+/* See https://www.coolfields.co.uk/2016/05/text-for-screen-readers-only-updated/ */
+.ScreenReaderElement {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute !important;
+}
