@@ -22,52 +22,54 @@
   display: block;
   position: fixed;
   top: 0;
-  left: 0;
-  z-index: 10;
-  width: 100%;
   opacity: 1.0;
+  width: 99%;
   filter: (opacity=100);
+  height: 6em;
+  overflow: hidden;
+  z-index: 10;
 }
 
 .Topbar::after {
   clear: both;
 }
 
-/* Without Flex get the Topbar's Menubar to the right */
-.Menubar {
-  display: block;
-  text-align: right;
-}
-
-/* must be immediately above RollupBlock */
 .SiteBadge {
   display: block;
-  position: relative;
-  top: 0;
-  left: 0;
-}
-
-.SiteId {
-  display: block;
-  padding-left: .2em;
-  padding-right: .2em;
-  font-family: var(--serif);
-  position: absolute; 
-  top: .5em;
-  left: 2em;
-}
-
-.SiteBadgeGraphic {
-  display: block;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 
 .GraphicsRow {
   display: inline-block;
+  width: 37px;
 }
 
+.SiteBadgeGraphic {
+  display: block;
+  height: 48px;
+}
+
+.SiteId {
+  display: inline-block;
+  padding-right: .2em;
+  font-family: var(--serif);
+  width: 80%;
+  vertical-align: 75%;
+}
+
+/* Without Flex get the Topbar's Menubar to the right */
+.Menubar {
+  display: block;
+  text-align: right;
+  padding-right: .2em;
+  padding-bottom: .3em;
+}
+
+.Footer {
+  position: relative;
+  bottom: -6em;
+}
+
+/* must be immediately above RollupBlock */
 .RollupHoversite {
   font-size: smaller;
   font-style: italic;

@@ -24,6 +24,21 @@
     align-content: flex-start;
     align-items: center;
     justify-content: flex-start;
+    flex-flow: row wrap;
+
+    & .GraphicsRow {
+      display: inline-flex;
+      align-content: flex-start;
+      align-items: center;
+      flex: 1 1 100%;
+    }
+  }
+
+  .SiteId {
+    flex: 1 1 100%;
+    text-align: left;
+    display: block;
+    position: static;
   }
 
   .Notice {
@@ -45,6 +60,14 @@
 }
 
 @media screen and (min-width: 28em) {
+  .SiteId {
+    flex: 4 1 0;
+  }
+
+  .SiteBadge .GraphicsRow {
+    flex: 0 0 48px;
+  }
+
   .SiteGraphics {
     @include flex(1 1 12em);
   }

@@ -13,44 +13,74 @@
 @import "custom-properties.css";
 
 .Homepage .SiteId {
-  font-size: 1.4em;
-  padding: .2em;
+  font-size: 1.2em;
+  padding-left: .2em;
+  padding-right: .2em;
 }
 
 .Homepage {
+  
   & .Main {
-    margin-top: 8em;
-    text-align: center;
-    vertical-align: middle;
+    position: relative;
+    top: 7.4em;
 
     & .Title {
       text-align: center;
       font-family: var(--serif);
-      width: 70%;
+      width: 69%;
       padding: 1em;
-      margin-left: 10%;
-      margin-right: 10%;
-      border-radius: 8px;
-      border: 2px solid;
+      margin-top: 0;
+      margin-left: 12%;
+      margin-right: 12%;
       display: block;
+      font-size: 1.3em;
+    }
+
+    & .TaglinesSpacingBefore,
+    & .TaglinesSpacingAfter {
+      width: 18%;
+      display: inline-block;
+    }
+
+    & .Taglines {
+      text-align: center;
+      padding: 0;
+      padding-top: 1em;
+      padding-bottom: 1em;
+      display: inline-block;
+      width: 60%;
     }
 
     & .OnelinerSpacingBefore,
-    & .SublinerSpacingAfter {
-      padding: 1em;
-      width: 50%;
+    & .OnelinerSpacingAfter {
+      width: 15%;
+      display: inline-block;
     }
 
     & .Oneliner {
       text-align: center;
       width: 60%;
-      display: block;
+      display: inline-block;
+      font-size: 1.2em;
+    }
+
+    & .SublinerSpacingBefore,
+    & .SublinerSpacingAfter {
+      width: 28%;
+      display: inline-block;
     }
 
     & .Subliner {
       text-align: center;
-      width: 45%;
-      display: block;
+      width: 40%;
+      display: inline-block;
+      font-size: .9em;
+    }
+
+    & .EnterButtonSpacingBefore,
+    & .EnterButtonSpacingAfter {
+      width: 15%;
+      display: inline-block;
     }
 
     & .EnterButton {
@@ -60,21 +90,14 @@
        border-radius: 8px;
        border: 2px solid;
        text-align: center;
+       display: inline-block;
     }
 
-    & .TaglineSpacingBefore,
-    & .TaglineSpacingAfter {
-      padding: 1em;
-    }
-
-    & .Taglines {
-      text-align: center;
-    }
     & .Aside {
       padding: 2em;
       font-size: .8em;
       font-style: italic;
-      width: 80%;
+       width: 80%;
     }
 
     & .AsideFooter {

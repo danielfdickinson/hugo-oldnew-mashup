@@ -24,6 +24,11 @@ body {
 
   background-color : #bbbbbb;
   /* grey background */
+
+}
+
+.Homepage .Title {
+  background-color : #999999;
 }
 
 .Topbar {

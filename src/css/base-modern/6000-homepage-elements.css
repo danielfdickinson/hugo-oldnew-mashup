@@ -13,43 +13,38 @@
       margin-top: .4em;
     }
  
-  .Homepage .Taglines {
-     flex: 1 1 70%;
-     display: inline-flex;
-     align-content: space-between;
-     justtify-content: space-between;
-     flex-flow: row wrap;
-  }
+    & .Title {
+      flex: 1 1 100%;
+      border-radius: 8px;
+      margin-left: 15%;
+    }
+ 
+    & .TaglinesSpacingBefore,
+    & .TaglinesSpacingAfter {
+      flex: 1 1 17%;
+      display: block;
+    }
 
-  .Homepage .TaglinesSpacingBefore,
-  .Homepage .TaglinesSpacingAfter {
-     flex: 1 1 12%;
-     display: block;
-  }
+    & .Taglines {
+      flex: 1 1 60%;
+      display: inline-flex;
+      align-content: space-between;
+      justtify-content: space-between;
+      flex-flow: row wrap;
 
-  .Homepage .Title {
-    flex: 1 1 100%;
-  }
+      & .OnelinerSpacingBefore,
+      &.OnelinerSpacingAfter {
+        flex: 1 1 15%;
+      }
 
-  .Taglines .OnelinerSpacingBefore,
-  .Taglines .OnelinerSpacingAfter {
-    flex: 1 1 15%;
-  }
-  .Taglines .Oneliner {
-    flex: 1 1 60%;
-  }
-  .Taglines .SublinerSpacingBefore,
-  .Taglines .SublinerSpacingAfter {
-    flex: 1 1 20%;
-  }
+      & .Oneliner {
+        flex: 1 1 60%;
+      }
 
-  .Taglines .Subliner {
-    flex: 1 1 50%;
-  }
-  .Taglines .EnterButtonSpacingBefore,
-  .Taglines .EnterButtonSpacingAfter {
-    flex: 1 1 25%;
-  }
+      &. SublinerSpacingBefore,
+      & .SublinerSpacingAfter {
+        flex: 1 1 20%;
+      }
 
       & .Subliner {
         flex: 1 1 50%;
@@ -89,7 +84,10 @@
       top: 0;
     }
   }
-  .Homepage .AsideFooter {
-     flex: 1 1 100%;
+}
+
+@media sreen and (min-width: 28em) {
+  .Homepage .SiteId {
+    font-size: 1.4em;
   }
 }
