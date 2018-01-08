@@ -14,6 +14,7 @@
   .NavSkiptoAnchor
   .NavSkiptoLinks {
     display: none;
+    visibility: hidden;
     font-size: 0pt;
   }
 }
@@ -26,33 +27,13 @@
  */
 
 @media screen {
-   /* Don't display navigation menus only intended
-    * for use when 'display' is slow
-    * (e.g. a screenreader) 
-    */
-   .NavSkiptoAnchor,
-   .NavSkiptoLinks {
-      @include flex(0 10 0px);
-      float: left;
-      font-size: 0pt;
-      visibility: hidden;
-      display: none;
-      a, span {
-        @include flex(0 10 0px);
-        float: left;
-        font-size: 0pt;
-        visibility: hidden;
-        display: none;
-      }
-    }
+  .Menubar {
+    position: initial;
+    left: initial;
+    top: initial;
+    flex: 1 100%;
+    margin-top: 0px;
   }
-
- .Menubar {
-   position: initial;
-   left: initial;
-   top: initial;
-   flex: 1 100%;
-   margin-top: 0px;
 }
 
 .Menubar {
