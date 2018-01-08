@@ -79,11 +79,11 @@ main, header, footer {
 /* Set the base font size (when styling Javascript is available it */
 /* will override this value). */
 .BaseFontSize {
-  font-size: var(--BaseFontSize, var(--baseFontSize));
+  font-size: var(--BaseFontSize, var(--baseNonRWDFontSize));
 }
 
 html {
-  font-size: var(--BaseFontSize, var(--baseFontSize));
+  font-size: var(--BaseFontSize, var(--baseNonRWDFontSize));
 }
 
 .Label {

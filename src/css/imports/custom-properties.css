@@ -17,7 +17,8 @@
   --shortformBorderBottom: 1px dashed;
   --unorderedListItemPaddingBottom: 3px;
   --horizontalRuleSurroundSpace: 0px;
-  --baseFontSize: 20px;
+  --baseNonRWDFontSize: 16px;
+  --baseRWDFontSize: 20px;
   --semiBlockIndent: 5%;
   --footNoteFontSize: smaller;
   --utilityBoxBorderWidth: 4px;
