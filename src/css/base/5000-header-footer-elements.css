@@ -13,12 +13,14 @@
 @import "custom-properties.css";
 
 .Topbar {
-  border-top: var(--TopBar-borderTop, var(--topBarBorderTop)) var(--TopBar-borderTopColor, var(--topBarBorderTopColor));
-  border-bottom: var(--TopBar-borderBottom, var(--topBarBorderBottom)) var(--TopBar-borderBottomColor, var(--topBarBorderBottomColor));
-  border-left: var(--TopBar-borderLeft var(--topBarBorderLeft)) var(--TopBar-borderLeftColor, var(--topBarBorderLeftColor));
-  border-right: var(--TopBar-borderRight, var(--topBarBorderRight)) var(--TopBar-borderRightColor, var(--topBarBorderRightColor));
+  border-top: var(--Topbar-borderTop, var(--topbarBorderTop)) var(--Topbar-borderTopColor, var(--topbarBorderTopColor));
+  border-bottom: var(--Topbar-borderBottom, var(--topbarBorderBottom)) var(--Topbar-borderBottomColor, var(--topbarBorderBottomColor));
+  border-left: var(--Topbar-borderLeft var(--topbarBorderLeft)) var(--Topbar-borderLeftColor, var(--topbarBorderLeftColor));
+  border-right: var(--Topbar-borderRight, var(--topbarBorderRight)) var(--Topbar-borderRightColor, var(--topbarBorderRightColor));
   padding: var(--Topbar-padding, var(--topbarPadding));
-  float: left;
+/*
+  margin: var(--Topbar-margin, var(--topbarMargin));
+*/
   display: block;
   position: fixed;
   top: 0;
