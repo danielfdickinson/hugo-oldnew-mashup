@@ -7,10 +7,10 @@
   "author": "Daniel F. Dickinson <cshored@thecshore.com>",
   "license": "CC-BY-SA-4.0",
   "private": false,
-   "scripts": {
-     "release": "gulp release",
-     "build": "gulp build",
-     "test": "gulp test"
+  "scripts": {
+    "release": "gulp release",
+    "build": "gulp build",
+    "test": "gulp test"
   },
   "dependencies": {
     "csslint": "^1.0.5",
@@ -37,7 +37,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-gzip": "^1.4.1",
     "gulp-rename": "^1.2.2",
-    "gulp-sourcemaps": "^2.6.2",
+    "gulp-sourcemaps": "^2.6.3",
     "gulp-tar": "^2.1.0",
     "gulp-yarn": "^1.0.1",
     "gulp-zip": "^4.1.0"

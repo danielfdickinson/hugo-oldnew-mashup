@@ -43,7 +43,7 @@ gulp.task('js', ['js-test'], function () {
     ])
     .pipe(sourcemaps.init())
     .pipe(babel())
-    .pipe(gulp.dest("dist/separated/js"))
+    .pipe(gulp.dest("build/separated/js"))
     .pipe(concat(pkg.name + ".js"))
     .pipe(gulp.dest("dist/js"))
     .pipe(babel({ "presets": ['minify'] }))
@@ -94,10 +94,10 @@ gulp.task('css', ['css-test'], function(done) {
     .pipe(postcss(plugins,{
        browsers: ['>0%']
      }))
-    .pipe(gulp.dest('dist/separated/css'))
+    .pipe(gulp.dest('build/separated/css/base'))
     .pipe(concat("base.css"))
-    .pipe(gulp.dest("dist/css/"))
-    .pipe(sourcemaps.write(".")),
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest('dist/css')),
   gulp.src([
       "src/css/base-modern/**/*.css",
    ])
@@ -105,19 +105,20 @@ gulp.task('css', ['css-test'], function(done) {
     .pipe(postcss(plugins,{
        browsers: ['>5%']
      }))
-    .pipe(gulp.dest('dist/separated/css'))
+    .pipe(gulp.dest('build/separated/css/base-modern'))
     .pipe(concat("base-modern.css"))
-    .pipe(gulp.dest("dist/css/"))
-    .pipe(sourcemaps.write(".")),
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest('dist/css')),
   gulp.src([
       "src/css/base-ie8/**/*.css",
    ])
     .pipe(postcss(plugins,{
        browsers: ['>0%']
      }))
-    .pipe(gulp.dest('dist/separated/css'))
-    .pipe(concat("base-ie8.css"))
-    .pipe(gulp.dest("dist/css/"))
+    .pipe(gulp.dest('build/separated/css/base-ie8'))
+    .pipe(concat('base-ie8.css'))
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest('dist/css')),
   );
 });
 
