@@ -8,3 +8,11 @@
 /* Remember, for the level of specifity last rule wins, hence
  *   most important rules are last
 */
+
+.Homepage {
+  & .Main {
+    & .Title {
+      width: 70%;
+    }
+  }
+}

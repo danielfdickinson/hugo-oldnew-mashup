@@ -36,9 +36,13 @@
       font-size: 1.3em;
     }
 
-    & .TaglinesSpacingBefore,
+    & .TaglinesSpacingBefore {
+      width: 20%;
+      display: inline-block;
+    }
+
     & .TaglinesSpacingAfter {
-      width: 18%;
+      width: 19%;
       display: inline-block;
     }
 
