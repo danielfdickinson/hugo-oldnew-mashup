@@ -13,5 +13,5 @@ asidefooter: >
   <a href="#emc2ref" id="emc2foot"><sup>1</sup></a>A footnote to the aside.
 
 oneliner: A short oneliner for the site
-subliner: And a sub-oneliner for the site.
+subliner: And a longer sub-oneliner for the site.
 ---

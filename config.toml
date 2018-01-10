@@ -1,14 +1,16 @@
-baseurl = "/"
-languageCode = "en-ca"
-languageLang = "en"
-title = "CShore OldNew Mashup Theme Test Site"
-enableGitInfo = true
-staticDir = ["static","dist"]
+# Config for using theme as Hugo website
 
-[params]
-  siteid = "OldNew Theme"
+baseurl = '/'
+languageCode = 'en-ca'
+languageLang = 'en'
+title = 'CShore OldNew Mashup Theme Test Site'
+enableGitInfo = 'true'
+staticDir = ['static','dist']
 
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details:
 # https://gohugo.io/getting-started/configuration/#toml-configuration
-disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+disableKinds = ['RSS', 'taxonomy', 'taxonomyTerm']
+
+[params]
+  siteid = 'OldNew Theme'
