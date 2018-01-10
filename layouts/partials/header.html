@@ -1,21 +1,9 @@
-<header class="Header">
-   <nav class="NavSkiptoAnchor"><a id="skipto-top" title="Top">&nbsp;</a></nav>{{ partial "nav-skipto-links.html" }}
-  <div class="pure-u-1 pure-u-sm-1-3">
-    <div class="pure-g">
-      <div><div class="image-row"><a href="{{ "/" | relURL }}">{{ partial "site-id-graphics.html" . }}</a></div></div>
-      <div class="wrapper-siteid">
-        <div class="siteid">{{.Site.Params.siteid}}</div>
-      </div>
-    </div>
-  </div>
-  <nav class="utility-nav-skipto-anchor">
-    <a id="skipto-menubar" title="Menubar" class="utility-nav-skipto-anchor">
-     &nbsp;
-   </a>
-  </nav>{{ partial "nav-skipto-links.html" }}
-  <nav class="pure-u-1 pure-u-sm-2-3">
-   <div class="wrapper-menubar">
-      [Placeholder]
-  </div>
-  </nav>
-</header>
+    <header class="Header Topbar">
+     <nav class="NavSkiptoAnchor"><a id="skipto-top" title="Top">&nbsp;</a></nav>{{ partial "nav-skipto-links.html" }}
+   <div class="SiteBadge">
+       <a class="GraphicsRow" href="{{ "/" | relURL }}">{{ partial "site-id-graphics.html" . }}</a><div class="SiteId">{{.Site.Params.siteid}}</div>
+     </div>
+     <nav class="NavSkiptoAnchor">
+       <a id="skipto-menubar" title="Menubar" class="utility-nav-skipto-anchor">&nbsp;</a></nav>{{ partial "nav-skipto-links.html" }}
+     <nav class="Menubar">[Placeholder]</nav>
+    </header>
