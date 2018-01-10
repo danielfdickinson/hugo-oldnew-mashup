@@ -162,4 +162,14 @@ gulp.task('css-test', ['yarn'], function(done) {
 
 gulp.task('test', ['js-test','css-test']);
 gulp.task('build', ['js','css']);
-gulp.task("default", ['test','build']);
+gulp.task('default', ['test','build']);
+gulp.task('watch', function(done) {
+  gulp.watch([
+    'src/**/*.js',
+    'src/**/*.css',
+    '**/*.toml',
+    '**/*.md',
+    'gulpfiles.babel.js'
+  ],
+  ['build']);
+});
