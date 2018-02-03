@@ -1,0 +1,23 @@
+/*
+  OldNew Mashup default colour settings
+  Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@cshore.theshore.com>
+
+  Released under the MIT License
+*/
+
+.Homepage {
+  background-image: none;
+
+  background-color : #bbbbbb;
+  /* grey background */
+
+}
+
+.Homepage .Title {
+  background-color : #999999;
+}
+
+.Taglines {
+  color: #bbbbbb;
+  background-color: #000000;
+}

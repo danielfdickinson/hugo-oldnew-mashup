@@ -1,8 +1,8 @@
 /*
-  The C Shore default colour settings
+  OldNew Mashup default colour settings
   Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@cshore.theshore.com>
 
-  Released under the Creative Commons Share-Alike By Attribution 4.0 License
+  Released under the MIT License
 */
 
 /* grey background for all elements, by default */
@@ -17,23 +17,6 @@ body {
 
     background-image : url("/images/default_background.png");
 /* This file contains background image url; CSS2 starts from directory of the .css */
-}
-
-.Homepage {
-  background-image: none;
-
-  background-color : #bbbbbb;
-  /* grey background */
-
-}
-
-.Homepage .Title {
-  background-color : #999999;
-}
-
-.Topbar {
-  background-color : #777777;
-  /* grey background */
 }
 
 /* Change the colour links to match our colour scheme */
@@ -55,14 +38,4 @@ a:Active, a:Hover  {
 pre, code, {
     background-color : #777777;
     /* Light grey */
-}
-
-.RollupHoversite:active + .RollupBlock,
-.RollupHoversite:hover + .RollupBlock {
-  background-color: #aaaaaa;
-}
-
-.Taglines {
-  color: #bbbbbb;
-  background-color: #000000;
 }

@@ -1,0 +1,16 @@
+/*
+  OldNew Mashup default colour settings
+  Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@cshore.theshore.com>
+
+  Released under the MIT License
+*/
+
+.Topbar {
+  background-color : #777777;
+  /* grey background */
+}
+
+.RollupHoversite:active + .RollupBlock,
+.RollupHoversite:hover + .RollupBlock {
+  background-color: #aaaaaa;
+}
