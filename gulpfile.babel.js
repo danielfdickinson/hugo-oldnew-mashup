@@ -165,11 +165,9 @@ gulp.task('build', ['js','css']);
 gulp.task('default', ['test','build']);
 gulp.task('watch', function(done) {
   gulp.watch([
-    'src/**/*.js',
     'src/**/*.css',
-    '**/*.toml',
-    '**/*.md',
-    'gulpfiles.babel.js'
-  ],
-  ['build']);
+    'src/**/*.js',
+    'gulpfile.babel.js'
+   ],
+   ['build']);
 });
