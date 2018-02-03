@@ -13,6 +13,7 @@
     "test": "gulp test"
   },
   "dependencies": {
+    "caniuse-lite": "^1.0.30000792",
     "csslint": "^1.0.5",
     "gulp-csslint": "^1.0.0",
     "gulp-eslint": "^4.0.1",
