@@ -152,7 +152,7 @@ gulp.task('css-test', ['yarn'], function(done) {
       "src/css/base-modern/**/*.css"
    ])
     .pipe(postcss(plugins,{
-       browsers: ['>1%']
+       browsers: ['>0%']
    }))
     .pipe(gulp.dest("build/lint/css"))
     .pipe(csslint())
