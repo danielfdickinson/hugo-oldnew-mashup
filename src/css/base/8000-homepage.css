@@ -13,7 +13,7 @@
 @import "custom-properties.css";
 
 .Homepage .SiteId {
-  font-size: 1.2em;
+  font-size: .8em;
   padding-left: .2em;
   padding-right: .2em;
 }
