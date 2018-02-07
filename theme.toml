@@ -7,7 +7,7 @@ description = "Hugo Theme mixing old school design elements with new-era"
 homepage = "https://www.thecshore.com/hugo-themes"
 keywords = ['hugo', 'old-school', 'modern', 'postmodern']
 features = ['blog', 'responsive', 'rwd']
-min_version = "0.31.1"
+min_version = "0.35"
 staticDir = ['static','dist']
 
 [author]
