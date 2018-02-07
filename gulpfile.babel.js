@@ -18,6 +18,7 @@ var csslint = require('gulp-csslint');
 var postcss = require('gulp-postcss');
 var cssImport = require('postcss-import');
 var cssnext = require('postcss-cssnext');
+var cleancss = require('postcss-clean');
 
 gulp.task('yarn', function (done) {
   return evstr.concat(
@@ -83,39 +84,80 @@ gulp.task('release', ['js'], function() {
 gulp.task('css', ['css-test'], function(done) {
   var plugins = [
      cssImport({path: ["src/css/imports"]}),
-     cssnext()
+     cssnext(),
+     cssclean()
   ]
   return evstr.concat(
     gulp.src([
       "src/css/modules/normalize.css/normalize.css",
-      "src/css/base/**/*.css",
-      "src/css/base-color/**/*.css"
+      "src/css/*-base.css",
    ])
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins,{
-       browsers: ['>0%']
+       browsers: ['>0%'],
+       clean: {
+         level: 2,
+         compatibility: ie8
+       }
      }))
     .pipe(gulp.dest('build/separated/css/base'))
     .pipe(concat("base.css"))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest('dist/css')),
   gulp.src([
-      "src/css/base-modern/**/*.css",
-      "src/css/base-color-modern/**/*.css"
+      "src/css/*-base-color.css",
    ])
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins,{
-       browsers: ['>5%']
+       browsers: ['>0%'],
+       clean: {
+         level: 2,
+         compatibility: ie8
+       }
+     }))
+    .pipe(gulp.dest('build/separated/css/base-color'))
+    .pipe(concat("base-color.css"))
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest('dist/css')),
+  gulp.src([
+      "src/css/*-base-modern.css",
+   ])
+    .pipe(sourcemaps.init())
+    .pipe(postcss(plugins,{
+       browsers: ['>5%'],
+       clean: {
+         level: 2,
+         compatibility: *
+       }
      }))
     .pipe(gulp.dest('build/separated/css/base-modern'))
     .pipe(concat("base-modern.css"))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest('dist/css')),
   gulp.src([
-      "src/css/base-ie8/**/*.css",
+      "src/css/*-base-modern-color.css",
+   ])
+    .pipe(sourcemaps.init())
+    .pipe(postcss(plugins,{
+       browsers: ['>5%'],
+       clean: {
+         level: 2,
+         compatibility: *
+       }
+     }))
+    .pipe(gulp.dest('build/separated/css/base-modern-color'))
+    .pipe(concat("base-modern-color.css"))
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest('dist/css')),
+  gulp.src([
+      "src/css/*-base-ie8/*.css",
    ])
     .pipe(postcss(plugins,{
-       browsers: ['>0%']
+       browsers: ['>0%'],
+       clean: {
+         level: 2,
+         compatibility: ie8
+       }
      }))
     .pipe(gulp.dest('build/separated/css/base-ie8'))
     .pipe(concat('base-ie8.css'))
@@ -145,18 +187,20 @@ gulp.task('js-test', function(done) {
 gulp.task('css-test', ['yarn'], function(done) {
   var plugins = [
      cssImport({path: ["src/css/imports"]}),
-     cssnext()
+     cssnext(),
+     cssclean()
   ]
   return evstr.concat(
     gulp.src([
       "src/css/modules/normalize.css/normalize.css",
-      "src/css/base/**/*.css",
-      "src/css/base-color/**/*.css",
-      "src/css/base-modern/**/*.css",
-      "src/css/base-color-modern/**/*.css"
+      "src/css/*-base*.css",
    ])
     .pipe(postcss(plugins,{
-       browsers: ['>0%']
+       browsers: ['>0%'],
+       clean: {
+         level: 2,
+         compatibility: ie8
+       }
    }))
     .pipe(gulp.dest("build/lint/css"))
     .pipe(csslint())
