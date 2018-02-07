@@ -4,18 +4,20 @@
     <title>{{ block "title" . }}
       {{ .Site.Title }}
     {{ end }}</title>
-    {{ partial "head.html" . }}
+    {{ partial "head" . }}
   </head>
   {{ block "bodytag" .}}
   <body>
   {{ end }}
     {{ block "header" . }}
-      {{ partial "header.html" . }}
+      <div class="DefaultBodyWrapper">
+      {{ partial "header" . }}
     {{ end }}
     {{ block "main" . }}
     {{ end }}
     {{ block "footer" . }}
-      {{ partial "footer.html" . }}
+      {{ partial "footer" . }}
+      </div>
      {{ end }}
   </body>
 </html>

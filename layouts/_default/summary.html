@@ -1,0 +1,12 @@
+<article class="PageSummary">
+  <header class="SummaryHeader">
+    <h2><a href='{{ .Permalink }}'>{{ .Title }}</a> </h2>
+    <div class="PageMetadata">{{ .Date.Format "Jan 2, 2006 15:04 MST" }} - {{ .FuzzyWordCount }} Words </div>
+  </header>
+  {{ .Summary }}
+  <footer class="SummaryFooter">
+  {{ if .Truncated }}
+    <a href='{{ .Permalink }}'><nobr>more...</nobr></a>
+  {{ end }}
+  </footer>
+</article>

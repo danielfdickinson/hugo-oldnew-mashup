@@ -1,0 +1,16 @@
+{{ define "title" }}
+  {{.Title}}
+{{ end }}
+{{ define "bodytag" }}
+  <body>
+{{ end }}
+{{ define "main" }}
+    <main class="SectionPageMain">
+      <h1 class="Title">{{ .Title }}</h1>
+      <ul>
+       {{ range .Pages }}
+         {{ .Render "li" }}
+       {{end }}
+     </ul>
+    </main>
+{{ end }}
