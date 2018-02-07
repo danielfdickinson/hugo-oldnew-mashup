@@ -1,0 +1,14 @@
+{{ define "title" }}
+  {{.Title}}
+{{ end }}
+{{ define "main" }}
+<main class="Main">
+  <h1 class="Title">{{.Title}}</h1>
+  <article class="LicenseArticle">
+    <pre class="LicenseBlock">
+    {{ $licenseFile := printf "licenses/%s" .File.TranslationBaseName }}
+    {{ readFile $licenseFile }}
+    </pre>
+  </article>
+</main>
+{{ end }}
