@@ -15,3 +15,5 @@ disableKinds = ['RSS', 'taxonomy', 'taxonomyTerm']
 
 [params]
   siteid = 'OldNew Theme'
+  license = 'CC-BY-4.0'
+  copyright = '2018 Daniel F. Dickinson'
