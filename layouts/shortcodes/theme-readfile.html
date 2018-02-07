@@ -1,0 +1,7 @@
+{{ $fileName := .Get 0 }}
+{{ if fileExists $fileName }}
+  {{ readFile $fileName | markdownify }}
+{{ else }}
+  {{ $theme := .Get 1 }}
+  {{ printf "themes/%s/%s" $theme $fileName | readFile | markdownify }}
+{{ end }}

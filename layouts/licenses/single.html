@@ -5,10 +5,17 @@
 <main class="Main">
   <h1 class="Title">{{.Title}}</h1>
   <article class="LicenseArticle">
-    <pre class="LicenseBlock">
-    {{ $licenseFile := printf "licenses/%s" .File.TranslationBaseName }}
-    {{ readFile $licenseFile }}
-    </pre>
+    <section class="LicenseSection">
+      <pre class="LicenseBlock">
+      {{ $license := .File.TranslationBaseName }}
+      {{ $licenseFile := printf "licenses/%s" .File.TranslationBaseName }}
+      {{ if fileExists $licenseFile }}
+        {{ readFile $licenseFile }}
+      {{ else }}
+        {{ printf "themes/%s/%s" "oldnew-mashup" $licenseFile | readFile }}
+      {{ end }}
+      </pre>
+    </section>
   </article>
 </main>
 {{ end }}
