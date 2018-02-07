@@ -33,6 +33,7 @@ var postcss = require('gulp-postcss');
 var cssImport = require('postcss-import');
 var cssnext = require('postcss-cssnext');
 var cleancss = require('postcss-clean');
+var uglify = require('gulp-uglify');
 
 gulp.task('yarn', function () {
   return evstr.concat(
@@ -47,24 +48,23 @@ gulp.task('yarn', function () {
   );
 });
 
-gulp.task('js', ['js-test'], function () {
+gulp.task('js', ['js-test'], function (cb) {
   var pkg = JSON.parse(fs.readFileSync('./package.json'));
   return evstr.concat(
     gulp.src([
-      "src/base/*.js",
-      "src/modules/*/src/**/*.js",
-      "!**/*.min.js",
-      "!**/*-min.js"
+      "src/js/*.js",
+      "src/js/modules/*/src/*.js",
+      "!src/js/*-min.js",
+      "!src/js/*.min.js"
     ])
-    .pipe(sourcemaps.init())
-    .pipe(babel())
-    .pipe(gulp.dest("build/separated/js"))
-    .pipe(concat(pkg.name + ".js"))
-    .pipe(gulp.dest("dist/js"))
-    .pipe(babel({ "presets": ['minify'] }))
-    .pipe(rename({extname: '-min.js'}))
-    .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest("dist/js"))
+      .pipe(sourcemaps.init())
+      .pipe(babel())
+      .pipe(concat(pkg.name + ".js"))
+      .pipe(gulp.dest("dist/js"))
+      .pipe(uglify({output: { comments: "/^!/"}}))
+      .pipe(rename({extname: '-min.js'}))
+      .pipe(sourcemaps.write("."))
+      .pipe(gulp.dest("dist/js"))
   );
 });
 
@@ -183,7 +183,7 @@ gulp.task('css', ['css-test'], function() {
 gulp.task('js-test', function() {
   return evstr.concat(
     gulp.src([
-      "src/js/base/**/*.js"
+      "src/js/*.js",
     ])
       .pipe(babel())
       .pipe(gulp.dest("build/lint/js"))
@@ -223,7 +223,7 @@ gulp.task('css-test', ['yarn'], function() {
 });
 
 gulp.task('test', ['js-test','css-test']);
-gulp.task('build', ['js-test','js','css-test','css']);
+gulp.task('build', ['js','css']);
 gulp.task('default', ['test','build']);
 gulp.task('watch', function() {
   gulp.watch([
