@@ -1,0 +1,21 @@
+{{ define "title" }}
+  404 Resource  not found
+{{ end }}
+{{ define "bodytag" }}
+  <body>
+{{ end }}
+{{ define "main" }}
+    <div class="FourOhFour">
+      <main class="Main">
+        <h1 class="Title">404 Resource not found</h1>
+        <article class="TextBox">
+          <div class="TextBlockSpacingBefore"></div>
+          <div class="TextBlock">
+            {{ print "It seems we can't find what you are looking for :disappointed:" | emojify | markdownify }}<br />
+            {{ markdownify " Pehaps you wish to [Browse to find it?](/)" }}
+          </div>
+          <div class="TextBlockSpacingAfter"></div>
+        </article>
+      </main>
+    </div>
+{{ end }}
