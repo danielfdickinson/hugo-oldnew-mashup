@@ -1,7 +1,7 @@
 ---
 date: 2018-01-06T14:23:41-05:00
 copyright: 2018 Daniel Dickinson
-license: MIT
+license: CC-BY-4.0
 author: Daniel F. Dickinson
 description: A test homepage for "cshore-oldnew-mashup" Hugo theme
 keywords: hugo, theme, html, css, test

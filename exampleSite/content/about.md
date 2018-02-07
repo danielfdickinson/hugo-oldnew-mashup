@@ -1,8 +1,8 @@
 ---
 date: 2018-01-08T18:03:05-05:00
 title: About (Lorem Ipsum)
-copyright: Expired and 2018 Daniel Dickinson
-license: Not applicable and MIT
+copyright: 2018 Daniel F. Dickinson and Expired
+license: Expired&CC0-1.0
 menu:
   main:
     name: About
