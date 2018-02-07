@@ -7,10 +7,25 @@
 
 .Topbar {
   background-color : #777777;
-  /* grey background */
+  & .SiteBadge {
+    background-color: #888888;
+    opacity: 1.0;
+    color: #000000;
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      color: #000000;
+    }
+  }
 }
 
 .RollupHoversite:active + .RollupBlock,
 .RollupHoversite:hover + .RollupBlock {
+  background-color: #aaaaaa;
+}
+
+.RolldownHoversite:active + .RolldownBlock,
+.RolldownHoversite:hover + .RolldownBlock {
   background-color: #aaaaaa;
 }
