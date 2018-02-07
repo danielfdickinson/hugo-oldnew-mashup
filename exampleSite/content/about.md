@@ -3,6 +3,12 @@ date: 2018-01-08T18:03:05-05:00
 title: About (Lorem Ipsum)
 copyright: Expired and 2018 Daniel Dickinson
 license: Not applicable and MIT
+menu:
+  main:
+    name: About
+  site:
+    weight: 100
+    name: About
 ---
 
 ## Section 1.10.32 of Cicero's “De finibus bonorum et malorum”
