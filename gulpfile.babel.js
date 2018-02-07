@@ -89,6 +89,7 @@ gulp.task('css', ['css-test'], function(done) {
     gulp.src([
       "src/css/modules/normalize.css/normalize.css",
       "src/css/base/**/*.css",
+      "src/css/base-color/**/*.css"
    ])
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins,{
@@ -100,6 +101,7 @@ gulp.task('css', ['css-test'], function(done) {
     .pipe(gulp.dest('dist/css')),
   gulp.src([
       "src/css/base-modern/**/*.css",
+      "src/css/base-color-modern/**/*.css"
    ])
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins,{
@@ -149,7 +151,9 @@ gulp.task('css-test', ['yarn'], function(done) {
     gulp.src([
       "src/css/modules/normalize.css/normalize.css",
       "src/css/base/**/*.css",
-      "src/css/base-modern/**/*.css"
+      "src/css/base-color/**/*.css",
+      "src/css/base-modern/**/*.css",
+      "src/css/base-color-modern/**/*.css"
    ])
     .pipe(postcss(plugins,{
        browsers: ['>0%']
