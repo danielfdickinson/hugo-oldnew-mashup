@@ -1,0 +1,9 @@
+{{ $licenses := split (default "CC-BY-4.0" .Page.Params.license) "&" }}
+<ul class="LicenseList">
+    {{ range $licenses }}
+    {{ $license_name := lower . }}
+    {{ $file := printf "/licenses/%s/index.html" $license_name }}
+      <li class="LicenseItem"><a href="{{ $file | relURL }}">{{ . }}</a></li>
+  {{ end }}
+</ul>
+
