@@ -4,8 +4,10 @@
 {{ end }}
 {{ block "links" . }}
     <base href="{{ $.Site.BaseURL }}">
-    <link rel="stylesheet" href="{{ "/css/default.css" | relURL}}"/>
+    <link rel="stylesheet" href="{{ "/css/base.css" | relURL}}"/>
+    <link rel="stylesheet" href="{{ "/css/base-color.css" | relURL}}"/>
     <link rel="stylesheet" href="{{ "/css/base-modern.css" | relURL}}"/>
+    <link rel="stylesheet" href="{{ "/css/base-modern-color.css" | relURL}}"/>
     {{ "<!--[if lt IE 9]>" | safeHTML }}
       <link rel="stylesheet" href="{{ "/css/base-ie8.css" | relURL}}"/>
     {{ "<![endif]-->" | safeHTML }}

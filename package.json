@@ -10,7 +10,7 @@
   "scripts": {
     "release": "gulp release",
     "build": "gulp build",
-    "test": "gulp test"
+    "test": "jshint gulpfile.babel.js && gulp test"
   },
   "dependencies": {
     "caniuse-lite": "^1.0.30000792",

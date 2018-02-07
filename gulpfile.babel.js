@@ -1,7 +1,21 @@
-'use strict';
+// ---- JSHint linter settings
+/* jshint undef: true, unused: true, strict: global, esversion: 6 */
+/* globals require: false */
+"use strict";
+
+/*!  Copyright (C) 2007,2017 Daniel F. Dickinson <thecshore.thecshore.com>
+ *   Released under the MIT License
+ */
+
+//   Script to set, save and restore stylesheet choice for site
+//   and to create smooth font resizing based on browser window size
+
+// The information used to write this script comes from
+//   http://www.alistapart.com/articles/alternate, however I wrote the script
+//   myself.
+//
 
 var gulp = require("gulp");
-var babel_register = require('babel-register');
 var babel = require("gulp-babel");
 var concat = require("gulp-concat");
 var sourcemaps = require("gulp-sourcemaps");
@@ -12,7 +26,7 @@ var evstr = require('event-stream');
 var tar = require('gulp-tar');
 var gzip = require('gulp-gzip');
 var zip = require('gulp-zip');
-var jshint= require('gulp-jshint');
+var jshint = require('gulp-jshint');
 var eslint = require('gulp-eslint');
 var csslint = require('gulp-csslint');
 var postcss = require('gulp-postcss');
@@ -20,7 +34,7 @@ var cssImport = require('postcss-import');
 var cssnext = require('postcss-cssnext');
 var cleancss = require('postcss-clean');
 
-gulp.task('yarn', function (done) {
+gulp.task('yarn', function () {
   return evstr.concat(
     gulp.src(['./modules/package.json'])
       .pipe(gulp.dest('./modules'))
@@ -30,7 +44,7 @@ gulp.task('yarn', function (done) {
         noBinLinks: true,
         ignoreScripts: true,
         nonInteractive: true}))
-  )
+  );
 });
 
 gulp.task('js', ['js-test'], function () {
@@ -81,12 +95,12 @@ gulp.task('release', ['js'], function() {
   );
 });
 
-gulp.task('css', ['css-test'], function(done) {
+gulp.task('css', ['css-test'], function() {
   var plugins = [
      cssImport({path: ["src/css/imports"]}),
      cssnext(),
-     cssclean()
-  ]
+     cleancss()
+  ];
   return evstr.concat(
     gulp.src([
       "src/css/modules/normalize.css/normalize.css",
@@ -97,7 +111,7 @@ gulp.task('css', ['css-test'], function(done) {
        browsers: ['>0%'],
        clean: {
          level: 2,
-         compatibility: ie8
+         compatibility: 'ie8'
        }
      }))
     .pipe(gulp.dest('build/separated/css/base'))
@@ -112,7 +126,7 @@ gulp.task('css', ['css-test'], function(done) {
        browsers: ['>0%'],
        clean: {
          level: 2,
-         compatibility: ie8
+         compatibility: 'ie8'
        }
      }))
     .pipe(gulp.dest('build/separated/css/base-color'))
@@ -127,7 +141,7 @@ gulp.task('css', ['css-test'], function(done) {
        browsers: ['>5%'],
        clean: {
          level: 2,
-         compatibility: *
+         compatibility: '*'
        }
      }))
     .pipe(gulp.dest('build/separated/css/base-modern'))
@@ -142,7 +156,7 @@ gulp.task('css', ['css-test'], function(done) {
        browsers: ['>5%'],
        clean: {
          level: 2,
-         compatibility: *
+         compatibility: '*'
        }
      }))
     .pipe(gulp.dest('build/separated/css/base-modern-color'))
@@ -156,17 +170,17 @@ gulp.task('css', ['css-test'], function(done) {
        browsers: ['>0%'],
        clean: {
          level: 2,
-         compatibility: ie8
+         compatibility: 'ie8'
        }
      }))
     .pipe(gulp.dest('build/separated/css/base-ie8'))
     .pipe(concat('base-ie8.css'))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest('dist/css')),
+    .pipe(gulp.dest('dist/css'))
   );
 });
 
-gulp.task('js-test', function(done) {
+gulp.task('js-test', function() {
   return evstr.concat(
     gulp.src([
       "src/js/base/**/*.js"
@@ -184,12 +198,12 @@ gulp.task('js-test', function(done) {
   );
 });
 
-gulp.task('css-test', ['yarn'], function(done) {
+gulp.task('css-test', ['yarn'], function() {
   var plugins = [
      cssImport({path: ["src/css/imports"]}),
      cssnext(),
-     cssclean()
-  ]
+     cleancss()
+  ];
   return evstr.concat(
     gulp.src([
       "src/css/modules/normalize.css/normalize.css",
@@ -199,7 +213,7 @@ gulp.task('css-test', ['yarn'], function(done) {
        browsers: ['>0%'],
        clean: {
          level: 2,
-         compatibility: ie8
+         compatibility: 'ie8'
        }
    }))
     .pipe(gulp.dest("build/lint/css"))
@@ -209,9 +223,9 @@ gulp.task('css-test', ['yarn'], function(done) {
 });
 
 gulp.task('test', ['js-test','css-test']);
-gulp.task('build', ['js','css']);
+gulp.task('build', ['js-test','js','css-test','css']);
 gulp.task('default', ['test','build']);
-gulp.task('watch', function(done) {
+gulp.task('watch', function() {
   gulp.watch([
     'src/**/*.css',
     'src/**/*.js',
