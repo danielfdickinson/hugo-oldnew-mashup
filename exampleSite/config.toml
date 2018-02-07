@@ -5,7 +5,7 @@ languageCode = 'en-ca'
 languageLang = 'en'
 title = 'CShore OldNew Mashup Theme Test Site'
 enableGitInfo = 'true'
-staticDir = ['static','dist']
+staticDir = ['static','themes/oldnew-mashup/dist']
 theme = 'oldnew-mashup'
 
 # RSS, categories and tags disabled for an easy start

@@ -7,4 +7,4 @@ menu:
   site:
     weight: -1000
 ---
-{{% readfile "README.md" %}}
+{{% theme-readfile "README.md" "oldnew-mashup" %}}
