@@ -1,5 +1,7 @@
 <nav class="SitebarSitemap">
 <ul class="SitemapList">
+  <!-- Copyright 2018 Daniel F. Dickinson,
+       Released under the Creative Commons 4.0 BY (Attribution) License -->
 {{ $currentPage := . }}{{ range .Site.Menus.site }}{{ if .Page }}{{ .Page.Scratch.Set "currentPage" $currentPage }}{{ .Page.Scratch.Set "maxLevel" 4 }}{{ .Page.Scratch.Set "prevLevel" 1 }}{{ if .HasChildren }}{{ partial "subsitemenu" . }}{{ else }}<li class="{{ if $currentPage.IsMenuCurrent "site" . }}MenuActive {{ end }}MenuItem">
   <a title="{{ .Title }}" href="{{ .URL | relURL }}">
     {{ .Pre }}

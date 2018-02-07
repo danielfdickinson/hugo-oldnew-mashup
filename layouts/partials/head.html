@@ -1,6 +1,8 @@
 {{ block "metadata" . }}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <!-- Copyright 2018 Daniel F. Dickinson,
+       Released under the Creative Commons 4.0 BY (Attribution) License -->
 {{ end }}
 {{ block "links" . }}
     <base href="{{ $.Site.BaseURL }}">
@@ -13,5 +15,5 @@
     {{ "<![endif]-->" | safeHTML }}
 {{ end }}
 {{ block "scripts" . }}
-  <script src="{{ "/js/all.js"|relURL }}"></script>
+  <script src="{{ "/js/hugo-oldnew-mashup-min.js"|relURL }}"></script>
 {{ end }}

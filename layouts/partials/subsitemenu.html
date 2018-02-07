@@ -1,4 +1,6 @@
 {{ if .Page }}{{ $currentPage := .Page.Scratch.Get "currentPage" }}{{ $maxLevel := .Page.Scratch.Get "maxLevel" }}{{ $prevLevel := .Page.Scratch.Get "prevLevel" }}{{ $curLevel := add $prevLevel 1 }}{{ .Page.Scratch.Set "prevLevel" $curLevel }}<li class="{{ if $currentPage.HasMenuCurrent "site" . }}MenuActive {{ end }} MenuParent MenuItem">
+  <!-- Copyright 2018 Daniel F. Dickinson,
+       Released under the Creative Commons 4.0 BY (Attribution) License -->
         <a title="{{ .Title }}" href="{{ .URL | relURL }}">
           {{ .Pre }}
           <span class="MenuEntryName">{{ .Name }}</span>

@@ -1,9 +1,9 @@
-/*  Copyright (C) 2007,2017 Daniel F. Dickinson <thecshore.thecshore.com>
-*/
+/*!  Copyright (C) 2007,2017 Daniel F. Dickinson <thecshore.thecshore.com>
+ *    Released under the MIT License
+ */
+
 //    Script to set, save and restore stylesheet choice for site
 //    and to create smooth font resizing based on browser window size
-
-//    Released under the MIT License
 
 // The information used to write this script comes from
 //   http://www.alistapart.com/articles/alternate, however I wrote the script

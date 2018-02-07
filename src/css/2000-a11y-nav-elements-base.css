@@ -1,14 +1,12 @@
-/*
-  The C Shore Accessibliity Navigation Stylesheet
-  Copyright 2007-2009,2017-2018 Daniel F. Dickinson <thecshore.thecshore.com>
+/*! Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@thecshore.com>
+ *  Released under the Creative Commons BY (Attribution) 4.0 License
+ */
 
-  Released under the Creative Commons Share-Alike By Attribute 4.0 License
-*/
+/* The C Shore Accessibliity Navigation Stylesheet */
 
 /* Remember, for the level of specifity last rule wins, hence
- *   most important rules are last
+ * most important rules are last
 */
-/* Defines semi-block style paragraphs (initial indent) */
 
 /* Note: skipto links are only displayed when no CSS3 styles, but 
  * the following styles help with layout despite that, by making

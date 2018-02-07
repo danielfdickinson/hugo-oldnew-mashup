@@ -1,14 +1,11 @@
-/*
-  The C Shore Homepage Elements Stylesheet
-  Copyright 2007-2009,2017-2018 Daniel F. Dickinson <thecshore.thecshore.com>
+/*! Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@thecshore.com>
+ *  Released under the Creative Commons BY (Attribution) 4.0 License
+ */
 
-  Released under the Creative Commons Share-Alike By Attribute 4.0 License
-*/
-
-/* Remember, for the level of specifity last rule wins, hence
- *   most important rules are last
-*/
-/* Defines semi-block style paragraphs (initial indent) */
+/*  The C Shore Homepage Elements Stylesheet
+ *  Remember, for the level of specifity last rule wins, hence
+ *  most important rules are last
+ */
 
 @import "custom-properties.css";
 

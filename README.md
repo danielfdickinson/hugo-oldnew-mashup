@@ -41,3 +41,9 @@ overall page and look and Expired applies to the primary content).
 
 You can mix and match licenses as you wish (in terms of the above scheme,
 whether the licenses can actually work together is another story).
+
+-------
+This theme Copyrigh 2018 Daniel F. Dickinson and released under the
+Creative Commons BY (Attribution) 4.0 License.
+See (https://github.com/cshoredaniel/hugo-oldnew-mashup/blob/master/licenses/CC-BY-4.0
+for terms).
