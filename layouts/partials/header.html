@@ -1,9 +1,4 @@
     <header class="Header Topbar">
-     <nav class="NavSkiptoAnchor"><a id="skipto-top" title="Top">&nbsp;</a></nav>{{ partial "nav-skipto-links.html" }}
-   <div class="SiteBadge">
-       <a class="GraphicsRow" href="{{ "/" | relURL }}">{{ partial "site-id-graphics.html" . }}</a><div class="SiteId">{{.Site.Params.siteid}}</div>
-     </div>
-     <nav class="NavSkiptoAnchor">
-       <a id="skipto-menubar" title="Menubar" class="utility-nav-skipto-anchor">&nbsp;</a></nav>{{ partial "nav-skipto-links.html" }}
-     <nav class="Menubar">[Placeholder]</nav>
+      {{ partial "siteid" . }}
+      {{ partial "menubar" . }}
     </header>
