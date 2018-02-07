@@ -1,11 +1,11 @@
+/*!  Copyright (C) 2007,2017-2018 Daniel F. Dickinson <thecshore.thecshore.com>
+ *   Released under the MIT License
+ */
+
 // ---- JSHint linter settings
 /* jshint undef: true, unused: true, strict: global, esversion: 6 */
 /* globals require: false */
 "use strict";
-
-/*!  Copyright (C) 2007,2017 Daniel F. Dickinson <thecshore.thecshore.com>
- *   Released under the MIT License
- */
 
 //   Script to set, save and restore stylesheet choice for site
 //   and to create smooth font resizing based on browser window size
