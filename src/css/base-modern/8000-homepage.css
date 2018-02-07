@@ -2,15 +2,21 @@
 
 @media  screen {
   .Homepage {
+    display: flex;
+    align-content: flex-start;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    width: 100%;
+
     & .Main {
       flex: 1 1 100%;
       display: inline-flex;
       align-content: space-between;
-      justtify-content: space-between;
+      justify-content: space-between;
       flex-flow: row wrap;
-      position: static;
-      top: 0;
       margin-top: .4em;
+      top: 0;
  
       & .Title {
         flex: 1 1 100%;
@@ -30,7 +36,7 @@
         flex: 1 1 60%;
         display: flex;
         align-content: flex-start;
-        justtify-content: space-between;
+        justify-content: space-between;
         flex-flow: row wrap;
         padding-top: .5em;
         padding-bottom: .5em;
@@ -103,18 +109,10 @@
         & li {
           align-content: center; 
           display: inline-block;
-          box-shadow: 3px 3px 3px #777;
 
           & .Screenshot {
             display: block; 
           }
-        }
-
-        & li:nth-child(1) {
-          transform: rotate(-3deg);
-        }
-        & li:nth-child(even) {
-          transform: rotate(5deg);
         }
       }
     }
@@ -125,13 +123,181 @@
 
     & .Footer {
       position: static;
+      margin-top: .4em;
+      flex: 1 1 100%;
+      top: 0;
+    }
+  }
+
+  .HomeBodyWrapper {
+    margin-right: 0;
+    padding-right: 0;
+    width: auto;
+    display: flex;
+    align-items: flex-start;
+    align-content: stretch;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+
+    & .Main {
+      flex: 1 1 100%;
+      display: inline-flex;
+      align-items: flex-start;
+      align-content: space-between;
+      justify-content: space-between;
+      flex-flow: row wrap;
+      position: static;
+      margin-top: .4em;
+      top: 0;
+ 
+      & .LeftSidebar,
+      & .RightSidebar {
+        width: auto;
+        flex: 1 1 10em;
+      }
+
+      & .LeftSidebar {
+        order: 1;
+        margin-left: 0;
+      }
+
+      & .RightSidebar {
+        margin-right: 0;
+        order: 3;
+
+        & .PageSummary {
+          & .SummaryHeader {
+            & h2 {
+              font-size: 1em;
+            }
+   
+            & .PageMetadata {
+              font-size: .8em;
+            }
+          }
+          & .SummaryFooter {
+            font-size: .8em;
+          }
+        }
+      }
+
+      & .MainContent {
+        flex: 1 1 22em;
+        order: 2;
+	margin: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: .2em;
+        padding-right: .2em;
+        text-align: left;
+        width: auto;
+        & pre {
+          width: 18em;  
+        }
+      }
+    }
+
+    & .Footer {
+      position: static;
+      margin-top: .4em;
+      flex: 1 1 100%;
       top: 0;
     }
   }
 }
 
 @media screen and (min-width: 28em) {
-  .Homepage .SiteId {
-    font-size: 1em;
+  .HomeBodyWrapper {
+    & .Main {
+      & .MainContent {
+        & pre {
+          width: 22em;  
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 46em) {
+  .HomeBodyWrapper {
+    & .Main {
+      & .MainContent {
+        & pre {
+          width: 32em;  
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .HomeBodyWrapper {
+    & .Main {
+      & .MainContent {
+        & pre {
+          width: 26em;  
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .HomeBodyWrapper {
+    & .Main {
+      & .MainContent {
+        & pre {
+         width: 24em;  
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 72em) {
+  .HomeBodyWrapper {
+    & .Main {
+      & .MainContent {
+        & pre {
+         width: 30em;  
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 80em) {
+  .HomeBodyWrapper {
+    & .Main {
+      & .MainContent {
+        & pre {
+         width: 24em;  
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 88em) {
+  .HomeBodyWrapper {
+    & .Main {
+      & .MainContent {
+        & pre {
+         width: 30em;  
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 96em) {
+  .HomeBodyWrapper {
+    & .Main {
+      & .MainContent {
+        & pre {
+         width: 32em;  
+        }
+      }
+    }
   }
 }

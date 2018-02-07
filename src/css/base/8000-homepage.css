@@ -8,21 +8,13 @@
 /* Remember, for the level of specifity last rule wins, hence
  *   most important rules are last
 */
-/* Defines semi-block style paragraphs (initial indent) */
 
 @import "custom-properties.css";
 
-.Homepage .SiteId {
-  font-size: .8em;
-  padding-left: .2em;
-  padding-right: .2em;
-}
-
 .Homepage {
-  
   & .Main {
     position: relative;
-    top: 7.4em;
+    top: 5.4em;
 
     & .Title {
       text-align: center;
@@ -91,7 +83,6 @@
        margin-top: 1em;
        margin-bottom: 1em;
        padding: 1em;
-       border-radius: 8px;
        border: 2px solid;
        text-align: center;
        display: inline-block;
@@ -139,6 +130,68 @@
             margin: 0;
           }
         }
+      }
+    }
+
+    & .Footer {
+      position: relative;
+      top: 7.4em;
+    }
+  }
+}
+
+.HomeBodyWrapper {
+  width: 99.5%;
+
+  & .Main {
+    position: relative;
+    top: 7.4em;
+
+    & .LeftSidebar,
+    & .RightSidebar {
+      display: inline-block;
+      width: 20%;
+      padding: .2em;
+      border: solid 4px;
+      font-size: .8em;
+
+      & .SidebarTitle {
+        font-size: 1.2em;
+        top-margin: 0;
+        
+      }
+    }
+
+    & .MainContent {
+      display: inline-block;
+      width: 79.5%;
+      padding-left: .8em;
+      padding-right: .8em;
+
+      & h1 {
+        text-align: center;
+        font-family: var(--serif);
+        width: auto;
+      }
+
+      & h2 {
+        font-family: var(--serif);
+      }
+
+      & pre {
+        display: block;
+        margin: 0;
+        overflow: hidden;
+        width: 22em;
+        min-width: 12em;
+      }
+
+      & pre:active {
+        overflow: auto;
+      }
+
+      & pre:hover {
+        overflow: auto;
       }
     }
 

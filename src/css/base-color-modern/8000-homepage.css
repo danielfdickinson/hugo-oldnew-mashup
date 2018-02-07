@@ -1,0 +1,20 @@
+@media screen {
+  .Homepage {
+    & .Main {
+      & .Splash {
+        & .ScreenshotList {
+          & li {
+            box-shadow: 3px 3px 3px #777;
+          }
+
+          & li:nth-child(1) {
+          transform: rotate(-3deg);
+          }
+          & li:nth-child(even) {
+            transform: rotate(5deg);
+          }
+        }
+      }
+    }
+  }
+}
