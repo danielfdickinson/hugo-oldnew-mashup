@@ -1,0 +1,27 @@
+/*
+  OldNew Mashup default colour settings
+  Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@cshore.theshore.com>
+
+  Released under the MIT License
+*/
+.Header {
+  & .SitebarSitemap {
+    & .SitemapList {
+      & .MenuItem {
+        & a {
+          border-radius: 10px;
+        }
+        & .MenuEntryName {
+          border-radius: 10px;
+          box-shadow: 4px 4px 4px #555555;
+        }
+      }
+
+      & .MenuParent .MenuItem .MenuEntryName {
+        border-radius: 0;
+        box-shadow: none;
+      }
+    }
+  }
+}
+

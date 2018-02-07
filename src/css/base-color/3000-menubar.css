@@ -1,0 +1,36 @@
+/*
+  OldNew Mashup default colour settings
+  Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@cshore.theshore.com>
+
+  Released under the MIT License
+*/
+
+.Header {
+  & .SitebarSitemap {
+    & .SitemapList {
+      & > .MenuItem {
+        & .MenuEntryName {
+          background-color : #888888;
+        }
+
+        & .MenuItem {
+          & a,
+          & a:link,
+          & a:visited {
+            & .MenuEntryName {
+              background-color : #aaaaaa;
+            }
+          }
+
+          & a:hover,
+          & a:active {
+            & .MenuEntryName {
+              background-color : #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

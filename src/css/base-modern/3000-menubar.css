@@ -1,0 +1,27 @@
+/*
+  The C Shore Generic Styling Elements for the menubar
+  Copyright 2007-2009,2017-2018 Daniel F. Dickinson <thecshore.thecshore.com>
+
+  Released under the Creative Commons Share-Alike By Attribution 4.0 License
+*/
+
+/* Remember, for the level of specifity last rule wins, hence
+ *   most important rules are last
+*/
+
+.Header {
+  & .SitebarSitemap {
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    justify-items: flex-end;
+
+    & .SitemapList {
+      & .MenuItem {
+        & .MenuEntryName {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
