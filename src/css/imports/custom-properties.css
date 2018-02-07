@@ -28,8 +28,8 @@
   --topbarBorderTop: none;
   --topbarBorderLeft: none;
   --topbarBorderRight: none;
-  --topbarBorderBottom: 1px solid;
-  --topbarBorderBottomColor: black;
+  --topbarBorderBottom: none;
+  --topbarBorderBottomColor: none;
   --topbarBorderTopColor: none;
   --topbarBorderLeftColor: none;
   --topbarBorderRightColor: none;

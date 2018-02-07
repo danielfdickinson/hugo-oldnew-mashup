@@ -52,12 +52,14 @@
     float: none;
   }
 
-  .Main {
-    display: flex;
+  .Main,
+  .SectionPageMain {
+    display: inline-flex;
     align-content: flex-start;
     align-items: center;
     justify-content: space-between;
     flow: row wrap;
+    flex: 1 1 100%;
   }
 }
 

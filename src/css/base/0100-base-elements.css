@@ -27,11 +27,17 @@ a:hover {
 
 .Preformatted {
    border: var(--Preformatted-border, var(--preformattedTextBorder));
+   font-family: var(--monospace);
 }
 
 /* PRE is block-level so can safely be done as a box, others may be inline */
 pre {
   border: var(--Preformatted-border, var(--preformattedTextBorder));
+  font-family: var(--monospace);
+}
+
+code {
+  font-family: var(--monospace);
 }
 
 /* Default for images, even when they are links, is borderless */
