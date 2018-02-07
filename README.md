@@ -1,4 +1,4 @@
-# Hugo OldNew Mashup
+# Hugo OldNew Mashup (not yet released)
 
 [Hugo](https://gohugo.io) theme mixing old school design elements
 with new-era CSS3, HTML5, etc. That is the look is a combination of
@@ -7,7 +7,8 @@ with new-era CSS3, HTML5, etc. That is the look is a combination of
 /exampleSite contains some example content as per
 [Add a theme to hugoThemes list](https://github.com/gohugoio/hugoThemes#adding-a-theme-to-the-list),
 including this documentation page, and other relevant information for
-the theme.
+the theme.  This theme has not yet been released as it needs a fair bit of
+work before it's ready to really deploy.
 
 ## A note on licenses
 
@@ -43,7 +44,7 @@ You can mix and match licenses as you wish (in terms of the above scheme,
 whether the licenses can actually work together is another story).
 
 -------
-This theme Copyrigh 2018 Daniel F. Dickinson and released under the
+This theme Copyright (C) 2018 Daniel F. Dickinson and released under the
 Creative Commons BY (Attribution) 4.0 License.
-See (https://github.com/cshoredaniel/hugo-oldnew-mashup/blob/master/licenses/CC-BY-4.0
+See [CC-BY-4.0 Plaintext](https://github.com/cshoredaniel/hugo-oldnew-mashup/blob/master/licenses/CC-BY-4.0
 for terms).
