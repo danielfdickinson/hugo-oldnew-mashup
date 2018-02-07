@@ -104,6 +104,7 @@ gulp.task('css', ['css-test'], function() {
   return evstr.concat(
     gulp.src([
       "src/css/modules/normalize.css/normalize.css",
+      "src/css/modules/github-fork-ribbon-css/gh-fork-ribbon.css",
       "src/css/*-base.css",
    ])
     .pipe(sourcemaps.init())
@@ -165,6 +166,7 @@ gulp.task('css', ['css-test'], function() {
     .pipe(gulp.dest('dist/css')),
   gulp.src([
       "src/css/*-base-ie8/*.css",
+      "src/css/modules/github-fork-ribbon-css/gh-fork-ribbon.ie.css",
    ])
     .pipe(postcss(plugins,{
        browsers: ['>0%'],
@@ -183,7 +185,7 @@ gulp.task('css', ['css-test'], function() {
 gulp.task('js-test', function() {
   return evstr.concat(
     gulp.src([
-      "src/js/*.js",
+      "src/js/*.js"
     ])
       .pipe(babel())
       .pipe(gulp.dest("build/lint/js"))
@@ -207,7 +209,9 @@ gulp.task('css-test', ['yarn'], function() {
   return evstr.concat(
     gulp.src([
       "src/css/modules/normalize.css/normalize.css",
-      "src/css/*-base*.css",
+      "src/css/modules/github-fork-ribbon-css/gh-fork-ribbon.css",
+      "src/css/modules/github-fork-ribbon-css/gh-fork-ribbon.ie.css",
+      "src/css/*-base*.css"
    ])
     .pipe(postcss(plugins,{
        browsers: ['>0%'],
