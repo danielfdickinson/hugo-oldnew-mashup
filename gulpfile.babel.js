@@ -32,7 +32,7 @@ var csslint = require('gulp-csslint');
 var postcss = require('gulp-postcss');
 var cssImport = require('postcss-import');
 var cssnext = require('postcss-cssnext');
-var cleancss = require('postcss-clean');
+var cleancss = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 
 gulp.task('yarn', function () {
@@ -98,8 +98,7 @@ gulp.task('release', ['js'], function() {
 gulp.task('css', ['css-test'], function() {
   var plugins = [
      cssImport({path: ["src/css/imports"]}),
-     cssnext(),
-     cleancss()
+     cssnext()
   ];
   return evstr.concat(
     gulp.src([
@@ -109,14 +108,11 @@ gulp.task('css', ['css-test'], function() {
    ])
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins,{
-       browsers: ['>0%'],
-       clean: {
-         level: 2,
-         compatibility: 'ie8'
-       }
+       browsers: ['>0%']
      }))
     .pipe(gulp.dest('build/separated/css/base'))
     .pipe(concat("base.css"))
+    .pipe(cleancss({ level: 2, compatibility: 'ie8' }))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest('dist/css')),
   gulp.src([
@@ -124,14 +120,12 @@ gulp.task('css', ['css-test'], function() {
    ])
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins,{
-       browsers: ['>0%'],
-       clean: {
-         level: 2,
-         compatibility: 'ie8'
-       }
+       browsers: ['>0%']
      }))
     .pipe(gulp.dest('build/separated/css/base-color'))
+    .pipe(sourcemaps.write("."))
     .pipe(concat("base-color.css"))
+    .pipe(cleancss({ level: 2, compatibility: 'ie8' }))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest('dist/css')),
   gulp.src([
@@ -139,14 +133,12 @@ gulp.task('css', ['css-test'], function() {
    ])
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins,{
-       browsers: ['>5%'],
-       clean: {
-         level: 2,
-         compatibility: '*'
-       }
+       browsers: ['>5%']
      }))
     .pipe(gulp.dest('build/separated/css/base-modern'))
+    .pipe(sourcemaps.write("."))
     .pipe(concat("base-modern.css"))
+    .pipe(cleancss({ level: 2, compatibility: '*' }))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest('dist/css')),
   gulp.src([
@@ -154,14 +146,12 @@ gulp.task('css', ['css-test'], function() {
    ])
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins,{
-       browsers: ['>5%'],
-       clean: {
-         level: 2,
-         compatibility: '*'
-       }
+       browsers: ['>5%']
      }))
     .pipe(gulp.dest('build/separated/css/base-modern-color'))
+    .pipe(sourcemaps.write("."))
     .pipe(concat("base-modern-color.css"))
+    .pipe(cleancss({ level: 2, compatibility: '*' }))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest('dist/css')),
   gulp.src([
@@ -169,14 +159,12 @@ gulp.task('css', ['css-test'], function() {
       "src/css/modules/github-fork-ribbon-css/gh-fork-ribbon.ie.css",
    ])
     .pipe(postcss(plugins,{
-       browsers: ['>0%'],
-       clean: {
-         level: 2,
-         compatibility: 'ie8'
-       }
+       browsers: ['>0%']
      }))
     .pipe(gulp.dest('build/separated/css/base-ie8'))
+    .pipe(sourcemaps.write("."))
     .pipe(concat('base-ie8.css'))
+    .pipe(cleancss({ level: 2, compatibility: 'ie8' }))
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest('dist/css'))
   );
@@ -203,8 +191,7 @@ gulp.task('js-test', function() {
 gulp.task('css-test', ['yarn'], function() {
   var plugins = [
      cssImport({path: ["src/css/imports"]}),
-     cssnext(),
-     cleancss()
+     cssnext()
   ];
   return evstr.concat(
     gulp.src([
