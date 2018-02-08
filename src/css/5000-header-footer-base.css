@@ -22,12 +22,16 @@
   position: fixed;
   top: 0;
   opacity: 1.0;
-  height: 6em;
+  height: 3.5em;
   overflow: visible;
   z-index: 10;
+  width: 98%;
 
   & .SiteBadge {
+    text-align: left;
     display: inline-block;
+    padding-left: .4em;
+    padding-right: .4em;
     & .GraphicsRow {
       display: inline-block;
       width: 37px;
@@ -39,7 +43,7 @@
     & .SiteId {
       display: inline-block;
       font-family: var(--serif);
-      vertical-align: 70%;
+      vertical-align: 40%;
       width: auto;
     }
   }

@@ -5,8 +5,6 @@
 
 @media screen {
   .Topbar {
-    background-color : rgba(119, 119, 119, 0.0);
-
     & .SiteBadge {
       box-shadow: 6px 6px 4px #555555;
       border-radius: 16px;

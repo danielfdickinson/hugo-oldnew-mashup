@@ -11,8 +11,10 @@
 /* Without Flex get the Topbar's Menubar to the right */
 .Header {
   & .SitebarSitemap {
+    text-align: left;
+    vertical-align: top;
     display: inline-block;
-    position: relative;
+    position: absolute;
     top: 0;
     right: 0;
     z-index: 20;
