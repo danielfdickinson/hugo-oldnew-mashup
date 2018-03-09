@@ -50,3 +50,117 @@
     text-align: left;
   }
 }
+
+.HomeBodyWrapper,
+.DefaultBodyWrapper {
+  width: 99.5%;
+
+  & .Main,
+  & .SectionPageMain {
+    position: relative;
+    top: 7.4em;
+
+    & .LeftSidebar,
+    & .RightSidebar {
+      display: inline-block;
+      padding-left: .5em;
+      padding-right: .5em;
+      margin-top: 0;
+      vertical-align: top;
+    }
+
+    & .LeftSidebar {
+      width: 18%;
+    }
+    & .LeftSidebar + .RightSidebar {
+      width: 18%;
+    }
+
+    & .LeftSidebar {
+      border-bottom: solid 1px;
+
+      & .PageSummary {
+        border-top: solid 1px;
+      }
+    }
+
+    & .LeftSidebar,
+    & .RightSidebar {
+      display: inline-block;
+      & .SidebarTitle {
+        margin-top: .4em;
+        font-size: 1.2em;
+        top-margin: 0;
+      }
+    }
+
+    & .RightSidebar {
+      text-align: right;
+      & .SitebarSitemap {
+        display: inline-block;
+        & .SitemapList,
+        & .MenuSubmenu {
+          text-align: left;
+          list-style: none outside;
+          padding-left: .6em;
+          & .MenuItem {
+	    display: block;
+            & a {
+	      display: block;
+            }
+          }
+        }
+
+        & .SitemapList {
+          margin: 0;
+          padding: 0;
+          & .MenuItem {
+            margin-top: .2em;
+          }
+        }
+      }
+    }
+
+    & .MainContent {
+      display: inline-block;
+      width: 70%;
+      padding-left: .8em;
+      padding-right: 1em;
+
+      & h1 {
+        text-align: center;
+        font-family: var(--serif);
+        width: auto;
+      }
+
+      & h2 {
+        font-family: var(--serif);
+      }
+
+      & pre {
+        display: block;
+        margin: 0;
+        overflow: hidden;
+        width: 22em;
+        min-width: 12em;
+      }
+
+      & pre:active {
+        overflow: auto;
+      }
+
+      & pre:hover {
+        overflow: auto;
+      }
+    }
+
+    & .Footer {
+      position: relative;
+      top: 7.4em;
+    }
+
+    & .LeftSidebar + .MainContent {
+      width: 55%;
+    }
+  }
+}
