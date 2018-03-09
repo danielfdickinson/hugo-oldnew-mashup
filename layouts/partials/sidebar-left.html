@@ -1,0 +1,6 @@
+      <section class="LeftSidebar">
+        <h1 class="SidebarTitle">Recent Changes</h1>
+        {{ range first 8 .Site.Pages }}
+          {{ .Render "summary" }}
+        {{ end }}
+      </section>
