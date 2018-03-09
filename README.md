@@ -47,4 +47,4 @@ whether the licenses can actually work together is another story).
 This theme Copyright (C) 2018 Daniel F. Dickinson and released under the
 Creative Commons BY (Attribution) 4.0 License.
 See [CC-BY-4.0 Plaintext](https://github.com/cshoredaniel/hugo-oldnew-mashup/blob/master/licenses/CC-BY-4.0)
-for terms).
+for terms.
