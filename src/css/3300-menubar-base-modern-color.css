@@ -12,6 +12,10 @@
         & .MenuEntryName {
           border-radius: 10px;
           box-shadow: 4px 4px 4px #555555;
+          &:hover,
+          &:active {
+            box-shadow: 4px 4px 4px #555555 inset;
+          }
         }
       }
 

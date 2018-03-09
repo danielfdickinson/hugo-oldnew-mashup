@@ -15,6 +15,11 @@
     &:active {
       color: #000000;
     }
+    border: 2px solid #888888;
+    &:hover,
+    &:active {
+      border: 2px inset #000000;
+    }
   }
 }
 

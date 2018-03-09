@@ -14,6 +14,10 @@
       &:active {
         border-radius: 16px;
       }
+      &:hover,
+      &:active {
+        box-shadow: 6px 6px 4px #555555 inset;
+      }
     }
   }
 }
