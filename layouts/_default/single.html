@@ -2,15 +2,15 @@
   {{.Title}}
 {{ end }}
 {{ define "main" }}
-<main class="Main">
-<!-- Copyright 2018 Daniel F. Dickinson
-     Released under the Creative Commons BY (Attribution) 4.0 License -->
-  <h1>{{.Title}}</h1>
-  <article>
-    {{.Content}}
-  </article>
+  <main class="Main">
+    {{ partial "sidebar-left" . }}
+    <article class="MainContent">
+    <h1 class="Title">{{ .Title }}</h1>
+    {{ .Content }}
+    </article>
   <aside>
-    {{ markdownify .Params.aside}}
+    {{ markdownify .Params.aside }}
   </aside>
-</main>
+  {{ partial "sidebar-right" . }}
+  </main>
 {{ end }}

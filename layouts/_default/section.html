@@ -8,11 +8,14 @@
 {{ end }}
 {{ define "main" }}
     <main class="SectionPageMain">
-      <h1 class="Title">{{ .Title }}</h1>
-      <ul>
-       {{ range .Pages }}
-         {{ .Render "li" }}
-       {{end }}
-     </ul>
-    </main>
+      <article class="MainContent">
+        <h1 class="Title">{{ .Title }}</h1>
+        <ul>
+          {{ range .Pages }}
+           {{ .Render "li" }}
+          {{end }}
+        </ul>
+      </article>
+      {{ partial "sidebar-right" . }}
+   </main>
 {{ end }}

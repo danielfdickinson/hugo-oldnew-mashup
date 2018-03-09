@@ -10,19 +10,3 @@
   <div class="HomeBodyWrapper">
   {{ partial "header" . }}
 {{ end }}
-{{ define "main" }}
-    <main class="Main">
-      <section class="LeftSidebar">
-        {{ partial "sitemenu" . }}
-      </section>
-      <article class="MainContent">
-        {{ .Content }}
-      </article>
-      <section class="RightSidebar">
-       <h1 class="SidebarTitle">Recent Changes</h1>
-       {{ range first 5 .Site.Pages }}
-         {{ .Render "summary" }}
-       {{end }}
-      </section>
-    </main>
-{{ end }}

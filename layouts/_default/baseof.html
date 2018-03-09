@@ -11,17 +11,24 @@
   {{ block "bodytag" .}}
   <body>
   {{ end }}
-    {{ block "header" . }}
-      <div class="DefaultBodyWrapper">
+  {{ block "header" . }}
+    <div class="DefaultBodyWrapper">
       {{ partial "header" . }}
-    {{ end }}
-    {{ block "main" . }}
-    {{ end }}
+  {{ end }}
+  {{ block "main" . }}
+        <main class="Main">
+          {{ partial "sidebar-left" . }}
+          <article class="MainContent">
+          <h1 class="Title">{{ .Title }}</h1>
+            {{ .Content }}
+          </article>
+          {{ partial "sidebar-right" . }}
+        </main>
+  {{ end }}
     <a class="github-fork-ribbon left-bottom fixed" data-ribbon="Fork me on GitHub" href="https://github.com/cshoredaniel/hugo-oldnew-mashup#fork-destination-box">Fork me on GitHub</a>
-
-    {{ block "footer" . }}
-      {{ partial "footer" . }}
-      </div>
-     {{ end }}
+  {{ block "footer" . }}
+    {{ partial "footer" . }}
+    </div>
+  {{ end }}
   </body>
 </html>
