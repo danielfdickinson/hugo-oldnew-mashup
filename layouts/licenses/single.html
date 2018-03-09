@@ -20,7 +20,7 @@
     </section>
     <section class="LicensePagesSection">
       <h2>Pages with {{ $license }} license</h2>
-      <ul>
+      <ul class="PageLicenseList">
        {{ range .Site.Pages }}
          {{ if in .Params.license $license }}
            <li><a href="{{ .URL | relURL }}">{{ if not .Title}}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}</a></li>
