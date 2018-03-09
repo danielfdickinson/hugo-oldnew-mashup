@@ -32,7 +32,7 @@ create a file name 'Expired' which contains the license, e.g.:
     This work's copyright has expired in all known jurisdictions.
 
 Likewise create a file CC-BY-SA-4.0 with the
-content of [CC-BY-SA-4.0 Plaintext](https://github.com/cshoredaniel/hugo-oldnew-mashup/blob/master/licenses/CC-BY-SA-4.0)
+content of [CC-BY-SA-4.0 Plaintext](https://raw.githubusercontent.com/cshoredaniel/hugo-oldnew-mashup/master/licenses/CC-BY-SA-4.0)
 
 Then issue the command ```hugo new licenses/Expired.md``` and
 ```hugo new licenses/CC-BY-SA-4.0.md```.
