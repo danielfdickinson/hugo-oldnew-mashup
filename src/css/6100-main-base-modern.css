@@ -29,7 +29,7 @@
     display: inline-flex;
     flex: 1 1 100%;
     align-content: stretch;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     flex-flow: row wrap;
 
