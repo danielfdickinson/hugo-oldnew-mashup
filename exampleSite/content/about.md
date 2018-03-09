@@ -12,7 +12,7 @@ menu:
 ---
 
 ## Section 1.10.32 of Cicero's “De finibus bonorum et malorum”
-Quoted from [Lorem Ispum Generator](https://loremipsumgenerator.com/)
+Quoted from [Lorem Ipsum Generator](https://loremipsumgenerator.com/)
 
 ### Original Latin text:
 
