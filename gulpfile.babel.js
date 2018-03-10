@@ -130,6 +130,7 @@ gulp.task('css', ['css-test'], function() {
     .pipe(gulp.dest('dist/css')),
   gulp.src([
       "src/css/*-base-modern.css",
+      "src/css/*-base-modern-ie11.css",
    ])
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins,{

@@ -9,9 +9,10 @@
     display: inline-flex;
     align-content: flex-start;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-flow: row nowrap;
     height: initial; 
+    position: fixed;
     position: sticky;
     width: 99.7%;
 
