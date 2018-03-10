@@ -108,7 +108,7 @@ gulp.task('css', ['css-test'], function() {
    ])
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins,{
-       browsers: ['>0%']
+       browsers: ['>5%']
      }))
     .pipe(gulp.dest('build/separated/css/base'))
     .pipe(concat("base.css"))
@@ -120,7 +120,7 @@ gulp.task('css', ['css-test'], function() {
    ])
     .pipe(sourcemaps.init())
     .pipe(postcss(plugins,{
-       browsers: ['>0%']
+       browsers: ['>5%']
      }))
     .pipe(gulp.dest('build/separated/css/base-color'))
     .pipe(sourcemaps.write("."))
@@ -159,7 +159,7 @@ gulp.task('css', ['css-test'], function() {
       "src/css/modules/github-fork-ribbon-css/gh-fork-ribbon.ie.css",
    ])
     .pipe(postcss(plugins,{
-       browsers: ['>0%']
+       browsers: ['>5%']
      }))
     .pipe(gulp.dest('build/separated/css/base-ie8'))
     .pipe(sourcemaps.write("."))
@@ -201,7 +201,7 @@ gulp.task('css-test', ['yarn'], function() {
       "src/css/*-base*.css"
    ])
     .pipe(postcss(plugins,{
-       browsers: ['>0%'],
+       browsers: ['>5%'],
        clean: {
          level: 2,
          compatibility: 'ie8'
