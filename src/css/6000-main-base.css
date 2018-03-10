@@ -59,54 +59,60 @@
   & .SectionPageMain {
     position: relative;
     top: 7.4em;
+    padding-right: .2em;
+    display: inline-block;
 
-    & .LeftSidebar,
     & .RightSidebar {
       display: inline-block;
       padding-left: .5em;
       padding-right: .5em;
       margin-top: 0;
       vertical-align: top;
-    }
-
-    & .LeftSidebar {
-      width: 18%;
-    }
-    & .LeftSidebar + .RightSidebar {
-      width: 18%;
-    }
-
-    & .LeftSidebar {
-      border-bottom: solid 1px;
-
-      & .PageSummary {
-        border-top: solid 1px;
-      }
-    }
-
-    & .LeftSidebar,
-    & .RightSidebar {
-      display: inline-block;
-      & .SidebarTitle {
-        margin-top: .4em;
-        font-size: 1.2em;
-        top-margin: 0;
-      }
-    }
-
-    & .RightSidebar {
       text-align: right;
+      display: inline-block;
+      & .PageSummaries {
+        text-align: left;
+        & .SidebarTitle {
+          border-top: solid 1px;
+          margin-top: .4em;
+          font-size: 1.2em;
+          top-margin: 0;
+        }
+        & .PageSummary {
+          border-top: dashed 1px;
+        }
+      }
+
       & .SitebarSitemap {
         display: inline-block;
+        & .SitemapList {
+          padding-right: 0;
+          & .MenuItem {
+            text-align: left;
+            padding-left: 0;
+            padding-right: 0;
+         }
+        }
+        & .MenuSubmenu {
+          padding-right: 2em;
+          & .MenuItem {
+            text-align: left;
+            padding-left: 0;
+            padding-right: 2em;
+          }
+        }
         & .SitemapList,
         & .MenuSubmenu {
-          text-align: left;
-          list-style: none outside;
-          padding-left: .6em;
+          list-style: none inside;
+          padding-left: 0;
           & .MenuItem {
 	    display: block;
             & a {
 	      display: block;
+              & .MenuEntryName {
+                .padding-left: 0;
+                .padding-right: .2em;
+              }
             }
           }
         }
@@ -123,7 +129,7 @@
 
     & .MainContent {
       display: inline-block;
-      width: 70%;
+      width: 75%;
       padding-left: .8em;
       padding-right: 1em;
 
@@ -157,10 +163,6 @@
     & .Footer {
       position: relative;
       top: 7.4em;
-    }
-
-    & .LeftSidebar + .MainContent {
-      width: 55%;
     }
   }
 }

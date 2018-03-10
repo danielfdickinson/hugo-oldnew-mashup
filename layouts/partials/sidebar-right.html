@@ -1,3 +1,9 @@
       <section class="RightSidebar">
         {{ partial "sitemenu" . }}
+        <section class="PageSummaries">
+          <h1 class="SidebarTitle">Recent Changes</h1>
+          {{ range first 8 .Site.Pages }}
+            {{ .Render "summary" }}
+          {{ end }}
+        </section>
       </section>

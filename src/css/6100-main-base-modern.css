@@ -78,7 +78,8 @@
     justify-content: flex-start;
     flex-flow: row wrap;
 
-    & .Main {
+    & .Main,
+    & .SectionPageMain {
       flex: 1 1 100%;
       display: inline-flex;
       align-items: flex-start;
@@ -89,21 +90,16 @@
       margin-top: .4em;
       top: 0;
  
-      & .LeftSidebar,
       & .RightSidebar {
-        width: auto;
-        flex: 1 1 10em;
+        width: initial;
+        flex: 1 1 20%;
+        display: inline-block;
+        position: static;
       }
 
       & .RightSidebar {
-        order: 3;
+        order: 2;
         margin-left: 0;
-      }
-
-      & .LeftSidebar {
-        margin-right: 0;
-        order: 1;
-
         & .PageSummary {
           & .SummaryHeader {
             & h2 {
@@ -117,8 +113,8 @@
       }
 
       & .MainContent {
-        flex: 1 1 22em;
-        order: 2;
+        flex: 1 1 70%;
+        order: 1;
 	margin: 0;
         padding-top: 0;
         padding-bottom: 0;
