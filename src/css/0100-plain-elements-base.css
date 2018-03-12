@@ -97,3 +97,8 @@ html {
 label {
    font-weight: bold;
 }
+
+figure {
+    display: inline-block;
+    float: left;
+}
