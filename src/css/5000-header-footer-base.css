@@ -12,7 +12,7 @@
 .Topbar {
   border-top: var(--Topbar-borderTop, var(--topbarBorderTop)) var(--Topbar-borderTopColor, var(--topbarBorderTopColor));
   border-bottom: var(--Topbar-borderBottom, var(--topbarBorderBottom)) var(--Topbar-borderBottomColor, var(--topbarBorderBottomColor));
-  border-left: var(--Topbar-borderLeft var(--topbarBorderLeft)) var(--Topbar-borderLeftColor, var(--topbarBorderLeftColor));
+  border-left: var(--Topbar-borderLeft, var(--topbarBorderLeft)) var(--Topbar-borderLeftColor, var(--topbarBorderLeftColor));
   border-right: var(--Topbar-borderRight, var(--topbarBorderRight)) var(--Topbar-borderRightColor, var(--topbarBorderRightColor));
   padding: var(--Topbar-padding, var(--topbarPadding));
 /*
