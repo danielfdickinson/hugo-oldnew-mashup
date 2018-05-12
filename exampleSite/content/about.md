@@ -11,6 +11,9 @@ menu:
     name: About
 ---
 
+## Examples of Sites Using This Theme
+* [The C Shore](https://www.thecshore.com)
+
 ## Section 1.10.32 of Cicero's “De finibus bonorum et malorum”
 Quoted from [Lorem Ipsum Generator](https://loremipsumgenerator.com/)
 
