@@ -38,27 +38,27 @@
       <listitem><para>Week 6:  TBD: Pi: A simple MP3 Player controlled by (buttons/light/pressure/tilt, etc)</para></listitem>
     </itemizedlist>
     </foil>
-    <foilgroup><title>Week 1</title>
-      <foil><title>Preparation</title>
-        <itemizedlist>
-          <listitem><para>What is the Raspberry Pi?</para></listitem>
-          <listitem><para>What is the Arduino Uno?</para></listitem>
-          <listitem><para>Why are we interested in them?</para></listitem>
-          <listitem><para>Arduino: Just enough electronics to 'do stuff'</para></listitem>
-          <listitem><para>Pi: Just enough Linux &amp; Python to 'do stuff'</para></listitem>
-          <listitem><para>Pi: Controlling the Arduino from the Pi</para></listitem>
-        </itemizedlist>
-      </foil>
-      <foil><title>Blinky Lights</title>
-        <itemizedlist>
-          <listitem><para>Arduino: Program to blink onboard LED</para></listitem>
-          <listitem><para>Arduino: Build an external LED circuit</para></listitem>
-          <listitem><para>Arduino: Program to blink  LED</para></listitem>
-          <listitem><para>Pi: Use an external LED circuit</para></listitem>
-          <listitem><para>Pi: Program to blink external LED</para></listitem>
-        </itemizedlist>
-      </foil>
-    </foilgroup>
+  </foilgroup>
+  <foilgroup><title>Week 1 Plan</title>
+    <foil><title>Preparation</title>
+      <itemizedlist>
+        <listitem><para>What is the Raspberry Pi?</para></listitem>
+        <listitem><para>What is the Arduino Uno?</para></listitem>
+        <listitem><para>Why are we interested in them?</para></listitem>
+        <listitem><para>Arduino: Just enough electronics to 'do stuff'</para></listitem>
+        <listitem><para>Pi: Just enough Linux &amp; Python to 'do stuff'</para></listitem>
+        <listitem><para>Pi: Controlling the Arduino from the Pi</para></listitem>
+      </itemizedlist>
+    </foil>
+    <foil><title>Blinky Lights</title>
+      <itemizedlist>
+        <listitem><para>Arduino: Program to blink onboard LED</para></listitem>
+        <listitem><para>Arduino: Build an external LED circuit</para></listitem>
+        <listitem><para>Arduino: Program to blink  LED</para></listitem>
+        <listitem><para>Pi: Use an external LED circuit</para></listitem>
+        <listitem><para>Pi: Program to blink external LED</para></listitem>
+      </itemizedlist>
+    </foil>
   </foilgroup>
   <foilgroup><title>The Real Week 1</title>
     <para>The reason we're here...</para>
