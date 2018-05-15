@@ -68,11 +68,12 @@
       <listitem><para>Is powerful enough to be useful, but not power as a desktop, laptop, or high-end mobile device (expensive cell phones, tablets, etc)</para></listitem>
       <listitem><para>Designed to make it easy to use with electronics projects</para></listitem>
       <listitem><para>Created by a U.K. non-profit to make it easy and inexpensive for kids to get involved in programming and electronics (including robotics) using a general purpose computer (i.e. not only for robotics, electronics.</para></listitem>
-      <listitem><para>This! (Show &amp; Tell)</para></listitme>
+      <listitem><para>This! (Show &amp; Tell)</para></listitem>
     </itemizedlist>
    </foil>
    <foil><title>What can the Raspberry Pi Do?</title>
    </foil>
    <foil><title>What is the Arduino Uno??</title>
    </foil>
+  </foilgroup>
 </slides>
