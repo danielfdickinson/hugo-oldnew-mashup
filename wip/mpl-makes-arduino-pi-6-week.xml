@@ -65,13 +65,39 @@
     <itemizedlist>
       <listitem><para>A full-blown computer capable of running a desktop</para></listitem>
       <listitem><para>Based on a different processor (brains) than a typical laptop or desktop</para></listitem>
-      <listitem><para>Is powerful enough to be useful, but not power as a desktop, laptop, or high-end mobile device (expensive cell phones, tablets, etc)</para></listitem>
+      <listitem><para>Is performant enough to be useful, but lower performance than a typical desktop, laptop, or high-end mobile device (expensive cell phones, tablets, etc)</para></listitem>
       <listitem><para>Designed to make it easy to use with electronics projects</para></listitem>
-      <listitem><para>Created by a U.K. non-profit to make it easy and inexpensive for kids to get involved in programming and electronics (including robotics) using a general purpose computer (i.e. not only for robotics, electronics.</para></listitem>
+      <listitem><para>Created by a U.K. non-profit to make it easy and inexpensive to learn computing and electronics and especially the combination of those (including robotics) using a general purpose computer (i.e. not only for robotics and electronics)</para></listitem>
       <listitem><para>This! (Show &amp; Tell)</para></listitem>
     </itemizedlist>
    </foil>
-   <foil><title>What can the Raspberry Pi Do?</title>
+   <foil><title>What does the Raspberry Pi 3  Have?</title>
+     <itemizedlist>
+        <listitem><para>Reasonably powerful (4 core x 1 GHz) ARM processor</para></listitem>
+        <listitem><para>1 GB RAM</para></listitem>
+        <listitem><para>SD card support</para></listitem>
+        <listitem><para>USB 2.0 ports</para></listitem>
+        <listitem><para>HDMI out</para></listitem>
+        <listitem><para>Audio / Composite video out</para></listitem>
+        <listitem><para>Wifi</para></listitem>
+        <listitem><para>Camera (with extra Pi module or USB)</para></listitem>
+        <listitem><para>LCD (with extra Pi module or USB or GPIO or I2C or SPI controlled)</para></listitem>
+        <listitem><para>Do on/off (digital) electronics including interfacing to other boards, or turning LEDs on/off etc</para></listitem>
+        <listitem><para>Interface with I2C or SPI bus electronics</para></listitem>
+        <listitem><para>Communicate with serial port devices (RX/TX/GND)</para></listitem>
+     </itemizedlist>
+   </foil>
+   <foil><title>What can you do with it?</title>
+     <itemizedlist>
+       <listitem><para>Robotics (using the above)</para></listitem>
+       <listitem><para>Network Appliances</para></listitem>
+       <listitem><para>IoT</para></listitem>
+       <listitem><para>Media Center</para></listitem>
+       <listitem><para>Home Automation</para></listitem>
+       <listitem><para>Use it a desktop computer</para></listitem>
+       <listitem><para>Use it as a low power server</para></listitem>
+       <listitem><para>Much more...</para></listitem>
+     </itemizedlist>
    </foil>
    <foil><title>What is the Arduino Uno??</title>
    </foil>
