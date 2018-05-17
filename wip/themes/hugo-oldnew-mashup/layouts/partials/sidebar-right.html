@@ -1,3 +1,4 @@
+      {{ if not (or .Params.norside .Site.Params.norside) }}
       <section class="RightSidebar">
         {{ partial "sitemenu" . }}
         <section class="PageSummaries">
@@ -7,3 +8,4 @@
           {{ end }}
         </section>
       </section>
+      {{ end }}

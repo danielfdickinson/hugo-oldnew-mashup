@@ -1,0 +1,14 @@
+baseurl = "/"
+languageCode = "en-ca"
+languageLang = "en"
+license = "CC-BY-4.0"
+title = "MPL-Makes Workshops"
+theme = "hugo-oldnew-mashup"
+enableGitInfo = true
+staticDir = ["static","themes/hugo-oldnew-mashup/dist"]
+
+[params]
+  siteid = "MPL-Makes Workshops"
+  license = 'CC-BY-SA-4.0'
+  copyright = '2018 Daniel F. Dickinson'
+  norside = true
