@@ -1,0 +1,55 @@
+/*! Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@cshore.theshore.com>
+ *  Released under the Creative Commons BY (Attribution) 4.0 License
+ */
+
+/*  OldNew Mashup default colour settings */
+
+.HomeBodyWrapper,
+.DefaultBodyWrapper {
+  & .Main,
+  & .SectionPageMain {
+    & .RightSidebar {
+      & .SitebarSitemap {
+        & .SitemapList {
+          & .MenuItem.MenuActive {
+            & a,
+            & a:link,
+            & a:visited {
+              color: #aaaaaa;
+              background-color: #555555;
+            }
+            & a:hover,
+            & a:active {
+              color: #222222;
+              background-color: #aaaaaa;
+            }
+          }
+          & .MenuItem {
+            &:hover,
+            &:active {
+              color: #222222;
+              background-color: #aaaaaa;
+            }
+            & a {
+              text-decoration: none;
+            }
+            & a:link,
+            & a:visited {
+              color: #cccccc;
+              background-color: #000000;
+            }
+            & a:hover,
+            & a:active {
+              color: #222222;
+              background-color: #aaaaaa;
+            }
+          }
+        }
+        & .MenuSubmenu {
+          color: #000000;
+          background-color: #bbbbbb;
+        }
+      }
+    }
+  }
+}
