@@ -10,11 +10,13 @@
     <main class="SectionPageMain">
       <article class="MainContent">
         <h1 class="Title">{{ .Title }}</h1>
-        <ul>
-          {{ range .Pages }}
-           {{ .Render "li" }}
-          {{end }}
-        </ul>
+        {{ .Content }}
+        <ol>
+          {{ partial "section-nesting" . }}
+          {{ range .Sections }}
+            {{ partial "section-listing" . }}
+          {{ end }}
+        </ol>
       </article>
       {{ partial "sidebar-right" . }}
    </main>
