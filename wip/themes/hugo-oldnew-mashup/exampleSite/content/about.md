@@ -11,6 +11,8 @@ menu:
     name: About
 ---
 
+# About
+
 ## Examples of Sites Using This Theme
 * [The C Shore](https://www.thecshore.com)
 
