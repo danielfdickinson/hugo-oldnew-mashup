@@ -70,6 +70,10 @@
       vertical-align: top;
       text-align: right;
       display: inline-block;
+      & .TableOfContents {
+        text-align: left;
+      }
+
       & .PageSummaries {
         text-align: left;
         & .SidebarTitle {
