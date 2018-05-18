@@ -2,13 +2,13 @@ baseurl = "/"
 languageCode = "en-ca"
 languageLang = "en"
 license = "CC-BY-4.0"
-title = "MPL-Makes Workshops"
+title = "MPL-Makes: Introduction to Arduino & Pi"
 theme = "hugo-oldnew-mashup"
 enableGitInfo = true
 staticDir = ["static","themes/hugo-oldnew-mashup/dist"]
 
 [params]
-  siteid = "MPL-Makes Workshops"
+  siteid = "Introduction to Arduino & Pi"
   license = 'CC-BY-SA-4.0'
   copyright = '2018 Daniel F. Dickinson'
   norsummary = 'true'
