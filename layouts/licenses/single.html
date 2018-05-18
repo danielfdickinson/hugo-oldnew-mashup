@@ -8,15 +8,7 @@
   <h1 class="Title">{{.Title}}</h1>
   <article class="LicenseArticle">
     <section class="LicenseSection">
-      <pre class="LicenseBlock">
-      {{ $license := .File.TranslationBaseName }}
-      {{ $licenseFile := printf "licenses/%s" .File.TranslationBaseName }}
-      {{ if fileExists $licenseFile }}
-        {{ readFile $licenseFile }}
-      {{ else }}
-        {{ printf "themes/%s/%s" "oldnew-mashup" $licenseFile | readFile }}
-      {{ end }}
-      </pre>
+      <pre class="LicenseBlock">{{ $license := .File.TranslationBaseName }}{{ $licenseFile := printf "licenses/%s" .File.TranslationBaseName }}{{ if fileExists $licenseFile }}{{ readFile $licenseFile }}{{ else }}{{ printf "themes/%s/%s" "oldnew-mashup" $licenseFile | readFile }}{{ end }}</pre>
     </section>
     <section class="LicensePagesSection">
       <h2>Pages with {{ $license }} license</h2>
