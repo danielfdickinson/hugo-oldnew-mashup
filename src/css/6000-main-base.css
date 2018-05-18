@@ -153,6 +153,9 @@
         overflow: hidden;
         width: 22em;
         min-width: 12em;
+        & h1 {
+          text-align: left;
+        }
       }
 
       & pre:active {
