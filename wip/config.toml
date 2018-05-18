@@ -11,4 +11,4 @@ staticDir = ["static","themes/hugo-oldnew-mashup/dist"]
   siteid = "MPL-Makes Workshops"
   license = 'CC-BY-SA-4.0'
   copyright = '2018 Daniel F. Dickinson'
-  norside = true
+  norsummary = 'true'
