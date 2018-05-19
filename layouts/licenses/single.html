@@ -6,7 +6,7 @@
 <!-- Copyright 2018 Daniel F. Dickinson,
      Released under the Creative Commons BY (Attribution) 4.0 License -->
   <h1 class="Title">{{.Title}}</h1>
-  {{ partial "localnav-bar" . }}
+  <div class="LicenseNav">{{ partial "localnav-bar" . }}</div>
   <article class="LicenseArticle">
     <section class="LicenseSection">
       <pre class="LicenseBlock">{{ $license := .File.TranslationBaseName }}{{ $licenseFile := printf "licenses/%s" .File.TranslationBaseName }}{{ if fileExists $licenseFile }}{{ readFile $licenseFile }}{{ else }}{{ printf "themes/%s/%s" "oldnew-mashup" $licenseFile | readFile }}{{ end }}</pre>
