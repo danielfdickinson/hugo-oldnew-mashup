@@ -27,8 +27,15 @@
   }
 
   & .LicenseNav {
-    width: 95%;
+    position: absolute;
+    right: 0;
+    width: 11em;
     text-align: right;
+    & .LocalNavBar {
+      width: 100%;
+      text-align: center;
+    }
+    z-index: 1;
   }
 
   & .LicenseArticle {
@@ -69,12 +76,18 @@
 
     & .LocalNavBar {
       display: inline-block;
+      text-align: center;
       & a,
       & a:link,
       & a:visited,
       & a:active,
       & a:hover {
+        text-align: center;
+        margin: 0;
+        padding: 0;
         text-decoration: none;
+        display: inline-block;
+        width: 31%;
       }
     }
 

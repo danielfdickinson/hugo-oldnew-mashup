@@ -9,7 +9,16 @@
   & .Main,
   & .SectionPageMain {
     & .LocalNavBar {
-      background-color: #cccccc; 
+      background-color: #888888;
+      & a,
+      & a:link,
+      & a:visited {
+        color: #222222;
+      }
+      & a:active,
+      & a:hover {
+        background-color: #aaaaaa;
+      }
     }
 
     & .RightSidebar {
