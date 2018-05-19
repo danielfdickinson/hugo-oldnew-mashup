@@ -1,9 +1,0 @@
-{{ $fileName := .Get 0 }}
-{{ if fileExists $fileName }}
-  {{ readFile $fileName | markdownify }}
-  <!-- Copyright 2018 Daniel F. Dickinson,
-       Released under the Creative Commons 4.0 BY (Attribution) License -->
-{{ else }}
-  {{ $theme := .Get 1 }}
-  {{ printf "themes/%s/%s" $theme $fileName | readFile | markdownify }}
-{{ end }}
