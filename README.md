@@ -10,6 +10,30 @@ including this documentation page, and other relevant information for
 the theme.  This theme has not yet been released as it needs a fair bit of
 work before it's ready to really deploy.
 
+## A note on navigation and display order
+
+This themes comes with the option to do a linear
+traversal from the main page (the one you get by pressing
+'Enter Site') to the last page in the sitemap, without missing
+any pages.  To ensure this is ordered the way you wish, it is
+important to set the 'weight' metadata in the frontmatter of
+all pages.  It is also important to use \_index.md files, and
+not rely on Hugo's automatic list page generation.
+
+An example of such a section page with appropriate frontmatter
+(which looks the same as regular page frontmatter), is:
+
+    ---
+    date: (some date)
+    title: Some Page
+    copyright: 2018 John Henry
+    license: CC-BY-SA-4.0
+    weight: 30000
+    ---
+
+The weight means that this page will sort before any page with
+higher weight, and after any page with a lower weight.
+
 ## A note on licenses
 
 This theme has an archetype and layouts that make it easy to indicate
