@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://maker-workshop-arduino-pi.thecshore.com/"
 languageCode = "en-ca"
 languageLang = "en"
 license = "CC-BY-4.0"
