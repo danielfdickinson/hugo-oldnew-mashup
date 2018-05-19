@@ -3,6 +3,7 @@ date: 2018-01-08T18:03:05-05:00
 title: About (Lorem Ipsum)
 copyright: 2018 Daniel F. Dickinson and Expired
 license: Expired&CC0-1.0
+weight: 100
 menu:
   main:
     name: About

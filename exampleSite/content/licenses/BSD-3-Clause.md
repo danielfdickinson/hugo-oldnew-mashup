@@ -5,6 +5,7 @@ copyright: 2018 Daniel F. Dickinson
 license: BSD-3-Clause&CC-BY-4.0
 categories:
 keywords:
+weight: 60000
 menu:
   site:
     parent: "Licenses"
