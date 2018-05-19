@@ -3,17 +3,5 @@
     <a href="{{ .NextInSection.URL | relURL }}">Prev</a>
   {{ end }}
 {{ else }}
-  {{ if .IsPage }}
-    {{ if .Parent }}
-      {{ partial "localnav-prevchild" . }}
-    {{ else }}
-      PageNoParent
-    {{ end }}
-  {{ else }}
-    {{ if .Sections }}
-      SectionHasSections
-    {{ else }}
-       {{ partial "localnav-findprevpage" . }}
-    {{ end }}
-  {{ end }}
+  {{ partial "localnav-findprevpage" . }}
 {{ end }}

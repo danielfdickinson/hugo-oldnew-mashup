@@ -1,38 +1,39 @@
 {{ $curPage := . }}
 {{ $curPage.Scratch.Set "match" 0 }}
 {{ $curPage.Scratch.Set "prevPage" nil }}
-{{ $curPage.Scratch.Set "hasChildren" false }}
+{{ $curPage.Scratch.Set "prevCPage" nil }}
 {{ if .Site.Menus.site }}
   {{ $siteMenus := where .Site.Menus.site "Page" "ne" nil }}
-  {{ range $siteMenus.Reverse }}
+  {{ range $siteMenus }}
     {{ $matched := $curPage.Scratch.Get "match" }}
     {{ if ne $matched 2 }}
+      {{ if eq $curPage .Page }}
+        {{ $curPage.Scratch.Set "match" 2 }}
+      {{ end }}
+    {{ end }}
+    {{ $matched := $curPage.Scratch.Get "match" }}
+    {{ if eq $matched 0 }}
       {{ $curPage.Scratch.Set "prevPage" . }}
-      {{ if eq $matched 1 }}
-         {{ $curPage.Scratch.Set "match" 2 }}
-      {{ else }}
-         {{ if eq $curPage .Page }}
-           {{ $curPage.Scratch.Set "match" 1 }}
-         {{ end }}
-      {{ end  }}
-    {{ else }}
-        {{ $prevPage := $curPage.Scratch.Get "prevPage" }}
-        {{ if $prevPage.HasChildren }}
-           {{ $curPage.Scratch.Set "hasChildren" true }}
-        {{ end }}
+      {{ if .HasChildren }}
+        {{ .Page.Scratch.Set "curPage" $curPage }}
+        {{ partial "localnav-prevchild" . }}
+      {{ end }}
     {{ end }}
   {{ end }}
   {{ $matched := $curPage.Scratch.Get "match" }}
   {{ if eq $matched 2 }}
     {{ $prevPage := $curPage.Scratch.Get "prevPage" }}
-    {{ $hasChildren := $curPage.Scratch.Get "hasChildren" }}
-    {{ if $hasChildren }}
-      {{ partial "localnav-prevchild" $prevPage.Page }}
+    {{ if $prevPage.URL }}
+      <a href="{{ $prevPage.URL | relURL }}">Prev</a>
     {{ else }}
-       <a href="{{ $prevPage.URL | relURL }}">Prev</a>
+      Prev
     {{ end }}
   {{ else }}
-    Prev
+    {{ if .Parent }}
+      {{ partial "localnav-findprevpage" .Parent }}
+    {{ else }}
+      Prev
+    {{ end }}
   {{ end }}
 {{ else }}
   NoSiteMenu

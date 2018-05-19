@@ -11,7 +11,9 @@
       {{ end }}
     {{ else }}
       {{ if .Sections }}
-        SectionHasSections
+        {{ range first 1 .Sections }}
+          <a href="{{ .URL | relURL }}">Next</a>
+        {{ end }}
       {{ else }}
         {{ partial "localnav-findnextpage" . }}
       {{ end }}
