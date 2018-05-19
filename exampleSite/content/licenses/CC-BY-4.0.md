@@ -10,3 +10,5 @@ menu:
   licenses:
     parent: "Licenses"
 ---
+
+# Creative Commons Share Attribution License 4.0
