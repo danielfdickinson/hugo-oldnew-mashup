@@ -92,6 +92,18 @@
 
       & .TableOfContents {
         text-align: left;
+        & ul {
+          list-style: none;
+          list-style-position: outside;
+          padding-left: .2em;
+          margin: 0;
+          & ul {
+            padding-left: 1em;
+          }
+        }
+        & a {
+          text-decoration: none;
+        }
       }
 
       & .PageSummaries {

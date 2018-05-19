@@ -13,6 +13,17 @@
     }
 
     & .RightSidebar {
+      & .TableOfContents {
+        background-color: #555555; 
+        & a,
+        & a:link {
+          color: #000055;
+        }
+        & a:active,
+        & a:hover {
+          background-color: #aaaaaa;
+        }
+      }
       & .SitebarSitemap {
         & .SitemapList {
           & .MenuItem.MenuActive {
