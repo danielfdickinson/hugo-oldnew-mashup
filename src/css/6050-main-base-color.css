@@ -8,6 +8,10 @@
 .DefaultBodyWrapper {
   & .Main,
   & .SectionPageMain {
+    & .LocalNavBar {
+      background-color: #cccccc; 
+    }
+
     & .RightSidebar {
       & .SitebarSitemap {
         & .SitemapList {

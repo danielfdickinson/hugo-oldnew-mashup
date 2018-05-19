@@ -113,7 +113,7 @@
       }
 
       & .MainContent {
-        flex: 1 1 70%;
+        flex: 1 1 60%;
         order: 1;
 	margin: 0;
         padding-top: 0;
@@ -144,6 +144,7 @@
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
+        flex: 1 1 62%;
         & pre {
           width: 22em;
         }
@@ -159,7 +160,7 @@
     & .Main {
       & .MainContent {
         & pre {
-          width: 32em;
+          width: 28em;
         }
       }
     }
@@ -228,6 +229,7 @@
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
+        flex: 1 1 65%;
         & pre {
          width: 30em;
         }
