@@ -27,14 +27,14 @@
       & .SitebarSitemap {
         & .SitemapList {
           & .MenuItem.MenuActive {
-            & a,
-            & a:link,
-            & a:visited {
+            & > a,
+            & > a:link,
+            & > a:visited {
               color: #aaaaaa;
               background-color: #555555;
             }
-            & a:hover,
-            & a:active {
+            & > a:hover,
+            & > a:active {
               color: #222222;
               background-color: #aaaaaa;
             }
