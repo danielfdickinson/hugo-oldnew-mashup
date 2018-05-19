@@ -1,4 +1,6 @@
-# Hugo OldNew Mashup (not yet released)
+# Hugo OldNew Mashup
+
+Version 0.1
 
 [Hugo](https://gohugo.io) theme mixing old school design elements
 with new-era CSS3, HTML5, etc. That is the look is a combination of
