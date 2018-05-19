@@ -1,0 +1,220 @@
+/*! Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@thecshore.com>
+ *  Released under the Creative Commons BY (Attribution) 4.0 License
+ */
+
+/*  The C Shore Homepage Elements Stylesheet
+ *  Remember, for the level of specifity last rule wins, hence
+ *  most important rules are last
+ */
+
+@import "custom-properties.css";
+
+.DefaultBodyWrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 0;
+
+  & .Title {
+    text-align: center;
+  }
+
+  & .Main,
+  & .SectionPageMain {
+    position: relative;
+    top: 4.4em;
+    text-align: left;
+  }
+
+  & .LicenseNav {
+    position: absolute;
+    right: 0;
+    width: 11em;
+    text-align: right;
+    & .LocalNavBar {
+      width: 100%;
+      text-align: center;
+    }
+    z-index: 1;
+  }
+
+  & .LicenseArticle {
+    margin-left: 2em;
+    margin-right: 2em;
+    width: 100%;
+    text-align: center;
+    & .LicenseBlockSpaceBefore,
+    & .LicenseBlockSpaceAfter {
+      display: inline-block;
+      width: 10%;
+    }
+    & .LicenseBlock {
+      text-align: left;
+      width: 80%;
+      overflow: auto;
+      display: inline-block;
+    }
+  }
+
+  & .Footer {
+    position: relative;
+    top: 7.4em;
+    text-align: left;
+  }
+}
+
+.HomeBodyWrapper,
+.DefaultBodyWrapper {
+  width: 99.5%;
+
+  & .Main,
+  & .SectionPageMain {
+    position: relative;
+    top: 7.4em;
+    padding-right: .2em;
+    display: inline-block;
+
+    & .LocalNavBar {
+      display: inline-block;
+      text-align: center;
+      & a,
+      & a:link,
+      & a:visited,
+      & a:active,
+      & a:hover {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        display: inline-block;
+        width: 31%;
+      }
+    }
+
+    & .RightSidebar {
+      display: inline-block;
+      padding-left: .5em;
+      padding-right: .5em;
+      margin-top: 0;
+      vertical-align: top;
+      text-align: right;
+      display: inline-block;
+      & .LocalNavBar {
+        width: 100%;
+      }
+
+      & .TableOfContents {
+        text-align: left;
+        & ul {
+          list-style: none;
+          list-style-position: outside;
+          padding-left: .2em;
+          margin: 0;
+          & ul {
+            padding-left: 1em;
+          }
+        }
+        & a {
+          text-decoration: none;
+        }
+      }
+
+      & .PageSummaries {
+        text-align: left;
+        & .SidebarTitle {
+          border-top: solid 1px;
+          margin-top: .4em;
+          font-size: 1.2em;
+          top-margin: 0;
+        }
+        & .PageSummary {
+          border-top: dashed 1px;
+        }
+      }
+
+      & .SitebarSitemap {
+        display: inline-block;
+        & .SitemapList {
+          padding-right: 0;
+          & .MenuItem {
+            text-align: left;
+            padding-left: 0;
+            padding-right: 0;
+         }
+        }
+        & .MenuSubmenu {
+          padding-right: 2em;
+          & .MenuItem {
+            text-align: left;
+            padding-left: 0;
+            padding-right: 2em;
+          }
+        }
+        & .SitemapList,
+        & .MenuSubmenu {
+          list-style: none inside;
+          padding-left: 0;
+          & .MenuItem {
+	    display: block;
+            & a {
+	      display: block;
+              & .MenuEntryName {
+                .padding-left: 0;
+                .padding-right: .2em;
+              }
+            }
+          }
+        }
+
+        & .SitemapList {
+          margin: 0;
+          padding: 0;
+          & .MenuItem {
+            margin-top: .2em;
+          }
+        }
+      }
+    }
+
+    & .MainContent {
+      display: inline-block;
+      width: 75%;
+      padding-left: .8em;
+      padding-right: 1em;
+
+      & h1 {
+        text-align: center;
+        font-family: var(--serif);
+        width: auto;
+      }
+
+      & h2 {
+        font-family: var(--serif);
+      }
+
+      & pre {
+        display: block;
+        margin: 0;
+        overflow: hidden;
+        width: 22em;
+        min-width: 12em;
+        & h1 {
+          text-align: left;
+        }
+      }
+
+      & pre:active {
+        overflow: auto;
+      }
+
+      & pre:hover {
+        overflow: auto;
+      }
+    }
+
+    & .Footer {
+      position: relative;
+      top: 7.4em;
+    }
+  }
+}

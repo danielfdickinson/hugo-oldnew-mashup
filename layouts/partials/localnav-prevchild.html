@@ -1,0 +1,25 @@
+{{ if .NextInSection }}
+  {{ if .NextInSection.URL }}
+    HasNIS
+  {{ end }}
+{{ else }}
+  {{ if not .IsPage }}
+    {{ if .Data.Pages }}
+      {{ $siblings := where .Data.Pages "URL" "ne" nil }}
+      {{ range first 1 $siblings.Reverse }}
+        <a href="{{ .URL | relURL }}">Prev</a>
+      {{ end }}
+    {{ else }}
+      {{ if .Sections }}
+        SectionHasSections
+      {{ else }}
+        NoSect
+        <a href="{{ .URL | relURL }}">Prev</a>
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{ if .Parent }}
+      <a href="{{ .Parent.URL | relURL }}">Prev</a>
+    {{ end }}
+  {{ end }}
+{{ end }}

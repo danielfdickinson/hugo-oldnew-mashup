@@ -1,0 +1,13 @@
+      <section class="RightSidebar">
+        {{ partial "localnav-bar" .Page }}
+        {{ if and (gt .WordCount 400) (ne .Params.toc "false") }}<section class="TableOfContents">{{ .TableOfContents }}</section>{{ end }}
+        {{ if not (or .Params.norsummary .Site.Params.norsummary) }}
+          {{ partial "sitemenu" . }}
+          <section class="PageSummaries">
+          <h1 class="SidebarTitle">Recent Changes</h1>
+          {{ range first 8 .Site.Pages }}
+            {{ .Render "summary" }}
+           {{ end }}
+          </section>
+        {{ end }}
+      </section>
