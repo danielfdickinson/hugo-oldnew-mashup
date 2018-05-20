@@ -6,7 +6,7 @@ license: Expired&CC0-1.0
 weight: 31000
 menu:
   site:
-    parent: "Lorem 1-1"
+    parent: "Set Amet"
 ---
 
 # Ipsum Dolor

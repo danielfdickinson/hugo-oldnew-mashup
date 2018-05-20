@@ -7,7 +7,7 @@ weight: 10000
 menu:
   main:
   site:
-    parent: "Lorem 1"
+    parent: "Lorem"
 ---
 # Consectetur Adipiscing
 

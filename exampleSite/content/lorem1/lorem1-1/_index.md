@@ -1,12 +1,12 @@
 ---
 date: 2018-05-20T01:34:14-04:00
-title: "Lorem 1-1"
+title: "Set Amet"
 copyright: 2018 Daniel F. Dickinson and Expired
 license: Expired&CC0-1.0
 weight: 20000
 menu:
   site:
-    parent: "Lorem 1"
+    parent: "Lorem"
 ---
 
 # A Sub-Collection of Lorem Ipsum Texts

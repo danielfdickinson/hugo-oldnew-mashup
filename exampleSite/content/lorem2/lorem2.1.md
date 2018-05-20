@@ -7,7 +7,7 @@ weight: 29000
 menu:
   main:
   site:
-    parent: "Lorem 2"
+    parent: "Ipsum"
 ---
 
 # Viverra Justo

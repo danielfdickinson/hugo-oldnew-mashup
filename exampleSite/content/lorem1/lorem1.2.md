@@ -7,7 +7,7 @@ weight: 110000
 menu:
   main:
   site:
-    parent: "Lorem 1"
+    parent: "Lorem"
 ---
 # Ornare Massa
 
