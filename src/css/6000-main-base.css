@@ -133,7 +133,7 @@
       }
 
       & .SitebarSitemap {
-        display: inline-block;
+        display: block;
         & .SitemapList {
           padding-right: 0;
           & .MenuItem {

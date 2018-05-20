@@ -102,19 +102,60 @@
               border: none;
             }
           }
-        }
-        
-        &:hover,
-        &:active {
-          & .MenuSubmenu {
-            display: inline-block;
-
-            & .MenuParent {
-              display: inline-block;
-            }
+          & .MenuParent {
+            position: relative;
+            z-index: 22;
+            top: 0;
+            right: 0;
 
             & .MenuSubmenu {
+              top: 0;
+              right: 100%;
+              position: absolute;
+              z-index: 24;
+              border: 4px solid;
               display: none;
+              & .MenuItem {
+                z-index: 24;
+                border: none;
+                & a {
+                  border: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+        
+    & .MenuParent {
+      &:hover,
+      &:active {
+        & .MenuSubmenu {
+          display: inline-block;
+
+          & .MenuParent {
+            display: inline-block;
+          
+            & .MenuSubmenu {
+              display: none;
+            }
+          }
+
+          & .MenuParent {
+            &:hover,
+            &:active {
+              & .MenuSubmenu {
+                display: inline-block;
+        
+                & .MenuParent {
+                  display: inline-block;
+                }
+
+                & .MenuSubmenu {
+                  display: none;
+                }
+              }
             }
           }
         }
