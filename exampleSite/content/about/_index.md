@@ -14,7 +14,7 @@ menu:
 
 ## Examples of Sites Using This Theme
 * [The C Shore](https://www.thecshore.com)
-* [MPL-Makes: Introduction to Arduino & Pi](https://maker-workshop-arduino-pi.thecshore.com)
+* [CShore's Maker Workshops](https://maker-workshops.thecshore.com)
 
 ## Section 1.10.32 of Cicero's “De finibus bonorum et malorum”
 Quoted from [Lorem Ipsum Generator](https://loremipsumgenerator.com/)
