@@ -1,0 +1,25 @@
+<nav class="SitebarSitemap">
+<ul class="SitemapList">
+  <!-- Copyright 2018 Daniel F. Dickinson,
+       Released under the Creative Commons 4.0 BY (Attribution) License -->
+{{ $currentPage := . }}
+{{ $prevLevel := 0 }}
+{{ if .Page.Params.sideMenuMaxLevel }}
+  {{ .Scratch.Set "sbMaxLevel" .Page.Params.sideMenuMaxLevel }}
+{{ else if .Site.Params.sideMenuMaxLevel }}
+  {{ .Scratch.Set "sbMaxLevel" .Site.Params.sideMenuMaxLevel }}
+{{ else }}
+  {{ .Scratch.Set "sbMaxLevel" 2 }}
+{{ end }}
+{{ if .IsPage }}
+  {{ .Scratch.Set "sbStartPage" .Parent }}
+{{ else }}
+  {{ .Scratch.Set "sbStartPage" . }}
+{{ end }}
+{{ .Scratch.Set "currentPage" $currentPage }}
+{{ with (.Scratch.Get "sbStartPage") }}
+  {{ .Scratch.Set "currentPage" $currentPage }}
+  {{ .Scratch.Set "sbPrevLevel" $prevLevel }}
+  {{ partial "sidebar-menutop" . }}
+{{ end }}
+</ul></nav>

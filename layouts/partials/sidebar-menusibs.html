@@ -1,0 +1,20 @@
+  <!-- Copyright 2018 Daniel F. Dickinson,
+       Released under the Creative Commons 4.0 BY (Attribution) License -->
+{{ $curItem := . }}
+{{ $currentPage := .Scratch.Get "currentPage" }}
+{{ $maxLevel := .Scratch.Get "sbMaxLevel" }}
+{{ $prevLevel := .Scratch.Get "sbPrevLevel" }}
+{{ $curLevel := add $prevLevel 1 }}
+{{ range .Data.Pages }}
+  {{ .Scratch.Set "sbPrevLevel" $prevLevel }}
+  {{ .Scratch.Set "sbMaxLevel" $maxLevel }}
+  {{ .Scratch.Set "currentPage" $currentPage }}
+  {{ if not .Sections }}
+    {{ partial "sidebar-menuitem" . }}
+  {{ else }}
+    {{ .Scratch.Set "sbHasSubmenu" true }}
+    {{ .Scratch.Set "sbSections" .Sections }}
+    {{ partial "sidebar-menusub" . }}
+    </ul><li>
+  {{ end }}
+{{ end}}
