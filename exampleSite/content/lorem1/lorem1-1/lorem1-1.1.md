@@ -3,10 +3,6 @@ date: 2018-05-20T01:35:15-04:00
 title: "Ullamcorper Dignissum"
 copyright: 2018 Daniel F. Dickinson and Expired
 license: Expired&CC0-1.0
-weight: 30000
-menu:
-  site:
-    parent: "Set Amet"
 ---
 
 # Ullamcorper Dignissum

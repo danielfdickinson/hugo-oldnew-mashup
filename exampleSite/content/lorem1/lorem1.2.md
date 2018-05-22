@@ -3,11 +3,6 @@ date: 2018-05-20T01:25:22-04:00
 title: "Ornare Massa"
 copyright: 2018 Daniel F. Dickinson and Expired
 license: Expired&CC0-1.0
-weight: 110000
-menu:
-  main:
-  site:
-    parent: "Lorem"
 ---
 # Ornare Massa
 

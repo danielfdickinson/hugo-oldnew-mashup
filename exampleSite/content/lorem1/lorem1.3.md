@@ -4,10 +4,6 @@ title: "Neque Convallis"
 copyright: 2018 Daniel F. Dickinson and Expired
 license: Expired&CC0-1.0
 weight: 120000
-menu:
-  main:
-  site:
-    parent: "Lorem"
 ---
 # Neque Convallis
 

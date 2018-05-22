@@ -3,10 +3,6 @@ date: 2018-05-20T01:42:11-04:00
 title: "Ipsum Dolor"
 copyright: 2018 Daniel F. Dickinson and Expired
 license: Expired&CC0-1.0
-weight: 31000
-menu:
-  site:
-    parent: "Set Amet"
 ---
 
 # Ipsum Dolor

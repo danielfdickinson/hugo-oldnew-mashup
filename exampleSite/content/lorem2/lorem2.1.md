@@ -3,11 +3,6 @@ date: 2018-05-20T01:56:30-04:00
 title: "Viverra Justo"
 copyright: 2018 Daniel F. Dickinson and Expired
 license: Expired&CC0-1.0
-weight: 29000
-menu:
-  main:
-  site:
-    parent: "Ipsum"
 ---
 
 # Viverra Justo
