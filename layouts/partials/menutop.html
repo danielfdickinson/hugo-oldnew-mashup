@@ -1,0 +1,20 @@
+<!-- Copyright 2018 Daniel F. Dickinson,
+       Released under the Creative Commons 4.0 BY (Attribution) License -->
+{{ if .Data.Pages }}
+  {{ if not .Sections }}
+    {{ .Scratch.Set "hasSubmenu" true }}
+    {{ partial "menuitem" . }}
+  {{ end }}
+  {{ if lt (.Scratch.Get "prevLevel") (.Scratch.Get "maxLevel") }}
+    {{ if .Sections }}
+      {{ .Scratch.Set "sections" .Sections }}
+      {{ .Scratch.Set "hasSubmenu" true }}
+      {{ partial "menusub" . }}
+    {{ end }}
+    {{ partial "menusibs" . }}
+    </ul></li>
+  {{ end }}
+{{ else }}
+  {{ .Scratch.Set "hasSubmenu" false }}
+  {{ partial "menuitem" . }}
+{{ end }}

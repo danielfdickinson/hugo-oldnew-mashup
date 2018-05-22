@@ -2,16 +2,23 @@
 <ul class="SitemapList">
   <!-- Copyright 2018 Daniel F. Dickinson,
        Released under the Creative Commons 4.0 BY (Attribution) License -->
-{{ $currentPage := . }}{{ range .Site.Menus.site }}{{ if .Page }}{{ .Page.Scratch.Set "prevLevel" 1 }}{{ .Page.Scratch.Set "currentPage" $currentPage }}{{ $maxLevel := $.Site.Params.siteMenuMaxLevel }}{{ if $maxLevel }}{{ .Page.Scratch.Set "maxLevel" $maxLevel }}{{ else }}{{ .Page.Scratch.Set "maxLevel" 3 }}{{ end }}{{ if .HasChildren }}{{ partial "subsitemenu" . }}{{ else }}<li class="{{ if $currentPage.IsMenuCurrent "site" . }}MenuActive {{ end }}MenuItem">
-  <a title="{{ .Title }}" href="{{ .URL | relURL }}">
-    {{ .Pre }}
-    <span class="MenuEntryName">{{ .Name }}</span>
-    {{ .Post }}
-  </a>
-</li>{{ end }}{{ else }}{{ if .HasChildren }}{{ partial "subsitemenu" . }}{{ else }}<li class="MenuItem">
-  <a title="{{ .Title }}" href="{{ .URL | relURL }}">
-    {{ .Pre }}
-    <span class="MenuEntryName">{{ .Name }}</span>
-    {{ .Post }}
-</a>
-</li>{{ end }}{{ end }}{{ end }}</ul></nav>
+{{ $currentPage := . }}
+{{ $curItem := . }}
+{{ if .Page.Params.siteMenuMaxLevel }}
+  {{ .Scratch.Set "maxLevel" .Page.Params.siteMenuMaxLevel }}
+{{ else if .Site.Params.siteMenuMaxLevel }}
+  {{ .Scratch.Set "maxLevel" .Site.Params.siteMenuMaxLevel }}
+{{ else }}
+  {{ .Scratch.Set "maxLevel" 4 }}
+{{ end }}
+{{ $maxLevel := .Scratch.Get "maxLevel" }}
+{{ $prevLevel := 0 }}
+{{ .Scratch.Set "currentPage" $currentPage }}
+{{ .Scratch.Set "maxLevel" $maxLevel }}
+{{ range $.Site.Sections }}
+  {{ .Scratch.Set "currentPage" $currentPage }}
+  {{ .Scratch.Set "maxLevel" $maxLevel }}
+  {{ .Scratch.Set "prevLevel" $prevLevel }}
+  {{ partial "menutop" . }}
+{{ end }}
+</ul></nav>

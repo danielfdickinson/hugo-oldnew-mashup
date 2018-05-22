@@ -2,8 +2,8 @@
 {{ $curPage.Scratch.Set "match" 0 }}
 {{ $curPage.Scratch.Set "prevPage" nil }}
 {{ $curPage.Scratch.Set "prevCPage" nil }}
-{{ if .Site.Menus.site }}
-  {{ $siteMenus := where .Site.Menus.site "Page" "ne" nil }}
+{{ if .Site.Menus.main }}
+  {{ $siteMenus := where .Site.Menus.main "Page" "ne" nil }}
   {{ range $siteMenus }}
     {{ $matched := $curPage.Scratch.Get "match" }}
     {{ if ne $matched 2 }}
