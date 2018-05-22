@@ -1,8 +1,6 @@
-{{ $currentPage := .Scratch.Get "currentPage" }}
+{{ $currentPage := .Scratch.Get "sbCurrentPage" }}
 {{ $hasSubmenu := .Scratch.Get "sbHasSubmenu" }}
-{{ partial "menuparents" . }}
-{{ $isActiveParent := .Scratch.Get "isActiveParent" }}
-<li class="{{ if or (eq $currentPage .) $isActiveParent }}MenuActive{{ end }} MenuItem {{ if $hasSubmenu }}MenuParent{{ end }}">
+<li class="{{ if or (eq $currentPage .) }}MenuActive {{ end }}MenuItem{{ if $hasSubmenu }} MenuParent{{ end }}">
   <a title="{{ .Title }}" href="{{ .URL | relURL }}">
     <span class="MenuEntryName">{{ .Name }}</span>
   </a>
