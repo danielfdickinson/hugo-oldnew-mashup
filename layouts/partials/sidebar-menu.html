@@ -2,36 +2,79 @@
 <ul class="SitemapList">
   <!-- Copyright 2018 Daniel F. Dickinson,
        Released under the Creative Commons 4.0 BY (Attribution) License -->
-{{ .Scratch.Set "sbHasSubmenu" true }}
-{{ .Parent.Scratch.Set "sbCurrentPage" .Parent }}
-{{ partial "sidebar-menuitem" .Parent }}
-{{ .Scratch.Delete "sbHasSubmenu" }}
-{{ .Parent.Scratch.Delete "sbCurrentPage" }}
-{{ .Scratch.Set "sbCurrentPage" . }}
+
 {{ $currentPage := . }}
-{{ if .Data.Pages }}
-  {{ if not .Sections }}
+{{ if .IsPage }}
+  {{ .Scratch.Set "sbCurrentPage" .Parent }}
+{{ else }}
+  {{ .Scratch.Set "sbCurrentPage" . }}
+{{ end }}
+{{ with (.Scratch.Get "sbCurrentPage") }}
+  {{ .Scratch.Set "sbCurrentPage" . }}
+  {{ if or ((.Data.Pages) (.Sections)) }}
     {{ .Scratch.Set "sbHasSubmenu" true }}
-    {{ partial "sidebar-menuitem" . }}
+  {{ end }}
+  {{ partial "sidebar-menuitem" . }}
+  {{ if or ((.Data.Pages) (.Sections)) }}
     {{ .Scratch.Delete "sbHasSubmenu" }}
   {{ end }}
-  {{ if .Sections }}
-    {{ range .Sections }}
+  {{ .Scratch.Delete "sbCurrentPage" }}
+{{ end }}
+
+{{ .Scratch.Set "sbCurrentPage" . }}
+{{ $currentPage := .Scratch.Get "sbCurrentPage" }}
+
+{{ if .IsPage }}
+  {{ if .Parent.Sections }}
+    {{ range .Parent.Sections }}
       {{ .Scratch.Set "sbCurrentPage" $currentPage }}
-      {{ .Scratch.Set "sbSections" .Sections }}
-      {{ .Scratch.Set "sbHasSubmenu" true }}
-      {{ partial "sidebar-menusibs" . }}
-      {{ .Scratch.Delete "sbHasSubmenu" }}
-      {{ .Scratch.Delete "sbSections" }}
+      {{ partial "sidebar-menuitem" . }}
       {{ .Scratch.Delete "sbCurrentPage" }}
     {{ end }}
-  {{ else }}
-    {{ partial "sidebar-menusibs" . }}
   {{ end }}
-  </ul></li>
+  {{ if .Parent.Data.Pages }}
+    {{ range .Parent.Data.Pages }}
+      {{ .Scratch.Set "sbCurrentPage" $currentPage }}
+      {{ partial "sidebar-menuitem" . }}
+      {{ .Scratch.Delete "sbCurrentPage" }}
+    {{ end }}
+  {{ end }}
 {{ else }}
-  {{ .Scratch.Delete "sbHasSubmenu" }}
-  {{ partial "sidebar-menuitem" . }}
+  {{ if .Sections }}
+    {{ range .Sections }}
+      {{ if or .Data.Pages .Sections }}
+        {{ .Scratch.Set "sbHasSubmenu" true }}
+      {{ end }}
+      {{ .Scratch.Set "sbCurrentPage" $currentPage }}
+      {{ partial "sidebar-menuitem" . }}
+      {{ if or .Data.Pages .Sections }}
+        {{ .Scratch.Delete "sbHasSubmenu" }}
+        {{ if .Sections }}
+          {{ range .Sections }}
+            {{ .Scratch.Set "sbCurrentPage" $currentPage }}
+            {{ partial "sidebar-menuitem" . }}
+            {{ .Scratch.Delete "sbCurrentPage" }}
+          {{ end }}
+        {{ end }}
+        {{ if .Data.Pages }}
+          {{ range .Data.Pages }}
+            {{ .Scratch.Set "sbCurrentPage" $currentPage }}
+            {{ partial "sidebar-menuitem" . }}
+            {{ .Scratch.Delete "sbCurrentPage" }}
+          {{ end }}
+        {{ end }}
+        </ul></li>
+      {{ end }}
+      {{ .Scratch.Delete "sbCurrentPage" }}
+    {{ end }}
+  {{ end }}
+  {{ if .Data.Pages }}
+    {{ range .Data.Pages }}
+      {{ .Scratch.Set "sbCurrentPage" $currentPage }}
+      {{ partial "sidebar-menuitem" . }}
+      {{ .Scratch.Delete "sbCurrentPage" }}
+    {{ end }}
+  {{ end }}
+  {{ .Scratch.Delete "sbCurrentPage" }}
 {{ end }}
-{{ .Scratch.Delete "sbCurrentPage" }}
-</ul></li></ul></nav>
+ </ul></li></ul></nav>

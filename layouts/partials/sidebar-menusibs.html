@@ -1,8 +1,0 @@
-  <!-- Copyright 2018 Daniel F. Dickinson,
-       Released under the Creative Commons 4.0 BY (Attribution) License -->
-{{ $currentPage := .Scratch.Get "sbCurrentPage" }}
-{{ range .Data.Pages }}
-  {{ .Scratch.Set "sbCurrentPage" $currentPage }}
-  {{ partial "sidebar-menuitem" . }}
-  {{ .Scratch.Delete "sbCurrentPage" }}
-{{ end}}
