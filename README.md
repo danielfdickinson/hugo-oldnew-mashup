@@ -1,6 +1,6 @@
 # Hugo OldNew Mashup
 
-Version 0.1.2
+Version 0.2
 
 [Hugo](https://gohugo.io) theme mixing old school design elements
 with new-era CSS3, HTML5, etc. That is the look is a combination of
@@ -15,27 +15,36 @@ it to be.
 
 ## A note on navigation and display order
 
-This themes comes with the option to do a linear
+This theme comes with the option to do a linear
 traversal from the main page (the one you get by pressing
 'Enter Site') to the last page in the sitemap, without missing
-any pages.  To ensure this is ordered the way you wish, it is
-important to set the 'weight' metadata in the frontmatter of
-all pages.  It is also important to use \_index.md files, and
-not rely on Hugo's automatic list page generation.
+any pages.  To ensure this is ordered the way you wish, you may
+set the 'weight' metadata in the frontmatter of pages that are not
+naturally in the order you wish (basic ordering is by date).  Lower
+weight sorts earlier.
 
-An example of such a section page with appropriate frontmatter
-(which looks the same as regular page frontmatter), is:
+Further if top-level sections (subdirectories of `content`) are not
+in the correct order, or you want to use a different name for the
+section than subdir name, you need to create an \_index.md in the
+appropriate subdir (for example to rename `content/lorem1` as
+`Lorem`, under `content/lorem1` add a content file `_index.md`
+with front matter such as:
 
-    ---
-    date: (some date)
-    title: Some Page
-    copyright: 2018 John Henry
-    license: CC-BY-SA-4.0
-    weight: 30000
-    ---
+```
+---
+date: 2018-05-20T01:21:20-04:00
+title: "Lorem"
+copyright: 2018 Daniel F. Dickinson and Expired
+license: Expired&CC0-1.0
+weight: 100
+---
+```
 
-The weight means that this page will sort before any page with
-higher weight, and after any page with a lower weight.
+Note that the above information also applies to the automatically
+created floating navbar.  Submenus are for sub-sections (that is,
+nested sections aka `topsection1/subsection1/_index.md`).  **NB**
+with Hugo, subsections *must* have an \_index.md.
+
 
 ## A note on licenses
 
