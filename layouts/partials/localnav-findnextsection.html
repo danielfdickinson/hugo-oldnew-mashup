@@ -1,0 +1,50 @@
+{{ if not (.Scratch.Get "lnfpCurPage") }}
+  {{ .Scratch.Set "lnfpCurPage" . }}
+{{ end }}
+{{ $curPage := .Scratch.Get "lnfpCurPage" }}
+{{ $curParent := .Scratch.Get "lnfpCurParent" }}
+{{ $curRangeSet := .Scratch.Get "lnfpRangeSet" }}
+{{ if $curRangeSet }}
+  {{ $curPage.Scratch.Set "lnfpNextPage" nil }}
+  {{ $curPage.Scratch.Set "lnfpFoundPage" false }}
+  {{ range $curRangeSet }}
+    {{ $curPageNode := . }}
+    {{ with $curPage }}
+      {{ if eq . $curPageNode }}
+      {{ .Scratch.Set "lnfpFoundPage" true }}
+      {{ else if and (.Scratch.Get "lnfpFoundPage") (not (.Scratch.Get "lnfpNextPage")) }}
+        {{ .Scratch.Set "lnfpNextPage" $curPageNode }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{ $foundPage := ($curPage.Scratch.Get "lnfpFoundPage") }}
+  {{ if $foundPage }}
+    {{ if ($curPage.Scratch.Get "lnfpNextPage") }}
+      {{ $nextPage := $curPage.Scratch.Get "lnfpNextPage" }}
+       <a href ="{{ $nextPage.URL | relURL }}">Next</a>
+    {{ else }}
+Next
+    {{ end }}
+  {{ else }}
+Next
+  {{ end }}
+{{ else if .Parent }}
+  {{ if .Parent.Parent }}
+    {{ if .Parent.Parent.Data.Pages }}
+      {{ range (first 1 .Parent.Parent.Data.Pages) }}
+        <a href ="{{ .URL | relURL }}">Next</a>
+      {{ end }}
+    {{ else }}
+      {{ .Scratch.Set "lnfpCurPage" . }}
+      {{ .Scratch.Set "lnfpCurParent" .Parent }}
+      {{ partial "localnav-findnextinparent" .Parent }}
+    {{ end }}
+  {{ else }}
+    {{ .Parent.Scratch.Set "lnfpCurPage" . }}
+    {{ .Parent.Scratch.Set "lnfpCurParent" .Parent }}
+    {{ .Parent.Scratch.Set "lnfpRangeSet" .Parent.Sections }}
+    {{ partial "localnav-findnextsection" .Parent }}
+  {{ end }}
+{{ else }}
+Next
+{{ end }}

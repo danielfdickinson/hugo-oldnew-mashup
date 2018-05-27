@@ -1,7 +1,0 @@
-{{ if .NextInSection }}
-  {{ if .NextInSection.URL }}
-    <a href="{{ .NextInSection.URL | relURL }}">Prev</a>
-  {{ end }}
-{{ else }}
-  {{ partial "localnav-findprevpage" . }}
-{{ end }}

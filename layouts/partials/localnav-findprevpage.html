@@ -1,40 +1,51 @@
 {{ $curPage := . }}
-{{ $curPage.Scratch.Set "match" 0 }}
-{{ $curPage.Scratch.Set "prevPage" nil }}
-{{ $curPage.Scratch.Set "prevCPage" nil }}
-{{ if .Site.Menus.main }}
-  {{ $siteMenus := where .Site.Menus.main "Page" "ne" nil }}
-  {{ range $siteMenus }}
-    {{ $matched := $curPage.Scratch.Get "match" }}
-    {{ if ne $matched 2 }}
-      {{ if eq $curPage .Page }}
-        {{ $curPage.Scratch.Set "match" 2 }}
+{{ .Scratch.Set "lnfpPrevPage" nil }}
+{{ if .NextInSection }}
+  <a href="{{ .NextInSection.URL | relURL }}">Prev</a>
+{{ else if .IsPage }}
+  {{ if .Parent }}
+    {{ with .Parent }}
+      {{ if .Sections }}
+        {{ range (first 1 .Sections) }}
+          {{ .Scratch.Set "lnfpCurPage" $curPage }}
+          {{ partial "localnav-findlastprev" . }}
+        {{ end }}
+      {{ else }}
+         <a href ="{{ .URL | relURL }}">Prev</a>
       {{ end }}
-    {{ end }}
-    {{ $matched := $curPage.Scratch.Get "match" }}
-    {{ if eq $matched 0 }}
-      {{ $curPage.Scratch.Set "prevPage" . }}
-      {{ if .HasChildren }}
-        {{ .Page.Scratch.Set "curPage" $curPage }}
-        {{ partial "localnav-prevchild" . }}
-      {{ end }}
-    {{ end }}
-  {{ end }}
-  {{ $matched := $curPage.Scratch.Get "match" }}
-  {{ if eq $matched 2 }}
-    {{ $prevPage := $curPage.Scratch.Get "prevPage" }}
-    {{ if $prevPage.URL }}
-      <a href="{{ $prevPage.URL | relURL }}">Prev</a>
     {{ else }}
-      Prev
+       <a href ="{{ .Parent.URL | relURL }}">Prev</a>
     {{ end }}
   {{ else }}
-    {{ if .Parent }}
-      {{ partial "localnav-findprevpage" .Parent }}
-    {{ else }}
-      Prev
+    Prev
+  {{ end }}
+{{ else if .Parent }}
+  {{ with .Parent }}
+    {{ $curPage.Scratch.Set "lnfpPrevPage" nil }}
+    {{ $curPage.Scratch.Set "lnfpCurPage" nil }}
+    {{ $curPage.Scratch.Set "lnfpFoundPage" false }}
+    {{ $parentPage := . }}
+    {{ range .Sections }}
+      {{ $curSection := . }}
+      {{ with $curPage }}
+        {{ .Scratch.Set "lnfpPrevPage" (.Scratch.Get "lnfpCurPage") }}
+        {{ if eq . $curSection }}
+          {{ .Scratch.Set "lnfpFoundPage" true }}
+        {{ else if not (.Scratch.Get "lnfpFoundPage") }}
+          {{ .Scratch.Set "lnfpCurPage" $curSection }}
+        {{ end }}
+      {{ end }}
     {{ end }}
+    {{ $curPage.Scratch.Delete "lnfpCurPage" }}
+    {{ $foundPage := ($curPage.Scratch.Get "lnfpFoundPage") }}
+    {{ if and $foundPage ($curPage.Scratch.Get "lnfpPrevPage") }}
+      {{ partial "localnav-findlastinsection" ($curPage.Scratch.Get "lnfpPrevPage") }}
+    {{ else }}
+      <a href ="{{ .URL | relURL }}">Prev</a>
+    {{ end }}
+    {{ $curPage.Scratch.Delete "lnfpFoundPage" }}
+    {{ $curPage.Scratch.Delete "lnfpPrevPage" }}
   {{ end }}
 {{ else }}
-  NoSiteMenu
+  Prev
 {{ end }}
