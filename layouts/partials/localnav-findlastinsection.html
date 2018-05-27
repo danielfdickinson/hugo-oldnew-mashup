@@ -4,7 +4,7 @@
   {{ end }}
 {{ else if .Sections }}
   {{ range (last 1 .Sections) }}
-    {{ partial "findlastinsection" . }}
+    {{ partial "localnav-findlastinsection" . }}
   {{ end }}
 {{ else }}
   <a href="{{ .URL | relURL }}">Prev</a>
