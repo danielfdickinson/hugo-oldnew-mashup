@@ -17,3 +17,4 @@ disableKinds = ['RSS', 'taxonomy', 'taxonomyTerm']
   siteid = 'OldNew Theme'
   license = 'CC-BY-4.0'
   copyright = '2018 Daniel F. Dickinson'
+  GitHubRepo = 'cshoredaniel/hugo-oldnew-mashup'
