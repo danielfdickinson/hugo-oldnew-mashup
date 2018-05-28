@@ -9,7 +9,7 @@ with new-era CSS3, HTML5, etc. That is the look is a combination of
 /exampleSite contains some example content as per
 [Add a theme to hugoThemes list](https://github.com/gohugoio/hugoThemes#adding-a-theme-to-the-list),
 including this documentation page, and other relevant information for
-the theme.  This theme has not been released since it's already use for
+the theme.  This theme has now been released since it's already useful for
 simple sites, but has quite a bit more work to be done to be what I want
 it to be.
 
