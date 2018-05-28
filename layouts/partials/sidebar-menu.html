@@ -11,11 +11,11 @@
 {{ end }}
 {{ with (.Scratch.Get "sbCurrentPage") }}
   {{ .Scratch.Set "sbCurrentPage" . }}
-  {{ if or ((.Data.Pages) (.Sections)) }}
+  {{ if or (.Data.Pages) (.Sections) }}
     {{ .Scratch.Set "sbHasSubmenu" true }}
   {{ end }}
   {{ partial "sidebar-menuitem" . }}
-  {{ if or ((.Data.Pages) (.Sections)) }}
+  {{ if or (.Data.Pages) (.Sections) }}
     {{ .Scratch.Delete "sbHasSubmenu" }}
   {{ end }}
   {{ .Scratch.Delete "sbCurrentPage" }}
@@ -25,13 +25,6 @@
 {{ $currentPage := .Scratch.Get "sbCurrentPage" }}
 
 {{ if .IsPage }}
-  {{ if .Parent.Sections }}
-    {{ range .Parent.Sections }}
-      {{ .Scratch.Set "sbCurrentPage" $currentPage }}
-      {{ partial "sidebar-menuitem" . }}
-      {{ .Scratch.Delete "sbCurrentPage" }}
-    {{ end }}
-  {{ end }}
   {{ if .Parent.Data.Pages }}
     {{ range .Parent.Data.Pages }}
       {{ .Scratch.Set "sbCurrentPage" $currentPage }}
@@ -39,23 +32,34 @@
       {{ .Scratch.Delete "sbCurrentPage" }}
     {{ end }}
   {{ end }}
+  {{ if .Parent.Sections }}
+    {{ range .Parent.Sections }}
+      {{ .Scratch.Set "sbCurrentPage" $currentPage }}
+      {{ partial "sidebar-menuitem" . }}
+      {{ .Scratch.Delete "sbCurrentPage" }}
+    {{ end }}
+  {{ end }}
 {{ else }}
-  {{ if .Sections }}
-    {{ range .Sections }}
+  {{ if .Data.Pages }}
+    {{ range .Data.Pages }}
       {{ if or .Data.Pages .Sections }}
         {{ .Scratch.Set "sbHasSubmenu" true }}
       {{ end }}
       {{ .Scratch.Set "sbCurrentPage" $currentPage }}
       {{ partial "sidebar-menuitem" . }}
+      {{ .Scratch.Delete "sbCurrentPage" }}
+    {{ end }}
+  {{ end }}
+  {{ if .Sections }}
+    {{ range .Sections }}
+      {{ .Scratch.Set "sbCurrentPage" $currentPage }}
+      {{ if or .Data.Pages .Sections }}
+        {{ .Scratch.Set "sbHasSubmenu" true }}
+      {{ end }}
+      {{ partial "sidebar-menuitem" . }}
+      {{ .Scratch.Delete "sbCurrentPage" }}
       {{ if or .Data.Pages .Sections }}
         {{ .Scratch.Delete "sbHasSubmenu" }}
-        {{ if .Sections }}
-          {{ range .Sections }}
-            {{ .Scratch.Set "sbCurrentPage" $currentPage }}
-            {{ partial "sidebar-menuitem" . }}
-            {{ .Scratch.Delete "sbCurrentPage" }}
-          {{ end }}
-        {{ end }}
         {{ if .Data.Pages }}
           {{ range .Data.Pages }}
             {{ .Scratch.Set "sbCurrentPage" $currentPage }}
@@ -63,18 +67,18 @@
             {{ .Scratch.Delete "sbCurrentPage" }}
           {{ end }}
         {{ end }}
+        {{ if .Sections }}
+          {{ range .Sections }}
+            {{ .Scratch.Set "sbCurrentPage" $currentPage }}
+            {{ partial "sidebar-menuitem" . }}
+            {{ .Scratch.Delete "sbCurrentPage" }}
+          {{ end }}
+        {{ end }}
         </ul></li>
       {{ end }}
-      {{ .Scratch.Delete "sbCurrentPage" }}
     {{ end }}
   {{ end }}
-  {{ if .Data.Pages }}
-    {{ range .Data.Pages }}
-      {{ .Scratch.Set "sbCurrentPage" $currentPage }}
-      {{ partial "sidebar-menuitem" . }}
-      {{ .Scratch.Delete "sbCurrentPage" }}
-    {{ end }}
-  {{ end }}
+  </ul></li>
   {{ .Scratch.Delete "sbCurrentPage" }}
 {{ end }}
  </ul></li></ul></nav>
