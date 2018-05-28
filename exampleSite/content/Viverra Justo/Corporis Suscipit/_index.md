@@ -1,0 +1,10 @@
+---
+title: "Corporis Suscipit"
+date: 2018-05-27T03:46:08-04:00
+copyright: 2018 Daniel F. Dickinson
+license: CC-BY-4.0
+categories:
+keywords:
+---
+
+# Corporis Suscipit
