@@ -9,18 +9,19 @@
       {{ .Scratch.Set "siteMaxLevel" $maxLevel }}
       {{ .Scratch.Set "siteCurLevel" (add $curLevel 1) }}
       {{ .Scratch.Set "siteSections" .Sections }}
-      {{ if lt $curLevel $maxLevel }}
+      {{ if and (or (.Sections) (.Data.Pages)) (lt $curLevel $maxLevel) }}
         {{ .Scratch.Set "hasSubmenu" true }}
       {{ end }}
-      {{ partial "sitemenusub" . }}
+      {{ partial "sitemenuitem" . }}
       {{ if lt $curLevel (sub $maxLevel 1) }}
         {{ partial "sitemenusibs" . }}
-     {{ end }}
-     {{ if and (not .Sections) (lt $curLevel $maxLevel) }}
+      {{ end }}
+      {{ if .Sections }}
+        {{ partial "sitemenusub" . }}
+      {{ end }}
+      {{ if and (not .Sections) (lt $curLevel $maxLevel) }}
         </ul></li>
       {{ end }}
     {{ end }}
-  {{else }}
-    {{ partial "sitemenuitem" . }}
   {{ end }}
 {{ end }}

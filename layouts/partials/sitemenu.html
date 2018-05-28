@@ -22,14 +22,14 @@
       {{ .Scratch.Set "siteCurLevel" 1 }}
     {{ else }}
       {{ if le (.Scratch.Get "siteCurLevel") $maxLevel }}
-        {{ .Scratch.Set "siteSections" .Sections }}
-        {{ .Scratch.Set "hasSubmenu" true }}
-        {{ .Scratch.Set "siteCurLevel" 0 }}
-        {{ partial "sitemenusub" . }}
       {{ end }}
     {{ end }}
+    {{ partial "sitemenusibs" . }}
     {{ if le (.Scratch.Get "siteCurLevel") $maxLevel }}
-      {{ partial "sitemenusibs" . }}
+      {{ .Scratch.Set "siteSections" .Sections }}
+      {{ .Scratch.Set "hasSubmenu" true }}
+      {{ .Scratch.Set "siteCurLevel" 0 }}
+      {{ partial "sitemenusub" . }}
       </ul></li>
     {{ end }}
   {{ else }}
@@ -40,6 +40,9 @@
       {{ .Scratch.Set "siteSections" .Sections }}
       {{ .Scratch.Set "hasSubmenu" true }}
       {{ .Scratch.Set "siteCurLevel" 0 }}
+      {{ partial "sitemenuitem" . }}
+      {{ partial "sitemenusub" . }}
+      </ul></li>
     {{ end }}
   {{ end }}
 {{ end }}
