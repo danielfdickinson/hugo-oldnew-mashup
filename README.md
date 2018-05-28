@@ -13,6 +13,16 @@ the theme.  This theme has not been released since it's already use for
 simple sites, but has quite a bit more work to be done to be what I want
 it to be.
 
+## Even Lazier Blogger Menus and Navigation
+
+This theme automatically creates the top nav bar based on the top level
+sections and their sibling pages and sub-sections.  Furthermore on each
+page it generates buttons for linear traveral (Previous|Next) as well
+up a level.  And finally on each page on which you don't suppress
+(unless one site-wide suppresses) the right sidebar, the right sidebar
+will contain a navigation menu for the current section and one level
+of subsections.
+
 ## A note on navigation and display order
 
 This theme comes with the option to do a linear
