@@ -1,0 +1,14 @@
+BaseURL = "https://maker-workshops.thecshore.com/"
+languageCode = "en-ca"
+languageLang = "en"
+license = "CC-BY-4.0"
+title = "MPL-Makes: Introduction to Arduino & Pi"
+theme = "oldnew-mashup"
+enableGitInfo = true
+staticDir = ["static","themes/oldnew-mashup/dist"]
+
+[params]
+  siteid = "CShore's Maker Workshops"
+  license = 'CC-BY-SA-4.0'
+  copyright = '2018 Daniel F. Dickinson'
+  GitHubRepo = 'cshoredaniel/maker-workshops'

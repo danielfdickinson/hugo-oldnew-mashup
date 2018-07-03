@@ -1,3 +1,10 @@
-# Pure OldNew Mashup"
+# maker-workshops
+Various Maker workshop presentations by Daniel Dickinson
 
-Hugo theme mixing old school design elements with new-era Pure CSS and others
+* Currenly only my Work in Progress on an Arduino & Pi
+introductory series.
+* Done using Hugo to create a basic presentation
+(no fancy transitions etc since I don't think they
+really make a presentation better; also this makes it
+easy to incoporate into my main website once they
+mature).

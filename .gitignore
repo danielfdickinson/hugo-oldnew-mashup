@@ -1,6 +1,3 @@
-npm_modules
-theme-build
-*.swp
+html.out/
+public/
 *~
-*.bak
-#*#
