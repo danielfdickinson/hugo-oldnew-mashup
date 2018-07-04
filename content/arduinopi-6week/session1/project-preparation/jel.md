@@ -15,13 +15,13 @@ weight: 2040
 
 ## Filesystem; essentials
 
-  * /home/user
-  * /root
-  * /bin
-  * /sbin
-  * /usr/bin
-  * /usr/sbin
-  * /etc
+  * /home/user (e.g. /home/pi): Where your personal files are stored.
+  * /root: Where the superuser's personal files are stored
+  * /bin: Essential binaries for all users
+  * /sbin: Essential binaries for admins
+  * /usr/bin: Additional binaries for all users
+  * /usr/sbin: Additional binaries for admins
+  * /etc: Where system-wide configuration is stored (note that some distro default configure is stored in directories under /lib* /usr/lib*).
 
 ## Browse around using the file manager
   * walk through

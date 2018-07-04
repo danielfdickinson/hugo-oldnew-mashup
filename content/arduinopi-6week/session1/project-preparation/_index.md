@@ -7,4 +7,4 @@ license: CC-BY-SA-4.0
 weight: 2000
 ---
 
-# Prerequistes for Projects
+# Prerequistes for Projects for Session 1
