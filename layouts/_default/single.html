@@ -1,0 +1,14 @@
+{{ define "title" }}
+  {{.Title}}
+{{ end }}
+{{ define "main" }}
+  <main class="Main">
+    <article class="MainContent">
+    {{ .Content }}
+    </article>
+  <aside>
+    {{ markdownify .Params.aside }}
+  </aside>
+  {{ partial "sidebar-right" . }}
+  </main>
+{{ end }}
