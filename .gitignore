@@ -62,7 +62,10 @@ typings/
 
 # dotenv environment variables file
 .env
+
+# Additional
 dist
 release
 public
 build
+exampleSite/themes
