@@ -1,6 +1,6 @@
 # Hugo OldNew Mashup
 
-Version 0.2.3
+Version 0.3.0
 
 [Hugo](https://gohugo.io) theme mixing old school design elements
 with new-era CSS3, HTML5, etc. That is the look is a combination of
@@ -12,6 +12,12 @@ including this documentation page, and other relevant information for
 the theme.  This theme has now been released since it's already useful for
 simple sites, but has quite a bit more work to be done to be what I want
 it to be.
+
+## Required partial per-site
+
+Due to limiations in the way the default baseof & blocks mechanism works,
+it is necessary to copy <themedir>/exampleSite/layouts/partials/head.html
+to your site and modify as appropriate.
 
 ## Even Lazier Blogger Menus and Navigation
 
