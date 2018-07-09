@@ -3,8 +3,4 @@
   {{ readFile $fileName | markdownify }}
   <!-- Copyright 2018 Daniel F. Dickinson,
        Released under the Creative Commons 4.0 BY (Attribution) License -->
-{{ else }}
-  {{ if fileExists "/$fileName" }}
-    {{ printf "/%s" $fileName | readFile | markdownify }}
-  {{ end }}
 {{ end }}

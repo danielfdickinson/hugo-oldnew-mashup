@@ -1,6 +1,6 @@
 # Hugo OldNew Mashup
 
-Version 0.3.0
+Version 0.3.1
 
 [Hugo](https://gohugo.io) theme mixing old school design elements
 with new-era CSS3, HTML5, etc. That is the look is a combination of
@@ -18,6 +18,14 @@ it to be.
 Due to limiations in the way the default baseof & blocks mechanism works,
 it is necessary to copy <themedir>/exampleSite/layouts/partials/head.html
 to your site and modify as appropriate.
+
+## Required link or copy
+
+Due to limitations in the readFile function and the lack of a
+$.Site.Theme variable, it is necessary to either make a
+symlink from \<your-site-root\>/oldnew-licenses pointing at
+\<oldnew-mashup-theme-dir\>/licenses OR to copy
+\<oldnew-mashup-them-dir\>/licences to \<your-site-root\>
 
 ## Even Lazier Blogger Menus and Navigation
 
