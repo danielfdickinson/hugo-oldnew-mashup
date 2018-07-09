@@ -1,6 +1,9 @@
 #!/bin/sh
 
-mkdir -p themes || exit 1
-ln -s ../.. themes/oldnew-mashup || exit 1
-yarn install || exit 1
-gulp build && hugo || exit 1
+gulp build
+cd exampleSite && {
+	mkdir -p themes || exit 1
+	ln -s ../.. themes/oldnew-mashup || exit 1
+	sed -i -e '/BaseURL = '\''https:\/\/example.com'\''/d' config.toml
+	hugo || exit 1
+} || exit 1

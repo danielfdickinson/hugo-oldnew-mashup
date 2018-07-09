@@ -5,7 +5,7 @@
        Released under the Creative Commons 4.0 BY (Attribution) License -->
 {{ end }}
 {{ block "links" . }}
-    <base href="{{ $.Site.BaseURL }}">
+    {{ if $.Site.BaseURL }}<base href="{{ $.Site.BaseURL }}">{{ end }}
     <link rel="stylesheet" href="{{ "/css/base.css" | relURL}}"/>
     <link rel="stylesheet" href="{{ "/css/base-color.css" | relURL}}"/>
     <link rel="stylesheet" href="{{ "/css/base-modern.css" | relURL}}"/>
