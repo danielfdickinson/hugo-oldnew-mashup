@@ -3,7 +3,7 @@
  */
 /* The C Shore Generic Styling Elements for the menubar */
 
-/* Remember, for the level of specifity last rule wins, hence
+/* Remember, for the level of specificity last rule wins, hence
  *   most important rules are last
 */
 @import "custom-properties.css";
@@ -14,7 +14,7 @@
     text-align: left;
     vertical-align: top;
     display: inline-block;
-    position: absolute;
+    position: relative;
     top: 0;
     right: 0;
     z-index: 20;

@@ -19,13 +19,13 @@
   margin: var(--Topbar-margin, var(--topbarMargin));
 */
   display: block;
-  position: fixed;
+  position: relative;
   top: 0;
   opacity: 1.0;
   height: 3.5em;
   overflow: visible;
   z-index: 10;
-  width: 98%;
+  width: 12em;
 
   & .SiteBadge {
     text-align: left;
