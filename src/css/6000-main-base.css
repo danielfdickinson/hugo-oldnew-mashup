@@ -81,13 +81,14 @@
       & a:link,
       & a:visited,
       & a:active,
-      & a:hover {
+      & a:hover,
+      & span {
         text-align: center;
         margin: 0;
         padding: 0;
         text-decoration: none;
         display: inline-block;
-        width: 31%;
+        width: 30%;
       }
     }
 
@@ -178,7 +179,7 @@
 
     & .MainContent {
       display: inline-block;
-      width: 75%;
+      width: 68%;
       padding-left: .8em;
       padding-right: 1em;
 
@@ -192,22 +193,25 @@
         font-family: var(--serif);
       }
 
-      & pre {
+      & pre,
+      & samp {
         display: block;
         margin: 0;
         overflow: hidden;
-        width: 22em;
-        min-width: 12em;
+        width: auto;
+        min-width: 10em;
         & h1 {
           text-align: left;
         }
       }
 
-      & pre:active {
+      & pre:active,
+      & samp:active {
         overflow: auto;
       }
 
-      & pre:hover {
+      & pre:hover,
+      & samp:hover {
         overflow: auto;
       }
     }
@@ -226,5 +230,4 @@
   padding-right: 0;
   margin-left: .1em;
   margin-right: .1em;
-
 }

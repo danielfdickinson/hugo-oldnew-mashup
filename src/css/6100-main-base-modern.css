@@ -21,9 +21,8 @@
     }
   }
 
- .Main,
- .SectionPageMain {
-    width: auto;
+  .Main,
+  .SectionPageMain {
     margin-top: .4em;
     top: 0;
     display: inline-flex;
@@ -66,17 +65,16 @@
     flex: 1 1 100%;
   }
 
-  .Main,
   .DefaultBodyWrapper,
   .HomeBodyWrapper {
     margin-right: 0;
     padding-right: 0;
-    width: auto;
+    width: 100%;
     display: flex;
-    align-items: flex-start;
-    align-content: stretch;
-    justify-content: flex-start;
     flex-flow: row wrap;
+    align-content: space-between;
+    justify-content: space-between;
+    position: static;
 
     & .Main,
     & .SectionPageMain {
@@ -89,15 +87,10 @@
       position: static;
       margin-top: .4em;
       top: 0;
- 
-      & .RightSidebar {
-        width: initial;
-        flex: 1 1 20%;
-        display: inline-block;
-        position: static;
-      }
 
       & .RightSidebar {
+        flex: 5 1 16%;
+        display: inline-block;
         order: 2;
         margin-left: 0;
         & .PageSummary {
@@ -111,29 +104,36 @@
           }
         }
       }
-
       & .MainContent {
-        flex: 1 1 60%;
+        width: auto;
+      }
+    }
+
+    & .Main,
+    & .SectionPageMain {
+      & .MainContent {
+        display: inline-block;
+        flex: 1 1 70%;
         order: 1;
-	margin: 0;
+        margin: 0;
         padding-top: 0;
         padding-bottom: 0;
         padding-left: .2em;
         padding-right: .2em;
         text-align: left;
-        width: auto;
-        & pre {
-          width: 18em;  
+        & pre,
+        & samp {
+          max-width: 100%;
         }
       }
-    }
 
-    & .Footer {
-      position: static;
-      margin-top: .4em;
-      font-size: .8em;
-      flex: 1 1 100%;
-      top: 0;
+      & .Footer {
+        position: static;
+        margin-top: .4em;
+        font-size: .8em;
+        flex: 1 1 100%;
+        top: 0;
+      }
     }
   }
 }
@@ -144,9 +144,9 @@
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
-        flex: 1 1 62%;
-        & pre {
-          width: 22em;
+        & pre,
+        & samp {
+          max-width: 20em;
         }
       }
     }
@@ -159,8 +159,9 @@
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
-        & pre {
-          width: 28em;
+        & pre,
+        & samp {
+          max-width: 26em;
         }
       }
     }
@@ -173,8 +174,9 @@
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
-        & pre {
-          width: 26em;
+        & pre,
+        & samp {
+          max-width: 30em;
         }
       }
     }
@@ -187,8 +189,9 @@
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
-        & pre {
-         width: 24em;
+        & pre,
+        & samp {
+          max-width: 30em;
         }
       }
     }
@@ -201,8 +204,9 @@
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
-        & pre {
-         width: 30em;
+        & pre,
+        & samp {
+          max-width: 36em;
         }
       }
     }
@@ -215,8 +219,9 @@
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
-        & pre {
-         width: 24em;
+        & pre,
+        & samp {
+          max-width: 40em;
         }
       }
     }
@@ -229,9 +234,9 @@
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
-        flex: 1 1 65%;
-        & pre {
-         width: 30em;
+        & pre,
+        & samp {
+          max-width: 42em;
         }
       }
     }
@@ -244,8 +249,24 @@
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
-        & pre {
-         width: 32em;
+        & pre,
+        & samp {
+          max-width: 46em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 110em) {
+  .Main,
+  .DefaultBodyWrapper,
+  .HomeBodyWrapper {
+    & .Main {
+      & .MainContent {
+        & pre,
+        & samp {
+          max-width: 56em;
         }
       }
     }

@@ -29,11 +29,14 @@ a:hover {
 }
 
 /* PRE is block-level so can safely be done as a box, others may be inline */
-pre {
+pre,
+samp {
   border: var(--Preformatted-border, var(--preformattedTextBorder));
   font-family: var(--monospace);
 }
 
+kbd,
+var,
 code {
   font-family: var(--monospace);
 }

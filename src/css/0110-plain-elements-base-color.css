@@ -33,7 +33,11 @@ a:Active, a:Hover  {
     background-color : #888888; /* light gray background */
 }
 
-pre, code {
+pre,
+code,
+samp,
+kbd,
+var {
     background-color : #777777;
     /* Light grey */
 }
