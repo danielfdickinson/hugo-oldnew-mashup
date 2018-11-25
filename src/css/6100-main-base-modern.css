@@ -146,7 +146,7 @@
       & .MainContent {
         & pre,
         & samp {
-          max-width: 20em;
+          max-width: 18em;
         }
       }
     }
@@ -161,7 +161,7 @@
       & .MainContent {
         & pre,
         & samp {
-          max-width: 26em;
+          max-width: 22em;
         }
       }
     }
@@ -176,7 +176,7 @@
       & .MainContent {
         & pre,
         & samp {
-          max-width: 30em;
+          max-width: 26em;
         }
       }
     }
@@ -191,7 +191,7 @@
       & .MainContent {
         & pre,
         & samp {
-          max-width: 30em;
+          max-width: 28em;
         }
       }
     }
@@ -206,7 +206,7 @@
       & .MainContent {
         & pre,
         & samp {
-          max-width: 36em;
+          max-width: 34em;
         }
       }
     }
@@ -221,7 +221,7 @@
       & .MainContent {
         & pre,
         & samp {
-          max-width: 40em;
+          max-width: 38em;
         }
       }
     }
@@ -236,7 +236,7 @@
       & .MainContent {
         & pre,
         & samp {
-          max-width: 42em;
+          max-width: 40em;
         }
       }
     }
@@ -251,7 +251,7 @@
       & .MainContent {
         & pre,
         & samp {
-          max-width: 46em;
+          max-width: 44em;
         }
       }
     }
@@ -266,7 +266,7 @@
       & .MainContent {
         & pre,
         & samp {
-          max-width: 56em;
+          max-width: 50em;
         }
       }
     }
