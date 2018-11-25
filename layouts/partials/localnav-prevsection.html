@@ -24,7 +24,7 @@
         {{ if .Parent }}
           <a href="{{ .Parent.URL | relURL }}">Prev</a>
         {{ else }}
-Prev
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
         {{ end }}
       {{ else }}
         <a href="{{ .URL | relURL }}">Prev</a>
@@ -34,5 +34,5 @@ Prev
     {{ $curPage.Scratch.Delete "lnfpPrevPage" }}
   {{ end }}
 {{ else }}
-Prev
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 {{ end }}

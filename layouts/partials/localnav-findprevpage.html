@@ -14,7 +14,7 @@
             {{ if .Parent }}
               {{ partial "localnav-prevsection" .Parent }}
             {{ else }}
-Prev
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
             {{ end }}
           {{ end }}
         {{ else }}
@@ -28,11 +28,11 @@ Prev
         {{ else if and (.Sections) }}
           {{ partial "localnav-prevsection" $curPage }}
         {{ else }}
-Prev
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
         {{ end }}
       {{ end }}
     {{ end }}
   {{ else }}
-Prev
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
   {{ end }}
 {{ end }}

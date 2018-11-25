@@ -15,7 +15,7 @@
           {{ partial "localnav-findnextsection" . }}
         {{ else }}
           <!-- If there is no higher level then we are done -->
-Next
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
         {{ end }}
       {{ else }}
         <!-- Let's find the next section in our parent -->
@@ -25,7 +25,7 @@ Next
     {{ end }}
   {{ end }}
 {{ else }}
-Next
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 {{ end }}
 {{ $curPage.Scratch.Delete "lnfpNextPage" }}
 {{ $curPage.Scratch.Delete "lnfpFoundPage" }}

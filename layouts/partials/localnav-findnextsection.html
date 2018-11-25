@@ -19,15 +19,15 @@
         {{ .Parent.Scratch.Set "lnfpCurPage" .Parent }}
         {{ partial "localnav-findnextsection" .Parent }}
       {{ else }}
-Next
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
       {{ end }}
     {{ else }}
-BadLeafNoParent
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
     {{ end }}
   {{ else }}
 <!-- This should never happen since we should at least
 find ourself -->
-BadSectionMissingSelf
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
   {{ end }}
 {{ end }}
 {{ $curPage.Scratch.Delete "lnfpNextPage" }}
