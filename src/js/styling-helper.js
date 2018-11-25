@@ -1,3 +1,7 @@
+/* jshint undef: true, unused: true, esversion: 6, globalstrict: true */
+/* globals SITE_DOMAIN: false, Cookies: false, window: false, document: false */
+// ---- JSHint linter settings
+
 /*!  Copyright (C) 2007,2017 Daniel F. Dickinson <thecshore.thecshore.com>
  *    Released under the MIT License
  */
@@ -9,11 +13,6 @@
 //   http://www.alistapart.com/articles/alternate, however I wrote the script
 //   myself.
 //
-
-// ---- JSHint linter settings
-/* jshint undef: true, unused: true, strict: global, esversion: 6 */
-/* globals SITE_DOMAIN: false, Cookies: false, window: false, document: false */
-
 (function () {
   function createCookie(style, fontZoom, siteDomain) {
     if (style) {
