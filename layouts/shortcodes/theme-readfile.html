@@ -1,6 +1,11 @@
 {{ $fileName := .Get 0 }}
 {{ if fileExists $fileName }}
   {{ readFile $fileName | markdownify }}
+{{ else }}
+  {{ $filePath := printf "/themes/%s/%s" $.Site.Params.theme $fileName }}
+  {{ if fileExists $filePath }}
+    {{ readFile $filePath | markdownify }}
+  {{ end}}
   <!-- Copyright 2018 Daniel F. Dickinson,
        Released under the Creative Commons 4.0 BY (Attribution) License -->
 {{ end }}
