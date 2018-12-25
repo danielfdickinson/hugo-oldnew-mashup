@@ -10,3 +10,16 @@
   <div class="HomeBodyWrapper">
   {{ partial "header" . }}
 {{ end }}
+{{ define "main" }}
+     <main class="Main">
+       <article class="MainContent">
+          {{ $readmeFile := resources.Get "README.md" }}
+          {{ with $readmeFile }}
+            {{ $readmeFile.Content | markdownify }}
+          {{ else }}
+            {{ readFile "README.md" | markdownify }}
+          {{ end }}
+       </article>
+      {{ partial "sidebar-right" . }}
+    </main>
+{{ end }}

@@ -5,4 +5,3 @@ copyright: 2018 Daniel F. Dickinson
 license: CC-BY-4.0
 weight: -1000
 ---
-{{% theme-readfile "README.md" %}}

@@ -6,6 +6,8 @@ languageLang = 'en'
 title = 'CShore OldNew Mashup Theme Test Site'
 enableGitInfo = 'true'
 theme = 'oldnew-mashup'
+pygmentsUseClasses = true
+pygmentsCodeFences = true
 
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details:
@@ -18,4 +20,8 @@ disableKinds = ['RSS', 'taxonomy', 'taxonomyTerm']
   copyright = '2018 Daniel F. Dickinson'
   GitHubRepo = 'cshoredaniel/hugo-oldnew-mashup'
   theme = 'oldnew-mashup'
+  pygmentsUsesClasses = true
+  pygmentsCodeFences = true
 
+[frontmatter]
+lastmod = ["lastmod",":git","date","publishDate"]
