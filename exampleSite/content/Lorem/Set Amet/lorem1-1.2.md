@@ -1,8 +1,8 @@
 ---
 date: 2018-05-20T01:42:11-04:00
 title: "Ipsum Dolor"
-copyright: 2018 Daniel F. Dickinson and Expired
-license: Expired&CC0-1.0
+copyright: 2018 Daniel F. Dickinson and Others
+license: Custom&CC0-1.0
 ---
 
 # Ipsum Dolor

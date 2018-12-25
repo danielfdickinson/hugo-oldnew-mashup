@@ -64,7 +64,6 @@ typings/
 .env
 
 # Additional
-dist
 release
 public
 build

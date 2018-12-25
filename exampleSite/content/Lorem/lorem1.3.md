@@ -1,8 +1,8 @@
 ---
 date: 2018-05-20T01:25:22-04:00
 title: "Neque Convallis"
-copyright: 2018 Daniel F. Dickinson and Expired
-license: Expired&CC0-1.0
+copyright: 2018 Daniel F. Dickinson and Others
+license: Custom&CC0-1.0
 weight: 120000
 ---
 # Neque Convallis
