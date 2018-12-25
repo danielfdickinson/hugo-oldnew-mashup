@@ -60,11 +60,11 @@ gulp.task('js', ['js-test'], function (cb) {
       .pipe(sourcemaps.init())
       .pipe(babel())
       .pipe(concat(pkg.name + ".js"))
-      .pipe(gulp.dest("dist/js"))
+      .pipe(gulp.dest("assets/dist/js"))
       .pipe(uglify({output: { comments: "/^!/"}}))
       .pipe(rename({extname: '-min.js'}))
       .pipe(sourcemaps.write("."))
-      .pipe(gulp.dest("dist/js"))
+      .pipe(gulp.dest("assets/dist/js"))
   );
 });
 
@@ -72,13 +72,13 @@ gulp.task('release', ['js'], function() {
   var pkg = JSON.parse(fs.readFileSync('./package.json'));
   return evstr.concat(
     gulp.src([
-      "dist/**/*.js",
-      "!dist/**/*-min.js",
+      "assets/dist/**/*.js",
+      "!assets/dist/**/*-min.js",
     ])
    .pipe(rename({basename: pkg.name + "-" + pkg.version}))
    .pipe(gulp.dest('release/' + pkg.name + '-' + pkg.version + '/')),
   gulp.src([
-      "dist/**/*-min.*",
+      "assets/dist/**/*-min.*",
     ])
    .pipe(rename({basename: pkg.name + "-" + pkg.version + '-min'}))
    .pipe(gulp.dest('release/' + pkg.name + '-' + pkg.version + '/')),
@@ -115,7 +115,7 @@ gulp.task('css', ['css-test'], function() {
     .pipe(concat("base.css"))
     .pipe(cleancss({ level: 2, compatibility: 'ie8' }))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest('dist/css')),
+    .pipe(gulp.dest('assets/dist/css')),
   gulp.src([
       "src/css/*-base-color.css",
    ])
@@ -128,7 +128,7 @@ gulp.task('css', ['css-test'], function() {
     .pipe(concat("base-color.css"))
     .pipe(cleancss({ level: 2, compatibility: 'ie8' }))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest('dist/css')),
+    .pipe(gulp.dest('assets/dist/css')),
   gulp.src([
       "src/css/*-base-modern.css",
       "src/css/*-base-modern-ie11.css",
@@ -142,7 +142,7 @@ gulp.task('css', ['css-test'], function() {
     .pipe(concat("base-modern.css"))
     .pipe(cleancss({ level: 2, compatibility: '*' }))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest('dist/css')),
+    .pipe(gulp.dest('assets/dist/css')),
   gulp.src([
       "src/css/*-base-modern-color.css",
    ])
@@ -155,7 +155,7 @@ gulp.task('css', ['css-test'], function() {
     .pipe(concat("base-modern-color.css"))
     .pipe(cleancss({ level: 2, compatibility: '*' }))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest('dist/css')),
+    .pipe(gulp.dest('assets/dist/css')),
   gulp.src([
       "src/css/*-base-ie8/*.css",
       "src/css/modules/github-fork-ribbon-css/gh-fork-ribbon.ie.css",
@@ -168,7 +168,7 @@ gulp.task('css', ['css-test'], function() {
     .pipe(concat('base-ie8.css'))
     .pipe(cleancss({ level: 2, compatibility: 'ie8' }))
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('assets/dist/css'))
   );
 });
 

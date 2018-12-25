@@ -6,9 +6,8 @@ licenselink = "https://github.com/cshoredaniel/hugo-pure-oldnew-mashup/blob/mast
 description = "Hugo Theme mixing old school design elements with new-era"
 homepage = "https://hugo-oldnew-mashup.thecshore.com/"
 keywords = ['hugo', 'old-school', 'modern', 'postmodern']
-features = ['blog', 'responsive', 'rwd']
-min_version = "0.48"
-staticDir = ['static','dist']
+features = ['blog', 'responsive']
+min_version = "0.51"
 
 [author]
   name = "Daniel F. Dickinson"

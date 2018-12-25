@@ -6,11 +6,16 @@
 {{ end }}
 {{ block "links" . }}
     {{ if $.Site.BaseURL }}<base href="{{ $.Site.BaseURL }}">{{ end }}
-    <link rel="stylesheet" href="{{ "/css/base.css" | relURL}}"/>
-    <link rel="stylesheet" href="{{ "/css/base-color.css" | relURL}}"/>
-    <link rel="stylesheet" href="{{ "/css/base-modern.css" | relURL}}"/>
-    <link rel="stylesheet" href="{{ "/css/base-modern-color.css" | relURL}}"/>
+    {{ $b := resources.Get "dist/css/base.css" }}
+    {{ $bc := resources.Get "dist/css/base-color.css" }}
+    {{ $bcm := resources.Get "dist/css/base-modern.css" }}
+    {{ $bcmc := resources.Get "dist/css/base-modern-color.css" }}
+    <link rel="stylesheet" href="{{ $b.RelPermalink }}"/>
+    <link rel="stylesheet" href="{{ $bc.RelPermalink }}"/>
+    <link rel="stylesheet" href="{{ $bcm.RelPermalink }}"/>
+    <link rel="stylesheet" href="{{ $bcmc.RelPermalink }}"/>
 {{ end }}
 {{ block "scripts" . }}
-  <script src="{{ "/js/hugo-oldnew-mashup-min.js"|relURL }}"></script>
+  {{ $js := resources.Get "dist/js/hugo-oldnew-mashup-min.js" }}
+  <script src="{{ $js.RelPermalink }}"></script>
 {{ end }}
