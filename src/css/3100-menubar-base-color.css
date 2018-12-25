@@ -8,7 +8,7 @@
   & .SitebarSitemap {
     & .SitemapList {
       & > .MenuItem {
-        background-color: inherit;
+        background-color: #888888;
         & a,
         & a:link,
         & a:visited,
