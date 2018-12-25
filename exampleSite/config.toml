@@ -19,7 +19,6 @@ disableKinds = ['RSS', 'taxonomy', 'taxonomyTerm']
   license = 'CC-BY-4.0'
   copyright = '2018 Daniel F. Dickinson'
   GitHubRepo = 'cshoredaniel/hugo-oldnew-mashup'
-  theme = 'oldnew-mashup'
   pygmentsUsesClasses = true
   pygmentsCodeFences = true
 
