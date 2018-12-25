@@ -6,8 +6,8 @@
 <!-- Copyright 2018 Daniel F. Dickinson,
      Released under the Creative Commons BY (Attribution) 4.0 License -->
   <article class="MainContent">
-    <h1 class="Title">{{.Title}}</h1>
     <section class="LicenseSection">
+      <h1 class="Title">{{.Title}}</h1>
       <pre class="LicenseBlock">{{ $license := .File.TranslationBaseName }}{{ $licenseFile := printf "licenses/%s" .File.TranslationBaseName }}{{ if fileExists $licenseFile }}{{ readFile $licenseFile }}{{ else }}{{ printf "/themes/%s/%s" $.Site.Params.theme $licenseFile | readFile }}{{ end }}</pre>
     </section>
     <section class="LicensePagesSection">

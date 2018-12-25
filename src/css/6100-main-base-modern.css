@@ -46,16 +46,21 @@
         text-align: center;
         margin-bottom: .2em;
       }
-    }
-    & .LicenseArticle {
-      align-self: center;
-      flex: 1 1 100%;
-      margin: 0;
-      width: auto;
-
-      & .LicenseBlock {
-        width: auto;
+      & .MainContent {
+        width: 100%;
         display: block;
+        flex: 1 1 60%;
+        order: 1;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+	overflow-x: hidden;
+        & h1,
+        & .Title {
+          margin-top: 0;
+          text-align: center;
+          margin-bottom: .2em;
+        }
       }
     }
   }

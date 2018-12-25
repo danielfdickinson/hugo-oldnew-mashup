@@ -24,6 +24,31 @@
     position: relative;
     top: 4.4em;
     text-align: left;
+    width: 100%;
+    left: 0;
+    z-index: 9;
+    float: left;
+    & .MainContent {
+      width: inherit;
+      & .LicensePagesSection {
+        width: 100%;
+        text-align: center;
+	line-height: initial;
+      }
+      & .LicenseSection {
+        width: 100%;
+        & .LicenseBlock {
+          width: 100%;
+          overflow: hidden;
+          padding-bottom: 10px;
+          &:hover,
+          &:active {
+            padding-bottom: 0px;
+            overflow-x: scroll;
+          }
+        }
+      }
+    }
   }
 
   & .LicenseNav {
@@ -38,23 +63,6 @@
     z-index: 1;
   }
 
-  & .LicenseArticle {
-    margin-left: 2em;
-    margin-right: 2em;
-    width: 100%;
-    text-align: center;
-    & .LicenseBlockSpaceBefore,
-    & .LicenseBlockSpaceAfter {
-      display: inline-block;
-      width: 10%;
-    }
-    & .LicenseBlock {
-      text-align: left;
-      width: 80%;
-      overflow: auto;
-      display: inline-block;
-    }
-  }
 
   & .Footer {
     position: relative;
@@ -100,6 +108,7 @@
       vertical-align: top;
       text-align: right;
       display: inline-block;
+      width: 16%;
       & .LocalNavBar {
         width: 100%;
       }
