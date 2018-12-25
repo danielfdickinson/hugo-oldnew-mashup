@@ -10,7 +10,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex-flow: row wrap;
-    width: 100%;
+    width: 99.5%;
 
     & .Main {
       flex: 1 1 100%;
@@ -46,46 +46,45 @@
         padding-bottom: .5em;
         width: auto;
   
-        & .OnelinerSpacingBefore {
-          flex: 1 1 10%;
-          width: auto;
-        }
-  
+        & .OnelinerSpacingBefore,
         & .OnelinerSpacingAfter {
-          flex: 1 1 10%;
+          flex: 0 0 0%;
           width: auto;
         }
   
         & .Oneliner {
-          flex: 1 1 79%;
+          flex: 1 1 100%;
           width: auto;
           padding-top: 0;
           padding-bottom: 0;
+          padding-left: .2em;
+          padding-right: .2em;
           margin-top: 0;
           margin-bottom: 0;
         }
   
         & .SublinerSpacingBefore,
         & .SublinerSpacingAfter {
-          flex: 1 1 5%;
+          flex: 0 0 0%;
           width: auto;
         }
   
         & .Subliner {
-          flex: 1 1 89.5%;
+          flex: 1 1 100%;
           width: auto;
           margin-bottom: 0;
+          padding-left: .1em;
+          padding-right: .1em;
         }
   
         & .EnterButtonSpacingBefore,
-        & .EnterButtonSpacingAfter {
-          flex: 1 1 0;
-           display: inline-block;
-           width: auto;
+        & .EnterButtonpSpacingAfter {
+          flex: 0 0 8%;
+          width: auto;
         }
   
         & .EnterButton {
-          flex: 0 0 6em;
+          flex: 0 0 8em;
           display: inline-block;
           text-align: center;
           border: 2px solid;
