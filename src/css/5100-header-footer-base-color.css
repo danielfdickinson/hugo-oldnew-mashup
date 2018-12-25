@@ -23,12 +23,12 @@
   }
 }
 
-.RollupHoversite:active + .RollupBlock,
-.RollupHoversite:hover + .RollupBlock {
+.RollupHoversite:hover + .RollupBlock,
+.RollupHoversite:active + .RollupBlock {
   background-color: #aaaaaa;
 }
 
-.RolldownHoversite:active + .RolldownBlock,
-.RolldownHoversite:hover + .RolldownBlock {
+.RolldownHoversite:hover + .RolldownBlock,
+.RolldownHoversite:active + .RolldownBlock {
   background-color: #aaaaaa;
 }
