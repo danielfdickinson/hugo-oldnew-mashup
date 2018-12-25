@@ -9,6 +9,7 @@
 
 @import "custom-properties.css";
 
+.HomeBodyWrapper,
 .DefaultBodyWrapper {
   position: relative;
   top: 0;
