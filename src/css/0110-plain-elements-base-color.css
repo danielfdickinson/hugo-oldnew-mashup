@@ -33,11 +33,11 @@ a:Active, a:Hover  {
     background-color : #888888; /* light gray background */
 }
 
-pre,
-code,
-samp,
-kbd,
-var {
+pre {
     background-color : #777777;
     /* Light grey */
+}
+
+* {
+  box-sizing: border-box;
 }

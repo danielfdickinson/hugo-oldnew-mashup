@@ -4,26 +4,39 @@
 /* OldNew Mashup default colour settings */
 .Header {
   & .SitebarSitemap {
-    & .SitemapList {
-      & .MenuItem {
-        & a {
-          border-radius: 10px;
-        }
-        & .MenuEntryName {
-          border-radius: 10px;
-          box-shadow: 4px 4px 4px #555555;
-          &:hover,
-          &:active {
-            box-shadow: 4px 4px 4px #555555 inset;
+    & > .SitemapList .MenuItem {
+      border-radius: 12px;
+      box-shadow: 4px 4px 4px #555555;
+      &:link,
+      & a:link,
+      &:visited,
+      & a:visited,
+      &:active,
+      & a:active,
+      &:hover,
+      & a:hover {
+        border-radius: 12px;
+      }
+      &:active,
+      & a:active,
+      &:hover,
+      & a:hover {
+        box-shadow: 4px 4px 4px #555555 inset;
+      }
+      & .MenuSubmenu {
+        & .MenuItem {
+          border-radius: 0;
+          box-shadow: none;
+	  display: block;
+	  & a {
+            border-radius: 0;
+	    display: block;
+            & .MenuEntryName {
+	      display: block;
+            }
           }
         }
-      }
-
-      & .MenuParent .MenuItem .MenuEntryName {
-        border-radius: 0;
-        box-shadow: none;
       }
     }
   }
 }
-

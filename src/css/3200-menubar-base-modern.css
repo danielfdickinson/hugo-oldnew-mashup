@@ -13,13 +13,5 @@
     align-items: flex-end;
     justify-content: flex-end;
     justify-items: flex-end;
-
-    & .SitemapList {
-      & .MenuItem {
-        & .MenuEntryName {
-          display: inline-block;
-        }
-      }
-    }
   }
 }

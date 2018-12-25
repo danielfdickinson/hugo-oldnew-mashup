@@ -67,3 +67,8 @@
   overflow: hidden;
   position: absolute !important;
 }
+
+.highlight {
+  width: inherit;
+  display: inline-block;
+}

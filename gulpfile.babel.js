@@ -104,6 +104,7 @@ gulp.task('css', ['css-test'], function() {
     gulp.src([
       "src/css/modules/normalize.css/normalize.css",
       "src/css/modules/github-fork-ribbon-css/gh-fork-ribbon.css",
+      "src/css/*-syntax.css",
       "src/css/*-base.css",
    ])
     .pipe(sourcemaps.init())
@@ -199,7 +200,8 @@ gulp.task('css-test', ['yarn'], function() {
       "src/css/modules/normalize.css/normalize.css",
       "src/css/modules/github-fork-ribbon-css/gh-fork-ribbon.css",
       "src/css/modules/github-fork-ribbon-css/gh-fork-ribbon.ie.css",
-      "src/css/*-base*.css"
+      "src/css/*-syntax.css",
+      "src/css/*-base*.css",
    ])
     .pipe(postcss(plugins,{
        browsers: ['>5%'],
