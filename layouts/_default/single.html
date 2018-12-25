@@ -6,9 +6,11 @@
     <article class="MainContent">
     {{ .Content }}
     </article>
+  {{ if .Params.aside }}
   <aside>
     {{ markdownify .Params.aside }}
   </aside>
+  {{ end }}
   {{ partial "sidebar-right" . }}
   </main>
 {{ end }}
