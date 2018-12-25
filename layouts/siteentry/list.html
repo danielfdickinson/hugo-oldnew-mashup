@@ -13,11 +13,13 @@
 {{ define "main" }}
      <main class="Main">
        <article class="MainContent">
-          {{ $readmeFile := resources.Get "README.md" }}
-          {{ with $readmeFile }}
-            {{ $readmeFile.Content | markdownify }}
-          {{ else }}
+          {{ if fileExists "README.md" }}
             {{ readFile "README.md" | markdownify }}
+          {{ else }}
+            {{ $readmeFile := resources.Get "README.md" }}
+            {{ with $readmeFile }}
+              {{ $readmeFile.Content | markdownify }}
+            {{ end }}
           {{ end }}
        </article>
       {{ partial "sidebar-right" . }}
