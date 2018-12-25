@@ -105,3 +105,9 @@ figure {
     display: inline-block;
     float: left;
 }
+
+code,
+var,
+samp {
+    width: 100%;
+}

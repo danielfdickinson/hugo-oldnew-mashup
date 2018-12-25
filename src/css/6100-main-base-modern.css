@@ -4,44 +4,36 @@
 
 /* The C Shore CSS3 Main Elements */
 @media screen {
+  .HomeBodyWrapper,
   .DefaultBodyWrapper {
     display: flex;
     align-content: stretch;
     align-items: flex-start;
     justify-content: flex-start;
     flex-flow: row wrap;
-    width: 100%;
- 
+
     & .SectionPageMain,
     & .Main {
-      top: 0;
-    }
-    & .Footer {
-      top: 0;
-    }
-  }
-
-  .Main,
-  .SectionPageMain {
-    margin-top: .4em;
-    top: 0;
-    display: inline-flex;
-    flex: 1 1 100%;
-    align-content: stretch;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-flow: row wrap;
-    line-height: 1.5;
-
-    & .Title {
+      top: initial;
+      float: none;
+      position: static;
+      display: inline-flex;
+      padding-left: .4em;
+      padding-right: 0;
       flex: 1 1 100%;
+      width: 100%;
+      left: initial;
+      z-index: initial;
       margin-top: 0;
-      text-align: center;
-      margin-bottom: .2em;
-    }
-    & .MainContent {
-      & h1,
+      align-items: flex-start;
+      align-content: space-between;
+      justify-content: space-between;
+      flex-flow: row wrap;
+      line-height: 1.5;
+      overflow: hidden;
+
       & .Title {
+        flex: 1 1 100%;
         margin-top: 0;
         text-align: center;
         margin-bottom: .2em;
@@ -62,44 +54,24 @@
           margin-bottom: .2em;
         }
       }
-    }
-  }
-
-  .Footer {
-    margin-top: .4em;
-    position: static;
-    flex: 1 1 100%;
-  }
-
-  .DefaultBodyWrapper,
-  .HomeBodyWrapper {
-    margin-right: 0;
-    padding-right: 0;
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    align-content: space-between;
-    justify-content: space-between;
-    position: static;
-
-    & .Main,
-    & .SectionPageMain {
-      flex: 1 1 100%;
-      display: inline-flex;
-      align-items: flex-start;
-      align-content: space-between;
-      justify-content: space-between;
-      flex-flow: row wrap;
-      position: static;
-      margin-top: .4em;
-      top: 0;
-
       & .RightSidebar {
+        width: auto;
+        max-width: 15em;
         flex: 5 1 16%;
-        display: inline-block;
+        display: block;
         order: 2;
-        margin-left: 0;
+        margin: 0;
+        padding-left: 2em;
+        padding-right: .4em;
+        padding-top: 0;
+        padding-bottom: 0;
+        vertical-align: initial;
+        text-align: initial;
         line-height: initial;
+        & .LocalNavBar {
+          display: block;
+          width: auto;
+        }
         & .PageSummary {
           line-height: 1.5;
           & .SummaryHeader {
@@ -112,52 +84,41 @@
           }
         }
       }
-      & .MainContent {
-        width: auto;
-      }
     }
+    & .Footer {
+      position: static;
+      margin-top: .4em;
+      font-size: .8em;
+      flex: 1 1 100%;
+      top: 0;
+      bottom: 0;
+    }
+  }
 
+  .HomeBodyWrapper {
+    margin-right: 0;
+    padding-right: 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+    justify-content: space-between;
     & .Main,
     & .SectionPageMain {
-      & .MainContent {
-        display: inline-block;
-        flex: 1 1 64%;
-        order: 1;
-        margin: 0;
-        margin-left: .3em;
-        margin-right: 1em;
-        padding-top: 0;
-        padding-bottom: 0;
-        padding-left: .2em;
-        padding-right: .4em;
-        text-align: left;
-        & pre,
-        & samp {
-          max-width: 100%;
-        }
-      }
-
-      & .Footer {
-        position: static;
-        margin-top: .4em;
-        font-size: .8em;
-        flex: 1 1 100%;
-        top: 0;
-      }
+      align-content: stretch;
+      justify-content: space-between;
+      margin-top: .4em;
+      display: inline-flex;
     }
   }
 }
 
+/*
 @media screen and (min-width: 28em) {
   .Main,
   .DefaultBodyWrapper,
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
-        & pre,
-        & samp {
-          max-width: 18em;
-        }
       }
     }
   }
@@ -169,10 +130,6 @@
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
-        & pre,
-        & samp {
-          max-width: 22em;
-        }
       }
     }
   }
@@ -184,10 +141,6 @@
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
-        & pre,
-        & samp {
-          max-width: 26em;
-        }
       }
     }
   }
@@ -199,10 +152,6 @@
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
-        & pre,
-        & samp {
-          max-width: 28em;
-        }
       }
     }
   }
@@ -214,10 +163,6 @@
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
-        & pre,
-        & samp {
-          max-width: 34em;
-        }
       }
     }
   }
@@ -229,10 +174,6 @@
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
-        & pre,
-        & samp {
-          max-width: 38em;
-        }
       }
     }
   }
@@ -244,10 +185,6 @@
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
-        & pre,
-        & samp {
-          max-width: 40em;
-        }
       }
     }
   }
@@ -259,10 +196,6 @@
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
-        & pre,
-        & samp {
-          max-width: 44em;
-        }
       }
     }
   }
@@ -274,11 +207,8 @@
   .HomeBodyWrapper {
     & .Main {
       & .MainContent {
-        & pre,
-        & samp {
-          max-width: 50em;
-        }
       }
     }
   }
 }
+*/
