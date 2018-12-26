@@ -4,7 +4,7 @@
 
 /* The C Shore CSS3 Main Elements */
 @media screen {
-  .HomeBodyWrapper,
+  .Homepage,
   .DefaultBodyWrapper {
     display: flex;
     align-content: stretch;
@@ -95,120 +95,4 @@
     }
   }
 
-  .HomeBodyWrapper {
-    margin-right: 0;
-    padding-right: 0;
-    display: flex;
-    flex-flow: row wrap;
-    align-content: space-between;
-    justify-content: space-between;
-    & .Main,
-    & .SectionPageMain {
-      align-content: stretch;
-      justify-content: space-between;
-      margin-top: .4em;
-      display: inline-flex;
-    }
-  }
 }
-
-/*
-@media screen and (min-width: 28em) {
-  .Main,
-  .DefaultBodyWrapper,
-  .HomeBodyWrapper {
-    & .Main {
-      & .MainContent {
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 46em) {
-  .Main,
-  .DefaultBodyWrapper,
-  .HomeBodyWrapper {
-    & .Main {
-      & .MainContent {
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 60em) {
-  .Main,
-  .DefaultBodyWrapper,
-  .HomeBodyWrapper {
-    & .Main {
-      & .MainContent {
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 64em) {
-  .Main,
-  .DefaultBodyWrapper,
-  .HomeBodyWrapper {
-    & .Main {
-      & .MainContent {
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 72em) {
-  .Main,
-  .DefaultBodyWrapper,
-  .HomeBodyWrapper {
-    & .Main {
-      & .MainContent {
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 80em) {
-  .Main,
-  .DefaultBodyWrapper,
-  .HomeBodyWrapper {
-    & .Main {
-      & .MainContent {
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 88em) {
-  .Main,
-  .DefaultBodyWrapper,
-  .HomeBodyWrapper {
-    & .Main {
-      & .MainContent {
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 96em) {
-  .Main,
-  .DefaultBodyWrapper,
-  .HomeBodyWrapper {
-    & .Main {
-      & .MainContent {
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 110em) {
-  .Main,
-  .DefaultBodyWrapper,
-  .HomeBodyWrapper {
-    & .Main {
-      & .MainContent {
-      }
-    }
-  }
-}
-*/

@@ -3,7 +3,7 @@
  */
 
 @media screen {
-  .HomeBodyWrapper,
+  .Homepage,
   .DefaultBodyWrapper,
   .SectionPageWrapper {
     & .Main {

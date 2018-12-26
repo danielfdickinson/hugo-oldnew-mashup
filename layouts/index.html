@@ -11,18 +11,13 @@
     {{ partial "header" . }}
 {{ end }}
 {{ define "main" }}
-    <main class="Main">
+    <main class="MainContent">
       <h1 class="Title">{{if not .Page.Title}}{{.Site.Title}}{{else}}{{.Page.Title}}{{end}}</h1>
-      <div class="TaglinesSpacingBefore">
-        &nbsp;</div><section class="Taglines"><div class="OnelinerSpacingBefore">
-        &nbsp;</div><h2 class="Oneliner">{{.Page.Params.oneliner}}</h2><div class="OnelinerSpacingAfter">
-        &nbsp;</div><div class="SublinerSpacingBefore">
-        &nbsp;</div><h3 class="Subliner">{{.Page.Params.subliner}}</h3><div class="SublinerSpacingAfter">
-        &nbsp;</div><div class="EnterButtonSpacingBefore">
-        &nbsp;</div><a class="EnterButton" href="{{ "/siteentry/" | relURL }}">Enter Site</a><div class="EnterButtonSpacingAfter">
-        &nbsp;</div>
-      </section><div class="TaglinesSpacingAfter">
-        &nbsp;</div>
+      <div class="Taglines">
+        <h2 class="Oneliner">{{.Page.Params.oneliner}}</h2>
+        <h3 class="Subliner">{{.Page.Params.subliner}}</h3>
+        <a class="EnterButton" href="{{ "/siteentry/" | absURL }}">Enter Site</a>
+      </div>
       <aside class="Aside">
         {{ markdownify .Page.Params.aside}}
       </aside>
