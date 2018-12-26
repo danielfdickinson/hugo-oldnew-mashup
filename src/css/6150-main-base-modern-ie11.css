@@ -9,8 +9,7 @@
 
 @media all and (-ms-high-contrast:none), (-ms-high-contrast:active) {
   .DefaultBodyWrapper,
-  .Homepage,
-  .HomeBodyWrapper {
+  .Homepage {
    
     & .Topbar {
       top: 0;

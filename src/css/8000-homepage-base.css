@@ -11,7 +11,7 @@
 @import "custom-properties.css";
 
 .Homepage {
-  & .Main {
+  & .MainContent {
     position: relative;
     top: 4.8em;
 

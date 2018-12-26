@@ -72,3 +72,8 @@
   width: inherit;
   display: inline-block;
 }
+
+.StartParaPic {
+  float: left;
+  display: inline-block;
+}
