@@ -19,4 +19,8 @@
 .Taglines {
   color: #bbbbbb;
   background-color: #000000;
+  & .EnterButton,
+  & .EnterButton:link {
+      color: #aaaaaa;
+  }
 }
