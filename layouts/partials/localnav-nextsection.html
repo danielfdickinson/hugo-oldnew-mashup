@@ -1,18 +1,18 @@
 {{ if .PrevInSection }}
-  {{ if .PrevInSection.URL }}
-    <a href="{{ .PrevInSection.URL | relURL }}">Next</a>
+  {{ if .PrevInSection.RelPermalink }}
+    <a href="{{ .PrevInSection.RelPermalink }}">Next</a>
   {{ end }}
 {{ else }}
   {{ if not .IsPage }}
     {{ if .Data.Pages }}
       {{ $siblings := where .Data.Pages "URL" "ne" nil }}
       {{ range first 1 $siblings }}
-        <a href="{{ .URL | relURL }}">Next</a>
+        <a href="{{ .RelPermalink }}">Next</a>
       {{ end }}
     {{ else }}
       {{ if .Sections }}
         {{ range first 1 .Sections }}
-          <a href="{{ .URL | relURL }}">Next</a>
+          <a href="{{ .RelPermalink}}">Next</a>
         {{ end }}
       {{ else }}
         {{ partial "localnav-findnextpage" . }}

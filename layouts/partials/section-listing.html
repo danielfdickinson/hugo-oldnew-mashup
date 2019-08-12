@@ -1,4 +1,4 @@
-        <li><a href="{{ .URL | relURL }}">{{ .Title }}</a>
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
           <ol>
             {{ partial "section-nesting" . }}
             {{ range .Sections }}

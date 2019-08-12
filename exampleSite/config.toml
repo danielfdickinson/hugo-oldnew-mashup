@@ -1,6 +1,5 @@
 # Config for using theme as Hugo website
 
-BaseURL = 'https://example.com'
 languageCode = 'en-ca'
 languageLang = 'en'
 title = 'CShore OldNew Mashup Theme Test Site'
@@ -8,6 +7,7 @@ enableGitInfo = 'true'
 theme = 'oldnew-mashup'
 pygmentsUseClasses = true
 pygmentsCodeFences = true
+summaryLength = 30
 
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details:

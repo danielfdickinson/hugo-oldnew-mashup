@@ -146,11 +146,12 @@
         & .SidebarTitle {
           border-top: solid 1px;
           margin-top: .4em;
-          font-size: 1.2em;
+          font-size: 1em;
           top-margin: 0;
         }
         & .PageSummary {
           border-top: dashed 1px;
+	  font-size: .8em;
         }
       }
 

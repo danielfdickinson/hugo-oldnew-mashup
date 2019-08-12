@@ -13,7 +13,7 @@
   {{ end }}
   {{ if (.Scratch.Get "lnfpFoundPage") }}
     {{ if (.Scratch.Get "lnfpNextPage") }}
-      <a href="{{ (.Scratch.Get "lnfpNextPage").URL | relURL }}">Next</a>
+      <a href="{{ (.Scratch.Get "lnfpNextPage").RelPermalink }}">Next</a>
     {{ else if .Parent }}
       {{ if .Parent.Parent }}
         {{ .Parent.Scratch.Set "lnfpCurPage" .Parent }}

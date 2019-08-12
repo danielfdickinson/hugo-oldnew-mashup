@@ -3,7 +3,7 @@
 {{ $curPage.Scratch.Set "lnfpFoundPage" false }}
 {{ $curPage.Scratch.Set "lnfpCurPage" . }}
 {{ if .PrevInSection }}
-  <a href="{{ .PrevInSection.URL | relURL }}">Next</a>
+  <a href="{{ .PrevInSection.RelPermalink }}">Next</a>
 {{ else if .Parent }}
   {{ with $curPage }}
     <!-- If we were a data page (sibling) -->
@@ -14,7 +14,7 @@
         <!-- if there are sibling sections -->
         {{ range (first 1 .Parent.Sections) }}
           <!-- start with the first sibling section -->
-          <a href="{{ .URL | relURL }}">Next</a>
+          <a href="{{ .RelPermalink}}">Next</a>
         {{ end }}
       {{ else }}
         <!-- no sibling sections so check parent -->
@@ -26,11 +26,11 @@
       or next section or we're a leaf section -->
       {{ if .Data.Pages }}
         {{ range (first 1 .Data.Pages) }}
-          <a href="{{ .URL | relURL }}">Next</a>
+          <a href="{{ .RelPermalink }}">Next</a>
         {{ end }}
       {{ else if .Sections }}
         {{ range (first 1 .Sections) }}
-          <a href="{{ .URL | relURL }}">Next</a>
+          <a href="{{ .RelPermalink }}">Next</a>
         {{ end }}
       {{ else }}
         <!-- find next section or whether we're a leaf section -->

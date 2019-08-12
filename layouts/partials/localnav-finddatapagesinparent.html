@@ -5,11 +5,11 @@
 {{ with $curPage }}
   {{ if .Sections }}
    {{ range (first 1 .Sections ) }}
-     <a href="{{ .URL | relURL }}">Next</a>
+     <a href="{{ .RelPermalink }}">Next</a>
    {{ end }}
   {{ else }}
    {{ range (first 1 .Data.Pages ) }}
-     <a href="{{ .URL | relURL }}">Next</a>
+     <a href="{{ .RelPemalink }}">Next</a>
    {{ end }}
   {{ end }}
 {{ end }}
