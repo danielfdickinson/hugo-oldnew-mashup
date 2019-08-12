@@ -1,0 +1,6 @@
+[submodule "assets/modules/necolas-normalize.css"]
+	path = assets/css/modules/necolas-normalize.css
+	url = github.com:cshoredaniel/necolas-normalize.css
+[submodule "assets/modules/simonwhitaker-github-fork-ribbon-css"]
+	path = assets/css/modules/simonwhitaker-github-fork-ribbon-css
+	url = github.com:cshoredaniel/simonwhitaker-github-fork-ribbon-css

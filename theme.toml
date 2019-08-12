@@ -7,7 +7,7 @@ description = "Hugo Theme mixing old school design elements with new-era"
 homepage = "https://hugo-oldnew-mashup.thecshore.com/"
 keywords = ['hugo', 'old-school', 'modern', 'postmodern']
 features = ['blog', 'responsive']
-min_version = "0.51"
+min_version = "0.55"
 
 [author]
   name = "Daniel F. Dickinson"
