@@ -15,7 +15,7 @@
       <ul class="PageLicenseList">
        {{ range .Site.Pages }}
          {{ if in .Params.license $license }}
-           <li><a href="{{ .URL | relURL }}">{{ if not .Title}}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}</a></li>
+           <li><a href="{{ .RelPermalink }}">{{ if not .Title}}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}</a></li>
          {{ end }}
        {{ end }}
       </ul>
