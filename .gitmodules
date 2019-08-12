@@ -4,3 +4,9 @@
 [submodule "assets/modules/simonwhitaker-github-fork-ribbon-css"]
 	path = assets/css/modules/simonwhitaker-github-fork-ribbon-css
 	url = github.com:cshoredaniel/simonwhitaker-github-fork-ribbon-css
+[submodule "assets/js/modules/krisk-Fuse"]
+	path = assets/js/modules/krisk-Fuse
+	url = github.com:cshoredaniel/krisk-Fuse
+[submodule "assets/js/modules/julmot-mark.js"]
+	path = assets/js/modules/julmot-mark.js
+	url = github.com:cshoredaniel/julmot-mark.js

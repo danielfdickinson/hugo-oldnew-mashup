@@ -22,5 +22,8 @@ disableKinds = ['RSS', 'taxonomy', 'taxonomyTerm']
   pygmentsUsesClasses = true
   pygmentsCodeFences = true
 
+[outputs]
+  home = ["HTML", "JSON"]
+
 [frontmatter]
 lastmod = ["lastmod",":git","date","publishDate"]
