@@ -1,0 +1,98 @@
+/*!  Copyright 2007-2009,2017-2018 Daniel F. Dickinson (<cshored@thecshore.com>)
+ *   Released under the Creative Commons BY (Attribution) 4.0 License
+ */
+/*  The C Shore Base Elements Styling */
+
+body {
+  /* People seem to like sans-serif better than serif */
+  /* so use a good looking default */
+  font-family: "Lucida Sans Unicode", "Lucida Granda", sans-serif;
+}
+
+.Href {
+  text-decoration: underline;
+  padding: 0;
+}
+
+a:link,
+a:visited,
+a:active,
+a:hover {
+  text-decoration: underline;
+  padding: 0;
+}
+
+.Preformatted {
+   border: dashed 1px;
+   font-family: "Lucida Console", Monaco, monospace;
+}
+
+/* PRE is block-level so can safely be done as a box, others may be inline */
+pre,
+samp {
+  border: dashed 1px;
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+kbd,
+var,
+code {
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+/* Default for images, even when they are links, is borderless */
+.Image {
+  border: none;
+}
+
+img {
+  border: none;
+}
+
+/* Make cursor popups for abbreviations and definitions follow a standard format */
+.ShortformPopup {
+  cursor: help;
+  border-bottom: 1px dotted;
+}
+
+ABBR, DFN  {
+  cursor: help;
+  border-bottom: 1px dotted;
+}
+
+/* Default for unordered list items */
+.UnorderedListItem {
+  padding-bottom: 3px;
+}
+
+UL LI {
+  padding-bottom: 3px;
+}
+
+/* Set the base font size (when styling Javascript is available it */
+/* will override this value). */
+.BaseFontSize {
+  font-size: 16px;
+}
+
+html {
+  font-size: 16px;
+}
+
+.Label {
+  font-weight: bold;
+}
+
+label {
+   font-weight: bold;
+}
+
+figure {
+    display: inline-block;
+}
+
+code,
+var,
+samp {
+    width: 100%;
+}
