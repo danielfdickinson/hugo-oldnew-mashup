@@ -21,6 +21,11 @@
     <link rel="stylesheet" href="{{ $bmc.RelPermalink }}"/>
 
 {{ end }}
+{{ block "output-formats" . }}
+  {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
+{{ end }}
 {{ block "scripts" . }}
   {{ $js := resources.Get "js/styling-helper.js" | resources.Minify }}
   {{ $fusejs := resources.Get "js/modules/krisk-Fuse/dist/fuse.js" }}
