@@ -4,7 +4,7 @@
        Released under the Creative Commons 4.0 BY (Attribution) License -->
     {{ range $licenses }}
     {{ $license_name := lower . }}
-    {{ $file := printf "/licenses/%s/index.html" $license_name }}
+    {{ $file := printf "/siteentry/licenses/%s/" $license_name }}
       <li class="LicenseItem"><a href="{{ $file | relURL }}">{{ . }}</a></li>
   {{ end }}
 </ul>
