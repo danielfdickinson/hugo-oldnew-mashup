@@ -5,3 +5,5 @@ copyright: 2018 Daniel F. Dickinson
 license: Custom
 licenseFile: BSD-3-Clause
 ---
+
+# BSD 3-Clause License
