@@ -8,7 +8,7 @@
   <article class="MainContent">
     <section class="LicenseSection">
       <h1 class="Title">{{.Title}}</h1>
-      <pre class="LicenseBlock">{{ $license := .Params.licenseFile }}{{ $licenseFile := resources.Get (print "licenses/" $license) }}{{ with $license }}{{ $licenseFile.Content }}{{ else }}{{ .Site.Params.licenseFile | readFile }}{{ end }}</pre>
+      <pre class="LicenseBlock">{{ $license := .Params.licenseFile }}{{ $licenseFile := resources.Get (print "licenses/" $license) }}{{ with $license }}{{ $licenseFile.Content }}{{ else }}{{ with .Params.licenseFile }}{{ .Params.licenseFile | readFile }}{{ else }}{{ print $licenseFile }}{{ end }}{{ end }}</pre>
     </section>
     <section class="LicensePagesSection">
       <h2>Pages with {{ $license }} license</h2>
