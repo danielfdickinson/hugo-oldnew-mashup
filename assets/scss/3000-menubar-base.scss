@@ -43,6 +43,15 @@
         }
       }
 
+     & > .TopSearch {
+        margin-top: .4em;
+        margin-bottom: .4em;
+        margin-left: .4em;
+        margin-right: .4em;
+        text-align: center;
+	display: inline-block;
+     }
+
       & .MenuSubmenu {
         list-style: none;
         display: inline-block;

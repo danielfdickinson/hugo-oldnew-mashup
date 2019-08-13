@@ -4,13 +4,8 @@
 {{ define "main" }}
 <main class="Main">
   <article class="MainContent">
-    <div class="my-auto" >
-      <form action="{{ "search" | absURL }}">
-        <input id="search-query" name="s"/>
-      </form>
-      <div id="search-results">
-        <h3>Matching pages</h3>
-      </div>
+    <div id="search-results">
+      <h3>Matching pages</h3>
    </div>
   </article>
   {{ if .Params.aside }}
