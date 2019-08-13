@@ -12,7 +12,7 @@ summaryLength = 30
 # RSS, categories and tags disabled for an easy start
 # See configuration options for more details:
 # https://gohugo.io/getting-started/configuration/#toml-configuration
-disableKinds = ['RSS', 'taxonomy', 'taxonomyTerm']
+disableKinds = ['taxonomy', 'taxonomyTerm']
 
 [params]
   siteid = 'OldNew Theme'
@@ -21,9 +21,11 @@ disableKinds = ['RSS', 'taxonomy', 'taxonomyTerm']
   GitHubRepo = 'cshoredaniel/hugo-oldnew-mashup'
   pygmentsUsesClasses = true
   pygmentsCodeFences = true
+  rssfeedlink = true
+  validatorlink = true
 
 [outputs]
-  home = ["HTML", "JSON"]
+  home = ["HTML", "JSON", "RSS"]
 
 [frontmatter]
 lastmod = ["lastmod",":git","date","publishDate"]
