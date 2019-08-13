@@ -3,7 +3,7 @@
 languageCode = 'en-ca'
 languageLang = 'en'
 title = 'CShore OldNew Mashup Theme Test Site'
-enableGitInfo = 'true'
+enableGitInfo = true
 theme = 'oldnew-mashup'
 pygmentsUseClasses = true
 pygmentsCodeFences = true
@@ -27,3 +27,17 @@ disableKinds = ['RSS', 'taxonomy', 'taxonomyTerm']
 
 [frontmatter]
 lastmod = ["lastmod",":git","date","publishDate"]
+
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    disable = true
+  [privacy.instagram]
+    disable = true
+  [privacy.twitter]
+    disable = true
+  [privacy.vimeo]
+    disable = true
+  [privacy.youtube]
+    disable = true
