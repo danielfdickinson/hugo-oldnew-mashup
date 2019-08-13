@@ -2,6 +2,41 @@
   <!-- Copyright 2018 Daniel F. Dickinson,
        Released under the Creative Commons 4.0 BY (Attribution) License -->
     <hr class="FooterSeparator" />
+      {{ if not .Site.Params.nocolophon }}
+      <div class="Colophon">
+        {{ with .Site.GetPage "/siteentry/contact" }}
+        <span class="Contact">
+          <a href="{{ "/siteentry/contact" | relURL }}" title="Contact Information">[Contact]</a>
+        </span>
+        {{ end }}
+        {{ with .Site.GetPage "/siteentry/privacy" }}
+        <span class="Privacy">
+          <a href="{{ "/siteentry/privacy" | relURL }}" title="Privacy / GDPR Statement">[Privacy]</a>
+        </span>
+        {{ end }}
+        {{ with .Site.GetPage "/siteetnry/accessibility" }}
+        <span class="Accessibility">
+          <a href="{{ "/siteentry/accessibility" | relURL }}" title="Accessibility Statement">[Accessibility]</a>
+        </span>
+        {{ end }}
+        {{ if not (or .Site.Params.norssfeedlink .Params.norssfeedlink) }}
+        <span class="FeedsLink">
+          {{ with .OutputFormats.Get "rss" -}}
+            {{ printf `<a href="%s" type="%s" title="News Feed for %s">` .Permalink .MediaType.Type $.Site.Title | safeHTML }}[RSS Feed]</a>
+          {{ end -}}
+        </span>
+        {{ end }}
+        {{ if not (or .Site.Params.novalidatorlink .Params.novalidatorlink) }}
+          {{ printf `<a href="https://validator.w3.org/nu/?doc=%s" title="Validate Page HTML">` .Page.Permalink | safeHTML }}[Validate Page (W3C)]</a>
+        {{ end }}
+        {{ with .Site.GetPage "/siteetnry/sitemap" }}
+        <span class="Sitemap">
+          <a href="{{ "/siteentry/sitemap" | relURL }}" title="Sitemap">[Sitemap]</a>
+        </span>
+        {{ end }}
+      </div>
+      {{ end }}
+    <hr class="FooterSeparator" />
     <div class="RollupHoversite">Hover or click here for some document information.</div>
     <div class="RollupBlock">
       <ul>
