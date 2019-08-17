@@ -1,0 +1,35 @@
+{{ $basePage := .Scratch.Get "BasePage" }}
+{{ $maxLevel := .Scratch.Get "sidebarMaxLevel" }}
+{{ $curLevel := .Scratch.Get "sidebarCurLevel" }}
+{{ if (or .Data.Pages .Sections) }}
+  {{ .Scratch.Set "hasSubmenu" true }}
+{{ else }}
+  {{ .Scratch.Set "hasSubmenu" false }}
+{{ end }}
+{{ partial "sitemenuitem" . }}
+{{ if .Data.Pages }}
+  {{ partial "sidebar-sitemenusibs" . }}
+  {{ if .Sections }}
+    {{ .Scratch.Set "BasePage" $basePage }}
+    {{ .Scratch.Set "siteSections" .Sections }}
+    {{ .Scratch.Set "hasSubmenu" true }}
+    {{ .Scratch.Set "sidebarCurLevel" $curLevel }}
+    {{ .Scratch.Set "sidebarMaxLevel" $maxLevel }}
+    {{ partial "sidebar-sitemenusub" . }}
+    </ul></li>
+  {{ else if .Scratch.Get "hasSubmenu" }}
+    </ul></li>
+  {{ end }}
+{{ else }}
+  {{ if not .Sections }}
+    {{ partial "sitemenuitem" . }}
+  {{ else if lt $curLevel $maxLevel }}
+    {{ .Scratch.Set "BasePage" $basePage }}
+    {{ .Scratch.Set "siteSections" .Sections }}
+    {{ .Scratch.Set "hasSubmenu" true }}
+    {{ .Scratch.Set "sidebarCurLevel" $curLevel }}
+    {{ .Scratch.Set "sidebarMaxLevel" $maxLevel }}
+    {{ partial "sidebar-sitemenusub" . }}
+    </ul></li>
+  {{ end }}
+{{ end }}
