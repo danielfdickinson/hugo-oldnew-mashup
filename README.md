@@ -35,9 +35,9 @@ is by date).  Lower weight sorts earlier.
 
 For top-level sections (subdirectories of `content`) are not
 in the correct order, or you want to use a different name for the
-section than subdir name, you need to create a &lowbar;index.md in the
+section than subdir name, you need to create a &#95;index.md in the
 appropriate subdir (for example to rename `content/lorem1` as
-`Lorem`, under `content/lorem1` add a content file `&lowbar;index.md`
+`Lorem`, under `content/lorem1` add a content file `index.md`
 with front matter such as:
 
 ```yaml
@@ -52,8 +52,8 @@ weight: 100
 
 Note that the above information also applies to the automatically
 created floating navbar.  Submenus are for sub-sections (that is,
-nested sections aka `topsection1/subsection1/&lowbar;index.md`).
-**NB** for Hugo, subsections *must* have an &lowbar;index.md.
+nested sections aka `topsection1/subsection1/index.md`).
+**NB** for Hugo, subsections *must* have an &#95;index.md.
 
 ## A note on licenses
 
