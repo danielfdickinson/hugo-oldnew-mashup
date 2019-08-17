@@ -3,19 +3,23 @@
 {{ end }}
 {{ define "bodytag" }}
   <body>
-<!-- Copyright 2018 Daniel F. Dickinson
+<!-- Copyright 2018-2019 Daniel F. Dickinson
      Released under the Create Commons BY (Attribution) 4.0 License -->
 {{ end }}
 {{ define "main" }}
     <main class="SectionPageMain">
       <article class="MainContent">
         {{ .Content }}
+        {{ if (or .Data.Pages .Sections) }}
         <ol>
+        {{ end }}
           {{ partial "section-nesting" . }}
           {{ range .Sections }}
             {{ partial "section-listing" . }}
           {{ end }}
+        {{ if (or .Data.Pages .Sections) }}
         </ol>
+        {{ end }}
       </article>
       {{ partial "sidebar-right" . }}
    </main>
