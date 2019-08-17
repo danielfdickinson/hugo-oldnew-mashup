@@ -1,0 +1,17 @@
+  <!-- Copyright 2019 Daniel F. Dickinson,
+       Released under the Creative Commons 4.0 BY (Attribution) License -->
+{{ $bURL := urls.Parse $.Site.BaseURL }}
+{{ $hostOnly := delimit (first 1 (split $bURL.Host ":")) ""}}
+<form class="ContactForm" action="{{ printf "%s://%s:8081" $bURL.Scheme $hostOnly }}" method="post" enctype="multipart/form-data" accept-charset="utf-8">
+<p><label for="Name">Name:</label> <input type="text" name="Name" id="Name" /></p>
+<p><label for="Subject">Subject:</label> <input type="text" name="Subject" id="Subject" /></p>
+<div class="ContactInformationWrapper">
+<label for="ContactInformation">Contact Information:</label>
+<textarea class="ContactInformation" name="ContactInformation" id="ContactInformation"></textarea>
+</div>
+<div class="QuestionCommentWrapper">
+<label for="QuestionComment">Question or Comment:</label>
+<textarea class="QuestionComment" name="QuestionComment" id="QuestionComment"></textarea>
+</div>
+<p><input type="submit" value="Send" size="6" /> <input type="reset" value="Reset" size="6" /></p>
+</form>
