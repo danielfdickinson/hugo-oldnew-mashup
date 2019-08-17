@@ -33,4 +33,4 @@ Further Tidy's validations checks for WCAG guidelines have been performed and ac
 
 ## If You Find A Barrier to Accessibility
 
-Please do not hesitate to <a href="{{ "/siteentry/contactform" | relURL }}">contact the site operator</a> in the event you find some barrier to accessibility on this site.  The site operator strives to keep the site accessible.
+Please do not hesitate to [contact the site operator](/siteentry/contactform) in the event you find some barrier to accessibility on this site.  The site operator strives to keep the site accessible.
