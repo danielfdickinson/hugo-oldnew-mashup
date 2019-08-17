@@ -1,5 +1,9 @@
 {{ define "title" }}
-  {{.Title}}
+  {{ with .Title }}
+    {{.Title}}
+  {{ else }}
+    {{ .Site.Title }}
+  {{ end }}
 {{ end }}
 {{ define "bodytag" }}
   <body>
@@ -21,9 +25,9 @@
       <aside class="Aside">
         {{ markdownify .Page.Params.aside}}
       </aside>
-      <section class="Splash">
+      <div class="Splash">
         {{ partial "splash-screenshots.html" . }}
-      </section>
+      </div>
       <aside class="AsideFooter">
         {{ markdownify .Page.Params.asidefooter }}
       </aside>
