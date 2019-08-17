@@ -72,14 +72,17 @@
           display: block;
           width: auto;
         }
-        & .PageSummary {
+        & .PageSummary,
+        & .NewsItem {
           line-height: 1.5;
-          & .SummaryHeader {
+          & .SummaryHeader,
+          & .NewsHeader {
             & h2 {
               font-size: 1em;
             }
           }
-          & .SummaryFooter {
+          & .SummaryFooter,
+          & .NewsFooter {
             font-size: .8em;
           }
         }
@@ -96,3 +99,4 @@
   }
 
 }
+
