@@ -4,6 +4,7 @@ sitemap:
   priority : 0.1
 layout: "search"
 nortoc: true
+notinmenu: true
 ---
 
 This file exists solely to respond to /siteentry/search URL with the related `search` layout template.

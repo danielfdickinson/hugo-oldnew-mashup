@@ -27,12 +27,12 @@
   {{ end -}}
 {{ end }}
 {{ block "scripts" . }}
-  {{ $js := resources.Get "js/styling-helper.js" | resources.Minify }}
   {{ $fusejs := resources.Get "js/modules/krisk-Fuse/dist/fuse.js" }}
   {{ $jmarkjs := resources.Get "js/modules/julmot-mark.js/dist/mark.js" | resources.Minify }}
   {{ $search := resources.Get "js/search.js" }}
-  <script src="{{ $js.RelPermalink }}"></script>
+  {{ $confirmation := resources.Get "js/confirmation.js" }}
   <script src="{{ $fusejs.RelPermalink }}"></script>
   <script src="{{ $jmarkjs.RelPermalink }}"></script>
   <script src="{{ $search.RelPermalink }}"></script>
+  <script src="{{ $confirmation.RelPermalink }}"></script>
 {{ end }}

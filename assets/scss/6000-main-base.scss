@@ -121,6 +121,7 @@
       text-align: right;
       display: inline-block;
       width: 16%;
+      font-size: .95em;
       & .LocalNavBar {
         width: 100%;
       }
@@ -141,17 +142,18 @@
         }
       }
 
-      & .PageSummaries {
+      & .PageSummaries,
+        .PageNews {
         text-align: left;
         & .SidebarTitle {
           border-top: solid 1px;
           margin-top: .4em;
           font-size: 1em;
-          top-margin: 0;
+          top-margin: 0px;
         }
-        & .PageSummary {
+        & .PageSummary,
+        & .NewsItem {
           border-top: dashed 1px;
-	  font-size: .8em;
         }
       }
 
@@ -163,6 +165,9 @@
             text-align: left;
             padding-left: 0;
             padding-right: 0;
+            & DIV {
+              padding-left: 12px;
+            }
          }
         }
         & .MenuSubmenu {
@@ -171,6 +176,9 @@
             text-align: left;
             padding-left: 0;
             padding-right: 2em;
+            & DIV {
+              padding-left: 12px;
+            }
           }
         }
         & .SitemapList,
@@ -179,11 +187,14 @@
           padding-left: 0;
           & .MenuItem {
 	    display: block;
-            & a {
-	      display: block;
-              & .MenuEntryName {
-                padding-left: 0px;
-                padding-right: .2em;
+            & DIV {
+	      padding-left: 12px;
+              & a {
+	        display: block;
+                & .MenuEntryName {
+                  padding-left: 0px;
+                  padding-right: .2em;
+                }
               }
             }
           }

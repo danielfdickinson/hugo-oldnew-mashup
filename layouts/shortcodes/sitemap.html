@@ -1,0 +1,22 @@
+<div class="SitemapMain">
+<ul class="SitemapList">
+  <!-- Copyright 2018-2019 Daniel F. Dickinson,
+       Released under the Creative Commons 4.0 BY (Attribution) License -->
+{{ .Scratch.Set "basePage" . }}
+{{ $basePage := . }}
+{{ .Scratch.Set "siteMaxLevel" 9999 }}
+{{ if $basePage.Page.Params.siteMenuMaxLevel }}
+  {{ $basePage.Scratch.Set "siteMaxLevel" .Page.Params.siteMenuMaxLevel }}
+{{ else if .Site.Params.siteMenuMaxLevel }}
+  {{ $basePage.Scratch.Set "siteMaxLevel" .Site.Params.siteMenuMaxLevel }}
+{{ else }}
+  {{ $basePage.Scratch.Set "siteMaxLevel" 3 }}
+{{ end }}
+{{ $maxLevel := $basePage.Scratch.Get "siteMaxLevel" }}
+{{ range $.Site.Sections }}
+  {{ .Scratch.Set "siteMaxLevel" $maxLevel }}
+  {{ .Scratch.Set "siteCurLevel" 1 }}
+  {{ .Scratch.Set "BasePage" $basePage }}
+  {{ partial "sitemenusub" . }}
+{{ end }}
+</ul></div>

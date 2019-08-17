@@ -1,0 +1,95 @@
+{{ $curPage := .Scratch.Get "lnfpCurPage" }}
+{{ $curPage.Scratch.Set "lnfpNextPage" nil }}
+{{ $curPage.Scratch.Set "lnfpFoundPage" false }}
+{{ .Scratch.Set "lnfpNextPage" nil }}
+{{ .Scratch.Set "lnfpFoundPage" false }}
+{{ if .IsPage }}
+  {{ if .Parent }}
+    {{ with .Parent }}
+      {{ range (first 1 (where .Pages ".Params.notinmenu" "ne" true ) ) }}
+        {{ if (eq . $curPage) }}
+          {{ .Scratch.Set "lnfpFoundPage" true }}
+          <!-- If we're the first page in our parent -->
+          <!-- We want to go up one level and stop -->
+          <a href="{{ .Parent.RelPermalink }}">Prev</a>
+        {{ end }}
+      {{ end }}
+      {{ if not (.Scratch.Get "lnfpFoundPage") }}
+        <!-- If we're not the first page, find the first page -->
+        {{ $curPage.Scratch.Set "lnfpCurPage" nil }}
+        {{ $curPage.Scratch.Set "lnfpPrevPage" nil }}
+        {{ $curPage.Scratch.Set "lnfpFoundPage" false }}
+        {{ range (where .Pages ".Params.notinmenu" "ne" true) }}
+          {{ $curSection := . }}
+          {{ $curPage.Scratch.Set "lnfpPrevPage" ($curPage.Scratch.Get "lnfpCurPage") }}
+          {{ if eq $curPage $curSection }}
+            {{ $curPage.Scratch.Set "lnfpFoundPage" true }}
+            {{ $curPage.Scratch.Get "lnfpCurPage" }}
+          {{ else if not ($curPage.Scratch.Get "lnfpFoundPage") }}
+            {{ $curPage.Scratch.Set "lnfpCurPage" . }}
+          {{ end }}
+        {{ end }}
+        {{ $curPage.Scratch.Set "lnfpCurPage" $curPage }}
+        {{ $foundPage := ($curPage.Scratch.Get "lnfpFoundPage") }}
+        {{ if and $foundPage ($curPage.Scratch.Get "lnfpPrevPage") }}
+          <!-- We found a previous page -->
+          {{ $prevPage := $curPage.Scratch.Get "lnfpPrevPage" }}
+          <!-- descend into it's bottom leaf -->
+          {{ if not (or (where $prevPage.Sections ".Params.notinmenu" "ne" true) (where $prevPage.Pages ".Params.notinmenu" "ne" true ) ) }}
+            <a href="{{ $prevPage.RelPermalink }}">Prev</a>
+          {{ else }}
+            <!-- We want to go up one level and go to last leaf -->
+            {{ partial "localnav-findlastinsection" $prevPage }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  {{ end }}
+{{ else if .IsSection }}
+  {{ if .Parent }}
+    {{ with .Parent }}
+      {{ range (first 1 (where .Sections ".Params.notinmenu" "ne" true ) ) }}
+        {{ if (eq . $curPage) }}
+          {{ $curPage.Scratch.Set "lnfpFoundPage" true }}
+          <!-- If we're the first section in our parent -->
+          <!-- We want to go up one level and go to last page -->
+          {{ partial "localnav-findlastpageinsection" . }}
+        {{ end }}
+      {{ end }}
+      {{ if not ($curPage.Scratch.Get "lnfpFoundPage") }}
+        <!-- We are not the first section, so find previous section -->
+        {{ $curPage.Scratch.Set "lnfpCurPage" nil }}
+        {{ $curPage.Scratch.Set "lnfpPrevPage" nil }}
+        {{ $curPage.Scratch.Set "lnfpFoundPage" false }}
+        {{ range (where .Sections ".Params.notinmenu" "ne" true) }}
+          {{ $curSection := . }}
+          {{ $curPage.Scratch.Set "lnfpPrevPage" ($curPage.Scratch.Get "lnfpCurPage") }}
+          {{ if eq $curPage $curSection }}
+            {{ $curPage.Scratch.Set "lnfpFoundPage" true }}
+          {{ else if not ($curPage.Scratch.Get "lnfpFoundPage") }}
+            {{ $curPage.Scratch.Set "lnfpCurPage" . }}
+          {{ end }}
+        {{ end }}
+        {{ $curPage.Scratch.Set "lnfpCurPage" $curPage }}
+        {{ $foundPage := ($curPage.Scratch.Get "lnfpFoundPage") }}
+        {{ if and $foundPage ($curPage.Scratch.Get "lnfpPrevPage") }}
+          <!-- We found a previous section -->
+          {{ $prevPage := $curPage.Scratch.Get "lnfpPrevPage" }}
+          <!-- descend into it's bottom leaf -->
+          {{ if not (or (where $prevPage.Sections ".Params.notinmenu" "ne" true) (where $prevPage.Pages ".Params.notinmenu" "ne" true ) ) }}
+            <a href="{{ $prevPage.RelPermalink }}">Prev</a>
+          {{ else }}
+            <!-- We want to go up one level and go to last leaf -->
+            {{ partial "localnav-findlastinsection" $prevPage }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  {{ end }}
+{{ else }}
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+{{ end }}

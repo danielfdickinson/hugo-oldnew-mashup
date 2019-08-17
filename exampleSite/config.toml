@@ -1,5 +1,6 @@
 # Config for using theme as Hugo website
 
+baseURL = 'http://example.com'
 languageCode = 'en-ca'
 languageLang = 'en'
 title = 'CShore OldNew Mashup Theme Test Site'

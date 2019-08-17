@@ -82,6 +82,18 @@
               background-color: #aaaaaa;
             }
           }
+          & .MenuItem {
+            & .CurrentPage {
+              border-left: 2px solid #000000;
+              padding-left: 10px;
+              & > a,
+              & > a:link,
+              & > a:visited {
+                color: #cccccc;
+                background-color: #444444;
+              }
+            }
+          }
         }
         & .MenuSubmenu {
           color: #000000;

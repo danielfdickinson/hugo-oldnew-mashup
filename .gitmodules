@@ -1,12 +1,12 @@
 [submodule "assets/modules/necolas-normalize.css"]
 	path = assets/css/modules/necolas-normalize.css
-	url = github.com:cshoredaniel/necolas-normalize.css
+	url = https://github.com/cshoredaniel/necolas-normalize.css
 [submodule "assets/modules/simonwhitaker-github-fork-ribbon-css"]
 	path = assets/css/modules/simonwhitaker-github-fork-ribbon-css
-	url = github.com:cshoredaniel/simonwhitaker-github-fork-ribbon-css
+	url = https://github.com/cshoredaniel/simonwhitaker-github-fork-ribbon-css
 [submodule "assets/js/modules/krisk-Fuse"]
 	path = assets/js/modules/krisk-Fuse
-	url = github.com:cshoredaniel/krisk-Fuse
+	url = https://github.com/cshoredaniel/krisk-Fuse
 [submodule "assets/js/modules/julmot-mark.js"]
 	path = assets/js/modules/julmot-mark.js
-	url = github.com:cshoredaniel/julmot-mark.js
+	url = https://github.com/cshoredaniel/julmot-mark.js

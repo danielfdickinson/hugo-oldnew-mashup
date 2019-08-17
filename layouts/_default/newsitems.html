@@ -1,0 +1,14 @@
+<article class="NewsItems">
+<!-- Copyright 2018 Daniel F. Dickinson
+     Released under the Creative Commons BY (Attribution) 4.0 License) -->
+  <header class="NewsHeader">
+    <h3><a href='{{ .Permalink }}'>{{ .Title }}</a></h3>
+    <div class="PageMetadata">{{ .Lastmod.Format "Jan 2, 2006 15:04 MST" }}</div>
+  </header>
+  <div>{{ .Summary }}</div>
+  <footer class="NewsFooter">
+  {{ if .Truncated }}
+    <a href='{{ .Permalink }}'>Full article</a>
+  {{ end }}
+  </footer>
+</article>
