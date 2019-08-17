@@ -5,9 +5,10 @@
 <main class="Main">
 <!-- Copyright 2018 Daniel F. Dickinson,
      Released under the Creative Commons BY (Attribution) 4.0 License -->
-  <article class="MainContent">
+  <article id="MainContent" class="MainContent">
+  <h1 class="Title">{{.Title}}</h1>
     <section class="LicenseSection">
-      <h1 class="Title">{{.Title}}</h1>
+      <h2>License Text</h2>
       <pre class="LicenseBlock">{{ $license := .Params.licenseFile }}{{ $licenseFile := resources.Get (print "licenses/" $license) }}{{ with $license }}{{ $licenseFile.Content }}{{ else }}{{ with .Params.licenseFile }}{{ .Params.licenseFile | readFile }}{{ else }}{{ print $licenseFile }}{{ end }}{{ end }}</pre>
     </section>
     <section class="LicensePagesSection">

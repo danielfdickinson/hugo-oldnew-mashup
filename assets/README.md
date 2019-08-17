@@ -2,7 +2,7 @@
 
 Version 0.7.0
 
-https://travis-ci.org/cshoredaniel/hugo-oldnew-mashup.svg?branch=master
+[![Travis CI results](https://travis-ci.org/cshoredaniel/hugo-oldnew-mashup.svg?branch=master)](https://travis-ci.org/cshoredaniel/hugo-oldnew-mashup?branch=master)
 
 [Hugo](https://gohugo.io) theme mixing old school design elements
 with new-era CSS3, HTML5, etc. That is the look is a combination of
@@ -23,7 +23,8 @@ generate buttons for linear traversal (Previous|Next) and Up.
 Finally the right sidebar will contain a navigation menu for the
 current section and one level of subsections.
 
-The right sidebar can be suppressed on a per page basis, or globally.
+If you want pages to not appear in the navigation, menus, and human-readable
+sitemap, you can add ```notinmenu: true``` to the frontmatter for the page.
 
 ## A note on navigation and display order
 
@@ -34,9 +35,9 @@ is by date).  Lower weight sorts earlier.
 
 For top-level sections (subdirectories of `content`) are not
 in the correct order, or you want to use a different name for the
-section than subdir name, you need to create an _index.md in the
+section than subdir name, you need to create a &#95;index.md in the
 appropriate subdir (for example to rename `content/lorem1` as
-`Lorem`, under `content/lorem1` add a content file `_index.md`
+`Lorem`, under `content/lorem1` add a content file `index.md`
 with front matter such as:
 
 ```yaml
@@ -51,8 +52,8 @@ weight: 100
 
 Note that the above information also applies to the automatically
 created floating navbar.  Submenus are for sub-sections (that is,
-nested sections aka `topsection1/subsection1/_index.md`).
-**NB** for Hugo, subsections *must* have an _index.md.
+nested sections aka `topsection1/subsection1/index.md`).
+**NB** for Hugo, subsections *must* have an &#95;index.md.
 
 ## A note on licenses
 

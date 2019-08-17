@@ -128,6 +128,9 @@
 
       & .TableOfContents {
         text-align: left;
+        & h2 {
+          font-size: 1.1em;
+        }
         & ul {
           list-style: none;
           list-style-position: outside;
@@ -149,7 +152,6 @@
           border-top: solid 1px;
           margin-top: .4em;
           font-size: 1em;
-          top-margin: 0px;
         }
         & .PageSummary,
         & .NewsItem {
