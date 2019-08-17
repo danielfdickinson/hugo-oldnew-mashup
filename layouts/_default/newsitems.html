@@ -8,7 +8,7 @@
   <div>{{ .Summary }}</div>
   <footer class="NewsFooter">
   {{ if .Truncated }}
-    <a href='{{ .Permalink }}'>Full article</a>
+    <a href='{{ .Permalink }}'>Read full article for "{{ if .Title }}{{ .Title }}{{ else }}{{ $.Site.Title }}{{ end }}"</a>
   {{ end }}
   </footer>
 </article>

@@ -15,7 +15,7 @@
     {{ partial "header" . }}
 {{ end }}
 {{ define "main" }}
-    <main class="MainContent">
+    <main id="MainContent" class="MainContent">
       <h1 class="Title">{{if not .Page.Title}}{{.Site.Title}}{{else}}{{.Page.Title}}{{end}}</h1>
       <div class="Taglines">
         <h2 class="Oneliner">{{.Page.Params.oneliner}}</h2>

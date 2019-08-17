@@ -8,7 +8,7 @@
 {{ end }}
 {{ define "main" }}
     <main class="SectionPageMain">
-      <article class="MainContent">
+      <article id="MainContent" class="MainContent">
         {{ .Content }}
         {{ if (or .Data.Pages .Sections) }}
         <ol>

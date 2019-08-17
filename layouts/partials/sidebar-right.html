@@ -13,8 +13,8 @@
         {{ $newspages := where .Site.Pages.ByLastmod.Reverse "Type" "news" }}
         {{ if not (or .Params.nornews .Site.Params.nornews) }}
 	  {{ if $newspages }}
-            <section class="PageNews">
-              <h2 class="SidebarTitle" id="SidebarNews">News</h2>
+            <section id="SidebarNews" class="PageNews">
+              <h2 class="SidebarTitle">News</h2>
                 {{ range first 5 $newspages }}
                 {{ .Render "newsitems" }}
                 {{ end }}
