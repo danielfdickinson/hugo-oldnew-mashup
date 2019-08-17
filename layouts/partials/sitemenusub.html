@@ -4,59 +4,26 @@
 {{ $maxLevel := .Scratch.Get "siteMaxLevel" }}
 {{ $curLevel := .Scratch.Get "siteCurLevel" }}
 {{ $nextLevel := (add (.Scratch.Get "siteCurLevel") 1) }}
-{{ if le $curLevel $maxLevel }}
-  {{ if .Data.Pages }}
-    {{ .Scratch.Set "BasePage" $basePage }}
-    {{ .Scratch.Set "siteMaxLevel" $maxLevel }}
-    {{ .Scratch.Set "siteCurLevel" $curLevel }}
-    {{ if and (or (.Sections) (.Data.Pages)) (lt $curLevel $maxLevel) }}
-      {{ .Scratch.Set "hasSubmenu" true }}
-    {{ else }}
-      {{ .Scratch.Set "hasSubmenu" false }}
-    {{ end }}
-    {{ partial "sitemenuitem" . }}
-    {{ partial "sitemenusibs" . }}
-    {{ if (and (not .Sections) (.Scratch.Get "hasSubmenu") ) }}
-      </ul></li>
-    {{ end }}
-    {{ if .Sections }}
-      {{ range .Sections }}
-        {{ .Scratch.Set "BasePage" $basePage }}
-        {{ .Scratch.Set "siteMaxLevel" $maxLevel }}
-        {{ .Scratch.Set "siteCurLevel" $nextLevel }}
-        {{ if and (or (.Sections) (.Data.Pages)) (lt $curLevel $maxLevel) }}
-          {{ .Scratch.Set "hasSubmenu" true }}
-        {{ else }}
-          {{ .Scratch.Set "hasSubmenu" false }}
-        {{ end }}
-        {{ partial "sitemenuitem" . }}
-        {{ if .Data.Pages }}
-          {{ .Scratch.Set "BasePage" $basePage }}
-          {{ .Scratch.Set "siteMaxLevel" $maxLevel }}
-          {{ .Scratch.Set "siteCurLevel" $nextLevel }}
-          {{ partial "sitemenusibs" . }}
-          {{ if (and (not .Sections) (.Scratch.Get "hasSubmenu") ) }}
-            </ul></li>
-          {{ end }}
-        {{ end }}
-        {{ if .Sections }}
-          {{ .Scratch.Set "BasePage" $basePage }}
-          {{ .Scratch.Set "siteMaxLevel" $maxLevel }}
-          {{ .Scratch.Set "siteCurLevel" $nextLevel }}
-          {{ partial "sitemenusub" . }}
-          </ul></li>
-        {{ end }}
-      {{ end }}
-      </ul></li>
-    {{ end }}
-  {{ else if .Sections }}
+{{ if .Data.Pages }}
+  {{ .Scratch.Set "BasePage" $basePage }}
+  {{ .Scratch.Set "siteMaxLevel" $maxLevel }}
+  {{ .Scratch.Set "siteCurLevel" $curLevel }}
+  {{ if and (or (.Sections) (.Data.Pages)) (lt $curLevel $maxLevel) }}
     {{ .Scratch.Set "hasSubmenu" true }}
-    {{ partial "sitemenuitem" . }}
+  {{ else }}
+    {{ .Scratch.Set "hasSubmenu" false }}
+  {{ end }}
+  {{ partial "sitemenuitem" . }}
+  {{ partial "sitemenusibs" . }}
+  {{ if (not .Sections) }}
+    </ul></li>
+  {{ end }}
+  {{ if .Sections }}
     {{ range .Sections }}
       {{ .Scratch.Set "BasePage" $basePage }}
       {{ .Scratch.Set "siteMaxLevel" $maxLevel }}
       {{ .Scratch.Set "siteCurLevel" $nextLevel }}
-      {{ if and (or (.Sections) (.Data.Pages)) (lt $nextLevel $maxLevel) }}
+      {{ if and (or (.Sections) (.Data.Pages)) (lt $curLevel $maxLevel) }}
         {{ .Scratch.Set "hasSubmenu" true }}
       {{ else }}
         {{ .Scratch.Set "hasSubmenu" false }}
@@ -67,9 +34,6 @@
         {{ .Scratch.Set "siteMaxLevel" $maxLevel }}
         {{ .Scratch.Set "siteCurLevel" $nextLevel }}
         {{ partial "sitemenusibs" . }}
-        {{ if (and (not .Sections) (.Scratch.Get "hasSubmenu") ) }}
-          </ul></li>
-        {{ end }}
       {{ end }}
       {{ if .Sections }}
         {{ .Scratch.Set "BasePage" $basePage }}
@@ -78,6 +42,35 @@
         {{ partial "sitemenusub" . }}
         </ul></li>
       {{ end }}
+      </ul></li>
+    {{ end }}
+    </ul></li>
+  {{ end }}
+{{ else if .Sections }}
+  {{ .Scratch.Set "hasSubmenu" true }}
+  {{ partial "sitemenuitem" . }}
+  {{ range .Sections }}
+    {{ .Scratch.Set "BasePage" $basePage }}
+    {{ .Scratch.Set "siteMaxLevel" $maxLevel }}
+    {{ .Scratch.Set "siteCurLevel" $nextLevel }}
+    {{ if and (or (.Sections) (.Data.Pages)) (lt $nextLevel $maxLevel) }}
+      {{ .Scratch.Set "hasSubmenu" true }}
+    {{ else }}
+      {{ .Scratch.Set "hasSubmenu" false }}
+    {{ end }}
+    {{ partial "sitemenuitem" . }}
+    {{ if .Data.Pages }}
+      {{ .Scratch.Set "BasePage" $basePage }}
+      {{ .Scratch.Set "siteMaxLevel" $maxLevel }}
+      {{ .Scratch.Set "siteCurLevel" $nextLevel }}
+      {{ partial "sitemenusibs" . }}
+    {{ end }}
+    {{ if .Sections }}
+      {{ .Scratch.Set "BasePage" $basePage }}
+      {{ .Scratch.Set "siteMaxLevel" $maxLevel }}
+      {{ .Scratch.Set "siteCurLevel" $nextLevel }}
+      {{ partial "sitemenusub" . }}
+      </ul></li>
     {{ end }}
     </ul></li>
   {{ end }}
