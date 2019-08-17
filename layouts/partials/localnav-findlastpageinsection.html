@@ -1,0 +1,15 @@
+{{ if (ne .Path .FirstSection.Path ) }}
+  {{ with .Parent }}
+    {{ if (last 1 (where .Pages ".Params.notinmenu" "ne" true ) ) }}
+      <!-- If there are pages below us -->
+      {{ range (last 1 (where .Pages ".Params.notinmenu" "ne" true ) ) }}
+        <a href="{{ .RelPermalink }}">Prev</a>
+      {{ end }}
+    {{ else }}
+      <!-- If there are no pages, just stop here -->
+      <a href="{{ .RelPermalink }}">Prev</a>
+    {{ end }}
+  {{ end }}
+{{ else }}
+    <a href="{{ .Parent.RelPermalink }}">Prev</a>
+{{ end }}

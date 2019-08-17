@@ -1,11 +1,30 @@
-{{ if .Sections }}
- {{ range (last 1 .Sections) }}
-   {{ partial "localnav-findlastinsection" . }}
- {{ end }}
-{{ else if .Data.Pages }}
-  {{ range (last 1 .Data.Pages) }}
-    <a href="{{ .RelPermalink }}">Prev</a>
+{{ if (last 1 (where .Sections ".Params.notinmenu" "ne" true ) ) }}
+  <!-- If there are sections below us -->
+  {{ range (last 1 (where .Sections ".Params.notinmenu" "ne" true ) ) }}
+    {{ if (where .Sections ".Params.notinmenu" "ne" true ) }}
+      {{ partial "localnav-findlastinsection" . }}
+    {{ else if (where .Pages ".Params.notinmenu" "ne" true ) }}
+      {{ partial "localnav-findlastinsection" . }}
+    {{ else }}
+      <a href="{{ .RelPermalink }}">Prev</a>
+    {{ end }}
   {{ end }}
+{{ else if (last 1 (where .Pages ".Params.notinmenu" "ne" true ) ) }}
+  <!-- If there are pages below us -->
+  {{ range (last 1 (where .Pages ".Params.notinmenu" "ne" true ) ) }}
+   {{ if (where .Sections ".Params.notinmenu" "ne" true ) }}
+     {{ partial "localnav-findlastinsection" . }}
+   {{ else if (where .Pages ".Params.notinmenu" "ne" true ) }}
+     {{ partial "localnav-findlastinsection" . }}
+   {{ else }}
+     <a href="{{ .RelPermalink }}">Prev</a>
+   {{ end }}
+ {{ end }}
 {{ else }}
-  <a href="{{ .RelPermalink }}">Prev</a>
+  {{ if .Parent }}
+    {{ .Parent.Scratch.Set "lnfpCurPage" .Parent }}
+    {{ partial "localnav-findprevsectionleaf" .Parent }}
+  {{ else }}
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  {{ end }}
 {{ end }}
