@@ -33,7 +33,9 @@
         {{ .Scratch.Set "sidebarMaxLevel" $maxLevel }}
         {{ .Scratch.Set "sidebarCurLevel" $nextLevel }}
         {{ partial "sidebar-sitemenusub" . }}
-        </ul></li>
+        {{ if .Data.Pages }}
+          </ul></li>
+        {{ end }}
       {{ end }}
     {{ end }}
   {{ end }}

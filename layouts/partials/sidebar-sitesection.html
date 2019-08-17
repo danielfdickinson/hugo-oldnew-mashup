@@ -17,7 +17,7 @@
     {{ .Scratch.Set "sidebarMaxLevel" $maxLevel }}
     {{ partial "sidebar-sitemenusub" . }}
     </ul></li>
-  {{ else if .Scratch.Get "hasSubmenu" }}
+  {{ else }}
     </ul></li>
   {{ end }}
 {{ else }}
