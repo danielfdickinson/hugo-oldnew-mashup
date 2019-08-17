@@ -2,7 +2,7 @@ language: c
 before_install:
   - sudo apt update
 install:
-  - sudo apt -y install hugo tidy
+  - sudo apt -y install tidy python-pygments
 script: "FROM_YAML=yes ./ci/travis-cmd.sh"
 dist: bionic
 branches:
