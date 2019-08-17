@@ -1,7 +1,0 @@
-/*! Copyright (C) 2007,2017,2019 Daniel F. Dickinson <thecshore.thecshore.com>
-* Released under the MIT License
-*/(function(){function calculateFontSize(fontZoom){var maxWidth=999999;var minWidth=1;var fontRatio=1;var fontLogScale=8;var fontLogOffset=105536;var fontScale=109;var fontScaleOffset=-11.448;var minFont=16;var maxFont=32;minFont=minFont*fontZoom;maxFont=maxFont*fontZoom;var baseWidth=document.documentElement.offsetWidth;var setWidth=baseWidth>maxWidth?maxWidth:baseWidth<minWidth?minWidth:baseWidth;var fontBase=((Math.log(fontLogOffset+fontLogScale*(setWidth/fontRatio)))+fontScaleOffset)*fontScale*fontZoom;var fontSize=(fontBase>maxFont?maxFont:fontBase<minFont?minFont:fontBase)+"px";return fontSize;}
-function setFontSizeOnResize(){document.documentElement.style["font-size"]=calculateFontSize(1);}
-function doOnResize(){setFontSizeOnResize();return true;}
-function doOnLoad(){setFontSizeOnResize();return true;}
-window.addEventListener("resize",doOnResize);window.addEventListener("load",doOnLoad);window.addEventListener("unload",doOnUnload);window.onload=doOnLoad;window.onresize=doOnResize;}());
