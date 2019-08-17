@@ -2,6 +2,8 @@
 
 Version 0.7.0
 
+https://travis-ci.org/cshoredaniel/hugo-oldnew-mashup.svg?branch=master
+
 [Hugo](https://gohugo.io) theme mixing old school design elements
 with new-era CSS3, HTML5, etc. That is the look is a combination of
 90's and postmodern.
