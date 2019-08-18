@@ -1,22 +1,22 @@
   <!-- Copyright 2019 Daniel F. Dickinson,
        Released under the Creative Commons 4.0 BY (Attribution) License -->
-{{ if not .Sections }}
-  {{ range .Pages }}
+{{ if not (where .Sections ".Params.notinmenu" "ne" true) }}
+  {{ range (where .Pages ".Param.notinmenu" "ne" true) }}
     <li class="MenuItem">
       {{ partial "menuitem" . }}
     </li>
   {{ end }}
 {{ else }}
-  {{ range .Pages }}
+  {{ range (where .Pages ".Params.notinmenu" "ne" true) }}
     <li class="MenuItem">
       {{ partial "menuitem" . }}
     </li>
   {{ end }}
-  {{ range .Sections }}
+  {{ range (where .Sections ".Params.notinmenu" "ne" true) }}
     {{ if .IsSection }}
       <li class="MenuItem HasSubmenu">
         {{ partial "menuitem" . }}
-        {{ if (or .Sections .Data.Pages) }}
+        {{ if (or (where .Sections ".Params.notinmenu" "ne" true ) (where .Data.Pages ".Params.notinmenu" "ne" true ) ) }}
           <ul class="MenuParent">
             {{ partial "menusectionhtml" . }}
           </ul>
