@@ -116,30 +116,32 @@
   }
 }
 
-.SitemenuList {
-  list-style: none inside;
-  & > .MenuItem {
+.Sitemenu {
+  .SitemenuList {
     list-style: none inside;
-    & div {
-      & .MenuEntry {
-        & .MenuLink {
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-      }
-    }
-    & .MenuParent {
+    & > .MenuItem {
       list-style: none inside;
       & div {
-        display: block;
         & .MenuEntry {
-          display: block;
           & .MenuLink {
-            display: block;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+          }
+        }
+      }
+      & .MenuParent {
+        list-style: none inside;
+        & div {
+          display: block;
+          & .MenuEntry {
+            display: block;
+            & .MenuLink {
+              display: block;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
           }
         }
       }
@@ -147,7 +149,7 @@
   } 
 }
 
-.MenuParent .MenuParent {
+.Sitemenu .MenuParent .MenuParent {
   display: none;
   list-style: none inside;
 }
