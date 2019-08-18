@@ -1,6 +1,6 @@
 /*! Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@cshore.theshore.com>
  *  Released under the Creative Commons BY (Attribution) 4.0 License
- */@media screen{.Topbar .SiteBadge{box-shadow:6px 6px 4px #555555;border-radius:16px}.Topbar .SiteBadge:link,.Topbar .SiteBadge:visited,.Topbar .SiteBadge:hover,.Topbar .SiteBadge:active{border-radius:16px}.Topbar .SiteBadge:hover,.Topbar .SiteBadge:active{box-shadow:6px 6px 4px #555555 inset}}/*! Copyright 2018 Daniel F. Dickinson <cshored@cshore.theshore.com>
+ */@media screen{.Topbar .SiteBadge{box-shadow:4px 4px 4px #555555;border-radius:12px}.Topbar .SiteBadge:link,.Topbar .SiteBadge:visited,.Topbar .SiteBadge:hover,.Topbar .SiteBadge:active{border-radius:12px}.Topbar .SiteBadge:hover,.Topbar .SiteBadge:active{box-shadow:4px 4px 4px #555555 inset}}/*! Copyright 2018 Daniel F. Dickinson <cshored@cshore.theshore.com>
  *  Released under the Creative Commons BY (Attribution) 4.0 License
  */@media screen{.Homepage .Main .MainContent hr+p:last-of-type,.DefaultBodyWrapper .Main .MainContent hr+p:last-of-type,.SectionPageWrapper .Main .MainContent hr+p:last-of-type{font-size:.8em}}/*! Copyright 2018 Daniel F. Dickinson <cshored@cshore.theshore.com>
  *  Released under the Creative Commons BY (Attribution) 4.0 License

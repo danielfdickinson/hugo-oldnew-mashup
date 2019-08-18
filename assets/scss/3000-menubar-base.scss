@@ -185,7 +185,7 @@
                 & .MenuParent {
                   display: block;
                   position: absolute;
-                  bottom: 0;
+                  top: -100%;
                   right: 33%;
                   z-index: 24;
                   & > .MenuItem {
