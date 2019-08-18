@@ -1,0 +1,14 @@
+<section class="LicenseSection">
+<h2>License Text</h2>
+  <pre class="LicenseBlock">{{ $license := .Page.Params.licenseFile }}{{ $licenseFile := resources.Get (print "licenses/" $license) }}{{ with $license }}{{ $licenseFile.Content }}{{ else }}{{ with .Page.Params.licenseFile }}{{ .Page.Params.licenseFile | readFile }}{{ else }}{{ print $licenseFile }}{{ end }}{{ end }}</pre>
+</section>
+<section class="LicensePagesSection">
+  <h2>Pages with {{ $license }} license</h2>
+  <ul class="PageLicenseList">
+   {{ range .Site.Pages }}
+     {{ if in .Params.license $license }}
+       <li><a href="{{ .RelPermalink }}">{{ if not .Title}}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}</a></li>
+     {{ end }}
+   {{ end }}
+  </ul>
+</section>

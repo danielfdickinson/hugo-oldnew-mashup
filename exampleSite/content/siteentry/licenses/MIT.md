@@ -8,3 +8,5 @@ layout: license
 ---
 
 # Expat / MIT License
+
+{{< license >}}

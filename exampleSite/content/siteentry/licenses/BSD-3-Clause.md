@@ -8,3 +8,5 @@ layout: license
 ---
 
 # BSD 3-Clause License
+
+{{< license >}}

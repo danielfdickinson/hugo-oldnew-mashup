@@ -8,3 +8,5 @@ layout: license
 ---
 
 # Copyright Expired
+
+{{< license >}}

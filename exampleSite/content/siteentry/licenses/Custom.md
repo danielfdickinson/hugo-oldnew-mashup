@@ -8,3 +8,5 @@ layout: license
 ---
 
 # Custom License
+
+{{< license >}}
