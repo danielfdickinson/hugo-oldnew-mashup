@@ -1,1 +1,2 @@
-<div><span class="MenuEntry"><a class="MenuLink" title="{{ if .Name }}{{ .Name }}{{ else }}Home{{ end }}" href="{{ .RelPermalink }}">{{ if .Name }}{{ .Name }}{{ else }}Home{{ end }}</a></span></div>
+{{ $curPage := (eq (.Scratch.Get "ThisPage") .) }}
+<div class="MenuEntryWrapper {{ if $curPage}}CurrentPage{{ end }}" ><span class="MenuEntry"><a class="MenuLink" title="{{ if .Name }}{{ .Name }}{{ else }}Home{{ end }}" href="{{ .RelPermalink }}">{{ if .Name }}{{ .Name }}{{ else }}Home{{ end }}</a></span></div>

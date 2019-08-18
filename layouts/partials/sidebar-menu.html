@@ -1,23 +1,13 @@
-  <!-- Copyright 2018 Daniel F. Dickinson,
-       Released under the Creative Commons 4.0 BY (Attribution) License -->
-
-{{ if (and .Parent .Parent.Parent)}}
-  {{ .Parent.Scratch.Set "BasePage" . }}
-{{ else }}
-  {{ .Scratch.Set "BasePage" . }}
-{{ end }}
-<a id="SitebarSitemenu" class="SkiptoLinks">&nbsp;</a>
-<nav class="SitebarSitemap">
+<!-- Copyright 2018-2019 Daniel F. Dickinson,
+     Released under the Creative Commons 4.0 BY (Attribution) License -->
+{{ .Scratch.Set "ThisPage" . }}
+<nav id="SidebarSitemenu" class="SidebarSitemap">
 <ul class="SitemapList">
-  <!-- Copyright 2018 Daniel F. Dickinson,
+  <!-- Copyright 2018-2019 Daniel F. Dickinson,
        Released under the Creative Commons 4.0 BY (Attribution) License -->
-{{ if (or (and .IsPage (and .Parent .Parent.Parent) ) (not (or .Sections .Data.Pages) ) ) }}
-  {{ .Parent.Scratch.Set "sidebarMaxLevel" 2 }}
-  {{ .Parent.Scratch.Set "sidebarCurLevel" 1 }}
+{{ if (or (and .IsPage (and .Parent .Parent.Parent) ) (not (or (where .Sections ".Params.notinmenu" "ne" true) (where .Data.Pages ".Params.notinmenu" "ne" true ) ) ))  }}
   {{ partial "sidebar-sitesection" .Parent }}
 {{ else }}
-  {{ .Scratch.Set "sidebarMaxLevel" 2 }}
-  {{ .Scratch.Set "sidebarCurLevel" 1 }}
   {{ partial "sidebar-sitesection" . }}
 {{ end }}
 </ul></nav>

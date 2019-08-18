@@ -1,35 +1,29 @@
-{{ $basePage := .Scratch.Get "BasePage" }}
-{{ $maxLevel := .Scratch.Get "sidebarMaxLevel" }}
-{{ $curLevel := .Scratch.Get "sidebarCurLevel" }}
-{{ if (or .Data.Pages .Sections) }}
-  {{ .Scratch.Set "hasSubmenu" true }}
-{{ else }}
-  {{ .Scratch.Set "hasSubmenu" false }}
-{{ end }}
-{{ partial "sitemenuitem" . }}
-{{ if .Data.Pages }}
-  {{ partial "sidebar-sitemenusibs" . }}
-  {{ if .Sections }}
-    {{ .Scratch.Set "BasePage" $basePage }}
-    {{ .Scratch.Set "siteSections" .Sections }}
-    {{ .Scratch.Set "hasSubmenu" true }}
-    {{ .Scratch.Set "sidebarCurLevel" $curLevel }}
-    {{ .Scratch.Set "sidebarMaxLevel" $maxLevel }}
-    {{ partial "sidebar-sitemenusub" . }}
-    </ul></li>
-  {{ else }}
-    </ul></li>
+  <!-- Copyright 2018-2019 Daniel F. Dickinson,
+       Released under the Creative Commons 4.0 BY (Attribution) License -->
+{{ if (where .Data.Pages ".Params.notinmenu" "ne" true) }}
+  {{ range (where .Data.Pages ".Params.notinmenu" "ne" true) }}
+    <li class="MenuItem">
+    {{ partial "menuitem" . }}
+   </li>
   {{ end }}
-{{ else }}
-  {{ if not .Sections }}
-    {{ partial "sitemenuitem" . }}
-  {{ else if lt $curLevel $maxLevel }}
-    {{ .Scratch.Set "BasePage" $basePage }}
-    {{ .Scratch.Set "siteSections" .Sections }}
-    {{ .Scratch.Set "hasSubmenu" true }}
-    {{ .Scratch.Set "sidebarCurLevel" $curLevel }}
-    {{ .Scratch.Set "sidebarMaxLevel" $maxLevel }}
-    {{ partial "sidebar-sitemenusub" . }}
-    </ul></li>
+  {{ if (where .Sections ".Params.notinmenu" "ne" true) }}
+    {{ range (where .Sections ".Params.notinmenu" "ne" true) }}
+      <li class="MenuItem">
+        {{ partial "menuitem" . }}
+        <ul class="MenuParent">
+          {{ partial "menusectionhtml" . }}
+        </ul>
+      </li>
+    {{ end }}
+  {{ end }}
+{{ else if (where .Sections ".Params.notinmenu" "ne" true) }}
+  {{ range (where .Sections ".Params.notinmenu" "ne" true) }}
+    <li class="MenuItem">
+      {{ partial "menuitem" . }}
+      <ul class="MenuParent">
+        {{ partial "menusectionhtml" . }}
+      </ul>
+    </li>
   {{ end }}
 {{ end }}
+</ul></nav>
