@@ -3,7 +3,6 @@ title: "Privacy / GDPR Statement"
 date: 2019-08-12T23:08:40-04:00
 copyright: 2019 Daniel F. Dickinson
 license: CC-BY-4.0
-draft: false
 ---
 
 # Privacy / GDPR Statement

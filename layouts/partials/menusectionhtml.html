@@ -1,0 +1,36 @@
+  <!-- Copyright 2019 Daniel F. Dickinson,
+       Released under the Creative Commons 4.0 BY (Attribution) License -->
+{{ $thisPage := .Scratch.Get "ThisPage" }}
+{{ if not (where .Sections ".Params.notinmenu" "ne" true) }}
+  {{ range (where .Pages ".Param.notinmenu" "ne" true) }}
+    {{ .Scratch.Set "ThisPage" $thisPage }}
+    <li class="MenuItem">
+      {{ partial "menuitem" . }}
+    </li>
+  {{ end }}
+{{ else }}
+  {{ range (where .Pages ".Params.notinmenu" "ne" true) }}
+    <li class="MenuItem">
+      {{ .Scratch.Set "ThisPage" $thisPage }}
+      {{ partial "menuitem" . }}
+    </li>
+  {{ end }}
+  {{ range (where .Sections ".Params.notinmenu" "ne" true) }}
+    {{ .Scratch.Set "ThisPage" $thisPage }}
+    {{ if .IsSection }}
+      <li class="MenuItem HasSubmenu">
+        {{ partial "menuitem" . }}
+        {{ if (or (where .Sections ".Params.notinmenu" "ne" true ) (where .Data.Pages ".Params.notinmenu" "ne" true ) ) }}
+          <ul class="MenuParent">
+            {{ partial "menusectionhtml" . }}
+          </ul>
+        {{ end }}
+    {{ else if .IsPage }}
+      <li class="MenuItem">
+        {{ partial "menuitem" . }}
+    {{ else }}
+      <li><div><span>Unknown node kind: {{ .Kind }}</span></div>
+    {{ end }}
+    </li>
+  {{ end }}
+{{ end }}

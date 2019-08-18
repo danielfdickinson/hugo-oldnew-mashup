@@ -7,181 +7,192 @@
  *   most important rules are last
 */
 
-/* Without Flex get the Topbar's Menubar to the right */
-.Header {
-  & .SitebarSitemap {
-    text-align: left;
-    vertical-align: top;
-    display: inline-block;
+.Sitemenu {
+  position: relative;
+  top: 0;
+  z-index: 20;
+  display: inline-flex;
+  flex: 2 1 60%;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  justify-content: stretch;
+  align-items: stretch;
+  align-self: stretch;
+  margin-left: 2em;
+  & > .SitemenuList {
+    display: inline-flex;
+    flex: 1 1 100%;
+    flex-flow: row wrap;
+    align-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
     top: 0;
-    right: -.4em;
+    right: 0;
     z-index: 20;
-  
-    & > .SitemapList {
-      position: relative;
-      top: 0;
-      right: 0;
-      z-index: 20;
-      list-style: none;
-      display: inline-block;
-      margin: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    & > .MenuItem {
+      flex: 0 2 7em;
+      margin-left: .4em;
+      margin-bottom: .4em;
+      text-align: center;
       padding: 0;
+      & > div {
+        & > .MenuEntry {
+          & > .MenuLink {
+            padding-top: .2em;
+            padding-bottom: .2em;
+          }
+        }
+      }
+      & .MenuParent {
+        display: none;
+        margin: 0;
+        padding: 0;
+        & .MenuItem {
+          display: none;
+        }
+      }
+    }
+    & > .TopSearch {
+      display: inline-flex;
+      flex: 2 1 7em;
+      margin-left: .4em;
+      align-self: center;
+      & form {
+        display: inline-flex;
+        flex: 2 1 5em;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        & input[type=search] {
+          display: inline-block;
+          flex: 1 2 2em;
+        }
+        & input[type=submit] {
+          display: inline-block;
+          flex: 0 1 1em;
+        }
+      }
+    }
+  }
+}
 
-      & > .MenuItem {
-        margin-top: .4em;
-        margin-bottom: .4em;
-        margin-left: .4em;
-        margin-right: .4em;
-        text-align: center;
-        & a {
-	  padding-left: .3em;
-	  padding-right: .3em;
-          padding-top: .3em;
-          padding-bottom: .3em;
+.SitemenuList {
+  & .MenuItem {
+    list-style: none inside;
+    text-align: left;
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    & div {
+      width: 100%;
+      display: block;
+      & .MenuEntry {
+        display: block;
+        width: 100%;
+        & .MenuLink {
+          display: block;
+          width: 100%;
           text-decoration: none;
         }
       }
-
-     & > .TopSearch {
-        margin-top: .4em;
-        margin-bottom: .4em;
-        margin-left: .4em;
-        margin-right: .4em;
-        text-align: center;
-	display: inline-block;
-     }
-
-      & .MenuSubmenu {
-        list-style: none;
-        display: inline-block;
+    }
+    & .MenuParent {
+      width: 100%;
+      display: none;
+      list-style: none inside;
+      margin: 0;
+      padding: 0;
+      & .MenuItem {
+        width: 100%;
+        list-style: none inside;
         margin: 0;
         padding: 0;
-        z-index: 21;
-
-        & .MenuItem {
-          width: 100%;
-          padding: 0;
-          margin: 0;
-          border: none;
-	  display: inline-block;
-          & a {
-            text-decoration: none;
-            width: 100%;
-            display: inline-block;
-            padding: 0;
-            margin: 0;
-            & .MenuEntryName {
-	      display: inline-block;
-              padding: 0;
-              margin: 0;
-              width: 100%;
-              border: none;
-            }
-          }
-        }
-      }
+       }
     }
+  }
+}
 
-    & .SitemapList {
-      list-style: none outside;
-      & .MenuItem {
-        display: inline-block;
-        & a {
-	  white-space: nowrap;
-          width: 10em;
-          height: 1.4em;
-          display: inline-block;
-          overflow: hidden;
-          text-overflow: ellipsis;
-        }
-        & .MenuSubmenu {
-	    white-space: initial;
-            overflow: visible;
-            text-overflow: initial;
-          & .MenuItem {
-            & a {
-              & .MenuEntryName {
-	        white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-              }
-            }
+.Sitemenu {
+  .SitemenuList {
+    list-style: none inside;
+    & > .MenuItem {
+      list-style: none inside;
+      & div {
+        & .MenuEntry {
+          & .MenuLink {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
         }
       }
-
       & .MenuParent {
-        position: relative;
-        top: 0;
-        right: 0;
-
-        & .MenuSubmenu {
-          top: 100%;
-          right: 4px;
-          position: absolute;
-          border: 4px solid;
-          display: none;
-          width: 100%;
-          text-align: left;
-          & .MenuItem {
-            border: none;
+        list-style: none inside;
+        & div {
+          display: block;
+          & .MenuEntry {
             display: block;
-            & a {
-              border: none;
+            & .MenuLink {
               display: block;
-              height: initial;
-            }
-          }
-          & .MenuParent {
-            position: relative;
-            top: 0;
-            right: 0;
-
-            & .MenuSubmenu {
-              top: 0;
-              right: 100%;
-              position: absolute;
-              border: 4px solid;
-              display: none;
-              & .MenuItem {
-                border: none;
-                & a {
-                  border: none;
-                }
-              }
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
             }
           }
         }
       }
     }
+  } 
+}
+
+.Sitemenu .MenuParent .MenuParent {
+  display: none;
+  list-style: none inside;
+}
         
-    & .MenuParent {
+.Sitemenu {
+  .SitemenuList {
+    & > .MenuItem {
+      list-style: none inside;
+      position: relative;
+      top: 0;
+      right: 0;
       &:hover,
       &:active {
-        & .MenuSubmenu {
-          display: inline-block;
-
-          & .MenuParent {
-            display: inline-block;
-          
-            & .MenuSubmenu {
-              display: none;
-            }
+        & > .MenuParent {
+          list-style: none inside;
+          display: block;
+          position: absolute;
+          top: 100%;
+          right: 33%;
+          z-index: 22;
+          & > .MenuItem {
+            display: block;
           }
-
-          & .MenuParent {
-            &:hover,
-            &:active {
-              & .MenuSubmenu {
-                display: inline-block;
-        
+          &:hover,
+          &:active {
+            & .MenuItem {
+              list-style: none inside;
+              display: block;
+              position: relative;
+              & .MenuParent {
+                display: none;
+              }
+              &:hover,
+              &:active {
                 & .MenuParent {
-                  display: inline-block;
-                }
-
-                & .MenuSubmenu {
-                  display: none;
+                  display: block;
+                  position: absolute;
+                  top: -100%;
+                  right: 33%;
+                  z-index: 24;
+                  & > .MenuItem {
+                    display: block;
+                  }
                 }
               }
             }

@@ -1,5 +1,5 @@
-<div class="SitemapMain">
-<ul class="SitemapList">
+<nav class="Sitemenu">
+<ul class="SitemenuList">
   <!-- Copyright 2018-2019 Daniel F. Dickinson,
        Released under the Creative Commons 4.0 BY (Attribution) License -->
 {{ range $.Site.Sections }}
@@ -10,4 +10,7 @@
     </ul>
   </li>
 {{ end }}
-</ul></div>
+<li class="TopSearch"><form action="{{ "/siteentry/search" | relURL }}">
+  <input id="search-query" type="search" name="s" size="4" /><input id="search-button" type="submit" value="Search" size="3" />
+</form></li>
+</ul></nav>

@@ -3,6 +3,7 @@
   {{ if (not .NextInSection.Params.notinmenu) }}
     <a href="{{ .NextInSection.RelPermalink }}">Prev</a>
   {{ else }}
+    {{ .NextInSection.Scratch.Set "lnfpCurPage" $curPage }}
     {{ partial "localnav-prevrecurse" .NextInSection }}
   {{ end }}
 {{ else }}
