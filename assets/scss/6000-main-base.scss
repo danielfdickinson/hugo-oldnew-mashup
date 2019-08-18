@@ -159,7 +159,7 @@
         }
       }
 
-      & .SitebarSitemap {
+      & .SidebarSitemap {
         display: block;
         & .SitemapList {
           padding-right: 0;
@@ -250,4 +250,23 @@
   padding-right: 0;
   margin-left: .1em;
   margin-right: .3em;
+}
+
+.SitemapMain {
+  & .SitemapList {
+    list-style: disc outside;
+    & .MenuItem {
+      & .MenuParent {
+        list-style: circle outside;
+        color: #000022;
+      }
+    }
+    & .MenuItem .MenuItem {
+      display: list-item;
+    }
+    & .MenuParent {
+      list-style: circle outside;
+      color: #000022;
+    }
+  }
 }
