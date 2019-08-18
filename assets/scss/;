@@ -109,8 +109,3 @@
     background-color: #aaaaaa;
   }
 }
-
-.PageSummaries,
-.PageNews {
-  background-color: #aaaaaa;
-}
