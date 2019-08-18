@@ -1,13 +1,19 @@
   <!-- Copyright 2018-2019 Daniel F. Dickinson,
        Released under the Creative Commons 4.0 BY (Attribution) License -->
+{{ $thisPage := .Scratch.Get "ThisPage" }}
+<li class="MenuItem">
+  {{ partial "menuitem" . }}
+  <ul class="MenuParent">
 {{ if (where .Data.Pages ".Params.notinmenu" "ne" true) }}
   {{ range (where .Data.Pages ".Params.notinmenu" "ne" true) }}
     <li class="MenuItem">
+    {{ .Scratch.Set "ThisPage" $thisPage }}
     {{ partial "menuitem" . }}
    </li>
   {{ end }}
   {{ if (where .Sections ".Params.notinmenu" "ne" true) }}
     {{ range (where .Sections ".Params.notinmenu" "ne" true) }}
+    {{ .Scratch.Set "ThisPage" $thisPage }}
       <li class="MenuItem">
         {{ partial "menuitem" . }}
         <ul class="MenuParent">
@@ -18,6 +24,7 @@
   {{ end }}
 {{ else if (where .Sections ".Params.notinmenu" "ne" true) }}
   {{ range (where .Sections ".Params.notinmenu" "ne" true) }}
+    {{ .Scratch.Set "ThisPage" $thisPage }}
     <li class="MenuItem">
       {{ partial "menuitem" . }}
       <ul class="MenuParent">
@@ -26,4 +33,4 @@
     </li>
   {{ end }}
 {{ end }}
-</ul></nav>
+</li>

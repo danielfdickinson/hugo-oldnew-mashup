@@ -1,13 +1,14 @@
 <!-- Copyright 2018-2019 Daniel F. Dickinson,
      Released under the Creative Commons 4.0 BY (Attribution) License -->
-{{ .Scratch.Set "ThisPage" . }}
 <nav id="SidebarSitemenu" class="SidebarSitemap">
 <ul class="SitemapList">
   <!-- Copyright 2018-2019 Daniel F. Dickinson,
        Released under the Creative Commons 4.0 BY (Attribution) License -->
 {{ if (or (and .IsPage (and .Parent .Parent.Parent) ) (not (or (where .Sections ".Params.notinmenu" "ne" true) (where .Data.Pages ".Params.notinmenu" "ne" true ) ) ))  }}
+  {{ .Parent.Scratch.Set "ThisPage" . }}
   {{ partial "sidebar-sitesection" .Parent }}
 {{ else }}
+  {{ .Scratch.Set "ThisPage" . }}
   {{ partial "sidebar-sitesection" . }}
 {{ end }}
 </ul></nav>

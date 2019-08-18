@@ -16,6 +16,12 @@
 
 .SidebarSitemap {
   & .SitemapList {
+   & .MenuEntryWrapper {
+     border-left: 4px dotted #aaaaaa;
+   }
+   & .MenuEntryWrapper.CurrentPage {
+     border-left: 4px dotted #222222;
+   }
    & > .MenuItem {
       background-color: #bbbbbb;
       color: #000000;

@@ -217,7 +217,7 @@
       margin-top: .2em;
       list-style: none outside;
       text-align: left;
-      margin-left: 1em;
+      margin-left: 0em;
       margin-right: 0em;
       margin-top: 0em;
       margin-bottom: .2em;
@@ -225,7 +225,7 @@
       & .MenuEntryWrapper {
         padding-left: 12px;
       }
-      & .MenuParent {
+      & > .MenuParent {
         list-style: none outside;
         padding: 0;
         margin-left: 0em;
@@ -235,13 +235,31 @@
         & .MenuEntryWrapper {
           width: 80%;
         }
-        & .MenuItem {
+        & > .MenuItem {
           list-style: none outside;
           padding: 0;
           margin-left: 0em;
           margin-right: 0em;
           margin-bottom: .2em;
           margin-top: 0em;
+          & > .MenuParent {
+            display: none;
+            padding: 0;
+            margin-left: 0em;
+            margin-right: 0em;
+            margin-top: .2em;
+            width: 60%;
+            & > .MenuItem {
+              list-style: none outside;
+              padding: 0;
+              margin-left: 0em;
+              margin-right: 0em;
+              margin-bottom: .2em;
+            }
+            & > .MenuParent {
+              display: none;
+            }
+          }
         }
       }
     }
