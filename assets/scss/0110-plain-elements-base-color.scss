@@ -41,3 +41,63 @@ pre {
 * {
   box-sizing: border-box;
 }
+
+@media not speech {
+  .BaseFontSize {
+    font-size: 16px;
+  }
+
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 28em) {
+  .BaseFontSize {
+    font-size: 17px;
+  }
+
+  html {
+    font-size: 17px;
+  }
+}
+
+@media screen and (min-width: 36em) {
+  .BaseFontSize {
+    font-size: 18px;
+  }
+
+  html {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .BaseFontSize {
+    font-size: 20px;
+  }
+
+  html {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 56em) {
+  .BaseFontSize {
+    font-size: 22px;
+  }
+
+  html {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .BaseFontSize {
+    font-size: 23px;
+  }
+
+  html {
+    font-size: 23px;
+  }
+}

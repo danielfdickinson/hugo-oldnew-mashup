@@ -1,5 +1,5 @@
 /*! Copyright 2007-2009,2017-2019 Daniel F. Dickinson <cshored@cshore.theshore.com>
- * Released under the Creative Commons BY (Attribution) 4.0 License 
+ * Released under the Creative Commons BY (Attribution) 4.0 License
  */
 
 /*  OldNew Mashup sitemenu colour settings */
@@ -18,44 +18,44 @@
           border: 2px solid #666666;
           &:active,
           &:hover {
-            box-shadow: none; 
+            box-shadow: none;
             border: 2px solid #666666;
             border-radius: 12px;
             background-color: #aaaaaa;
             & .MenuItem {
-              border: none; 
+              border: none;
               box-shadow: none;
               background-color: #aaaaaa;
               &:hover,
               &:active {
-                border: none; 
+                border: none;
                 background-color: #777777;
                 box-shadow: none;
                 & .MenuEntryWrapper {
-                  border: none; 
+                  border: none;
                   background-color: #aaaaaa;
                   box-shadow: none;
                   &:hover,
                   &:active {
-                    border: none; 
+                    border: none;
                     background-color: #777777;
                     box-shadow: none;
                     & .MenuEntry {
-                      border: none; 
+                      border: none;
                       background-color: #aaaaaa;
                       box-shadow: none;
                       &:hover,
                       &:active {
-                        border: none; 
+                        border: none;
                         background-color: #777777;
                         box-shadow: none;
                         & .MenuLink {
-                          border: none; 
+                          border: none;
                           background-color: #aaaaaa;
                           box-shadow: none;
                           &:hover,
                           &:active {
-                            border: none; 
+                            border: none;
                             box-shadow: none;
                             background-color: #777777;
                           }
@@ -69,22 +69,22 @@
           }
           & .MenuItem {
             box-shadow: none;
-            border: none; 
+            border: none;
             background-color: #aaaaaa;
             &:hover,
             &:active {
               background-color: #777777;
               box-shadow: none;
-              border: none; 
+              border: none;
               & .MenuEntryWrapper {
                 background-color: #aaaaaa;
-                border: none; 
+                border: none;
                 & .MenuEntry {
-                  border: none; 
+                  border: none;
                   box-shadow: none;
                   background-color: #aaaaaa;
                   & .MenuLink {
-                    border: none; 
+                    border: none;
                     box-shadow: none;
                     background-color: #aaaaaa;
                   }
@@ -99,25 +99,25 @@
         background-color: #aaaaaa;
         &:active,
         &:hover {
-          box-shadow: none; 
+          box-shadow: none;
           border: 2px solid #666666;
           border-radius: 12px;
         }
         & .MenuItem {
           &:active,
           &:hover {
-            box-shadow: none; 
-            border: none; 
+            box-shadow: none;
+            border: none;
             border-radius: 12px;
           }
           & .MenuParent {
-            box-shadow: none; 
+            box-shadow: none;
             border: 2px solid #666666;
             border-radius: 12px;
             background-color: #aaaaaa;
             &:active,
             &:hover {
-              box-shadow: none; 
+              box-shadow: none;
               border: 2px solid #666666;
               border-radius: 12px;
             }
@@ -210,4 +210,3 @@
     }
   }
 }
-

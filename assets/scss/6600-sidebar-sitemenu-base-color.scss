@@ -1,16 +1,6 @@
-/*! Copyright 2018 Daniel F. Dickinson <cshored@cshore.theshore.com>
- *  Released under the Creative Commons BY (Attribution) 4.0 License
- */
-
-.Homepage,
-.DefaultBodyWrapper,
-.SectionPageWrapper {
-  & .Main {
-    & .MainContent {
-      & hr + p:last-of-type {
-        font-size: .8em;
-      }
-    }
+.SidebarSitemap {
+  & h2 {
+    background-color: #aaaaaa;
   }
 }
 

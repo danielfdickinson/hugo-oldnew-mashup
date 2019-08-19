@@ -1,4 +1,4 @@
-/*! Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@cshore.theshore.com>
+/*! Copyright 2007-2009,2017-2019 Daniel F. Dickinson <cshored@cshore.theshore.com>
  *  Released under the Creative Commons BY (Attribution) 4.0 License
  */
 
@@ -37,7 +37,7 @@
 
     & .RightSidebar {
       & .TableOfContents {
-        background-color: #888888; 
+        background-color: #888888;
         & a,
         & a:link {
           color: #111111;
@@ -45,55 +45,6 @@
         & a:active,
         & a:hover {
           background-color: #aaaaaa;
-        }
-      }
-      & .SitebarSitemap {
-        & .SitemapList {
-          & .MenuItem.MenuActive {
-            & > a,
-            & > a:link,
-            & > a:visited {
-              color: #aaaaaa;
-              background-color: #555555;
-            }
-            & > a:hover,
-            & > a:active {
-              color: #222222;
-              background-color: #aaaaaa;
-            }
-          }
-          & .MenuItem {
-            &:hover,
-            &:active {
-              color: #222222;
-              background-color: #aaaaaa;
-            }
-            & a {
-              text-decoration: none;
-            }
-            & a:link,
-            & a:visited {
-              color: #cccccc;
-              background-color: #000000;
-            }
-            & a:hover,
-            & a:active {
-              color: #222222;
-              background-color: #aaaaaa;
-            }
-          }
-          & .MenuItem {
-            & .CurrentPage {
-              border-left: 2px solid #000000;
-              padding-left: 10px;
-              & > a,
-              & > a:link,
-              & > a:visited {
-                color: #cccccc;
-                background-color: #444444;
-              }
-            }
-          }
         }
         & .MenuSubmenu {
           color: #000000;
@@ -104,13 +55,19 @@
   }
 }
 
-.SidebarSitemap {
-  & h2 {
-    background-color: #aaaaaa;
-  }
-}
-
 .PageSummaries,
 .PageNews {
   background-color: #aaaaaa;
+}
+
+.Homepage,
+.DefaultBodyWrapper,
+.SectionPageWrapper {
+  & .Main {
+    & .MainContent {
+      & hr + p:last-of-type {
+        font-size: .8em;
+      }
+    }
+  }
 }
