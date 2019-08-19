@@ -14,7 +14,9 @@ body {
     /* Blue font */
 
     background-image : url("/images/default_background.png");
-/* This file contains background image url; CSS2 starts from directory of the .css */
+    /* This file contains background image url; CSS2 starts from directory of the
+    * .css for relative links
+    */
 }
 
 /* Change the colour links to match our colour scheme */
@@ -23,12 +25,12 @@ a:link {
 /* bright blue font (links) */
 }
 
-a:Visited {
+a:visited {
     color : #772277;
-/* purple font (visited links) */
+    /* purple font (visited links) */
 }
 
-a:Active, a:Hover  {
+a:active, a:hover  {
     color : #ff0000; /* red font (hover/active links) */
     background-color : #888888; /* light gray background */
 }
@@ -43,61 +45,37 @@ pre {
 }
 
 @media not speech {
-  .BaseFontSize {
-    font-size: 16px;
-  }
-
   html {
     font-size: 16px;
   }
 }
 
 @media screen and (min-width: 28em) {
-  .BaseFontSize {
-    font-size: 17px;
-  }
-
   html {
     font-size: 17px;
   }
 }
 
 @media screen and (min-width: 36em) {
-  .BaseFontSize {
-    font-size: 18px;
-  }
-
   html {
     font-size: 18px;
   }
 }
 
 @media screen and (min-width: 48em) {
-  .BaseFontSize {
-    font-size: 20px;
-  }
-
   html {
-    font-size: 20px;
+    font-size: 19px;
   }
 }
 
 @media screen and (min-width: 56em) {
-  .BaseFontSize {
-    font-size: 22px;
-  }
-
   html {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 
 @media screen and (min-width: 64em) {
-  .BaseFontSize {
-    font-size: 23px;
-  }
-
   html {
-    font-size: 23px;
+    font-size: 21px;
   }
 }

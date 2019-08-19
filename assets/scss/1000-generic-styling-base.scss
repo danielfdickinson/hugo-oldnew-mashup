@@ -24,11 +24,6 @@
   display: block;
 }
 
-/* Generic functional box (e.g. breadcrumb
- *   navigation, news, etc)
- * Only if not CSS3
- */
-
 /* The utility box wrapper should go around a utility box so that things
  * like borders and margins don't confuse the box model
  */
@@ -77,16 +72,6 @@
   display: inline-block;
 }
 
-/*! Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@thecshore.com>
- *  Released under the Creative Commons BY (Attribution) 4.0 License
- */
-
-/* The C Shore Base Styles for Modern CSS (CSS3/HTML5) */
-
-/* Remember, for the level of specifity last rule wins, hence
- *  most import rules are last
- */
-
  /* New settings only for CSS3 */
 @-ms-viewport {
   width: device-width;
@@ -114,26 +99,4 @@
       position: relative;
     }
   }
-}
-
-
-/* Base styles for when we have CSS3 (e.g. flexbox), which
- * we know because of media queries work
- * The following settings exist in the base settings for browsers
- * not supporting flexbox,
- * so we have to undo these settings for flexbox.
- */
-
-@media screen {
-  .Notice {
-    vertical-align: initial;
-    width: auto;
-    float: none;
-  }
-}
-
-@media screen and (min-width: 28em) {
-}
-
-@media screen and (min-width: 36em) {
 }
