@@ -8,7 +8,6 @@
  */
 
 
-.Homepage,
 .DefaultBodyWrapper {
   display: flex;
   align-content: flex-start;
@@ -16,7 +15,8 @@
   justify-content: flex-start;
   flex-flow: row wrap;
 
-  & .Title {
+  & .Title,
+  & h1 {
     order: 1;
     text-align: center;
   }
@@ -106,7 +106,6 @@
   }
 }
 
-.Homepage,
 .DefaultBodyWrapper {
   & .Main,
   & .SectionPageMain {
@@ -152,7 +151,7 @@
         text-align: left;
         & h2 {
           font-size: 1em;
-	  margin-bottom: 0;
+	        margin-bottom: 0;
         }
         & ul {
           list-style: none;
