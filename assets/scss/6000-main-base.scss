@@ -27,7 +27,7 @@
     text-align: left;
     align-items: flex-start;
     align-content: flex-start;
-    justify-content: flex-start;
+    justify-content: space-between;
     flex-flow: row wrap;
     line-height: 1.5;
     overflow: hidden;
@@ -37,12 +37,12 @@
     padding: 0;
     overflow-x: hidden;
     & .MainContent {
-      flex: 1 1 65%;
+      flex: 1 1 50%;
       order: 2;
       display: inline-block;
       padding-left: .8em;
       padding-right: .8em;
-      max-width: 67%;
+      max-width: 73%;
 
       & h1,
       & .Title {
@@ -133,6 +133,8 @@
       }
       order: 2;
       flex: 5 1 15%;
+      max-width: 25%;
+      min-width: 10em;
       margin: 0;
       padding-left: .5em;
       padding-right: .4em;
@@ -186,7 +188,14 @@
             }
           }
           & .NewsFooter {
-            font-size: .8em; 
+            font-size: .8em;
+          }
+        }
+        & .PageSummary,
+        & .NewsItem {
+          & div {
+            max-width: 100%;
+            overflow-x: hidden;
           }
         }
         & .PageSummary {
@@ -200,7 +209,7 @@
           border-top: dashed 1px;
         }
         & .SummaryFooter {
-          font-size: .8em; 
+          font-size: .8em;
         }
       }
     }
