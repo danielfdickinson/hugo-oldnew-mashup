@@ -8,3 +8,5 @@ layout: license
 ---
 
 # Creative Commons Attribution Share-Alike License 4.0
+
+{{< license >}}
