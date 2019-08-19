@@ -5,7 +5,7 @@
         {{ end }}
         {{ if not (or .Params.nortoc .Site.Params.nortroc) }}
           {{ if and (gt .WordCount 200) (ne .Params.toc "false") }}<section class="TableOfContents"><h2>Table of Contents</h2>
-        {{ replace .TableOfContents `href="#` (printf `href="%s#` .Permalink) | safeHTML }}</section>{{ end }}
+          {{ replace .TableOfContents `href="#` (printf `href="%s#` .Permalink) | safeHTML }}</section>{{ end }}
         {{ end }}
         {{ if not (or .Params.normenu .Site.Params.normenu) }}
           {{ partial "sidebar-menu" . }}
