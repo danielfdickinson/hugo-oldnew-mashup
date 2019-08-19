@@ -1,5 +1,5 @@
 {{ define "title" }}
-  {{ with .Title }}
+  {{ if .Title }}
     {{.Title}}
   {{ else }}
     {{ .Site.Title }}
