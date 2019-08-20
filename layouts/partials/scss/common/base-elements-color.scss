@@ -1,0 +1,36 @@
+
+#all { // sass-lint:disable-line no-ids
+  background-color: $default-background-color;
+}
+
+body {
+  background-color: $default-background-color;
+  @if $default-background-image {
+    background-image: url($default-background-image);
+  }
+  color: $default-text-color;
+}
+
+// Change the colour links to match our colour scheme
+a {
+  // anchors default to regular text colour
+  color: $default-text-color;
+
+  &:link {
+    color: $default-link-color;
+  }
+
+  &:visited {
+    color: $default-visited-link-color;
+  }
+
+  &:active,
+  &:hover {
+    background-color: $default-hover-background;
+    color: $default-hover-color;
+  }
+}
+
+pre {
+  background-color: $default-pre-background-color;
+}

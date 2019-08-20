@@ -1,11 +1,16 @@
-  <footer class="Footer">
-  <!-- Copyright 2018 Daniel F. Dickinson,
+{{/* Default Footer for OldNew Mashup Theme */}}
+  <footer class="footer">
+  <!-- Copyright 2019 Daniel F. Dickinson,
        Released under the Creative Commons 4.0 BY (Attribution) License -->
-    {{ block "footer-links" . }}
-      {{ partial "footer-links" . }}
+    {{ block "footerlinks" . }}
+      {{ if not (or .Site.Params.nofooterlinks .Params.nofooterlinks) }}
+        {{ partial "footer/links" . }}
+      {{ end }}
     {{ end }}
-    {{ block "colophon" .}}
-      <hr class="FooterSeparator" />
-      {{ partial "colophon" . }}
+    {{ block "footercolophon" .}}
+      {{ if not (or .Site.Params.nocolophon .Params.nocolophon) }}
+        {{ partial "footer/colophon" . }}
+      {{ end }}
     {{ end }}
   </footer>
+{{/* Hugo partial */}}

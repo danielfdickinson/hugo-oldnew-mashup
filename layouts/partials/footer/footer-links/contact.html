@@ -1,0 +1,6 @@
+{{ $footerPage := "/siteentry/contact" }}
+{{ if .Params.footersection }}
+{{ $footerPage = printf "/%s/contact" .Params.footersection }}
+{{ else if .Site.Params.footersection }}
+{{ $footerPage = printf "/%s/contact" .Site.Params.footersection }}
+{{ end }}{{ if .Site.GetPage $footerPage }}<span class="contact"><a href="{{ $footerPage | relURL }}" title="Contact Information">Contact</a></span>{{ end }}

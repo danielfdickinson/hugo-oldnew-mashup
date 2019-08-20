@@ -1,0 +1,33 @@
+@mixin normaltextlinks {
+  a {
+    &:link,
+    &:visited,
+    &:active,
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+@mixin rollup-section ($rollup-type) {
+  // must be immediately above #${$rollup-type}-block
+  & .#{$rollup-type}-hoversite {
+
+    &:Active + .#{$rollup-type}-block,
+    &:Hover + .#{$rollup-type}-block {
+      border: $default-container-border;
+      display: block;
+      opacity: 1;
+      padding: .1em;
+    }
+  }
+
+  // rises from bottom of viewport
+  & .#{$rollup-type}-block {
+    bottom: 0;
+    display: none;
+    overflow: auto;
+    position: fixed;
+    z-index: 100;
+  }
+}

@@ -1,0 +1,9 @@
+options:
+  formatter: stylish
+  merge-default-rules: true
+files:
+  include: '**/*.s+(a|c)ss'
+  ignore:
+    - '**/partials/scss/common/main.scss'
+    - 'assets/scss/hugo-templates/*.scss'
+rules:

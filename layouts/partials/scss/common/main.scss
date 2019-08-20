@@ -1,0 +1,18 @@
+$sans-font-stack: 'Lucida Sans Unicode', 'Lucida Granda', sans-serif;
+$mono-font-stack: 'Lucida Console', Monaco, monospace;
+
+// sass-lint:disable-all
+$default-background-color: {{ default "#bbb" (default (.Param "default_background_color") (.Param "default_background_color") ) }};
+$default-background-image: '';
+$default-pre-background-color: #777;
+$default-hover-background: #888;
+$default-container-background-color: #aaa;
+
+$default-text-color: #000020;
+$default-link-color: #00f;
+$default-visited-link-color: #727;
+$default-hover-color: #f00;
+
+$default-separator-color: #808080;
+
+$default-container-border: 4px solid;
