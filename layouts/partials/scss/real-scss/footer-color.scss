@@ -3,9 +3,6 @@
  */
 // OldNew Mashup default colour settings
 
-{{ partial "scss/common/main.scss" }}
-{{ partial "scss/common/base-elements-color.scss" }}
-
 @mixin footer-links-color {
   & .footer-links {
     border-top-color: $default-separator-color;

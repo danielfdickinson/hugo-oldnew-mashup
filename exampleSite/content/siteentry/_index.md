@@ -111,6 +111,49 @@ whether the licenses can actually work together is another story).
 
 ## Reference Guide {#referenceguide}
 
+### Site Param
+
+Set these in your site configuration file in the ``params`` section.
+E.g. for a ``config.toml`` you might have:
+
+```
+baseURL = 'https://example.com/
+languageCode = 'en-ca'
+languageLang = 'en'
+title = 'Site Title'
+enableGitInfo = true
+theme = 'oldnew-mashup'
+
+# RSS, categories and tags disabled for an easy start
+# See configuration options for more details:
+# https://gohugo.io/getting-started/configuration/#toml-configuration
+disableKinds = ['taxonomy', 'taxonomyTerm']
+
+[params]
+  siteid = 'Site Title/ID'
+  license = 'CC-BY-4.0'
+  copyright = '© 2018 Daniel F. Dickinson'
+  default_background_color = '#aba'
+  default_text_color = '#454'
+  ...
+
+```
+and so on.
+
+| Param                               | Purpose                        |
+|-------------------------------------|--------------------------------|
+| default_background_color            | self-explanatory               |
+| default_background_image            | ditto (default no image)       |
+| default_pre_background_color        | default background for pre-formatted text boxes |
+| default_hover_background            | default link hover background  |
+| default_container_background_color  | default background for 'containers' (e.g. boxes) |
+| default_text_color                  | default colour for any text not otherwise styled |
+| default_link_color                  | default colour for non-visited (new) links |
+| defult_visited_link_color           | default colour for visited links |
+| default_hover_color                 | default text colour for hovered over links |
+| default_separator_color             | default colour for separating lines / borders |
+| default_container_border            | default colour for 'container' (e.g. box) borders |
+
 ### Organization and Knobs
 
 #### Footer

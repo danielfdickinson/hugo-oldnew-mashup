@@ -10,17 +10,17 @@
     {{ $nm := resources.Get "css/modules/necolas-normalize.css/normalize.css" | resources.ToCSS $options }}
     {{ $b := resources.Get "css/base.scss" | resources.ToCSS $options }}
     {{ $bc := resources.Get "css/base-color.scss" | resources.ToCSS $options }}
-    {{ $fb := resources.Get "scss/hugo-templates/footer-base.scss" }}
-    {{ $fbc := resources.Get "scss/hugo-templates/footer-base-color.scss" }}
-    {{ $fbstyle := $fb | resources.ExecuteAsTemplate "css/footer-base.scss" . | resources.ToCSS $options }}
-    {{ $fbcstyle := $fbc | resources.ExecuteAsTemplate "css/footer-base-color.scss" . | resources.ToCSS $options }}
+    {{ $nb := resources.Get "scss/hugo-templates/new-base.scss" }}
+    {{ $nbc := resources.Get "scss/hugo-templates/new-base-color.scss" }}
+    {{ $nbstyle := $nb | resources.ExecuteAsTemplate "css/new-base.scss" . | resources.ToCSS $options }}
+    {{ $nbcstyle := $nbc | resources.ExecuteAsTemplate "css/new-base-color.scss" . | resources.ToCSS $options }}
     {{ $ghf := resources.Get "css/modules/simonwhitaker-github-fork-ribbon-css/gh-fork-ribbon.css" | resources.ToCSS $options }}
     <link rel="stylesheet" href="{{ $nm.RelPermalink }}"/>
     <link rel="stylesheet" href="{{ $ghf.RelPermalink }}"/>
     <link rel="stylesheet" href="{{ $b.RelPermalink }}"/>
     <link rel="stylesheet" href="{{ $bc.RelPermalink }}"/>
-    <link rel="stylesheet" href="{{ $fbstyle.RelPermalink }}"/>
-    <link rel="stylesheet" href="{{ $fbcstyle.RelPermalink }}"/>
+    <link rel="stylesheet" href="{{ $nbstyle.RelPermalink }}"/>
+    <link rel="stylesheet" href="{{ $nbcstyle.RelPermalink }}"/>
 {{ end }}
 {{ block "output-formats" . }}
   {{ range .AlternativeOutputFormats -}}

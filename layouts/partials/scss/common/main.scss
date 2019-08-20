@@ -1,18 +1,16 @@
-$sans-font-stack: 'Lucida Sans Unicode', 'Lucida Granda', sans-serif;
-$mono-font-stack: 'Lucida Console', Monaco, monospace;
+$sans-font-stack: {{ default "Lucida Sans Unicode, Lucida Granda, sans-serif" ( .Param "sans_font_stack" ) }};
+$mono-font-stack: {{ default "Lucida Console, Monaco, monospace" ( .Param "mono_font_stack" ) }};
 
-// sass-lint:disable-all
-$default-background-color: {{ default "#bbb" (default (.Param "default_background_color") (.Param "default_background_color") ) }};
-$default-background-image: '';
-$default-pre-background-color: #777;
-$default-hover-background: #888;
-$default-container-background-color: #aaa;
+$default-background-color: {{ default "#bbb" ( .Param "default_background_color" ) }};
+{{ if .Param "default_background_image" }}$default-background-image: {{ .Param "default_background_image" }};{{ else  }}$default-background-image: '';{{ end }}
+$default-pre-background-color: {{ default "#777" ( .Param "default_pre_background_color" ) }};
+$default-hover-background-color: {{ default "#888" ( .Param "default_hover_background_color" ) }};
+$default-container-background-color: {{ default "#aaa" ( .Param "default_container_background_color" ) }};
 
-$default-text-color: #000020;
-$default-link-color: #00f;
-$default-visited-link-color: #727;
-$default-hover-color: #f00;
+$default-text-color: {{ default "#000020" ( .Param "default_text_color" ) }};
+$default-link-color: {{ default "#00f" ( .Param "default_link_color" ) }};
+$default-visited-link-color: {{ default "#727" ( .Param "default_visited_link_color" ) }};
+$default-hover-color: {{ default "#f00" ( .Param "default_hover_color" ) }};
 
-$default-separator-color: #808080;
-
-$default-container-border: 4px solid;
+$default-separator-color: {{ default "#808080" ( .Param "default_separator_color" ) }};
+$default-container-border: {{ default "4px solid" ( .Param "default_container_border" ) }};

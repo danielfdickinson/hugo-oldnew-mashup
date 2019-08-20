@@ -1,12 +1,3 @@
-/*! Copyright 2007-2009,2017-2019 Daniel F. Dickinson <cshored@thecshore.com>
- *  Released under the Creative Commons BY (Attribution) 4.0 License
- */
-// OldeNew Mashup theme footer elements
-
-{{ partial "scss/common/main.scss" }}
-{{ partial "scss/common/base-mixins.scss" }}
-{{ partial "scss/common/base-elements.scss" }}
-
 @mixin footer-links {
   & .footer-links {
     @include normaltextlinks;
