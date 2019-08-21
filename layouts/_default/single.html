@@ -3,8 +3,8 @@
 {{ end }}
 {{ define "main" }}
   <main class="Main">
-    <div class="main-body">
-      <article id="MainContent" class="MainContent">
+    <div aria-labelledby="main-content" class="main-body">
+      <article aria-label="Main Content" id="main-content" class="MainContent">
         {{ .Content }}
       </article>
      {{ if .Params.aside }}

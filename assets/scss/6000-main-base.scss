@@ -59,7 +59,7 @@
         }
       }
       & .highlight {
-        resize: auto;
+        resize: both;
         display: block;
         flex: 1 1 60%;
         & .chroma {

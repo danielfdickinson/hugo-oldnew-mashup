@@ -1,10 +1,15 @@
-<nav class="NavSkiptoLinks">
+<nav class="screen-reader-element">
   <!-- Copyright 2018 Daniel F. Dickinson,
        Released under the Creative Commons 4.0 BY (Attribution) License -->
-      <span>Skip to: </span><a 
-      href="#skipto-main" aria-labelledby="MainContent" class="SkiptoLinks">Content</a>: <a
-      href="#SidebarSitemenu" class="SkiptoLinks">Sidebar Section Menu</a> : {{if not .IsHome }}<a
-      class="SkiptoLinks" aria-labelledby="SidebarNews" href="#skipto-news">News</a>{{ end }} : <a
-      href="#skipto-menubar" class="SkiptoLinks">Menu for {{ .Name }}</a>: <a
-      class="SkiptoLinks" href="#skipto-footer">Footer for {{ .Name }}</a>: <a
-      href="#skipto-top" class="SkiptoLinks">Top for {{ .Name }}</a></nav>
+  <span>Skip to: </span>
+  <a href="#main-content" class="skip-to-links">Main Content for {{ .Name }}</a>
+  {{ if not (.Param "norbar") }}
+    {{ if not (.Param "normenu") }}<a href="#sidebar-sitemenu" class="skip-to-links">Sidebar Section Menu</a>{{ end }}
+    {{ if not (.Param "nornews") }}<a href="#sidebar-news" class="skip-to-links">News for {{ .Name }}</a>{{ end }}
+    {{ if not (.Param "norevents") }}<a href="#sidebar-events" class="skip-to-links">Events for {{ .Name }}</a>{{ end }}
+    {{ if not (.Param "norsummary") }}<a href="#sidebar-recent-changes" class="skip-to-links">News for {{ .Name }}</a>{{ end }}
+  {{ end }}
+  <a href="#menu-bar" class="skip-to-links">Menu for {{ .Name }}</a>
+  <a href="#page-footer" class="skip-to-links">Footer for {{ .Name }}</a>
+  <a href="#site-badge" class="skip-to-links">Top for {{ .Name }}</a>
+</nav>

@@ -7,14 +7,14 @@
      Released under the Create Commons BY (Attribution) 4.0 License -->
 {{ end }}
 {{ define "main" }}
-  <main class="SectionPageMain">
-    <div class="main-body">
-      <article id="MainContent" class="MainContent">
+  <main aria-label="Page Body" class="SectionPageMain">
+    <div aria-labelledby="main-content" class="main-body">
+      <article aria-label="Main Content" id="main-content" class="MainContent">
         {{ .Content }}
       </article>
       {{ if (or .Data.Pages .Sections) }}
-        <section class="section-toc">
-          <h2 class="section-contents-heading">Section Contents</h2>
+        <section aria-labelledby="section-contents-heading" class="section-toc">
+          <h2 id="section-contents-heading" class="section-contents-heading">Section Contents</h2>
           <ol class="section-contents">
       {{ end }}
             {{ partial "section-nesting" . }}

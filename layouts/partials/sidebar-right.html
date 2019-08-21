@@ -1,10 +1,10 @@
       {{ if not (or .Params.norbar .Site.Params.norbar) }}
-      <div class="RightSidebar">
+      <div aria-label="Sidebar" class="RightSidebar">
         {{ if not (or .Params.nornav .Site.Params.nornav) }}
           {{ partial "localnav-bar" .Page }}
         {{ end }}
         {{ if not (or .Params.nortoc .Site.Params.nortroc) }}
-          {{ if and (gt .WordCount 200) (ne .Params.toc "false") }}<section class="TableOfContents"><h2>Table of Contents</h2>
+          {{ if and (gt .WordCount 200) (ne .Params.toc "false") }}<section aria-labelledby="sidebar-toc-title" class="TableOfContents"><h2 id="sidebar-toc-title">Table of Contents</h2>
           {{ replace .TableOfContents `href="#` (printf `href="%s#` .Permalink) | safeHTML }}</section>{{ end }}
         {{ end }}
         {{ if not (or .Params.normenu .Site.Params.normenu) }}
@@ -12,9 +12,10 @@
         {{ end }}
         {{ $newspages := where .Site.Pages.ByLastmod.Reverse "Type" "news" }}
         {{ if not (or .Params.nornews .Site.Params.nornews) }}
-	  {{ if $newspages }}
-            <section id="SidebarNews" class="PageNews">
-              <h2 class="SidebarTitle">News</h2>
+	        {{ if $newspages }}
+            {{ partial "nav-skipto-links" . }}
+            <section aria-labelledby="sidebar-news-title" id="sidebar-news" class="PageNews">
+              <h2 id="sidebar-news-title" class="SidebarTitle">News</h2>
                 {{ range first 5 $newspages }}
                 {{ .Render "newsitems" }}
                 {{ end }}
@@ -23,9 +24,10 @@
         {{ end }}
         {{ $eventpages := where .Site.Pages.ByLastmod.Reverse "Type" "events" }}
         {{ if not (or .Params.norevents .Site.Params.norevents) }}
-	  {{ if $eventpages }}
-            <section class="PageSummaries">
-              <h2 class="SidebarTitle">Events</h2>
+	        {{ if $eventpages }}
+            {{ partial "nav-skipto-links" . }}
+            <section aria-labelledby="sidebar-events-title" id="sidebar-events" class="PageSummaries">
+              <h2 id="sidebar-events-title" class="SidebarTitle">Events</h2>
                 {{ range first 5 $eventpages }}
                 {{ .Render "summary" }}
                 {{ end }}
@@ -34,8 +36,9 @@
         {{ end }}
         {{ $recentpages := first 5 .Site.Pages.ByLastmod.Reverse }}
         {{ if not (or .Params.norsummary .Site.Params.norsummary) }}
-          <section class="PageSummaries">
-            <h2 class="SidebarTitle">Recent Changes</h2>
+          {{ partial "nav-skipto-links" . }}
+          <section aria-labelledby="sidebar-recent-changes" class="PageSummaries">
+            <h2 id="sidebar-recent-changes" class="SidebarTitle">Recent Changes</h2>
             {{ range $recentpages }}
               {{ .Render "summary" }}
             {{ end }}

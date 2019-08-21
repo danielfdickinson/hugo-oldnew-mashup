@@ -1,5 +1,5 @@
 {{/* Footer Colophon for OldNew Mashup Theme */}}
-<div class="colophon">
+<div aria-label="Publishing information (colophon)" class="colophon">
   {{ block "license" . }}
     {{ if not (or .Site.Params.nolicense .Params.nolicense) }}
       {{ partial "footer/colophon/license" . }}
