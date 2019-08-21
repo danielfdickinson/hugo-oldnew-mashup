@@ -3,14 +3,16 @@
 {{ end }}
 {{ define "main" }}
   <main class="Main">
-    <article id="MainContent" class="MainContent">
-    {{ .Content }}
-    </article>
-  {{ if .Params.aside }}
-  <aside>
-    {{ markdownify .Params.aside }}
-  </aside>
-  {{ end }}
-  {{ partial "sidebar-right" . }}
+    <div class="main-body">
+      <article id="MainContent" class="MainContent">
+        {{ .Content }}
+      </article>
+     {{ if .Params.aside }}
+      <aside>
+        {{ markdownify .Params.aside }}
+      </aside>
+      {{ end }}
+    </div>
+    {{ partial "sidebar-right" . }}
   </main>
 {{ end }}

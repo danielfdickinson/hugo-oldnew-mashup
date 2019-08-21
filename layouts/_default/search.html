@@ -3,16 +3,18 @@
 {{ end }}
 {{ define "main" }}
 <main class="Main">
-  <article id="MainContent" class="MainContent">
-    <div id="search-results">
-      <h3>Matching pages</h3>
-   </div>
-  </article>
-  {{ if .Params.aside }}
-  <aside>
-    {{ markdownify .Params.aside }}
-  </aside>
-  {{ end }}
+  <div class="main-body">
+    <article id="MainContent" class="MainContent">
+      <div id="search-results">
+        <h3>Matching pages</h3>
+     </div>
+    </article>
+    {{ if .Params.aside }}
+    <aside>
+      {{ markdownify .Params.aside }}
+    </aside>
+    {{ end }}
+  </div>
   {{ partial "sidebar-right" . }}
 </main>
 <!-- this template is sucked in by search.js and appended to the search-results div above. So editing here will adjust style -->

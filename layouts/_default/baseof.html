@@ -20,9 +20,11 @@
   {{ end }}
   {{ block "main" . }}
         <main class="Main">
-          <article id="MainContent" class="MainContent">
-            {{ .Content }}
-          </article>
+          <div class="main-body">
+            <article id="MainContent" class="MainContent">
+              {{ .Content }}
+            </article>
+          </div>
           {{ partial "sidebar-right" . }}
         </main>
   {{ end }}
