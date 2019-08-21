@@ -4,9 +4,9 @@
      <a href="{{ .PrevInSection.RelPermalink }}">Next</a>
   {{ else }}
     {{ .PrevInSection.Scratch.Set "lnfpCurPage" $curPage }}
-    {{ partial "localnav-nextrecurse" .PrevInSection }}
+    {{ partial "sidebar/local-nav/generate/nextrecurse" .PrevInSection }}
   {{ end }}
 {{ else }}
   {{ $curPage.Scratch.Set "lnfpCurPage" $curPage }}
-  {{ partial "localnav-findnextpage" $curPage }}
+  {{ partial "sidebar/local-nav/generate/findnextpage" $curPage }}
 {{ end }}

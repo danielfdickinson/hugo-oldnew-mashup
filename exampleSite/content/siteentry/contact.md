@@ -4,4 +4,4 @@ nortoc: true
 ---
 # Contact Site Operator
 
-{{% theme-contactform 8082 %}}
+{{% contact/basic-form 8082 %}}

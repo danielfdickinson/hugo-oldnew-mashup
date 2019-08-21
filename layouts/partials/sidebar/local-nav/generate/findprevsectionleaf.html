@@ -39,7 +39,7 @@
             <a href="{{ $prevPage.RelPermalink }}">Prev</a>
           {{ else }}
             <!-- We want to go up one level and go to last leaf -->
-            {{ partial "localnav-findlastinsection" $prevPage }}
+            {{ partial "sidebar/local-nav/generate/findlastinsection" $prevPage }}
           {{ end }}
         {{ end }}
       {{ end }}
@@ -55,7 +55,7 @@
           {{ $curPage.Scratch.Set "lnfpFoundPage" true }}
           <!-- If we're the first section in our parent -->
           <!-- We want to go up one level and go to last page -->
-          {{ partial "localnav-findlastpageinsection" . }}
+          {{ partial "sidebar/local-nav/generate/findlastpageinsection" . }}
         {{ end }}
       {{ end }}
       {{ if not ($curPage.Scratch.Get "lnfpFoundPage") }}
@@ -82,7 +82,7 @@
             <a href="{{ $prevPage.RelPermalink }}">Prev</a>
           {{ else }}
             <!-- We want to go up one level and go to last leaf -->
-            {{ partial "localnav-findlastinsection" $prevPage }}
+            {{ partial "sidebar/local-nav/generate/findlastinsection" $prevPage }}
           {{ end }}
         {{ end }}
       {{ end }}

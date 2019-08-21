@@ -8,9 +8,9 @@
        Released under the Creative Commons 4.0 BY (Attribution) License -->
 {{ if (or (and .IsPage (and .Parent .Parent.Parent) ) (not (or (where .Sections ".Params.notinmenu" "ne" true) (where .Data.Pages ".Params.notinmenu" "ne" true ) ) ))  }}
   {{ .Parent.Scratch.Set "ThisPage" . }}
-  {{ partial "sidebar-sitesection" .Parent }}
+  {{ partial "sidebar/menu/section" .Parent }}
 {{ else }}
   {{ .Scratch.Set "ThisPage" . }}
-  {{ partial "sidebar-sitesection" . }}
+  {{ partial "sidebar/menu/section" . }}
 {{ end }}
 </ul></nav>

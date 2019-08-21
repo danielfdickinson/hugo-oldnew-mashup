@@ -1,14 +1,14 @@
       {{ if not (or .Params.norbar .Site.Params.norbar) }}
       <div aria-label="Sidebar" class="RightSidebar">
         {{ if not (or .Params.nornav .Site.Params.nornav) }}
-          {{ partial "localnav-bar" .Page }}
+          {{ partial "sidebar/local-nav/bar" .Page }}
         {{ end }}
         {{ if not (or .Params.nortoc .Site.Params.nortroc) }}
           {{ if and (gt .WordCount 200) (ne .Params.toc "false") }}<section aria-labelledby="sidebar-toc-title" class="TableOfContents"><h2 id="sidebar-toc-title">Table of Contents</h2>
           {{ replace .TableOfContents `href="#` (printf `href="%s#` .Permalink) | safeHTML }}</section>{{ end }}
         {{ end }}
         {{ if not (or .Params.normenu .Site.Params.normenu) }}
-          {{ partial "sidebar-menu" . }}
+          {{ partial "sidebar/menu" . }}
         {{ end }}
         {{ $newspages := where .Site.Pages.ByLastmod.Reverse "Type" "news" }}
         {{ if not (or .Params.nornews .Site.Params.nornews) }}

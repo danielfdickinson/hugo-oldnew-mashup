@@ -7,8 +7,8 @@
       {{ .Site.Title }}
     {{ end }}</title>
     {{ block "head" . }}
-       {{ partial "head-theme" . }}
-       {{ partial "head-site" . }}
+       {{ partial "head/theme" . }}
+       {{ partial "head/site" . }}
     {{ end }}
   </head>
   {{ block "bodytag" .}}
@@ -16,7 +16,7 @@
   {{ end }}
   {{ block "header" . }}
     <div class="DefaultBodyWrapper">
-      {{ partial "header" . }}
+      {{ partial "page-header" . }}
   {{ end }}
   {{ block "main" . }}
         <main class="Main">

@@ -17,11 +17,11 @@
       <!-- No more sections in our parent so try parent's parent -->
     {{ else if .Parent }}
       {{ .Parent.Scratch.Set "lnfpCurPage" .Parent }}
-      {{ partial "localnav-findnextsectionleaf" .Parent }}
+      {{ partial "sidebar/local-nav/generate/findnextsectionleaf" .Parent }}
     {{ end }}
   {{ else }}
     {{ .Parent.Scratch.Set "lnfpCurPage" .Parent }}
-    {{ partial "localnav-findnextsectionleaf" .Parent }}
+    {{ partial "sidebar/local-nav/generate/findnextsectionleaf" .Parent }}
   {{ end }}
 {{ else }}
   <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>

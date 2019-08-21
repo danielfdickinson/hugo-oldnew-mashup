@@ -2,9 +2,9 @@
   <!-- If there are sections below us -->
   {{ range (last 1 (where .Sections ".Params.notinmenu" "ne" true ) ) }}
     {{ if (where .Sections ".Params.notinmenu" "ne" true ) }}
-      {{ partial "localnav-findlastinsection" . }}
+      {{ partial "sidebar/local-nav/generate/findlastinsection" . }}
     {{ else if (where .Pages ".Params.notinmenu" "ne" true ) }}
-      {{ partial "localnav-findlastinsection" . }}
+      {{ partial "sidebar/local-nav/generate/findlastinsection" . }}
     {{ else }}
       <a href="{{ .RelPermalink }}">Prev</a>
     {{ end }}
@@ -13,9 +13,9 @@
   <!-- If there are pages below us -->
   {{ range (last 1 (where .Pages ".Params.notinmenu" "ne" true ) ) }}
    {{ if (where .Sections ".Params.notinmenu" "ne" true ) }}
-     {{ partial "localnav-findlastinsection" . }}
+     {{ partial "sidebar/local-nav/generate/findlastinsection" . }}
    {{ else if (where .Pages ".Params.notinmenu" "ne" true ) }}
-     {{ partial "localnav-findlastinsection" . }}
+     {{ partial "sidebar/local-nav/generate/findlastinsection" . }}
    {{ else }}
      <a href="{{ .RelPermalink }}">Prev</a>
    {{ end }}
@@ -23,7 +23,7 @@
 {{ else }}
   {{ if .Parent }}
     {{ .Parent.Scratch.Set "lnfpCurPage" .Parent }}
-    {{ partial "localnav-findprevsectionleaf" .Parent }}
+    {{ partial "sidebar/local-nav/generate/findprevsectionleaf" .Parent }}
   {{ else }}
     <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
   {{ end }}

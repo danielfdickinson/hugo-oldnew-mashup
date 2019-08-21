@@ -273,3 +273,7 @@ and so on.
             comma-separated list as one line (i.e. as inline
             rather than block level elements) with wrapping.  It
             consists of a 'license-list' with 'license-item's.
+
+## Description of Site Logo
+
+[Description of the Site Logo](/siteentry/site-badge-description)

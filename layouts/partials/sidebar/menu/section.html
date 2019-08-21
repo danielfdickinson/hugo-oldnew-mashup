@@ -2,22 +2,22 @@
        Released under the Creative Commons 4.0 BY (Attribution) License -->
 {{ $thisPage := .Scratch.Get "ThisPage" }}
 <li class="MenuItem">
-  {{ partial "menuitem" . }}
+  {{ partial "generic-site-menu/menuitem" . }}
   <ul class="MenuParent">
 {{ if (where .Data.Pages ".Params.notinmenu" "ne" true) }}
   {{ range (where .Data.Pages ".Params.notinmenu" "ne" true) }}
     <li class="MenuItem">
     {{ .Scratch.Set "ThisPage" $thisPage }}
-    {{ partial "menuitem" . }}
+    {{ partial "generic-site-menu/menuitem" . }}
    </li>
   {{ end }}
   {{ if (where .Sections ".Params.notinmenu" "ne" true) }}
     {{ range (where .Sections ".Params.notinmenu" "ne" true) }}
     {{ .Scratch.Set "ThisPage" $thisPage }}
       <li class="MenuItem">
-        {{ partial "menuitem" . }}
+        {{ partial "generic-site-menu/menuitem" . }}
         <ul class="MenuParent">
-          {{ partial "menusectionhtml" . }}
+          {{ partial "generic-site-menu/menusectionhtml" . }}
         </ul>
       </li>
     {{ end }}
@@ -26,9 +26,9 @@
   {{ range (where .Sections ".Params.notinmenu" "ne" true) }}
     {{ .Scratch.Set "ThisPage" $thisPage }}
     <li class="MenuItem">
-      {{ partial "menuitem" . }}
+      {{ partial "generic-site-menu/menuitem" . }}
       <ul class="MenuParent">
-        {{ partial "menusectionhtml" . }}
+        {{ partial "generic-site-menu/menusectionhtml" . }}
       </ul>
     </li>
   {{ end }}

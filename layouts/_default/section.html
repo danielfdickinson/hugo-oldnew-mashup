@@ -17,15 +17,15 @@
           <h2 id="section-contents-heading" class="section-contents-heading">Section Contents</h2>
           <ol class="section-contents">
       {{ end }}
-            {{ partial "section-nesting" . }}
+            {{ partial "layout-helpers/section/nesting" . }}
             {{ range .Sections }}
-              {{ partial "section-listing" . }}
+              {{ partial "layout-helpers/section/listing" . }}
             {{ end }}
       {{ if (or .Data.Pages .Sections) }}
           </ol>
         </section>
       {{ end }}
     </div>
-    {{ partial "sidebar-right" . }}
+    {{ partial "sidebar" . }}
   </main>
 {{ end }}

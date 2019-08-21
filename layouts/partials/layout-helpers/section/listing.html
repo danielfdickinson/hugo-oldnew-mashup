@@ -1,9 +1,9 @@
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
           {{ if (or .Sections .Pages) }}
             <ol>
-            {{ partial "section-nesting" . }}
+            {{ partial "layout-helpers/section/nesting" . }}
             {{ range .Sections }}
-              {{ partial "section-listing" . }}
+              {{ partial "layout-helpers/section/listing" . }}
             {{ end }}
             </ol>
           {{ end }}

@@ -5,29 +5,29 @@
   {{ range (where .Pages ".Param.notinmenu" "ne" true) }}
     {{ .Scratch.Set "ThisPage" $thisPage }}
     <li class="MenuItem">
-      {{ partial "menuitem" . }}
+      {{ partial "generic-site-menu/menuitem" . }}
     </li>
   {{ end }}
 {{ else }}
   {{ range (where .Pages ".Params.notinmenu" "ne" true) }}
     <li class="MenuItem">
       {{ .Scratch.Set "ThisPage" $thisPage }}
-      {{ partial "menuitem" . }}
+      {{ partial "generic-site-menu/menuitem" . }}
     </li>
   {{ end }}
   {{ range (where .Sections ".Params.notinmenu" "ne" true) }}
     {{ .Scratch.Set "ThisPage" $thisPage }}
     {{ if .IsSection }}
       <li class="MenuItem HasSubmenu">
-        {{ partial "menuitem" . }}
+        {{ partial "generic-site-menu/menuitem" . }}
         {{ if (or (where .Sections ".Params.notinmenu" "ne" true ) (where .Data.Pages ".Params.notinmenu" "ne" true ) ) }}
           <ul class="MenuParent">
-            {{ partial "menusectionhtml" . }}
+            {{ partial "generic-site-menu/menusectionhtml" . }}
           </ul>
         {{ end }}
     {{ else if .IsPage }}
       <li class="MenuItem">
-        {{ partial "menuitem" . }}
+        {{ partial "generic-site-menu/menuitem" . }}
     {{ else }}
       <li><div><span>Unknown node kind: {{ .Kind }}</span></div>
     {{ end }}

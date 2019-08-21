@@ -15,7 +15,7 @@
     {{ else }}
       <!-- no sibling sections so check parent -->
       {{ .Parent.Scratch.Set "lnfpCurPage" .Parent }}
-      {{ partial "localnav-findnextsectionleaf" .Parent }}
+      {{ partial "sidebar/local-nav/generate/findnextsectionleaf" .Parent }}
     {{ end }}
   {{ else }}
     <!-- we are a section so we need find first sub-page (if exists)
@@ -36,14 +36,14 @@
            <!-- Find next sibling of our parent -->
            {{ if .Parent.Parent }}
              {{ .Parent.Scratch.Set "lnfpCurPage" .Parent }}
-             {{ partial "localnav-findnextsection"  .Parent }}
+             {{ partial "sidebar/local-nav/generate/findnextsection"  .Parent }}
            {{ else }}
             <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
            {{ end }}
          {{ else }}
            <!-- Let's find the next sibling section in our parent -->
            {{ $curPage.Scratch.Set "lnfpCurPage" $curPage }}
-           {{ partial "localnav-findnextsection"  $curPage }}
+           {{ partial "sidebar/local-nav/generate/findnextsection"  $curPage }}
         {{ end }}
       {{ end }}
     {{ end }}

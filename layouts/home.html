@@ -10,9 +10,9 @@
 {{ end }}
 {{ define "header" }}
   <div class="Homepage">
-    <!-- Copyright 2018 Daniel F. Dickinson
+    <!-- Copyright 2018-2019 Daniel F. Dickinson
          Release under the Creative Commons BY (Attribution) 4.0 License -->
-    {{ partial "header" . }}
+    {{ partial "page-header" . }}
 {{ end }}
 {{ define "main" }}
     <main id="MainContent" class="MainContent">
@@ -25,9 +25,7 @@
       <aside class="Aside">
         {{ markdownify .Page.Params.aside}}
       </aside>
-      <div class="Splash">
-        {{ partial "splash-screenshots.html" . }}
-      </div>
+     {{ partial "splash-screenshots.html" . }}
       <aside class="AsideFooter">
         {{ markdownify .Page.Params.asidefooter }}
       </aside>

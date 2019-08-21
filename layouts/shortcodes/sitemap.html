@@ -4,9 +4,9 @@
        Released under the Creative Commons 4.0 BY (Attribution) License -->
 {{ range $.Site.Sections }}
   <li class="MenuItem">
-    {{ partial "menuitem" . }}
+    {{ partial "generic-site-menu/menuitem" . }}
     <ul class="MenuParent">
-      {{ partial "menusectionhtml" . }}
+      {{ partial "generic-site-menu/menusectionhtml" . }}
     </ul>
   </li>
 {{ end }}

@@ -11,7 +11,7 @@
           {{ if .Parent }}
             <!-- We need to go up another level -->
             {{ .Parent.Scratch.Set "lnfpCurPage" .Parent }}
-            {{ partial "localnav-findnextsection" .Parent }}
+            {{ partial "sidebar/local-nav/generate/findnextsection" .Parent }}
           {{ else }}
             <!-- If there is no higher level then we are done -->
             <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -21,7 +21,7 @@
     {{ else }}
       <!-- We need to go up another level -->
       {{ .Scratch.Set "lnfpCurPage" . }}
-      {{ partial "localnav-findnextsection" . }}
+      {{ partial "sidebar/local-nav/generate/findnextsection" . }}
     {{ end }}
     {{ if not ($curPage.Scratch.Get "lnfpFoundPage") }}
       <!-- Let's find the next section in our parent -->
@@ -38,7 +38,7 @@
         {{ else }}
           <!-- We need to go up another level -->
           {{ .Scratch.Set "lnfpCurPage" . }}
-          {{ partial "localnav-findnextsection" . }}
+          {{ partial "sidebar/local-nav/generate/findnextsection" . }}
         {{ end }}
       {{ end }}
     {{ end }}
