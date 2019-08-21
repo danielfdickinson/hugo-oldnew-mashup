@@ -29,7 +29,7 @@ disableKinds = ['taxonomy', 'taxonomyTerm']
   home = ["HTML", "JSON", "RSS"]
 
 [frontmatter]
-lastmod = ["lastmod",":git","date","publishDate"]
+  lastmod = ["lastmod",":git","date","publishDate"]
 
 [privacy]
   [privacy.disqus]
