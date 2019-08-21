@@ -1,1 +1,104 @@
+
 {{ partial "scss/footer/base.scss" . }}
+
+@media print {
+  html {
+    & body {
+      & .github-fork-ribbon.left-bottom.fixed {
+        display: none;
+        position: static;
+        &::before {
+          display: none;
+          position: static;
+        }
+        &::after {
+          display: none;
+          position: static;
+        }
+      }
+      .NavSkiptoLinks {
+        display: none;
+      }
+      & .DefaultBodyWrapper {
+        display: inline;
+        position: static;
+        width: auto;
+        & .Topbar {
+          display: inline;
+          position: static;
+          width: auto;
+          z-index: 0;
+          & .SiteBadge {
+            display: inline-block;
+            position: static;
+            width: auto;
+            & .GraphicsRow {
+              display: inline-block;
+              position: static;
+              width: auto;
+              & .SiteBadgeGraphic {
+                display: inline-block;
+                position: static;
+                width: 37px;
+              }
+            }
+            & .SiteId {
+              display: inline-block;
+              position: static;
+              width: auto;
+            }
+          }
+          & .Sitemenu {
+            display: none;
+            position: static;
+            width: auto;
+            z-index: 0;
+          }
+        }
+        & .Main,
+        & .SectionPageMain {
+          display: inline;
+          position: static;
+          width: auto;
+          & .main-body {
+            display: inline;
+            position: static;
+            width: auto;
+            & .MainContent {
+              display: inline;
+              position: static;
+              width: auto;
+            }
+            & .section-toc {
+              display: none;
+            }
+          }
+          & .RightSidebar {
+            display: none;
+            position: static;
+            width: auto;
+          }
+        }
+        & .footer {
+          display: inline;
+          position: static;
+          width: auto;
+          & .footer-links {
+            display: none;
+          }
+          & .colophon {
+            & .doc-date-block {
+              border: 0px none;
+              background-color: initial;
+              margin-top: .3em;
+              padding: 0;
+              & .label {
+                font-weight: normal;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
