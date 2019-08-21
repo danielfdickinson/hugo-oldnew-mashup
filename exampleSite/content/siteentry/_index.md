@@ -55,7 +55,7 @@ in the correct order, or you want to use a different name for the
 section than subdir name, you need to create a &#95;index.md in the
 appropriate subdir (for example to rename `content/lorem1` as
 `Lorem`, under `content/lorem1` add a content file `index.md`
-with front matter such as:
+with front-matter such as:
 
 ```yaml
 ---
@@ -165,10 +165,11 @@ and so on.
 | clear               | Causes HTML following to be rendered on the next line (never beside) the element with this class |
 | label               | Element is intended as a label for following text (but is not necessarily in a form, so not label element |
 | screen-reader-element | Element is for rending in screen readers but not regular pages |
+| rollup-hoversite    | When this a block named with this class is hovered over, rollup-element gets ``display: block`` instead of ``display: none`` |
+| rollup-element      | Is hidden (``display:none``) by default, but when a rollup-hoversite classed element is hovered over it is displayed (as block) |
 | semiblock           | For paragraphs that need an initial indent    |
 | semiblockwrapper    | For a wrapper around paragraphs that need an initial indent on every paragraph |
 | start-para-pic      | For a an image intended to be at the start of a paragraph of text (but done as a div because p elements can't contain block-level elements) |
-
 
 ### Organization and Knobs
 
