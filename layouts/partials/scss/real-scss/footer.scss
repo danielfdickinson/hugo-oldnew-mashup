@@ -81,7 +81,9 @@
 
   .colophon {
     @include license-block;
-    @include rollup-section(doc-date);
+    @include rollup-section-named(doc-date) {
+      @include utility-box;
+    };
 
     border-top: 2px solid;
     padding: .3em;
@@ -96,5 +98,11 @@
 
   & .doc-date-block {
     font-style: italic;
+  }
+
+  & ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
 }

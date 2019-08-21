@@ -3,6 +3,7 @@
  */
 // OldNew Mashup default colour settings
 
-{{ partial "scss/common/main.scss" }}
-{{ partial "scss/real-scss/base-elements-color.scss" }}
-{{ partial "scss/real-scss/footer-color.scss"}}
+{{ partial "scss/common/main.scss" . }}
+{{ partial "scss/real-scss/base-mixins-color.scss" . }}
+{{ partial "scss/real-scss/base-elements-color.scss" . }}
+{{ partial "scss/real-scss/footer-color.scss" . }}

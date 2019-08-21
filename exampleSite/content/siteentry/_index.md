@@ -111,7 +111,7 @@ whether the licenses can actually work together is another story).
 
 ## Reference Guide {#referenceguide}
 
-### Site Param
+### Site Params
 
 Set these in your site configuration file in the ``params`` section.
 E.g. for a ``config.toml`` you might have:
@@ -140,19 +140,35 @@ disableKinds = ['taxonomy', 'taxonomyTerm']
 ```
 and so on.
 
-| Param                               | Purpose                        |
+| Param                               | Description                    |
 |-------------------------------------|--------------------------------|
+| sans_font_stack                     | Default sans-serif font selection preferences |
+| mono_font_stack                     | Default monospace font selection preferences |
 | default_background_color            | self-explanatory               |
 | default_background_image            | ditto (default no image)       |
 | default_pre_background_color        | default background for pre-formatted text boxes |
-| default_hover_background            | default link hover background  |
+| default_hover_background_color      | default link hover background colour  |
 | default_container_background_color  | default background for 'containers' (e.g. boxes) |
 | default_text_color                  | default colour for any text not otherwise styled |
 | default_link_color                  | default colour for non-visited (new) links |
-| defult_visited_link_color           | default colour for visited links |
+| default_visited_link_color          | default colour for visited links |
 | default_hover_color                 | default text colour for hovered over links |
 | default_separator_color             | default colour for separating lines / borders |
-| default_container_border            | default colour for 'container' (e.g. box) borders |
+| default_container_border            | default border for 'containers' (e.g. boxes) not including colour. E.g. '4px solid' |
+| default_container_border_color      | default colour for 'containers' (e.g. boxes) borders |
+| doc_date_background_color           | background colour for the document date information colophon hover block |
+
+### Generic Styles Available
+
+| Class Name          | Description                                   |
+|---------------------|-----------------------------------------------|
+| clear               | Causes HTML following to be rendered on the next line (never beside) the element with this class |
+| label               | Element is intended as a label for following text (but is not necessarily in a form, so not label element |
+| screen-reader-element | Element is for rending in screen readers but not regular pages |
+| semiblock           | For paragraphs that need an initial indent    |
+| semiblockwrapper    | For a wrapper around paragraphs that need an initial indent on every paragraph |
+| start-para-pic      | For a an image intended to be at the start of a paragraph of text (but done as a div because p elements can't contain block-level elements) |
+
 
 ### Organization and Knobs
 
@@ -256,6 +272,3 @@ and so on.
             comma-separated list as one line (i.e. as inline
             rather than block level elements) with wrapping.  It
             consists of a 'license-list' with 'license-item's.
-
-
-## Home Section Contents

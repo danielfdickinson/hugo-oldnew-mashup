@@ -26,6 +26,10 @@ DFN {
 UL {
   & LI {
     padding-bottom: 3px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
   }
 }
 
@@ -84,6 +88,8 @@ samp {
   }
 }
 
-* {
-  box-sizing: border-box;
+@media screen {
+  * {
+    box-sizing: border-box;
+  }
 }

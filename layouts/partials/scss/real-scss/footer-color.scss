@@ -13,18 +13,11 @@
   }
 }
 
-@mixin doc-date-block-color {
-  .doc-date-hoversite {
-    &:hover + .doc-date-block,
-    &:active + .doc-date-block {
-      background-color: $default-container-background-color;
-    }
-  }
-}
-
 @mixin colophon-color {
   & .colophon {
-    @include doc-date-block-color;
+    @include rollup-section-color-named(doc-date) {
+      background-color: $doc-date-background-color;
+    }
 
     border-top-color: $default-separator-color;
   }

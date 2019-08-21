@@ -3,7 +3,8 @@
  */
 // OldeNew Mashup theme footer elements
 
-{{ partial "scss/common/main.scss" }}
-{{ partial "scss/real-scss/base-mixins.scss" }}
-{{ partial "scss/real-scss/base-elements.scss" }}
-{{ partial "scss/real-scss/footer.scss"}}
+{{ partial "scss/common/main.scss" . }}
+{{ partial "scss/real-scss/base-mixins.scss" . }}
+{{ partial "scss/real-scss/base-elements.scss" . }}
+{{ partial "scss/real-scss/base-generic-styling.scss" . }}
+{{ partial "scss/real-scss/footer.scss" . }}

@@ -14,3 +14,6 @@ $default-hover-color: {{ default "#f00" ( .Param "default_hover_color" ) }};
 
 $default-separator-color: {{ default "#808080" ( .Param "default_separator_color" ) }};
 $default-container-border: {{ default "4px solid" ( .Param "default_container_border" ) }};
+$default-container-border-color: {{ default "#000" ( .Param "default_container_border_color" ) }};
+
+$doc-date-background-color: {{ default "$default-container-background-color" ( .Param "doc_date_background_color" ) }};

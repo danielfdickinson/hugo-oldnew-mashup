@@ -1,0 +1,5 @@
+/*! Copyright 2007-2009,2017-2019 Daniel F. Dickinson <cshored@cshore.theshore.com>
+ *  Released under the Creative Commons BY (Attribution) 4.0 License
+ */#all{background-color:#bbb}body{background-color:#bbb;background-image:url("");color:#000020}a{color:#000020}a:link{color:blue}a:visited{color:#727}a:active,a:hover{background-color:#888;color:red}pre{background-color:#777}.footer .footer-links{border-top-color:gray}.footer .footer-links span{border-color:gray}.footer .colophon{border-top-color:gray}.footer .colophon .doc-date-hoversite:hover+.doc-date-block,.footer .colophon .doc-date-hoversite:active+.doc-date-block{background-color:#aaa}
+
+/*# sourceMappingURL=footer-base-color.css.map */
