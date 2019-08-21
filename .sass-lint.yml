@@ -5,6 +5,6 @@ files:
   include: '**/*.s+(a|c)ss'
   ignore:
     - '**/partials/scss/common/main.scss'
-    - '**/partials/scss/footer/*.scss'
+    - '**/partials/scss/base/*.scss'
     - 'assets/scss/hugo-templates/*.scss'
 rules:

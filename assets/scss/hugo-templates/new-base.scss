@@ -1,5 +1,6 @@
 
-{{ partial "scss/footer/base.scss" . }}
+{{ partial "scss/base/main.scss" }}
+{{ partial "scss/base/color.scss" }}
 
 @media print {
   html {
@@ -13,7 +14,7 @@
         }
         &::after {
           display: none;
-          position: static;
+          position: static
         }
       }
       .NavSkiptoLinks {
