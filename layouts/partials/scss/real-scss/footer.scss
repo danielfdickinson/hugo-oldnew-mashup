@@ -82,7 +82,7 @@
   .colophon {
     @include license-block;
     @include rollup-section-named(doc-date) {
-      @include utility-box;
+      @include utility-box($doc-date-border, $doc-date-border-color, $doc-date-text-color);
     };
 
     border-top: 2px solid;

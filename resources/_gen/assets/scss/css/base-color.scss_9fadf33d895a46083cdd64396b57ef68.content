@@ -1,0 +1,110 @@
+/*! Copyright 2007-2009,2017-2019 Daniel F. Dickinson <cshored@cshore.theshore.com>
+ *  Released under the Creative Commons BY (Attribution) 4.0 License
+ */
+/* OldNew Mashup default colour settings */
+.Topbar {
+  background-color: transparent; }
+  .Topbar .SiteBadge {
+    background-color: #888888;
+    opacity: 1.0;
+    color: #000000;
+    box-shadow: 4px 4px 4px #555555;
+    border-radius: 12px;
+    border: 2px solid #888888; }
+    .Topbar .SiteBadge:link, .Topbar .SiteBadge:visited, .Topbar .SiteBadge:hover, .Topbar .SiteBadge:active {
+      color: #000000;
+      text-decoration: none;
+      border-radius: 12px; }
+    .Topbar .SiteBadge:hover, .Topbar .SiteBadge:active {
+      border: 2px inset #000000;
+      box-shadow: 4px 4px 4px #555555 inset; }
+
+/*! Copyright 2007-2009,2017-2019 Daniel F. Dickinson <cshored@cshore.theshore.com>
+ *  Released under the Creative Commons BY (Attribution) 4.0 License
+ */
+/*  OldNew Mashup default colour settings */
+.DefaultBodyWrapper .Main .LocalNavBar,
+.DefaultBodyWrapper .SectionPageMain .LocalNavBar {
+  background-color: #888888; }
+  .DefaultBodyWrapper .Main .LocalNavBar a,
+  .DefaultBodyWrapper .Main .LocalNavBar a:link,
+  .DefaultBodyWrapper .Main .LocalNavBar a:visited,
+  .DefaultBodyWrapper .SectionPageMain .LocalNavBar a,
+  .DefaultBodyWrapper .SectionPageMain .LocalNavBar a:link,
+  .DefaultBodyWrapper .SectionPageMain .LocalNavBar a:visited {
+    color: #222222; }
+  .DefaultBodyWrapper .Main .LocalNavBar a:active,
+  .DefaultBodyWrapper .Main .LocalNavBar a:hover,
+  .DefaultBodyWrapper .SectionPageMain .LocalNavBar a:active,
+  .DefaultBodyWrapper .SectionPageMain .LocalNavBar a:hover {
+    background-color: #aaaaaa; }
+
+.DefaultBodyWrapper .Main .MainContent .highlight .chroma code,
+.DefaultBodyWrapper .SectionPageMain .MainContent .highlight .chroma code {
+  background-color: inherit; }
+
+.DefaultBodyWrapper .Main .RightSidebar .TableOfContents,
+.DefaultBodyWrapper .SectionPageMain .RightSidebar .TableOfContents {
+  background-color: #888888; }
+  .DefaultBodyWrapper .Main .RightSidebar .TableOfContents a,
+  .DefaultBodyWrapper .Main .RightSidebar .TableOfContents a:link,
+  .DefaultBodyWrapper .SectionPageMain .RightSidebar .TableOfContents a,
+  .DefaultBodyWrapper .SectionPageMain .RightSidebar .TableOfContents a:link {
+    color: #111111; }
+  .DefaultBodyWrapper .Main .RightSidebar .TableOfContents a:active,
+  .DefaultBodyWrapper .Main .RightSidebar .TableOfContents a:hover,
+  .DefaultBodyWrapper .SectionPageMain .RightSidebar .TableOfContents a:active,
+  .DefaultBodyWrapper .SectionPageMain .RightSidebar .TableOfContents a:hover {
+    background-color: #aaaaaa; }
+  .DefaultBodyWrapper .Main .RightSidebar .TableOfContents .MenuSubmenu,
+  .DefaultBodyWrapper .SectionPageMain .RightSidebar .TableOfContents .MenuSubmenu {
+    color: #000000;
+    background-color: #bbbbbb; }
+
+.PageSummaries,
+.PageNews {
+  background-color: #aaaaaa; }
+
+.Homepage .Main .MainContent hr + p:last-of-type,
+.DefaultBodyWrapper .Main .MainContent hr + p:last-of-type,
+.SectionPageWrapper .Main .MainContent hr + p:last-of-type {
+  font-size: .8em; }
+
+/*! Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@cshore.theshore.com>
+ *  Released under the Creative Commons BY (Attribution) 4.0 License
+ */
+/*  OldNew Mashup default colour settings */
+.Homepage {
+  background-image: none;
+  background-color: #bbbbbb;
+  /* grey background */ }
+
+.Homepage .Title {
+  background-color: #999999; }
+
+.Taglines {
+  color: #bbbbbb;
+  background-color: #000000; }
+  .Taglines .EnterButton,
+  .Taglines .EnterButton:link {
+    color: #aaaaaa; }
+
+.Homepage .MainContent .Splash .ScreenshotList li {
+  box-shadow: 3px 3px 3px #777; }
+
+.Homepage .MainContent .Splash .ScreenshotList li:nth-child(odd) {
+  transform: rotate(-3deg);
+  z-index: 8; }
+
+.Homepage .MainContent .Splash .ScreenshotList li:nth-child(even) {
+  transform: rotate(5deg);
+  z-index: 8; }
+
+.Homepage .MainContent .Splash .ScreenshotList li:nth-child(3) {
+  transform: translate(0, -60%) rotate(3deg);
+  z-index: 7; }
+
+.Homepage .MainContent .Splash .ScreenshotList li:nth-child(4) {
+  transform: translate(0, -55%) rotate(0deg); }
+
+/*# sourceMappingURL=base-color.css.map */

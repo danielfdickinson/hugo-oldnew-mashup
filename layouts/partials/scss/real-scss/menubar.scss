@@ -1,0 +1,230 @@
+/*! Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@thecshore.com>
+ * Released under the Creative Commons BY (Attribution) 4.0 License
+ */
+
+// The C Shore Generic Styling Elements for the menubar
+
+// Remember, for the level of specificity last rule wins
+
+@mixin menubar-menu-entry-wrapper {
+  & > .menu-entry-wrapper {
+    border-radius: 12px;
+    max-width: 8em;
+    padding-left: .1em;
+    width: 100%;
+
+    & > .menu-entry {
+      border-radius: 12px;
+
+      & > .menu-link {
+        border-radius: 12px;
+        display: inline;
+        padding-bottom: .2em;
+        padding-top: .2em;
+      }
+    }
+  }
+}
+
+@mixin menubar-search-form {
+  & form {
+    display: inline-flex;
+    flex: 2 1 5em;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+
+    & input {
+      &[type='search'] {
+        display: inline-block;
+        flex: 1 2 2em;
+      }
+    }
+
+    & input {
+      &[type='submit'] {
+        display: inline-block;
+        flex: 0 1 1em;
+      }
+    }
+  }
+}
+
+@mixin flyout-menu-parent($initial-display, $on-display, $item-display, $initial-z-index, $position, $topbottom, $topvalue, $right) {
+  & > .menu-parent {
+    @include enable-z-index($initial-z-index, $topbottom);
+
+    #{$topbottom}: $topvalue;
+    background-color: $menubar-submenu-background-color;
+    border-radius: 12px;
+    display: $initial-display;
+    left: auto;
+    list-style: none inside;
+    margin: 0;
+    opacity: 1;
+    padding: 0;
+    position: $position;
+    right: $right;
+    width: 100%;
+
+    &:active,
+    &:hover {
+      border-radius: 12px;
+      box-shadow: none;
+    }
+
+    & > .menu-item {
+      @include menu-item-contents($item-display, $on-display, $initial-z-index) {
+        @include menubar-menu-entry-wrapper;
+
+        @content;
+      }
+      margin: inherit;
+      padding: inherit;
+    }
+  }
+}
+
+@mixin flyout-menu-parent-parent($initial-display, $on-display, $item-display, $initial-z-index, $topbottom, $position, $right) {
+  & > .menu-parent {
+    @include enable-z-index($initial-z-index, $topbottom);
+
+    background-color: $menubar-submenu-background-color;
+    border: 2px solid;
+    border-radius: 12px;
+    display: $initial-display;
+    left: auto;
+    list-style: none inside;
+    margin: 0;
+    opacity: 1;
+    padding: 0;
+    position: $position;
+    right: $right;
+    top: 100%;
+    width: 100%;
+
+    & > .menu-item {
+      @include menu-item-contents($item-display, $on-display, $initial-z-index) {
+        @include menubar-menu-entry-wrapper;
+        @include flyout-menu-parent($initial-display, $on-display, $item-display, $initial-z-index + 1, $position, bottom, 0, $right) {
+          border-radius: 12px;
+          box-shadow: none;
+        }
+
+        border: 2px none;
+        border-radius: 12px;
+        box-shadow: none;
+        display: $initial-display;
+        left: auto;
+        list-style: none inside;
+        margin: 0;
+        opacity: 1;
+        padding: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.menubar-site-menu {
+  @include enable-z-index(20, top);
+
+  align-content: stretch;
+  align-items: stretch;
+  align-self: stretch;
+  display: inline-flex;
+  flex: 2 1 60%;
+  flex-wrap: nowrap;
+  justify-content: stretch;
+  margin-left: 2em;
+
+  .menu-link {
+    text-decoration: none;
+  }
+
+  & > .menubar-site-menu-list {
+    @include enable-z-index(20, top);
+
+    align-content: space-around;
+    align-items: center;
+    display: inline-flex;
+    flex: 1 1 100%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & > .menu-item {
+      @include menu-item-contents(inline-block, block, 20) {
+        @include menubar-menu-entry-wrapper;
+        @include flyout-menu-parent-parent(none, block, inline-block, 22, top, absolute, 33%);
+
+        border: 2px none;
+        border-radius: 12px;
+        box-shadow: 4px 4px 4px $menubar-box-shadow-color;
+
+        flex: 0 2 7em;
+        margin: .2em;
+        padding: .2em;
+        text-align: center;
+
+        &:hover,
+        &:active {
+          border-radius: 12px;
+          box-shadow: none;
+        }
+      }
+
+      border: 2px solid $menubar-top-level-border-color;
+    }
+
+    & > .top-search {
+      @include menubar-search-form;
+
+      align-self: center;
+      display: flex;
+      flex: 2 1 7em;
+      margin-left: .4em;
+    }
+  }
+}
+
+@mixin menubar-active-menu-parent-active {
+  &:active,
+  &:hover {
+    border: solid 2px;
+  }
+}
+
+@mixin menubar-active-menu-item-parent($on-display) {
+  & > LI {
+    &:active,
+    &:hover {
+      border: 2px solid;
+
+      & > UL {
+        @include menubar-active-menu-parent-active;
+        border: 2px solid;
+        display: $on-display;
+      }
+    }
+  }
+}
+
+@mixin menubar-active-menu-parent($on-display) {
+  & > UL {
+    @include menubar-active-menu-item-parent($on-display);
+
+    display: $on-display;
+  }
+}
+
+.menubar-site-menu-list {
+  & > .menu-item {
+
+    &:active,
+    &:hover {
+      @include menubar-active-menu-parent(block);
+    }
+  }
+}

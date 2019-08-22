@@ -6,18 +6,18 @@
 {{ end }}
 {{ block "links" . }}
     {{ if $.Site.BaseURL }}<base href="{{ $.Site.BaseURL }}">{{ end }}
-    {{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true) }}
+    {{ $options := (dict "enableSourceMap" true) }}
     {{ $nm := resources.Get "css/modules/necolas-normalize.css/normalize.css" | resources.ToCSS $options }}
     {{ $b := resources.Get "css/base.scss" | resources.ToCSS $options }}
     {{ $bc := resources.Get "css/base-color.scss" | resources.ToCSS $options }}
     {{ $nb := resources.Get "scss/hugo-templates/new-base.scss" }}
     {{ $nbstyle := $nb | resources.ExecuteAsTemplate "css/new-base.scss" . | resources.ToCSS $options }}
     {{ $ghf := resources.Get "css/modules/simonwhitaker-github-fork-ribbon-css/gh-fork-ribbon.css" | resources.ToCSS $options }}
-    <link rel="stylesheet" href="{{ $nm.RelPermalink }}"/>
-    <link rel="stylesheet" href="{{ $ghf.RelPermalink }}"/>
-    <link rel="stylesheet" href="{{ $b.RelPermalink }}"/>
-    <link rel="stylesheet" href="{{ $bc.RelPermalink }}"/>
-    <link rel="stylesheet" href="{{ $nbstyle.RelPermalink }}"/>
+    <link rel="stylesheet" href="{{ $nm.Permalink }}"/>
+    <link rel="stylesheet" href="{{ $ghf.Permalink }}"/>
+    <link rel="stylesheet" href="{{ $b.Permalink }}"/>
+    <link rel="stylesheet" href="{{ $bc.Permalink }}"/>
+    <link rel="stylesheet" href="{{ $nbstyle.Permalink }}"/>
 {{ end }}
 {{ block "output-formats" . }}
   {{ range .AlternativeOutputFormats -}}

@@ -66,6 +66,9 @@ license: Expired&CC0-1.0
 weight: 100
 ---
 ```
+<pre>
+<a href="/test">test</a> other-test
+</pre>
 
 Note that the above information also applies to the automatically
 created floating navbar.  Sub-menus are for sub-sections (that is,

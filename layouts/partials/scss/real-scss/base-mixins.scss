@@ -9,18 +9,18 @@
   }
 }
 
-@mixin enable-z-index($initial-z-index) {
-  left: 0;
+@mixin enable-z-index($initial-z-index, $topbottom) {
+  #{$topbottom}: 0;
   position: relative;
-  top: 0;
-  width: 100%;
   z-index: $initial-z-index;
 }
 
-@mixin utility-box {
-  border: $default-container-border $default-container-border-color;
+@mixin utility-box($utility-box-border, $utility-box-border-color, $utility-box-text-color) {
+  border: $utility-box-border $utility-box-border-color;
+  color: $utility-box-text-color;
   padding: .6em;
   text-align: left;
+  @content;
 }
 
 @mixin rollup-section-named ($rollup-section-name) {

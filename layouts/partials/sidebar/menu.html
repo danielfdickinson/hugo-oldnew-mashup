@@ -1,9 +1,9 @@
 <!-- Copyright 2018-2019 Daniel F. Dickinson,
      Released under the Creative Commons 4.0 BY (Attribution) License -->
 {{ partial "nav-skipto-links" . }}
-<nav id="sidebar-sitemenu" class="SidebarSitemap">
+<nav id="sidebar-site-menu" class="sidebar-sitemap sidebar-box">
 <h2>Navigation Menu</h2>
-<ul class="SitemapList">
+<ul class="sitemap-list">
   <!-- Copyright 2018-2019 Daniel F. Dickinson,
        Released under the Creative Commons 4.0 BY (Attribution) License -->
 {{ if (or (and .IsPage (and .Parent .Parent.Parent) ) (not (or (where .Sections ".Params.notinmenu" "ne" true) (where .Data.Pages ".Params.notinmenu" "ne" true ) ) ))  }}

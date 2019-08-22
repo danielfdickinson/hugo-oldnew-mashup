@@ -4,7 +4,7 @@
   <span>Skip to: </span>
   <a href="#main-content" class="skip-to-links">Main Content for {{ .Name }}</a>
   {{ if not (.Param "norbar") }}
-    {{ if not (.Param "normenu") }}<a href="#sidebar-sitemenu" class="skip-to-links">Sidebar Section Menu</a>{{ end }}
+    {{ if not (.Param "normenu") }}<a href="#sidebar-site-menu" class="skip-to-links">Sidebar Section Menu</a>{{ end }}
     {{ if not (.Param "nornews") }}<a href="#sidebar-news" class="skip-to-links">News for {{ .Name }}</a>{{ end }}
     {{ if not (.Param "norevents") }}<a href="#sidebar-events" class="skip-to-links">Events for {{ .Name }}</a>{{ end }}
     {{ if not (.Param "norsummary") }}<a href="#sidebar-recent-changes" class="skip-to-links">News for {{ .Name }}</a>{{ end }}

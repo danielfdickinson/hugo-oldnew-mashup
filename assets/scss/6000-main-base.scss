@@ -155,12 +155,7 @@
         }
       }
 
-      & .TableOfContents {
-        text-align: left;
-        & h2 {
-          font-size: 1em;
-	        margin-bottom: 0;
-        }
+      & .sidebar-toc {
         & ul {
           list-style: none;
           list-style-position: outside;

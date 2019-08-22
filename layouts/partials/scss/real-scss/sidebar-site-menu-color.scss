@@ -1,0 +1,20 @@
+.sidebar-sitemap {
+  & .menu-item {
+    & .menu-entry-wrapper.current-page { // sass-lint:disable-line force-element-nesting
+      border-left-color: $default-text-color;
+      padding-left: 12px;
+    }
+
+    & .menu-entry-wrapper {
+      background-color: $sidebar-menu-entry-row-background-color;
+    }
+
+    &:active,
+    &:hover {
+      & > .menu-entry-wrapper {
+        background-color: $default-hover-background-color;
+        color: $default-hover-color;
+      }
+    }
+  }
+}

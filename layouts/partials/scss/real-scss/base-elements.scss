@@ -52,6 +52,10 @@ samp {
   width: 100%;
 }
 
+a {
+  display: inline-block;
+}
+
 @media not speech {
   html {
     font-size: 16px;

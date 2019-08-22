@@ -31,6 +31,28 @@ a {
   }
 }
 
-pre {
+pre,
+code,
+samp,
+var,
+kbd {
   background-color: $default-pre-background-color;
+  color: $default-pre-text-color;
+
+  & a {
+    color: $default-pre-text-color;
+
+    &:link {
+      color: $default-pre-link-color;
+    }
+
+    &:visited {
+      color: $default-pre-visited-color;
+    }
+
+    &:active,
+    &:hover {
+      color: $default-pre-hover-color;
+    }
+  }
 }

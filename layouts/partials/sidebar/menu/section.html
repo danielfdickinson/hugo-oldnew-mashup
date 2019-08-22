@@ -1,23 +1,23 @@
   <!-- Copyright 2018-2019 Daniel F. Dickinson,
        Released under the Creative Commons 4.0 BY (Attribution) License -->
 {{ $thisPage := .Scratch.Get "ThisPage" }}
-<li class="MenuItem">
-  {{ partial "generic-site-menu/menuitem" . }}
-  <ul class="MenuParent">
+<li class="menu-item">
+  {{ partial "generic-site-menu/menu-item" . }}
+  <ul class="menu-parent">
 {{ if (where .Data.Pages ".Params.notinmenu" "ne" true) }}
   {{ range (where .Data.Pages ".Params.notinmenu" "ne" true) }}
-    <li class="MenuItem">
+    <li class="menu-item">
     {{ .Scratch.Set "ThisPage" $thisPage }}
-    {{ partial "generic-site-menu/menuitem" . }}
+    {{ partial "generic-site-menu/menu-item" . }}
    </li>
   {{ end }}
   {{ if (where .Sections ".Params.notinmenu" "ne" true) }}
     {{ range (where .Sections ".Params.notinmenu" "ne" true) }}
     {{ .Scratch.Set "ThisPage" $thisPage }}
-      <li class="MenuItem">
-        {{ partial "generic-site-menu/menuitem" . }}
-        <ul class="MenuParent">
-          {{ partial "generic-site-menu/menusectionhtml" . }}
+      <li class="menu-item">
+        {{ partial "generic-site-menu/menu-item" . }}
+        <ul class="menu-parent">
+          {{ partial "generic-site-menu/menu-section" . }}
         </ul>
       </li>
     {{ end }}
@@ -25,10 +25,10 @@
 {{ else if (where .Sections ".Params.notinmenu" "ne" true) }}
   {{ range (where .Sections ".Params.notinmenu" "ne" true) }}
     {{ .Scratch.Set "ThisPage" $thisPage }}
-    <li class="MenuItem">
-      {{ partial "generic-site-menu/menuitem" . }}
-      <ul class="MenuParent">
-        {{ partial "generic-site-menu/menusectionhtml" . }}
+    <li class="menu-item">
+      {{ partial "generic-site-menu/menu-item" . }}
+      <ul class="menu-parent">
+        {{ partial "generic-site-menu/menu-section" . }}
       </ul>
     </li>
   {{ end }}

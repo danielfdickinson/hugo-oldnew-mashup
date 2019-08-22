@@ -1,0 +1,32 @@
+.sidebar-sitemap {
+  & .sitemap-list {
+    list-style: none inside;
+    margin: 0;
+    padding: 0;
+
+    & > .menu-item {
+      @include menu-item-contents(inline-block, inline-block, inherit) {
+        text-align: left;
+
+        & .menu-entry-wrapper {
+          display: inline-block;
+          padding-left: 12px;
+        }
+      }
+
+      @include list-menu-parent-parent(inline-block, none, inline-block);
+
+      margin-bottom: .2em;
+    }
+  }
+}
+
+.sidebar-sitemap > .sitemap-list > .menu-item > .menu-parent { // sass-lint:disable-line force-element-nesting
+  display: inline-block;
+  margin-top: .2em;
+  width: 80%;
+}
+
+.sidebar-sitemap > .sitemap-list > .menu-item > .menu-parent > .menu-item > .menu-parent { // sass-lint:disable-line force-element-nesting
+  display: none;
+}

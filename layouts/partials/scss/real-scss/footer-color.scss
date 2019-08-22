@@ -17,6 +17,7 @@
   & .colophon {
     @include rollup-section-color-named(doc-date) {
       background-color: $doc-date-background-color;
+      color: $doc-date-text-color;
     }
 
     border-top-color: $default-separator-color;

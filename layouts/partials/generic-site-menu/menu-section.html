@@ -4,30 +4,30 @@
 {{ if not (where .Sections ".Params.notinmenu" "ne" true) }}
   {{ range (where .Pages ".Param.notinmenu" "ne" true) }}
     {{ .Scratch.Set "ThisPage" $thisPage }}
-    <li class="MenuItem">
-      {{ partial "generic-site-menu/menuitem" . }}
+    <li class="menu-item">
+      {{ partial "generic-site-menu/menu-item" . }}
     </li>
   {{ end }}
 {{ else }}
   {{ range (where .Pages ".Params.notinmenu" "ne" true) }}
-    <li class="MenuItem">
+    <li class="menu-item">
       {{ .Scratch.Set "ThisPage" $thisPage }}
-      {{ partial "generic-site-menu/menuitem" . }}
+      {{ partial "generic-site-menu/menu-item" . }}
     </li>
   {{ end }}
   {{ range (where .Sections ".Params.notinmenu" "ne" true) }}
     {{ .Scratch.Set "ThisPage" $thisPage }}
     {{ if .IsSection }}
-      <li class="MenuItem HasSubmenu">
-        {{ partial "generic-site-menu/menuitem" . }}
+      <li class="menu-item has-sub-menu">
+        {{ partial "generic-site-menu/menu-item" . }}
         {{ if (or (where .Sections ".Params.notinmenu" "ne" true ) (where .Data.Pages ".Params.notinmenu" "ne" true ) ) }}
-          <ul class="MenuParent">
-            {{ partial "generic-site-menu/menusectionhtml" . }}
+          <ul class="menu-parent">
+            {{ partial "generic-site-menu/menu-section" . }}
           </ul>
         {{ end }}
     {{ else if .IsPage }}
-      <li class="MenuItem">
-        {{ partial "generic-site-menu/menuitem" . }}
+      <li class="menu-item">
+        {{ partial "generic-site-menu/menu-item" . }}
     {{ else }}
       <li><div><span>Unknown node kind: {{ .Kind }}</span></div>
     {{ end }}
