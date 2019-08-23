@@ -5,7 +5,7 @@
 // OldNew Mashup Theme Main Elements Stylesheet
 //  Remember, for the level of specifity last rule wins
 
-.DefaultBodyWrapper {
+.default-body-wrapper {
   display: flex;
   align-content: flex-start;
   align-items: flex-start;
@@ -94,7 +94,7 @@
   }
 }
 
-.DefaultBodyWrapper {
+.default-body-wrapper {
   & .Main,
   & .SectionPageMain {
     & .RightSidebar {
