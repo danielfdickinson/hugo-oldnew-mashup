@@ -35,14 +35,13 @@
     flex: 1 1 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
     & .main-body {
       display: inline-block;
       order: 1;
       flex: 1 1 50%;
       padding-left: .8em;
       padding-right: .8em;
-      max-width: 73%;
+//      max-width: 73%;
 
       & .section-toc {
         display: block;
@@ -56,22 +55,6 @@
           text-align: center;
           margin-bottom: .2em;
           display: block;
-        }
-      }
-      & .highlight {
-        resize: both;
-        display: block;
-        flex: 1 1 60%;
-        & .chroma {
-          display: block;
-          width: auto;
-          padding-bottom: 12px;
-          overflow: hidden;
-          &:hover,
-          &:active {
-            padding-bottom: 0px;
-            overflow-x: scroll;
-          }
         }
       }
 
