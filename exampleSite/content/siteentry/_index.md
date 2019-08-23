@@ -23,7 +23,7 @@ Jump to [Reference Guide](/siteentry/#referenceguide)
 ## Example Site
 
 ``/exampleSite`` contains some example content as per
-"[Add a theme to hugoThemes list](https://github.com/gohugoio/hugoThemes#adding-a-theme-to-the-list)",
+["Add a theme to hugoThemes list"](https://github.com/gohugoio/hugoThemes#adding-a-theme-to-the-list),
 including this documentation page and a sample of how to use this theme.
 The theme is in early release form in that while it is usable for
 simple sites, there is quite a bit of  work to do before it's truly
