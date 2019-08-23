@@ -6,20 +6,19 @@
 
 // Remember, for the level of specificity last rule wins
 
-@mixin menu-link {
-  & .menu-link {
-    display: inline;
+@mixin menu-entry {
+  & .menu-entry {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
   }
 }
 
-@mixin menu-entry {
-  & .menu-entry {
-    @include menu-link;
+@mixin menu-link {
+  & .menu-link {
+    @include menu-entry;
 
-    display: inline-block;
+    display: block;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
@@ -28,7 +27,7 @@
 
 @mixin menu-entry-wrapper {
   & .menu-entry-wrapper {
-    @include menu-entry;
+    @include menu-link;
 
     display: block;
     width: 100%;
@@ -63,16 +62,17 @@
 }
 
 @mixin menu-item-contents ($item-display, $on-display, $initial-z-index) {
-  @include enable-z-index($initial-z-index, top);
   @include menu-entry-wrapper;
   @content;
 
   display: $item-display;
   list-style: none inside;
+  padding-bottom: 0;
   width: 100%;
 
   &:active,
   &:hover {
+    @include enable-z-index($initial-z-index, top);
     @include active-menu-parent($on-display);
   }
 }
@@ -118,10 +118,4 @@
 
 .menu-parent {
   margin-top: .2em;
-}
-
-.menu-item {
-  & .menu-entry-wrapper {
-    display: inline-block;
-  }
 }

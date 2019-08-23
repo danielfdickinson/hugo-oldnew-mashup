@@ -2,12 +2,12 @@ $serif-font-stack: {{ default "Georgia, serif" ( .Param "serif_stack" ) }};
 $sans-font-stack: {{ default "Lucida Sans Unicode, Lucida Granda, sans-serif" ( .Param "sans_font_stack" ) }};
 $mono-font-stack: {{ default "Lucida Console, Monaco, monospace" ( .Param "mono_font_stack" ) }};
 
-$default-background-color: {{ default "#444" ( .Param "default_background_color" ) }};
+$default-background-color: {{ default "#333" ( .Param "default_background_color" ) }};
 {{ if .Param "default_background_image" }}$default-background-image: {{ .Param "default_background_image" }};{{ else  }}$default-background-image: '';{{ end }}
 $default-text-color: {{ default "#eee" ( .Param "default_text_color" ) }};
-$default-link-color: {{ default "#ccc" ( .Param "default_link_color" ) }};
+$default-link-color: {{ default "#ccf" ( .Param "default_link_color" ) }};
 $default-visited-link-color: {{ default "#cde" ( .Param "default_visited_link_color" ) }};
-$default-hover-background-color: {{ default "#999" ( .Param "default_hover_background_color" ) }};
+$default-hover-background-color: {{ default "#777" ( .Param "default_hover_background_color" ) }};
 $default-hover-color: {{ default "#f00" ( .Param "default_hover_color" ) }};
 
 $default-pre-background-color: {{ default "#000" ( .Param "default_pre_background_color" ) }};
@@ -43,8 +43,16 @@ $doc-date-border-color: {{ default "$default-container-border-color" ( .Param "d
 $doc-date-background-color: {{ default "$default-container-background-color" ( .Param "doc_date_background_color" ) }};
 $doc-date-text-color: {{ default "$default-container-text-color" ( .Param "doc_date_text_color" ) }};
 
-$menubar-box-shadow-color: {{ default "#000" ( .Param "menubar_box_shadow_color") }};
-$menubar-top-level-border-color: {{ default "#222" ( .Param "menubar_top_level_border_color") }};
+$default-top-bar-background-color: {{ default "$default-background-color" ( .Param "default_top_bar_background_color" ) }};
+$default-top-bar-box-shadow-color: {{ default "#000" ( .Param "default_top_bar_box_shadow_color") }};
+$default-top-bar-border-color: {{ default "#222" ( .Param "default_top_bar_border_color") }};
+$default-top-bar-hover-border-color: {{ default "#000"  ( .Param "default_top_bar_hover_border_color") }};
+$default-top-bar-hover-box-shadow-color: {{ default "#555"  ( .Param "default_top_bar_hover_box_shadow_color") }};
+
+$site-badge-graphic-background-color: {{ default "$default-inline-pre-background-color" ( .Param "$site_badge_graphic_background_color") }};
+
+$menubar-box-shadow-color: {{ default "$default-top-bar-box-shadow-color" ( .Param "menubar_box_shadow_color") }};
+$menubar-top-level-border-color: {{ default "$default-top-bar-border-color" ( .Param "menubar_top_level_border_color") }};
 $menubar-submenu-background-color: {{ default "$default-container-background-color" ( .Param "menubar_submenu_background_color" ) }};
 
 $local-nav-background-color: {{ default "#bbb" ( .Param "local_nav_background_color" ) }};

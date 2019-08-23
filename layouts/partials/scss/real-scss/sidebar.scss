@@ -64,6 +64,15 @@
 }
 
 .sidebar-toc {
+  & li {
+    display: block;
+
+    & a {
+      display: block;
+      padding: .2em;
+    }
+  }
+
   & ul {
     list-style: none;
     list-style-position: outside;

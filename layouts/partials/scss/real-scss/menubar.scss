@@ -9,18 +9,15 @@
 @mixin menubar-menu-entry-wrapper {
   & > .menu-entry-wrapper {
     border-radius: 12px;
-    max-width: 8em;
-    padding-left: .1em;
+    max-width: 10em;
     width: 100%;
 
-    & > .menu-entry {
+    & > .menu-link {
       border-radius: 12px;
+      padding: .4em;
 
-      & > .menu-link {
+      & > .menu-entry {
         border-radius: 12px;
-        display: inline;
-        padding-bottom: .2em;
-        padding-top: .2em;
       }
     }
   }
@@ -78,8 +75,6 @@
 
         @content;
       }
-      margin: inherit;
-      padding: inherit;
     }
   }
 }
@@ -106,7 +101,7 @@
     & > .menu-item {
       @include menu-item-contents($item-display, $on-display, $initial-z-index) {
         @include menubar-menu-entry-wrapper;
-        @include flyout-menu-parent($initial-display, $on-display, $item-display, $initial-z-index + 1, $position, bottom, 0, $right) {
+        @include flyout-menu-parent($initial-display, $on-display, $item-display, $initial-z-index + 2, $position, top, -100%, $right) {
           border-radius: 12px;
           box-shadow: none;
         }
@@ -143,8 +138,6 @@
   }
 
   & > .menubar-site-menu-list {
-    @include enable-z-index(20, top);
-
     align-content: space-around;
     align-items: center;
     display: inline-flex;
@@ -166,16 +159,18 @@
 
         flex: 0 2 7em;
         margin: .2em;
-        padding: .2em;
         text-align: center;
 
         &:hover,
         &:active {
+          background-color: $default-hover-background-color;
+          border: 2px inset $default-top-bar-hover-border-color;
           border-radius: 12px;
-          box-shadow: none;
+          box-shadow: 4px 4px 4px $default-top-bar-hover-box-shadow-color inset;
         }
       }
 
+      background-color: $default-top-bar-background-color;
       border: 2px solid $menubar-top-level-border-color;
     }
 

@@ -4,6 +4,11 @@
     margin: 0;
     padding: 0;
 
+    & .menu-link {
+      padding-bottom: .2em;
+      padding-top: .2em;
+    }
+
     & > .menu-item {
       @include menu-item-contents(inline-block, inline-block, inherit) {
         text-align: left;
@@ -20,6 +25,8 @@
     }
 
     & .menu-item {
+      padding-bottom: 0;
+
       & .menu-entry-wrapper.current-page { // sass-lint:disable-line force-element-nesting
         border-left-color: $default-text-color;
         padding-left: 12px;
@@ -36,6 +43,7 @@
           color: $default-hover-color;
         }
       }
+
     }
   }
 }

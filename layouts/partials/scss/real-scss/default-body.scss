@@ -11,7 +11,11 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
+  left: 0;
+  position: relative;
+  top: 0;
   width: 100%;
+  z-index: 0;
 }
 
 .main,
@@ -36,6 +40,7 @@
   & h1 {
     border-bottom: 6px ridge;
     border-top: 6px ridge;
+    margin-top: 0;
   }
 
   & .section-toc {
@@ -85,4 +90,12 @@
   padding-left: 0;
   padding-right: 0;
   width: 45%;
+}
+
+.sitemap-main {
+  & .menu-item {
+    & .menu-link {
+      display: block;
+    }
+  }
 }
