@@ -1,5 +1,0 @@
-@mixin rollup-section-color-named($rollup-section-name) {
-  & .#{$rollup-section-name}-block {
-    @content;
-  }
-}

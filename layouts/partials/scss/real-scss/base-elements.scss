@@ -1,6 +1,15 @@
+#all { // sass-lint:disable-line no-ids
+  background-color: $default-background-color;
+}
+
 body {
   // People seem to like sans-serif better than serif
   // so use a good looking default
+  background-color: $default-background-color;
+  @if($default-background-image) {
+    background-image: url($default-background-image);
+  }
+  color: $default-text-color;
   font-family: $sans-font-stack;
 }
 
@@ -21,6 +30,32 @@ ABBR,
 DFN {
   border-bottom: 1px dotted;
   cursor: help;
+}
+
+pre,
+code,
+samp,
+var,
+kbd {
+  background-color: $default-pre-background-color;
+  color: $default-pre-text-color;
+
+  & a {
+    color: $default-pre-text-color;
+
+    &:link {
+      color: $default-pre-link-color;
+    }
+
+    &:visited {
+      color: $default-pre-visited-color;
+    }
+
+    &:active,
+    &:hover {
+      color: $default-pre-hover-color;
+    }
+  }
 }
 
 UL {
@@ -52,9 +87,27 @@ samp {
   width: 100%;
 }
 
+// Change the colour links to match our colour scheme
 a {
+  // anchors default to regular text colour
+  color: $default-text-color;
   display: inline-block;
+
+  &:link {
+    color: $default-link-color;
+  }
+
+  &:visited {
+    color: $default-visited-link-color;
+  }
+
+  &:active,
+  &:hover {
+    background-color: $default-hover-background-color;
+    color: $default-hover-color;
+  }
 }
+
 
 @media not speech {
   html {

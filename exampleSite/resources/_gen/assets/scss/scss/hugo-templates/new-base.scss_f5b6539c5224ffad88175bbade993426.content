@@ -1,7 +1,13 @@
 /*! Copyright 2007-2009,2017-2019 Daniel F. Dickinson <cshored@thecshore.com>
  *  Released under the Creative Commons BY (Attribution) 4.0 License
  */
+#all {
+  background-color: #444; }
+
 body {
+  background-color: #444;
+  background-image: url("");
+  color: #eee;
   font-family: Lucida Sans Unicode, Lucida Granda, sans-serif; }
 
 pre,
@@ -18,6 +24,42 @@ ABBR,
 DFN {
   border-bottom: 1px dotted;
   cursor: help; }
+
+pre,
+code,
+samp,
+var,
+kbd {
+  background-color: #000;
+  color: #aaa; }
+  pre a,
+  code a,
+  samp a,
+  var a,
+  kbd a {
+    color: #aaa; }
+    pre a:link,
+    code a:link,
+    samp a:link,
+    var a:link,
+    kbd a:link {
+      color: #999; }
+    pre a:visited,
+    code a:visited,
+    samp a:visited,
+    var a:visited,
+    kbd a:visited {
+      color: #cde; }
+    pre a:active, pre a:hover,
+    code a:active,
+    code a:hover,
+    samp a:active,
+    samp a:hover,
+    var a:active,
+    var a:hover,
+    kbd a:active,
+    kbd a:hover {
+      color: #fff; }
 
 UL LI {
   padding-bottom: 3px; }
@@ -40,7 +82,15 @@ samp {
   width: 100%; }
 
 a {
+  color: #eee;
   display: inline-block; }
+  a:link {
+    color: #ccc; }
+  a:visited {
+    color: #cde; }
+  a:active, a:hover {
+    background-color: #999;
+    color: #f00; }
 
 @media not speech {
   html {
@@ -169,7 +219,7 @@ a {
   margin-top: .4em;
   order: 999; }
   .footer .footer-links {
-    border-top: 2px solid;
+    border-top: 2px solid #909090;
     display: flex;
     justify-content: space-between;
     padding: .3em;
@@ -177,13 +227,13 @@ a {
     .footer .footer-links a:link, .footer .footer-links a:visited, .footer .footer-links a:active, .footer .footer-links a:hover {
       text-decoration: none; }
     .footer .footer-links span {
-      border-left: 2px solid;
-      border-right: 2px solid;
+      border-left: 2px solid #909090;
+      border-right: 2px solid #909090;
       display: inline-block;
       padding-left: .2em;
       padding-right: .2em; }
   .footer .colophon {
-    border-top: 2px solid;
+    border-top: 2px solid #909090;
     padding: .3em;
     text-align: left; }
     .footer .colophon .license-block {
@@ -223,7 +273,9 @@ a {
       border: 4px solid #ccc;
       color: #ccc;
       padding: .6em;
-      text-align: left; }
+      text-align: left;
+      background-color: #222;
+      color: #ccc; }
 
 .colophon .doc-date-hoversite {
   font-style: italic; }
@@ -353,6 +405,14 @@ a {
           display: none; }
           .sidebar-sitemap .sitemap-list > .menu-item .menu-parent .menu-item:active > UL > LI:active > UL, .sidebar-sitemap .sitemap-list > .menu-item .menu-parent .menu-item:active > UL > LI:hover > UL, .sidebar-sitemap .sitemap-list > .menu-item .menu-parent .menu-item:hover > UL > LI:active > UL, .sidebar-sitemap .sitemap-list > .menu-item .menu-parent .menu-item:hover > UL > LI:hover > UL {
             display: none; }
+  .sidebar-sitemap .sitemap-list .menu-item .menu-entry-wrapper.current-page {
+    border-left-color: #eee;
+    padding-left: 12px; }
+  .sidebar-sitemap .sitemap-list .menu-item .menu-entry-wrapper {
+    background-color: #000; }
+  .sidebar-sitemap .sitemap-list .menu-item:active > .menu-entry-wrapper, .sidebar-sitemap .sitemap-list .menu-item:hover > .menu-entry-wrapper {
+    background-color: #999;
+    color: #f00; }
 
 .sidebar-sitemap > .sitemap-list > .menu-item > .menu-parent {
   display: inline-block;
@@ -596,88 +656,6 @@ a {
       display: block; }
       .menubar-site-menu-list > .menu-item:active > UL > LI:active > UL:active, .menubar-site-menu-list > .menu-item:active > UL > LI:active > UL:hover, .menubar-site-menu-list > .menu-item:active > UL > LI:hover > UL:active, .menubar-site-menu-list > .menu-item:active > UL > LI:hover > UL:hover, .menubar-site-menu-list > .menu-item:hover > UL > LI:active > UL:active, .menubar-site-menu-list > .menu-item:hover > UL > LI:active > UL:hover, .menubar-site-menu-list > .menu-item:hover > UL > LI:hover > UL:active, .menubar-site-menu-list > .menu-item:hover > UL > LI:hover > UL:hover {
         border: solid 2px; }
-
-/*! Copyright 2007-2009,2017-2019 Daniel F. Dickinson <cshored@cshore.theshore.com>
- *  Released under the Creative Commons BY (Attribution) 4.0 License
- */
-#all {
-  background-color: #444; }
-
-body {
-  background-color: #444;
-  background-image: url("");
-  color: #eee; }
-
-a {
-  color: #eee; }
-  a:link {
-    color: #ccc; }
-  a:visited {
-    color: #cde; }
-  a:active, a:hover {
-    background-color: #999;
-    color: #f00; }
-
-pre,
-code,
-samp,
-var,
-kbd {
-  background-color: #000;
-  color: #aaa; }
-  pre a,
-  code a,
-  samp a,
-  var a,
-  kbd a {
-    color: #aaa; }
-    pre a:link,
-    code a:link,
-    samp a:link,
-    var a:link,
-    kbd a:link {
-      color: #999; }
-    pre a:visited,
-    code a:visited,
-    samp a:visited,
-    var a:visited,
-    kbd a:visited {
-      color: #cde; }
-    pre a:active, pre a:hover,
-    code a:active,
-    code a:hover,
-    samp a:active,
-    samp a:hover,
-    var a:active,
-    var a:hover,
-    kbd a:active,
-    kbd a:hover {
-      color: #fff; }
-
-/*! Copyright 2007-2009,2017-2019 Daniel F. Dickinson <cshored@cshore.theshore.com>
- *  Released under the Creative Commons BY (Attribution) 4.0 License
- */
-.footer .footer-links {
-  border-top-color: #909090; }
-  .footer .footer-links span {
-    border-color: #909090; }
-
-.footer .colophon {
-  border-top-color: #909090; }
-  .footer .colophon .doc-date-block {
-    background-color: #222;
-    color: #ccc; }
-
-.sidebar-sitemap .menu-item .menu-entry-wrapper.current-page {
-  border-left-color: #eee;
-  padding-left: 12px; }
-
-.sidebar-sitemap .menu-item .menu-entry-wrapper {
-  background-color: #000; }
-
-.sidebar-sitemap .menu-item:active > .menu-entry-wrapper, .sidebar-sitemap .menu-item:hover > .menu-entry-wrapper {
-  background-color: #999;
-  color: #f00; }
 
 .chroma {
   background-color: #272822;
