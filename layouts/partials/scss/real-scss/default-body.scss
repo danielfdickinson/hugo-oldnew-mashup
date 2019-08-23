@@ -6,228 +6,221 @@
 //  Remember, for the level of specifity last rule wins
 
 .default-body-wrapper {
-  display: flex;
   align-content: flex-start;
   align-items: flex-start;
-  justify-content: flex-start;
+  display: flex;
   flex-flow: row wrap;
+  justify-content: flex-start;
+}
 
-  & .Title,
-  & h1 {
+.Main,
+.SectionPageMain {
+  order: 2;
+  text-align: left;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  line-height: 1.5;
+  overflow-x: hidden;
+  display: flex;
+  flex: 1 1 100%;
+  margin: 0;
+  padding: 0;
+  & .main-body {
+    display: inline-block;
     order: 1;
-    text-align: center;
-  }
-
-  & .Main,
-  & .SectionPageMain {
-    order: 2;
-    text-align: left;
-    align-items: flex-start;
-    align-content: flex-start;
-    justify-content: space-between;
-    flex-flow: row wrap;
-    line-height: 1.5;
-    overflow-x: hidden;
-    display: flex;
-    flex: 1 1 100%;
-    margin: 0;
-    padding: 0;
-    & .main-body {
-      display: inline-block;
-      order: 1;
-      flex: 1 1 50%;
-      padding-left: .8em;
-      padding-right: .8em;
+    flex: 1 1 50%;
+    padding-left: .8em;
+    padding-right: .8em;
 //      max-width: 73%;
 
-      & .section-toc {
+    & .section-toc {
+      display: block;
+    }
+    & .MainContent {
+      display: block;
+
+      & h1,
+      & .Title {
+        margin-top: 0;
+        text-align: center;
+        margin-bottom: .2em;
         display: block;
       }
-      & .MainContent {
-        display: block;
+    }
 
-        & h1,
-        & .Title {
-          margin-top: 0;
-          text-align: center;
-          margin-bottom: .2em;
-          display: block;
-        }
-      }
+    & h1 {
+      order: 1;
+      text-align: center;
+      font-family: Georgia, serif;
+      width: auto;
+    }
 
+    & h2 {
+      font-family: Georgia, serif;
+    }
+
+    & pre,
+    & samp {
       & h1 {
-        order: 1;
-        text-align: center;
-        font-family: Georgia, serif;
-        width: auto;
+        text-align: left;
       }
+    }
 
-      & h2 {
-        font-family: Georgia, serif;
-      }
-
-      & pre,
-      & samp {
-        & h1 {
-          text-align: left;
-        }
-      }
-
-      & .LicensePagesSection {
+    & .LicensePagesSection {
+      width: 100%;
+      text-align: center;
+    }
+    & .LicenseSection {
+      width: 100%;
+      & .LicenseBlock {
         width: 100%;
-        text-align: center;
-      }
-      & .LicenseSection {
-        width: 100%;
-        & .LicenseBlock {
-          width: 100%;
-          overflow: hidden;
-          padding-bottom: 10px;
-          &:hover,
-          &:active {
-            padding-bottom: 0px;
-            overflow-x: scroll;
-          }
+        overflow: hidden;
+        padding-bottom: 10px;
+        &:hover,
+        &:active {
+          padding-bottom: 0px;
+          overflow-x: scroll;
         }
       }
     }
   }
 }
 
-.default-body-wrapper {
-  & .Main,
-  & .SectionPageMain {
-    & .RightSidebar {
-      display: inline-block;
-      font-size: .9em;
-      & .LocalNavBar {
-        background-color: #888888;
-        width: 100%;
-        display: block;
+.Main,
+.SectionPageMain {
+  & .RightSidebar {
+    display: inline-block;
+    font-size: .9em;
+    & .LocalNavBar {
+      background-color: #888888;
+      width: 100%;
+      display: block;
+      text-align: center;
+      & a,
+      & a:link,
+      & a:visited,
+      & a:active,
+      & a:hover,
+      & span {
         text-align: center;
-        & a,
-        & a:link,
-        & a:visited,
-        & a:active,
-        & a:hover,
-        & span {
-          text-align: center;
-          margin: 0;
-          padding: 0;
-          text-decoration: none;
-          display: inline-block;
-          width: 30%;
-        }
-        & a,
-        & a:link,
-        & a:visited {
-          color: #222222;
-        }
-        & a:active,
-        & a:hover {
-          background-color: #aaaaaa;
-        }
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        display: inline-block;
+        width: 30%;
       }
-      order: 4;
-      flex: 5 1 15%;
-      max-width: 25%;
-      min-width: 10em;
-      margin: 0;
-      padding-left: .5em;
-      padding-right: .4em;
-      padding-top: 0;
-      padding-bottom: 0;
-      & .TableOfContents {
-        background-color: #888888;
-        & a,
-        & a:link {
-          color: #111111;
-        }
-        & a:active,
-        & a:hover {
-          background-color: #aaaaaa;
-        }
-        & .MenuSubmenu {
-          color: #000000;
-          background-color: #bbbbbb;
-        }
+      & a,
+      & a:link,
+      & a:visited {
+        color: #222222;
       }
+      & a:active,
+      & a:hover {
+        background-color: #aaaaaa;
+      }
+    }
+    order: 4;
+    flex: 5 1 15%;
+    max-width: 25%;
+    min-width: 10em;
+    margin: 0;
+    padding-left: .5em;
+    padding-right: .4em;
+    padding-top: 0;
+    padding-bottom: 0;
+    & .TableOfContents {
+      background-color: #888888;
+      & a,
+      & a:link {
+        color: #111111;
+      }
+      & a:active,
+      & a:hover {
+        background-color: #aaaaaa;
+      }
+      & .MenuSubmenu {
+        color: #000000;
+        background-color: #bbbbbb;
+      }
+    }
 
-      & .PageSummary,
-      & .NewsItem {
-        & .SummaryFooter,
+    & .PageSummary,
+    & .NewsItem {
+      & .SummaryFooter,
+      & .NewsFooter {
+        font-size: .8em;
+      }
+    }
+
+    & .sidebar-toc {
+      & ul {
+        list-style: none;
+        list-style-position: outside;
+        padding-left: .2em;
+        margin: 0;
+        & ul {
+          padding-left: 1em;
+        }
+      }
+      & a {
+        text-decoration: none;
+      }
+      margin-bottom: .4em;
+    }
+
+    & .PageSummaries,
+      .PageNews {
+        margin-top: .8em;
+      text-align: left;
+      & .SidebarTitle {
+        border-top: solid 1px;
+        margin-top: .4em;
+        font-size: 1em;
+      }
+      & .NewsItems {
+        & .NewsHeader {
+          border-top: dashed 1px;
+          & h3 {
+            margin-top: .4em;
+            margin-bottom: 0;
+            font-size: .9em;
+          }
+        }
         & .NewsFooter {
           font-size: .8em;
         }
       }
-
-      & .sidebar-toc {
-        & ul {
-          list-style: none;
-          list-style-position: outside;
-          padding-left: .2em;
-          margin: 0;
-          & ul {
-            padding-left: 1em;
-          }
+      & .PageSummary,
+      & .NewsItem {
+        & div {
+          max-width: 100%;
+          overflow-x: hidden;
         }
-        & a {
-          text-decoration: none;
-        }
-        margin-bottom: .4em;
       }
-
-      & .PageSummaries,
-        .PageNews {
-          margin-top: .8em;
-        text-align: left;
-        & .SidebarTitle {
-          border-top: solid 1px;
-          margin-top: .4em;
-          font-size: 1em;
-        }
-        & .NewsItems {
-          & .NewsHeader {
-            border-top: dashed 1px;
-            & h3 {
-              margin-top: .4em;
-              margin-bottom: 0;
-              font-size: .9em;
-            }
-          }
-          & .NewsFooter {
-            font-size: .8em;
+      & .PageSummary {
+        & .SummaryHeader {
+          & h3 {
+            margin-top: .4em;
+            margin-bottom: 0;
+            font-size: .9em;
           }
         }
-        & .PageSummary,
-        & .NewsItem {
-          & div {
-            max-width: 100%;
-            overflow-x: hidden;
-          }
-        }
-        & .PageSummary {
-          & .SummaryHeader {
-            & h3 {
-              margin-top: .4em;
-              margin-bottom: 0;
-              font-size: .9em;
-            }
-          }
-          border-top: dashed 1px;
-        }
-        & .SummaryFooter {
-          font-size: .8em;
-        }
+        border-top: dashed 1px;
+      }
+      & .SummaryFooter {
+        font-size: .8em;
       }
     }
   }
-  & .Footer {
-    order: 3;
-    margin-top: .4em;
-    font-size: .8em;
-    flex: 1 1 100%;
-  }
+}
+
+.Footer {
+  order: 3;
+  margin-top: .4em;
+  font-size: .8em;
+  flex: 1 1 100%;
 }
 
 .SideBySide {
