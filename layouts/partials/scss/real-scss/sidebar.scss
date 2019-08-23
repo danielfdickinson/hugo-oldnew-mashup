@@ -1,129 +1,135 @@
-.RightSidebar {
-  display: inline-block;
-  font-size: .9em;
-  & .LocalNavBar {
-    background-color: #888888;
-    width: 100%;
-    display: block;
+.sidebar-box {
+  background-color: $sidebar-box-background-color;
+  border-bottom: $sidebar-box-border $sidebar-box-border-color;
+  border-top: $sidebar-box-border $sidebar-box-border-color;
+  color: $sidebar-box-text-color;
+  display: block;
+  margin-bottom: .4em;
+  padding: .6em;
+  text-align: left;
+
+  & h2 {
+    border-bottom: solid 1px;
+    font-size: 1em;
+    margin-bottom: .2em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: .4em;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+  }
+}
+
+.local-nav-bar {
+  background-color: $local-nav-background-color;
+  color: $local-nav-text-color;
+  display: block;
+  text-align: center;
+  width: 100%;
+
+  & a {
+    color: $local-nav-text-color;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
     text-align: center;
-    & a,
-    & a:link,
-    & a:visited,
-    & a:active,
-    & a:hover,
-    & span {
-      text-align: center;
+    text-decoration: none;
+    width: 30%;
+
+    &:link,
+    &:visited,
+    &:active,
+    &:hover {
+      display: inline-block;
       margin: 0;
       padding: 0;
+      text-align: center;
       text-decoration: none;
-      display: inline-block;
       width: 30%;
     }
-    & a,
-    & a:link,
-    & a:visited {
-      color: #222222;
-    }
-    & a:active,
-    & a:hover {
-      background-color: #aaaaaa;
-    }
-  }
-  order: 4;
-  flex: 5 1 15%;
-  max-width: 25%;
-  min-width: 10em;
-  margin: 0;
-  padding-left: .5em;
-  padding-right: .4em;
-  padding-top: 0;
-  padding-bottom: 0;
-  & .TableOfContents {
-    background-color: #888888;
-    & a,
-    & a:link {
-      color: #111111;
-    }
-    & a:active,
-    & a:hover {
-      background-color: #aaaaaa;
-    }
-    & .MenuSubmenu {
-      color: #000000;
-      background-color: #bbbbbb;
-    }
-  }
 
-  & .PageSummary,
-  & .NewsItem {
-    & .SummaryFooter,
-    & .NewsFooter {
-      font-size: .8em;
+    &:link,
+    &:visited {
+      color: $local-nav-link-color;
     }
-  }
 
-  & .sidebar-toc {
-    & ul {
-      list-style: none;
-      list-style-position: outside;
-      padding-left: .2em;
-      margin: 0;
-      & ul {
-        padding-left: 1em;
-      }
-    }
-    & a {
-      text-decoration: none;
-    }
-    margin-bottom: .4em;
-  }
-
-  & .PageSummaries,
-    .PageNews {
-      margin-top: .8em;
-    text-align: left;
-    & .SidebarTitle {
-      border-top: solid 1px;
-      margin-top: .4em;
-      font-size: 1em;
-    }
-    & .NewsItems {
-      & .NewsHeader {
-        border-top: dashed 1px;
-        & h3 {
-          margin-top: .4em;
-          margin-bottom: 0;
-          font-size: .9em;
-        }
-      }
-      & .NewsFooter {
-        font-size: .8em;
-      }
-    }
-    & .PageSummary,
-    & .NewsItem {
-      & div {
-        max-width: 100%;
-        overflow-x: hidden;
-      }
-    }
-    & .PageSummary {
-      & .SummaryHeader {
-        & h3 {
-          margin-top: .4em;
-          margin-bottom: 0;
-          font-size: .9em;
-        }
-      }
-      border-top: dashed 1px;
-    }
-    & .SummaryFooter {
-      font-size: .8em;
+    &:active,
+    &:hover {
+      background-color: $local-nav-hover-background-color;
+      color: $local-nav-hover-color;
     }
   }
 }
 
-.PageSummaries,
-.PageNews {
-  background-color: #aaaaaa;
+.sidebar-toc {
+  & ul {
+    list-style: none;
+    list-style-position: outside;
+    margin: 0;
+    margin-bottom: .4em;
+    padding-left: .2em;
+
+    & ul {
+      padding-left: 1em;
+    }
+  }
+
+  & a {
+    text-decoration: none;
+  }
+}
+
+.recent-changes-footer,
+.news-footer {
+  font-size: .8em;
+}
+
+.news-header,
+.recent-changes-header {
+  border-bottom: dashed 1px;
+  margin-bottom: .2em;
+  margin-top: .2em;
+
+  & h3 {
+    font-size: .9em;
+    margin-bottom: 0;
+    margin-top: .4em;
+
+    & a {
+      text-decoration: none;
+    }
+  }
+}
+
+.page-metadata {
+  font-size: .8em;
+  font-style: italic;
+}
+
+.news-item,
+.recent-change {
+  border-bottom: 1px solid;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding-bottom: .4em;
+
+  &:last-child {
+    border-bottom: 0 none;
+    padding-bottom: 0;
+  }
+}
+
+.sidebar {
+  display: block;
+  flex: 2 2 12%;
+  font-size: .9em;
+  margin: 0;
+  min-width: 10em;
+  order: 2;
+  padding-bottom: 0;
+  padding-left: .5em;
+  padding-right: .4em;
+  padding-top: 0;
 }

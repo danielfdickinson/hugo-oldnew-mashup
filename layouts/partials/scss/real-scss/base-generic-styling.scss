@@ -53,30 +53,6 @@
   }
 }
 
-.sidebar-box {
-  @include utility-box($sidebar-box-border, $sidebar-box-border-color, $sidebar-box-text-color) {
-
-    background-color: $sidebar-box-background-color;
-    color: $sidebar-box-text-color;
-    display: block;
-    margin-bottom: .4em;
-
-    & h2 {
-      border-bottom: dashed 1px;
-      font-size: 1em;
-      margin-bottom: .2em;
-      margin-left: 0;
-      margin-right: 0;
-      margin-top: 0;
-      padding-bottom: .4em;
-      padding-left: 0;
-      padding-right: 0;
-      padding-top: 0;
-    }
-  }
-
-}
-
 .start-para-pic {
   display: inline-block;
   float: left;
