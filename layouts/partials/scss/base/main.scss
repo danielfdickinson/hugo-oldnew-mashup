@@ -8,6 +8,7 @@
 {{ partial "scss/real-scss/base-elements.scss" . }}
 {{ partial "scss/real-scss/base-generic-styling.scss" . }}
 {{ partial "scss/real-scss/accessibility-nav-elements.scss" . }}
+{{ partial "scss/real-scss/default-body.scss" . }}
 {{ partial "scss/real-scss/footer.scss" . }}
 {{ partial "scss/real-scss/menu-sub-menu.scss" . }}
 {{ partial "scss/real-scss/sidebar-site-menu.scss" }}

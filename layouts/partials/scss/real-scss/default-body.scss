@@ -2,11 +2,8 @@
  *  Released under the Creative Commons BY (Attribution) 4.0 License
  */
 
-/*  The C ShoreMain Elements Stylesheet
- *  Remember, for the level of specifity last rule wins, hence
- *  most important rules are last
- */
-
+// OldNew Mashup Theme Main Elements Stylesheet
+//  Remember, for the level of specifity last rule wins
 
 .DefaultBodyWrapper {
   display: flex;
@@ -104,6 +101,7 @@
       display: inline-block;
       font-size: .9em;
       & .LocalNavBar {
+        background-color: #888888;
         width: 100%;
         display: block;
         text-align: center;
@@ -120,6 +118,15 @@
           display: inline-block;
           width: 30%;
         }
+        & a,
+        & a:link,
+        & a:visited {
+          color: #222222;
+        }
+        & a:active,
+        & a:hover {
+          background-color: #aaaaaa;
+        }
       }
       order: 4;
       flex: 5 1 15%;
@@ -130,6 +137,22 @@
       padding-right: .4em;
       padding-top: 0;
       padding-bottom: 0;
+      & .TableOfContents {
+        background-color: #888888;
+        & a,
+        & a:link {
+          color: #111111;
+        }
+        & a:active,
+        & a:hover {
+          background-color: #aaaaaa;
+        }
+        & .MenuSubmenu {
+          color: #000000;
+          background-color: #bbbbbb;
+        }
+      }
+
       & .PageSummary,
       & .NewsItem {
         & .SummaryFooter,
@@ -301,4 +324,9 @@
       }
     }
   }
+}
+
+.PageSummaries,
+.PageNews {
+  background-color: #aaaaaa;
 }
