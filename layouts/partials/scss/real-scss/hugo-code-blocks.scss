@@ -4,9 +4,9 @@
   color: #f8f8f2; // Default text
 
   display: block;
+  max-width: 10em;
   overflow: hidden;
   padding-bottom: 12px;
-  width: auto;
 
   &:active,
   &:hover {
@@ -281,7 +281,84 @@
 
 .highlight {
   display: block;
-  max-width: 100%;
-  overflow-x: hidden;
   resize: none;
+  width: 100%;
+}
+
+@media screen and (min-width: 13em) {
+  .chroma {
+    max-width: 10em;
+  }
+}
+
+@media screen and (min-width: 16em) {
+  .chroma {
+    max-width: 12em;
+  }
+}
+
+@media screen and (min-width: 24em) {
+  .chroma {
+    max-width: 20em;
+  }
+}
+
+@media screen and (min-width: 30em) {
+  .chroma {
+    max-width: 26em;
+  }
+}
+
+@media screen and (min-width: 36em) {
+  .chroma {
+    max-width: 30em;
+  }
+}
+
+@media screen and (min-width: 42em) {
+  .chroma {
+    max-width: 26em;
+  }
+}
+
+@media screen and (min-width: 48em) {
+  .chroma {
+    max-width: 29em;
+  }
+}
+
+@media screen and (min-width: 56em) {
+  .chroma {
+    max-width: 32em;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .chroma {
+    max-width: 36em;
+  }
+}
+
+@media screen and (min-width: 70em) {
+  .chroma {
+    max-width: 40em;
+  }
+}
+
+@media screen and (min-width: 76em) {
+  .chroma {
+    max-width: 48em;
+  }
+}
+
+@media screen and (min-width: 82em) {
+  .chroma {
+    max-width: 52em;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .chroma {
+    max-width: 60em;
+  }
 }
