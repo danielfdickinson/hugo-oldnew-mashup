@@ -116,8 +116,8 @@ whether the licenses can actually work together is another story).
 Set these in your site configuration file in the ``params`` section.
 E.g. for a ``config.toml`` you might have:
 
-```
-baseURL = 'https://example.com/
+```toml
+baseURL = 'https://example.com/'
 languageCode = 'en-ca'
 languageLang = 'en'
 title = 'Site Title'
