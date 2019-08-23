@@ -11,6 +11,7 @@
 {{ partial "scss/real-scss/default-body.scss" . }}
 {{ partial "scss/real-scss/footer.scss" . }}
 {{ partial "scss/real-scss/menu-sub-menu.scss" . }}
-{{ partial "scss/real-scss/sidebar-site-menu.scss" }}
+{{ partial "scss/real-scss/sidebar.scss" }}
+{{ partial "scss/real-scss/sidebar/site-menu.scss" }}
 {{ partial "scss/real-scss/menubar.scss" . }}
 {{ partial "scss/real-scss/hugo-code-blocks.scss" }}

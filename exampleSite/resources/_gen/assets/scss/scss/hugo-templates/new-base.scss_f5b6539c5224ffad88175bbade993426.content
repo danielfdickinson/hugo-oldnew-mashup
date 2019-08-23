@@ -217,231 +217,80 @@ a {
  *  Released under the Creative Commons BY (Attribution) 4.0 License
  */
 .default-body-wrapper {
-  display: flex;
   align-content: flex-start;
   align-items: flex-start;
-  justify-content: flex-start;
-  flex-flow: row wrap; }
-  .default-body-wrapper .Title,
-  .default-body-wrapper h1 {
-    order: 1;
-    text-align: center; }
-  .default-body-wrapper .Main,
-  .default-body-wrapper .SectionPageMain {
-    order: 2;
-    text-align: left;
-    align-items: flex-start;
-    align-content: flex-start;
-    justify-content: space-between;
-    flex-flow: row wrap;
-    line-height: 1.5;
-    overflow-x: hidden;
-    display: flex;
-    flex: 1 1 100%;
-    margin: 0;
-    padding: 0; }
-    .default-body-wrapper .Main .main-body,
-    .default-body-wrapper .SectionPageMain .main-body {
-      display: inline-block;
-      order: 1;
-      flex: 1 1 50%;
-      padding-left: .8em;
-      padding-right: .8em; }
-      .default-body-wrapper .Main .main-body .section-toc,
-      .default-body-wrapper .SectionPageMain .main-body .section-toc {
-        display: block; }
-      .default-body-wrapper .Main .main-body .MainContent,
-      .default-body-wrapper .SectionPageMain .main-body .MainContent {
-        display: block; }
-        .default-body-wrapper .Main .main-body .MainContent h1,
-        .default-body-wrapper .Main .main-body .MainContent .Title,
-        .default-body-wrapper .SectionPageMain .main-body .MainContent h1,
-        .default-body-wrapper .SectionPageMain .main-body .MainContent .Title {
-          margin-top: 0;
-          text-align: center;
-          margin-bottom: .2em;
-          display: block; }
-      .default-body-wrapper .Main .main-body h1,
-      .default-body-wrapper .SectionPageMain .main-body h1 {
-        order: 1;
-        text-align: center;
-        font-family: Georgia, serif;
-        width: auto; }
-      .default-body-wrapper .Main .main-body h2,
-      .default-body-wrapper .SectionPageMain .main-body h2 {
-        font-family: Georgia, serif; }
-      .default-body-wrapper .Main .main-body pre h1,
-      .default-body-wrapper .Main .main-body samp h1,
-      .default-body-wrapper .SectionPageMain .main-body pre h1,
-      .default-body-wrapper .SectionPageMain .main-body samp h1 {
-        text-align: left; }
-      .default-body-wrapper .Main .main-body .LicensePagesSection,
-      .default-body-wrapper .SectionPageMain .main-body .LicensePagesSection {
-        width: 100%;
-        text-align: center; }
-      .default-body-wrapper .Main .main-body .LicenseSection,
-      .default-body-wrapper .SectionPageMain .main-body .LicenseSection {
-        width: 100%; }
-        .default-body-wrapper .Main .main-body .LicenseSection .LicenseBlock,
-        .default-body-wrapper .SectionPageMain .main-body .LicenseSection .LicenseBlock {
-          width: 100%;
-          overflow: hidden;
-          padding-bottom: 10px; }
-          .default-body-wrapper .Main .main-body .LicenseSection .LicenseBlock:hover, .default-body-wrapper .Main .main-body .LicenseSection .LicenseBlock:active,
-          .default-body-wrapper .SectionPageMain .main-body .LicenseSection .LicenseBlock:hover,
-          .default-body-wrapper .SectionPageMain .main-body .LicenseSection .LicenseBlock:active {
-            padding-bottom: 0px;
-            overflow-x: scroll; }
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start; }
 
-.default-body-wrapper .Main .RightSidebar,
-.default-body-wrapper .SectionPageMain .RightSidebar {
-  display: inline-block;
-  font-size: .9em;
-  order: 4;
-  flex: 5 1 15%;
-  max-width: 25%;
-  min-width: 10em;
+.Main,
+.SectionPageMain {
+  order: 2;
+  text-align: left;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  line-height: 1.5;
+  overflow-x: hidden;
+  display: flex;
+  flex: 1 1 100%;
   margin: 0;
-  padding-left: .5em;
-  padding-right: .4em;
-  padding-top: 0;
-  padding-bottom: 0; }
-  .default-body-wrapper .Main .RightSidebar .LocalNavBar,
-  .default-body-wrapper .SectionPageMain .RightSidebar .LocalNavBar {
-    background-color: #888888;
-    width: 100%;
-    display: block;
-    text-align: center; }
-    .default-body-wrapper .Main .RightSidebar .LocalNavBar a,
-    .default-body-wrapper .Main .RightSidebar .LocalNavBar a:link,
-    .default-body-wrapper .Main .RightSidebar .LocalNavBar a:visited,
-    .default-body-wrapper .Main .RightSidebar .LocalNavBar a:active,
-    .default-body-wrapper .Main .RightSidebar .LocalNavBar a:hover,
-    .default-body-wrapper .Main .RightSidebar .LocalNavBar span,
-    .default-body-wrapper .SectionPageMain .RightSidebar .LocalNavBar a,
-    .default-body-wrapper .SectionPageMain .RightSidebar .LocalNavBar a:link,
-    .default-body-wrapper .SectionPageMain .RightSidebar .LocalNavBar a:visited,
-    .default-body-wrapper .SectionPageMain .RightSidebar .LocalNavBar a:active,
-    .default-body-wrapper .SectionPageMain .RightSidebar .LocalNavBar a:hover,
-    .default-body-wrapper .SectionPageMain .RightSidebar .LocalNavBar span {
+  padding: 0; }
+  .Main .main-body,
+  .SectionPageMain .main-body {
+    display: inline-block;
+    order: 1;
+    flex: 1 1 50%;
+    padding-left: .8em;
+    padding-right: .8em; }
+    .Main .main-body .section-toc,
+    .SectionPageMain .main-body .section-toc {
+      display: block; }
+    .Main .main-body .MainContent,
+    .SectionPageMain .main-body .MainContent {
+      display: block; }
+      .Main .main-body .MainContent h1,
+      .Main .main-body .MainContent .Title,
+      .SectionPageMain .main-body .MainContent h1,
+      .SectionPageMain .main-body .MainContent .Title {
+        margin-top: 0;
+        text-align: center;
+        margin-bottom: .2em;
+        display: block; }
+    .Main .main-body h1,
+    .SectionPageMain .main-body h1 {
+      order: 1;
       text-align: center;
-      margin: 0;
-      padding: 0;
-      text-decoration: none;
-      display: inline-block;
-      width: 30%; }
-    .default-body-wrapper .Main .RightSidebar .LocalNavBar a,
-    .default-body-wrapper .Main .RightSidebar .LocalNavBar a:link,
-    .default-body-wrapper .Main .RightSidebar .LocalNavBar a:visited,
-    .default-body-wrapper .SectionPageMain .RightSidebar .LocalNavBar a,
-    .default-body-wrapper .SectionPageMain .RightSidebar .LocalNavBar a:link,
-    .default-body-wrapper .SectionPageMain .RightSidebar .LocalNavBar a:visited {
-      color: #222222; }
-    .default-body-wrapper .Main .RightSidebar .LocalNavBar a:active,
-    .default-body-wrapper .Main .RightSidebar .LocalNavBar a:hover,
-    .default-body-wrapper .SectionPageMain .RightSidebar .LocalNavBar a:active,
-    .default-body-wrapper .SectionPageMain .RightSidebar .LocalNavBar a:hover {
-      background-color: #aaaaaa; }
-  .default-body-wrapper .Main .RightSidebar .TableOfContents,
-  .default-body-wrapper .SectionPageMain .RightSidebar .TableOfContents {
-    background-color: #888888; }
-    .default-body-wrapper .Main .RightSidebar .TableOfContents a,
-    .default-body-wrapper .Main .RightSidebar .TableOfContents a:link,
-    .default-body-wrapper .SectionPageMain .RightSidebar .TableOfContents a,
-    .default-body-wrapper .SectionPageMain .RightSidebar .TableOfContents a:link {
-      color: #111111; }
-    .default-body-wrapper .Main .RightSidebar .TableOfContents a:active,
-    .default-body-wrapper .Main .RightSidebar .TableOfContents a:hover,
-    .default-body-wrapper .SectionPageMain .RightSidebar .TableOfContents a:active,
-    .default-body-wrapper .SectionPageMain .RightSidebar .TableOfContents a:hover {
-      background-color: #aaaaaa; }
-    .default-body-wrapper .Main .RightSidebar .TableOfContents .MenuSubmenu,
-    .default-body-wrapper .SectionPageMain .RightSidebar .TableOfContents .MenuSubmenu {
-      color: #000000;
-      background-color: #bbbbbb; }
-  .default-body-wrapper .Main .RightSidebar .PageSummary .SummaryFooter,
-  .default-body-wrapper .Main .RightSidebar .PageSummary .NewsFooter,
-  .default-body-wrapper .Main .RightSidebar .NewsItem .SummaryFooter,
-  .default-body-wrapper .Main .RightSidebar .NewsItem .NewsFooter,
-  .default-body-wrapper .SectionPageMain .RightSidebar .PageSummary .SummaryFooter,
-  .default-body-wrapper .SectionPageMain .RightSidebar .PageSummary .NewsFooter,
-  .default-body-wrapper .SectionPageMain .RightSidebar .NewsItem .SummaryFooter,
-  .default-body-wrapper .SectionPageMain .RightSidebar .NewsItem .NewsFooter {
-    font-size: .8em; }
-  .default-body-wrapper .Main .RightSidebar .sidebar-toc,
-  .default-body-wrapper .SectionPageMain .RightSidebar .sidebar-toc {
-    margin-bottom: .4em; }
-    .default-body-wrapper .Main .RightSidebar .sidebar-toc ul,
-    .default-body-wrapper .SectionPageMain .RightSidebar .sidebar-toc ul {
-      list-style: none;
-      list-style-position: outside;
-      padding-left: .2em;
-      margin: 0; }
-      .default-body-wrapper .Main .RightSidebar .sidebar-toc ul ul,
-      .default-body-wrapper .SectionPageMain .RightSidebar .sidebar-toc ul ul {
-        padding-left: 1em; }
-    .default-body-wrapper .Main .RightSidebar .sidebar-toc a,
-    .default-body-wrapper .SectionPageMain .RightSidebar .sidebar-toc a {
-      text-decoration: none; }
-  .default-body-wrapper .Main .RightSidebar .PageSummaries,
-  .default-body-wrapper .Main .RightSidebar .PageNews,
-  .default-body-wrapper .SectionPageMain .RightSidebar .PageSummaries,
-  .default-body-wrapper .SectionPageMain .RightSidebar .PageNews {
-    margin-top: .8em;
-    text-align: left; }
-    .default-body-wrapper .Main .RightSidebar .PageSummaries .SidebarTitle,
-    .default-body-wrapper .Main .RightSidebar .PageNews .SidebarTitle,
-    .default-body-wrapper .SectionPageMain .RightSidebar .PageSummaries .SidebarTitle,
-    .default-body-wrapper .SectionPageMain .RightSidebar .PageNews .SidebarTitle {
-      border-top: solid 1px;
-      margin-top: .4em;
-      font-size: 1em; }
-    .default-body-wrapper .Main .RightSidebar .PageSummaries .NewsItems .NewsHeader,
-    .default-body-wrapper .Main .RightSidebar .PageNews .NewsItems .NewsHeader,
-    .default-body-wrapper .SectionPageMain .RightSidebar .PageSummaries .NewsItems .NewsHeader,
-    .default-body-wrapper .SectionPageMain .RightSidebar .PageNews .NewsItems .NewsHeader {
-      border-top: dashed 1px; }
-      .default-body-wrapper .Main .RightSidebar .PageSummaries .NewsItems .NewsHeader h3,
-      .default-body-wrapper .Main .RightSidebar .PageNews .NewsItems .NewsHeader h3,
-      .default-body-wrapper .SectionPageMain .RightSidebar .PageSummaries .NewsItems .NewsHeader h3,
-      .default-body-wrapper .SectionPageMain .RightSidebar .PageNews .NewsItems .NewsHeader h3 {
-        margin-top: .4em;
-        margin-bottom: 0;
-        font-size: .9em; }
-    .default-body-wrapper .Main .RightSidebar .PageSummaries .NewsItems .NewsFooter,
-    .default-body-wrapper .Main .RightSidebar .PageNews .NewsItems .NewsFooter,
-    .default-body-wrapper .SectionPageMain .RightSidebar .PageSummaries .NewsItems .NewsFooter,
-    .default-body-wrapper .SectionPageMain .RightSidebar .PageNews .NewsItems .NewsFooter {
-      font-size: .8em; }
-    .default-body-wrapper .Main .RightSidebar .PageSummaries .PageSummary div,
-    .default-body-wrapper .Main .RightSidebar .PageSummaries .NewsItem div,
-    .default-body-wrapper .Main .RightSidebar .PageNews .PageSummary div,
-    .default-body-wrapper .Main .RightSidebar .PageNews .NewsItem div,
-    .default-body-wrapper .SectionPageMain .RightSidebar .PageSummaries .PageSummary div,
-    .default-body-wrapper .SectionPageMain .RightSidebar .PageSummaries .NewsItem div,
-    .default-body-wrapper .SectionPageMain .RightSidebar .PageNews .PageSummary div,
-    .default-body-wrapper .SectionPageMain .RightSidebar .PageNews .NewsItem div {
-      max-width: 100%;
-      overflow-x: hidden; }
-    .default-body-wrapper .Main .RightSidebar .PageSummaries .PageSummary,
-    .default-body-wrapper .Main .RightSidebar .PageNews .PageSummary,
-    .default-body-wrapper .SectionPageMain .RightSidebar .PageSummaries .PageSummary,
-    .default-body-wrapper .SectionPageMain .RightSidebar .PageNews .PageSummary {
-      border-top: dashed 1px; }
-      .default-body-wrapper .Main .RightSidebar .PageSummaries .PageSummary .SummaryHeader h3,
-      .default-body-wrapper .Main .RightSidebar .PageNews .PageSummary .SummaryHeader h3,
-      .default-body-wrapper .SectionPageMain .RightSidebar .PageSummaries .PageSummary .SummaryHeader h3,
-      .default-body-wrapper .SectionPageMain .RightSidebar .PageNews .PageSummary .SummaryHeader h3 {
-        margin-top: .4em;
-        margin-bottom: 0;
-        font-size: .9em; }
-    .default-body-wrapper .Main .RightSidebar .PageSummaries .SummaryFooter,
-    .default-body-wrapper .Main .RightSidebar .PageNews .SummaryFooter,
-    .default-body-wrapper .SectionPageMain .RightSidebar .PageSummaries .SummaryFooter,
-    .default-body-wrapper .SectionPageMain .RightSidebar .PageNews .SummaryFooter {
-      font-size: .8em; }
+      font-family: Georgia, serif;
+      width: auto; }
+    .Main .main-body h2,
+    .SectionPageMain .main-body h2 {
+      font-family: Georgia, serif; }
+    .Main .main-body pre h1,
+    .Main .main-body samp h1,
+    .SectionPageMain .main-body pre h1,
+    .SectionPageMain .main-body samp h1 {
+      text-align: left; }
+    .Main .main-body .LicensePagesSection,
+    .SectionPageMain .main-body .LicensePagesSection {
+      width: 100%;
+      text-align: center; }
+    .Main .main-body .LicenseSection,
+    .SectionPageMain .main-body .LicenseSection {
+      width: 100%; }
+      .Main .main-body .LicenseSection .LicenseBlock,
+      .SectionPageMain .main-body .LicenseSection .LicenseBlock {
+        width: 100%;
+        overflow: hidden;
+        padding-bottom: 10px; }
+        .Main .main-body .LicenseSection .LicenseBlock:hover, .Main .main-body .LicenseSection .LicenseBlock:active,
+        .SectionPageMain .main-body .LicenseSection .LicenseBlock:hover,
+        .SectionPageMain .main-body .LicenseSection .LicenseBlock:active {
+          padding-bottom: 0px;
+          overflow-x: scroll; }
 
-.default-body-wrapper .Footer {
+.Footer {
   order: 3;
   margin-top: .4em;
   font-size: .8em;
@@ -454,81 +303,6 @@ a {
   padding-right: 0;
   margin-left: .1em;
   margin-right: .3em; }
-
-.SidebarSitemap {
-  display: block;
-  text-align: left;
-  margin: 0;
-  padding: 0; }
-  .SidebarSitemap h2 {
-    font-size: 1em;
-    margin-bottom: .2em;
-    display: block; }
-  .SidebarSitemap .SitemapList {
-    padding: 0;
-    margin: 0;
-    list-style: none outside; }
-    .SidebarSitemap .SitemapList > .MenuItem {
-      margin-top: .2em;
-      list-style: none outside;
-      text-align: left;
-      margin-left: 0em;
-      margin-right: 0em;
-      margin-top: 0em;
-      margin-bottom: .2em;
-      padding: 0; }
-      .SidebarSitemap .SitemapList > .MenuItem .MenuEntryWrapper {
-        padding-left: 12px; }
-      .SidebarSitemap .SitemapList > .MenuItem > .MenuParent {
-        list-style: none outside;
-        padding: 0;
-        margin-left: 0em;
-        margin-right: 0em;
-        margin-top: .2em;
-        margin-bottom: 0em; }
-        .SidebarSitemap .SitemapList > .MenuItem > .MenuParent .MenuEntryWrapper {
-          width: 80%; }
-        .SidebarSitemap .SitemapList > .MenuItem > .MenuParent > .MenuItem {
-          list-style: none outside;
-          padding: 0;
-          margin-left: 0em;
-          margin-right: 0em;
-          margin-bottom: .2em;
-          margin-top: 0em; }
-          .SidebarSitemap .SitemapList > .MenuItem > .MenuParent > .MenuItem > .MenuParent {
-            display: none;
-            padding: 0;
-            margin-left: 0em;
-            margin-right: 0em;
-            margin-top: .2em;
-            width: 60%; }
-            .SidebarSitemap .SitemapList > .MenuItem > .MenuParent > .MenuItem > .MenuParent > .MenuItem {
-              list-style: none outside;
-              padding: 0;
-              margin-left: 0em;
-              margin-right: 0em;
-              margin-bottom: .2em; }
-            .SidebarSitemap .SitemapList > .MenuItem > .MenuParent > .MenuItem > .MenuParent > .MenuParent {
-              display: none; }
-  .SidebarSitemap .HasSubmenu {
-    display: block;
-    list-style: none inside;
-    padding-left: 0;
-    padding-right: 2em; }
-    .SidebarSitemap .HasSubmenu .MenuItem {
-      display: block;
-      padding-left: 0;
-      padding-right: 2em; }
-      .SidebarSitemap .HasSubmenu .MenuItem .MenuEntryWrapper {
-        padding-left: 12px; }
-        .SidebarSitemap .HasSubmenu .MenuItem .MenuEntryWrapper .MenuEntry {
-          display: block; }
-          .SidebarSitemap .HasSubmenu .MenuItem .MenuEntryWrapper .MenuEntry a {
-            display: block; }
-
-.PageSummaries,
-.PageNews {
-  background-color: #aaaaaa; }
 
 .footer {
   flex: 1 1 100%;
@@ -613,6 +387,111 @@ a {
 
 .menu-item .menu-entry-wrapper {
   display: inline-block; }
+
+.RightSidebar {
+  display: inline-block;
+  font-size: .9em;
+  order: 4;
+  flex: 5 1 15%;
+  max-width: 25%;
+  min-width: 10em;
+  margin: 0;
+  padding-left: .5em;
+  padding-right: .4em;
+  padding-top: 0;
+  padding-bottom: 0; }
+  .RightSidebar .LocalNavBar {
+    background-color: #888888;
+    width: 100%;
+    display: block;
+    text-align: center; }
+    .RightSidebar .LocalNavBar a,
+    .RightSidebar .LocalNavBar a:link,
+    .RightSidebar .LocalNavBar a:visited,
+    .RightSidebar .LocalNavBar a:active,
+    .RightSidebar .LocalNavBar a:hover,
+    .RightSidebar .LocalNavBar span {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      display: inline-block;
+      width: 30%; }
+    .RightSidebar .LocalNavBar a,
+    .RightSidebar .LocalNavBar a:link,
+    .RightSidebar .LocalNavBar a:visited {
+      color: #222222; }
+    .RightSidebar .LocalNavBar a:active,
+    .RightSidebar .LocalNavBar a:hover {
+      background-color: #aaaaaa; }
+  .RightSidebar .TableOfContents {
+    background-color: #888888; }
+    .RightSidebar .TableOfContents a,
+    .RightSidebar .TableOfContents a:link {
+      color: #111111; }
+    .RightSidebar .TableOfContents a:active,
+    .RightSidebar .TableOfContents a:hover {
+      background-color: #aaaaaa; }
+    .RightSidebar .TableOfContents .MenuSubmenu {
+      color: #000000;
+      background-color: #bbbbbb; }
+  .RightSidebar .PageSummary .SummaryFooter,
+  .RightSidebar .PageSummary .NewsFooter,
+  .RightSidebar .NewsItem .SummaryFooter,
+  .RightSidebar .NewsItem .NewsFooter {
+    font-size: .8em; }
+  .RightSidebar .sidebar-toc {
+    margin-bottom: .4em; }
+    .RightSidebar .sidebar-toc ul {
+      list-style: none;
+      list-style-position: outside;
+      padding-left: .2em;
+      margin: 0; }
+      .RightSidebar .sidebar-toc ul ul {
+        padding-left: 1em; }
+    .RightSidebar .sidebar-toc a {
+      text-decoration: none; }
+  .RightSidebar .PageSummaries,
+  .RightSidebar .PageNews {
+    margin-top: .8em;
+    text-align: left; }
+    .RightSidebar .PageSummaries .SidebarTitle,
+    .RightSidebar .PageNews .SidebarTitle {
+      border-top: solid 1px;
+      margin-top: .4em;
+      font-size: 1em; }
+    .RightSidebar .PageSummaries .NewsItems .NewsHeader,
+    .RightSidebar .PageNews .NewsItems .NewsHeader {
+      border-top: dashed 1px; }
+      .RightSidebar .PageSummaries .NewsItems .NewsHeader h3,
+      .RightSidebar .PageNews .NewsItems .NewsHeader h3 {
+        margin-top: .4em;
+        margin-bottom: 0;
+        font-size: .9em; }
+    .RightSidebar .PageSummaries .NewsItems .NewsFooter,
+    .RightSidebar .PageNews .NewsItems .NewsFooter {
+      font-size: .8em; }
+    .RightSidebar .PageSummaries .PageSummary div,
+    .RightSidebar .PageSummaries .NewsItem div,
+    .RightSidebar .PageNews .PageSummary div,
+    .RightSidebar .PageNews .NewsItem div {
+      max-width: 100%;
+      overflow-x: hidden; }
+    .RightSidebar .PageSummaries .PageSummary,
+    .RightSidebar .PageNews .PageSummary {
+      border-top: dashed 1px; }
+      .RightSidebar .PageSummaries .PageSummary .SummaryHeader h3,
+      .RightSidebar .PageNews .PageSummary .SummaryHeader h3 {
+        margin-top: .4em;
+        margin-bottom: 0;
+        font-size: .9em; }
+    .RightSidebar .PageSummaries .SummaryFooter,
+    .RightSidebar .PageNews .SummaryFooter {
+      font-size: .8em; }
+
+.PageSummaries,
+.PageNews {
+  background-color: #aaaaaa; }
 
 .sidebar-sitemap .sitemap-list {
   list-style: none inside;
