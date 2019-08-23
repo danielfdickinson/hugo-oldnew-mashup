@@ -5,6 +5,7 @@ $default-background-color: {{ default "#444" ( .Param "default_background_color"
 {{ if .Param "default_background_image" }}$default-background-image: {{ .Param "default_background_image" }};{{ else  }}$default-background-image: '';{{ end }}
 $default-pre-background-color: {{ default "#000" ( .Param "default_pre_background_color" ) }};
 $default-hover-background-color: {{ default "#999" ( .Param "default_hover_background_color" ) }};
+$default-inline-pre-background-color: {{ default "#bbb" ( .Param "default_pre_background_color" ) }};
 
 $default-text-color: {{ default "#eee" ( .Param "default_text_color" ) }};
 $default-link-color: {{ default "#ccc" ( .Param "default_link_color" ) }};
@@ -14,6 +15,10 @@ $default-pre-text-color: {{ default "#aaa" (.Param "defaul_pre_text_color" ) }};
 $default-pre-link-color: {{ default "#999" ( .Param "default_pre_link_color" ) }};
 $default-pre-visited-color: {{ default "$default-visited-link-color" ( .Param "default_pre_visited_color" ) }};
 $default-pre-hover-color: {{ default "#fff" ( .Param "default_pre_hover_color" ) }};
+$default-inline-pre-text-color: {{ default "#000" (.Param "defaul_pre_text_color" ) }};
+$default-inline-pre-link-color: {{ default "#222" ( .Param "default_pre_link_color" ) }};
+$default-inline-pre-visited-color: {{ default "#111" ( .Param "default_pre_visited_color" ) }};
+$default-inline-pre-hover-color: {{ default "#fff" ( .Param "default_pre_hover_color" ) }};
 
 $default-separator-color: {{ default "#909090" ( .Param "default_separator_color" ) }};
 $default-container-border: {{ default "4px solid" ( .Param "default_container_border" ) }};

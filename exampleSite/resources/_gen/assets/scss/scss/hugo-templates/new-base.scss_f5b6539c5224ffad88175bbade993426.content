@@ -25,34 +25,40 @@ DFN {
   border-bottom: 1px dotted;
   cursor: help; }
 
-pre,
+pre {
+  background-color: #000;
+  color: #aaa; }
+  pre a {
+    color: #aaa; }
+    pre a:link {
+      color: #999; }
+    pre a:visited {
+      color: #cde; }
+    pre a:active, pre a:hover {
+      color: #fff; }
+
 code,
 samp,
 var,
 kbd {
-  background-color: #000;
-  color: #aaa; }
-  pre a,
+  background-color: #bbb;
+  color: #000; }
   code a,
   samp a,
   var a,
   kbd a {
-    color: #aaa; }
-    pre a:link,
+    color: #000; }
     code a:link,
     samp a:link,
     var a:link,
     kbd a:link {
-      color: #999; }
-    pre a:visited,
+      color: #222; }
     code a:visited,
     samp a:visited,
     var a:visited,
     kbd a:visited {
-      color: #cde; }
-    pre a:active, pre a:hover,
-    code a:active,
-    code a:hover,
+      color: #111; }
+    code a:active, code a:hover,
     samp a:active,
     samp a:hover,
     var a:active,
@@ -860,9 +866,18 @@ a {
   overflow: hidden;
   padding-bottom: 12px;
   width: auto; }
-  .chroma:hover, .chroma:active {
+  .chroma:active, .chroma:hover {
     overflow-x: scroll;
     padding-bottom: 0; }
+  .chroma code {
+    background-color: #000;
+    color: #aaa;
+    display: block;
+    width: 100%; }
+    .chroma code a:link {
+      color: #999; }
+    .chroma code a:active, .chroma code a:hover {
+      color: #fff; }
   .chroma .err {
     background-color: #1e0010;
     color: #960050; }

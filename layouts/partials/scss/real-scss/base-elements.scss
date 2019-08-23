@@ -32,11 +32,7 @@ DFN {
   cursor: help;
 }
 
-pre,
-code,
-samp,
-var,
-kbd {
+pre {
   background-color: $default-pre-background-color;
   color: $default-pre-text-color;
 
@@ -54,6 +50,31 @@ kbd {
     &:active,
     &:hover {
       color: $default-pre-hover-color;
+    }
+  }
+}
+
+code,
+samp,
+var,
+kbd {
+  background-color: $default-inline-pre-background-color;
+  color: $default-inline-pre-text-color;
+
+  & a {
+    color: $default-inline-pre-text-color;
+
+    &:link {
+      color: $default-inline-pre-link-color;
+    }
+
+    &:visited {
+      color: $default-inline-pre-visited-color;
+    }
+
+    &:active,
+    &:hover {
+      color: $default-inline-pre-hover-color;
     }
   }
 }

@@ -8,10 +8,28 @@
   padding-bottom: 12px;
   width: auto;
 
-  &:hover,
-  &:active {
+  &:active,
+  &:hover {
     overflow-x: scroll;
     padding-bottom: 0;
+  }
+
+  code {
+    background-color: $default-pre-background-color;
+    color: $default-pre-text-color;
+    display: block;
+    width: 100%;
+
+    & a {
+      &:link {
+        color: $default-pre-link-color;
+      }
+
+      &:active,
+      &:hover {
+        color: $default-pre-hover-color;
+      }
+    }
   }
 
   & .err {  //  Error
