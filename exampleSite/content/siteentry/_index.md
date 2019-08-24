@@ -1,12 +1,12 @@
 ---
-title: Home of The Hugo OldNew Mashup Theme
+title: Home of OldNew Mashup Theme
 date: 2018-02-04T10:41:55-05:00
 copyright: 2018 Daniel F. Dickinson
 license: CC-BY-4.0
 weight: -1000
 layout: siteentry
 ---
-# Hugo OldNew Mashup
+# Hugo OldNew Mashup Theme
 
 Version 0.8.0
 
@@ -175,101 +175,101 @@ and so on.
 
 #### Footer
 
-* contains 'footerlinks' and 'footercolophon' blocks
-    * for each of these, you may omit the section with a no&lt;block&gt;
-      Site or Page Param (e.g. ``nofooterlinks`` would omit the
-      footerlinks block in footer
-    * 'footerlinks'
-        * just references 'footer/links' partial
-        * contains 'contact', 'sitemap', 'privacy', 'accessibility',
-          'feed-link', and 'validator' blocks
-        * for each of these, you may omit the section with by setting
-          a parameter of the same name with a 'no' prefix (e.g.
-          ``nositemap = true``) in the site configuration file, or by
-          setting 'no_block_: true' (e.g ``nositemap: true``) in the
-          front-matter of the page (for per-page) settings.
-        * for 'contact', 'sitemap', 'privacy', and 'accessibility'
-          blocks
-            * The default section expected for these pages is
+*   contains 'footerlinks' and 'footercolophon' blocks
+    *   for each of these, you may omit the section with a no&lt;block&gt;
+        Site or Page Param (e.g. ``nofooterlinks`` would omit the
+        footerlinks block in footer
+    *   'footerlinks'
+        *   just references 'footer/links' partial
+        *   contains 'contact', 'sitemap', 'privacy', 'accessibility',
+           'feed-link', and 'validator' blocks
+        *   for each of these, you may omit the section with by setting
+            a parameter of the same name with a 'no' prefix (e.g.
+            ``nositemap = true``) in the site configuration file, or by
+            setting 'no*block*: true' (e.g ``nositemap: true``) in the
+            front-matter of the page (for per-page) settings.
+        *   for 'contact', 'sitemap', 'privacy', and 'accessibility'
+            blocks
+            *   The default section expected for these pages is
               ``/siteentry``.
-            * The default section can be overridden by setting a
-              parameter named ``footersection`` in the site config file,
-              or by setting ``footersection: desired-section`` in the
-              front-matter of the page (for per-page definitions).
-            * The default partial only displays the link if a
-              content pages with the same name exists in the section
-              as defined above.  E.g. the privacy page is only displayed
-               if ``/contents/siteentry/privacy.md`` exists in the site,
-               when using the default settings.  '.md' can be any page
-               type supported by [Hugo](https://gohugo.io)).
-        * 'feed-link' displays a links for the RSS feed for the current
-          section (for sections) or is not displayed (for pages).  The
-          link can be suppressed with a ``nofeedlink`` parameter set to
-          true in either the site config file, or in the front-matter of
-          the page (for per-page suppression).
-        * 'validator' likewise can be suppressed with ``novalidator``.
-          When present there will be a link to the the
-          [W3C Unicorn Validator](https://valdator.w3.org/unicorn/) set
-          to automatically validate the page on which it appears.
-    * 'footercolophon'
-        * just references 'footer/colophon' partial
-            * contains 'docdate' and 'license' blocks
-              * for each of these, you may omit the section with by
-                setting a parameter of the same name with a 'no' prefix
-                (e.g.``nodocdate = true``) in the site configuration
-                file, or by setting 'no_block_: true' (e.g
-                ``nodocdate: true``) in the front-matter of the page
+            *   The default section can be overridden by setting a
+                parameter named ``footersection`` in the site config file,
+                or by setting ``footersection: desired-section`` in the
+                front-matter of the page (for per-page definitions).
+            *   The default partial only displays the link if a
+                content pages with the same name exists in the section
+                as defined above.  E.g. the privacy page is only displayed
+                if ``/contents/siteentry/privacy.md`` exists in the site,
+                when using the default settings.  '.md' can be any page
+                type supported by [Hugo](https://gohugo.io)).
+        *   'feed-link' displays a links for the RSS feed for the current
+            section (for sections) or is not displayed (for pages).  The
+            link can be suppressed with a ``nofeedlink`` parameter set to
+            true in either the site config file, or in the front-matter of
+            the page (for per-page suppression).
+        *   'validator' likewise can be suppressed with ``novalidator``.
+            When present there will be a link to the the
+            [W3C Unicorn Validator](https://valdator.w3.org/unicorn/) set
+            to automatically validate the page on which it appears.
+    *   'footercolophon'
+        *   just references 'footer/colophon' partial
+            *   contains 'docdate' and 'license' blocks
+                *   for each of these, you may omit the section with by
+                    setting a parameter of the same name with a 'no' prefix
+                   (e.g.``nodocdate = true``) in the site configuration
+                   file, or by setting 'no*block*: true' (e.g
+                   ``nodocdate: true``) in the front-matter of the page
                 (for per-page) settings.
-              * See [A note on Licenses](/siteentry/#notelicenses) above
-                for information on setting the copyright and license
-                information to appear in the colophon.
+                *   See [A note on Licenses](/siteentry/#notelicenses) above
+                    for information on setting the copyright and license
+                    information to appear in the colophon.
 
 
 ### Styling
 
 #### Footer
 
-* Style name is 'footer'
-    * Smaller font size
-    * Uses entire width of page
-    * Is a flex item (``order: 999`` so that it normally appears last on
-      the page, but can be overridden by having order greater than 999
-      on elements under the 'default-body-wrapper' or 'homepage'
-      top-level container (div)).
-    * Contains 'footer-links' and 'colophon'
-        * 'footer-links'
-            * has a top border (2px grey) that acts a separator from the
-            previous sections
-            * is slightly padded on all sides
-            * Text (contents) are centred within the 'footer-links' div.
-            * Contains 'contact', 'sitemap', 'privacy', 'accessibility',
-              'feed-link', and 'validator' spans.  By default these are
-              styled via the combination of the footer-links followed by
-              a span, but the above classes may be used to override the
-              default styling on a per-section basis.
-        * 'colophon'
+*   Style name is 'footer'
+    *   Smaller font size
+    *   Uses entire width of page
+    *   Is a flex item (``order: 999`` so that it normally appears last on
+        the page, but can be overridden by having order greater than 999
+        on elements under the 'default-body-wrapper' or 'homepage'
+        top-level container (div)).
+    *   Contains 'footer-links' and 'colophon'
+        *   'footer-links'
+            *   has a top border (2px grey) that acts a separator from the
+                previous sections
+            *   is slightly padded on all sides
+            *   Text (contents) are centred within the 'footer-links' div.
+            *   Contains 'contact', 'sitemap', 'privacy', 'accessibility',
+                'feed-link', and 'validator' spans.  By default these are
+                styled via the combination of the footer-links followed by
+                a span, but the above classes may be used to override the
+                default styling on a per-section basis.
+        *   'colophon'
 
 ##### Colophon
 
-  * Style name is 'colophon'
-  * has a top border (2px grey) that acts a separator from the
+*   Style name is 'colophon'
+*   has a top border (2px grey) that acts a separator from the
     previous sections
-  * is slightly padded on all sides
-  * Text (contents) is left-justified within the 'colophon'
-     div.
-  * Contains 'doc-date' and 'license-block' classed divs
-      * 'doc-date' contains 'doc-date-hoversite' and 'doc-date-block'
-          * 'doc-date-hoversite' controls whether 'doc-date-block' is
+*   is slightly padded on all sides
+*   Text (contents) is left-justified within the 'colophon'
+    div.
+*   Contains 'doc-date' and 'license-block' classed divs
+    *   'doc-date' contains 'doc-date-hoversite' and 'doc-date-block'
+        *   'doc-date-hoversite' controls whether 'doc-date-block' is
             visible, when using the default styling (when
             'doc-date-hoversite' is hovered over, or is clicked, then
             'doc-date-block' gets ``display: block`` style, otherwise
             it is ``display: none``)
-      * 'license-block' contains 'page-license' and 'site-license'
-          * Each of these is a div containing a span with class 'label',
-            some text, and an unordered lists of licenses (generated
-            from the parameters mentioned in
-            [A note on Licenses](/siteentry/#notelicenses) above).
-          * The unordered list has been styled to appear as a
+        *   'license-block' contains 'page-license' and 'site-license'
+        *   Each of these is a div containing a span with class 'label',
+              some text, and an unordered lists of licenses (generated
+              from the parameters mentioned in
+              [A note on Licenses](/siteentry/#notelicenses) above).
+        *   The unordered list has been styled to appear as a
             comma-separated list as one line (i.e. as inline
             rather than block level elements) with wrapping.  It
             consists of a 'license-list' with 'license-item's.

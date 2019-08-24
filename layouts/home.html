@@ -9,24 +9,24 @@
   <body>
 {{ end }}
 {{ define "header" }}
-  <div class="Homepage">
+  <div class="homepage">
     <!-- Copyright 2018-2019 Daniel F. Dickinson
          Release under the Creative Commons BY (Attribution) 4.0 License -->
     {{ partial "page-header" . }}
 {{ end }}
 {{ define "main" }}
-    <main id="MainContent" class="MainContent">
-      <h1 class="Title">{{if not .Page.Title}}{{.Site.Title}}{{else}}{{.Page.Title}}{{end}}</h1>
-      <div class="Taglines">
-        <h2 class="Oneliner">{{.Page.Params.oneliner}}</h2>
-        <h3 class="Subliner">{{.Page.Params.subliner}}</h3>
-        <a class="EnterButton" href="{{ "/siteentry/" | absURL }}">Enter Site</a>
+    <main id="main-content" class="main-content">
+      <h1 class="title">{{if not .Page.Title}}{{.Site.Title}}{{else}}{{.Page.Title}}{{end}}</h1>
+      <div class="taglines">
+        <h2 class="one-liner">{{.Page.Params.oneliner}}</h2>
+        <h3 class="sub-liner">{{.Page.Params.subliner}}</h3>
+        <a class="enter-button" href="{{ "/siteentry/" | absURL }}">Enter Site</a>
       </div>
-      <aside class="Aside">
+      <aside class="aside">
         {{ markdownify .Page.Params.aside}}
       </aside>
      {{ partial "splash-screenshots.html" . }}
-      <aside class="AsideFooter">
+      <aside class="aside-footer">
         {{ markdownify .Page.Params.asidefooter }}
       </aside>
     </main>

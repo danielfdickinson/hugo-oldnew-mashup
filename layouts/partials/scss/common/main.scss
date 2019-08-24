@@ -60,3 +60,11 @@ $local-nav-text-color: {{ default "#000" (.Param "local_nav_text_color" ) }};
 $local-nav-link-color: {{ default "#222" ( .Param "local_nav_link_color" ) }};
 $local-nav-hover-background-color: {{ default "#ddd" ( .Param "local_nav_hover_background_color" ) }};
 $local-nav-hover-color: {{ default "#222" ( .Param "local_nav_hover_color" ) }};
+
+$homepage-title-background-color: {{ default "#777" ( .Param "homepage_title_background_color" ) }};
+$homepage-title-text-color: {{ default "#fff" ( .Param "homepage_title_background_color" ) }};
+
+$splash-screenshot-frame-border: {{ default "20px solid #fff" ( .Param "splash_screenshot_frame_border" ) }};
+$splash-screenshot-image-border: {{ default "2px solid #202020" ( .Param "splash_screenshot_image_border" ) }};
+$splash-screenshot-outside-border: {{ default "2px solid #202020" ( .Param "splash_screenshot_outside_border" ) }};
+$splash-screenshot-box-shadow: {{ default "6px 6px 6px #000" ( .Param "splash_screenshot_box_shadow" ) }};

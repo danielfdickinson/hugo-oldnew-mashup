@@ -42,10 +42,9 @@
   }
 
   & .graphics-row {
-    align-content: stretch;
     align-items: center;
     display: inline-flex;
-    flex: 1 1 100%;
+    flex: 0 0 37px;
     justify-content: space-between;
   }
 
@@ -66,7 +65,7 @@
   border-top: 0 none;
   display: inline-flex;
   flex: 1 1 100%;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   height: initial;
   justify-content: space-between;
   left: 0;
@@ -101,19 +100,8 @@
 }
 
 @media screen and (min-width: 28em) {
-  .top-bar {
-    & .site-badge {
-      & .graphics-row {
-        flex: 0 1 48px;
-        width: 48px;
-      }
-    }
-  }
-
   .graphics-row {
-    & .site-graphics {
-      flex: 1 1 12em;
-    }
+    flex: 0 0 48px;
   }
 }
 
