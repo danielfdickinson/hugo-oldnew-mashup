@@ -209,7 +209,7 @@ and so on.
             the page (for per-page suppression).
         *   'validator' likewise can be suppressed with ``novalidator``.
             When present there will be a link to the the
-            [W3C Unicorn Validator](https://valdator.w3.org/unicorn/) set
+            [W3C Unicorn Validator](https://validator.w3.org/unicorn/) set
             to automatically validate the page on which it appears.
     *   'footercolophon'
         *   just references 'footer/colophon' partial
