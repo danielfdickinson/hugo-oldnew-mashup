@@ -1,6 +1,7 @@
-$serif-font-stack: {{ default "Georgia, serif" ( .Param "serif_stack" ) }};
-$sans-font-stack: {{ default "Lucida Sans Unicode, Lucida Granda, sans-serif" ( .Param "sans_font_stack" ) }};
-$mono-font-stack: {{ default "Lucida Console, Monaco, monospace" ( .Param "mono_font_stack" ) }};
+
+$serif-font-stack: {{ default "(Georgia, serif)" ( .Param "serif_stack" ) }};
+$sans-font-stack: {{ default "(quote(Lucida Sans Unicode), quote(Lucida Granda), sans-serif)" ( .Param "sans_font_stack" ) }};
+$mono-font-stack: {{ default "(quote(Lucida Console), Monaco, monospace)" ( .Param "mono_font_stack" ) }};
 
 $default-background-color: {{ default "#333" ( .Param "default_background_color" ) }};
 {{ if .Param "default_background_image" }}$default-background-image: {{ .Param "default_background_image" }};{{ else  }}$default-background-image: '';{{ end }}
