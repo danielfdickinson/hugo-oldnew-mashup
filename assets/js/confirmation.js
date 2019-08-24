@@ -15,10 +15,12 @@ function param(name) {
 var confirmationCode = param("ConfirmationCode");
 
 function doConfirmation() {
-  if (confirmationCode) {
-    document.getElementById("ConfirmationCode").value = confirmationCode;
-  } else {
-    var para = document.createElement("P");
-    document.getElementById("ConfirmationCode").value = "Missing confirmation code";
+  if (document.getElementById("ConfirmationCode")) {
+    if (confirmationCode) {
+      document.getElementById("ConfirmationCode").value = confirmationCode;
+    } else {
+      var para = document.createElement("P");
+      document.getElementById("ConfirmationCode").value = "Missing confirmation code";
+    }
   }
 }

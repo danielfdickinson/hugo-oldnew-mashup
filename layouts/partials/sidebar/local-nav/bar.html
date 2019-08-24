@@ -1,0 +1,1 @@
+<nav aria-label="Linear page navigation bar" class="local-nav-bar">{{ .Scratch.Set "lnfpCurPage" . }}{{ partial "sidebar/local-nav/generate/prevrecurse" . }} {{ if .Parent.RelPermalink }}<a href="{{ .Parent.RelPermalink }}">Up</a>{{ else }}Up{{ end }} {{ .Scratch.Set "lnfpCurPage" .}}{{ partial "sidebar/local-nav/generate/nextrecurse" . }}</nav>

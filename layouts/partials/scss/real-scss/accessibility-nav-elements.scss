@@ -1,0 +1,29 @@
+/*! Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@thecshore.com>
+ *  Released under the Creative Commons BY (Attribution) 4.0 License
+ */
+
+// The C Shore Accessiblity Navigation Stylesheet
+
+// Remember, for the level of specifity last rule wins
+
+@media speech {
+  .screen-reader-element {
+    display: block;
+  }
+}
+
+@media not speech {
+  .screen-reader-element {
+    display: none;
+  }
+}
+
+.nav-skip-to-anchor {
+  display: none;
+  float: left;
+  font-size: 0;
+  left: 0;
+  position: absolute !important; // sass-lint:disable-line no-important
+  top: 0;
+  visibility: hidden;
+}

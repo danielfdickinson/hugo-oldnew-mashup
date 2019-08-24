@@ -1,0 +1,12 @@
+{{ $curPage := .Scratch.Get "lnfpCurPage" }}
+{{ if .NextInSection }}
+  {{ if (not .NextInSection.Params.notinmenu) }}
+    <a href="{{ .NextInSection.RelPermalink }}">Prev</a>
+  {{ else }}
+    {{ .NextInSection.Scratch.Set "lnfpCurPage" $curPage }}
+    {{ partial "sidebar/local-nav/generate/prevrecurse" .NextInSection }}
+  {{ end }}
+{{ else }}
+    {{ $curPage.Scratch.Set "lnfpCurPage" $curPage }}
+    {{ partial "sidebar/local-nav/generate/findprevsectionleaf" $curPage }}
+{{ end }}

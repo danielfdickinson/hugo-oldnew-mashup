@@ -5,4 +5,4 @@ notinmenu: true
 ---
 # Contact Success
 
-{{% theme-contactsuccess %}}
+{{% contact/basic-success %}}

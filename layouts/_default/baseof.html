@@ -7,22 +7,24 @@
       {{ .Site.Title }}
     {{ end }}</title>
     {{ block "head" . }}
-       {{ partial "head-theme" . }}
-       {{ partial "head-site" . }}
+       {{ partial "head/theme" . }}
+       {{ partial "head/site" . }}
     {{ end }}
   </head>
   {{ block "bodytag" .}}
   <body>
   {{ end }}
   {{ block "header" . }}
-    <div class="DefaultBodyWrapper">
-      {{ partial "header" . }}
+    <div class="default-body-wrapper">
+      {{ partial "page-header" . }}
   {{ end }}
   {{ block "main" . }}
-        <main class="Main">
-          <article id="MainContent" class="MainContent">
-            {{ .Content }}
-          </article>
+        <main class="main">
+          <div aria-labelledby="main-content" class="main-body">
+            <article aria-label="Main Content" id="main-content" class="MainContent">
+              {{ .Content }}
+            </article>
+          </div>
           {{ partial "sidebar-right" . }}
         </main>
   {{ end }}

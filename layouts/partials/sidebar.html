@@ -1,0 +1,52 @@
+{{ if not (or .Params.norbar .Site.Params.norbar) }}
+<div aria-label="Sidebar" class="sidebar">
+  {{ if not (or .Params.nornav .Site.Params.nornav) }}
+    {{ partial "sidebar/local-nav/bar" .Page }}
+  {{ end }}
+  {{ if not (or .Params.nortoc .Site.Params.nortroc) }}
+    {{ if and (gt .WordCount 200) (ne .Params.nortoc "true") }}
+      <section aria-labelledby="sidebar-toc-title" class="sidebar-toc sidebar-box">
+        <h2 id="sidebar-toc-title">Table of Contents</h2>
+        {{ replace .TableOfContents `href="#` (printf `href="%s#` .Permalink) | safeHTML }}
+      </section>
+    {{ end }}
+  {{ end }}
+  {{ if not (or .Params.normenu .Site.Params.normenu) }}
+    {{ partial "sidebar/menu" . }}
+  {{ end }}
+  {{ $newspages := where .Site.Pages.ByLastmod.Reverse "Type" "news" }}
+  {{ if not (or .Params.nornews .Site.Params.nornews) }}
+    {{ if $newspages }}
+      {{ partial "nav-skipto-links" . }}
+      <section aria-labelledby="sidebar-news-title" id="sidebar-news" class="page-news sidebar-box">
+        <h2 id="sidebar-news-title" class="sidebar-title">News</h2>
+          {{ range first 5 $newspages }}
+          {{ .Render "newsitems" }}
+          {{ end }}
+       </section>
+    {{ end }}
+  {{ end }}
+  {{ $eventpages := where .Site.Pages.ByLastmod.Reverse "Type" "events" }}
+  {{ if not (or .Params.norevents .Site.Params.norevents) }}
+    {{ if $eventpages }}
+      {{ partial "nav-skipto-links" . }}
+      <section aria-labelledby="sidebar-events-title" id="sidebar-events" class="sidebar-page-events sidebar-box">
+        <h2 id="sidebar-events-title" class="sidebar-title">Events</h2>
+          {{ range first 5 $eventpages }}
+          {{ .Render "summary" }}
+          {{ end }}
+       </section>
+    {{ end }}
+  {{ end }}
+  {{ $recentpages := first 5 .Site.Pages.ByLastmod.Reverse }}
+  {{ if not (or .Params.norchanges .Site.Params.norchanges) }}
+    {{ partial "nav-skipto-links" . }}
+    <section aria-labelledby="sidebar-recent-changes" class="sidebar-recent-changes sidebar-box">
+      <h2 id="sidebar-recent-changes" class="sidebar-title">Recent Changes</h2>
+      {{ range $recentpages }}
+        {{ .Render "summary" }}
+      {{ end }}
+    </section>
+  {{ end }}
+</div>
+{{ end }}

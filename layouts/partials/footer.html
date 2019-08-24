@@ -1,22 +1,16 @@
-  <footer class="Footer">
-  <!-- Copyright 2018 Daniel F. Dickinson,
+{{/* Default Footer for OldNew Mashup Theme */}}
+  <footer aria-label="Page Footer" id="page-footer" class="footer">
+  <!-- Copyright 2019 Daniel F. Dickinson,
        Released under the Creative Commons 4.0 BY (Attribution) License -->
-    {{ block "colophon" . }}
-      {{ partial "colophon" . }}
+    {{ block "footerlinks" . }}
+      {{ if not (or .Site.Params.nofooterlinks .Params.nofooterlinks) }}
+        {{ partial "footer/links" . }}
+      {{ end }}
     {{ end }}
-    <hr class="FooterSeparator" />
-    <div class="RollupHoversite">Hover or click here for some document information.</div>
-    <div class="RollupBlock">
-      <ul>
-        <li><span class="Label">Content created</span>: {{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</li>
-        <li><span class="Label">Content last modified</span>: {{ .Lastmod.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</li>
-        <li><span class="Label">Full page last generated</span>: {{ now.Format "Mon, 02 Jan 2006 15:04:05 -0700" }}</li>
-      </ul>
-    </div>
-    <div class="LicenseBlock">
-      <span class="Label">Copyright</span> (C) {{default .Site.Params.copyright .Page.Params.copyright}},
-      <span class="Label">License</span>: {{ partial "footer-license.html" . }}<br />
-      <span class="Label">Site (Collection) Copyright</span> (C) {{default .Site.Params.copyright }},
-      <span class="Label">Site (Collection) License</span>{{ partial "footer-site-license.html" . }}
-    </div>
+    {{ block "footercolophon" .}}
+      {{ if not (or .Site.Params.nocolophon .Params.nocolophon) }}
+        {{ partial "footer/colophon" . }}
+      {{ end }}
+    {{ end }}
   </footer>
+{{/* Hugo partial */}}

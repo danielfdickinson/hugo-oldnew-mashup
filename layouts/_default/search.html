@@ -2,18 +2,20 @@
   {{.Title}}
 {{ end }}
 {{ define "main" }}
-<main class="Main">
-  <article id="MainContent" class="MainContent">
-    <div id="search-results">
-      <h3>Matching pages</h3>
-   </div>
-  </article>
-  {{ if .Params.aside }}
-  <aside>
-    {{ markdownify .Params.aside }}
-  </aside>
-  {{ end }}
-  {{ partial "sidebar-right" . }}
+<main class="main">
+  <div aria-labelledby="main-content" class="main-body">
+    <article aria-label="Main Content" id="main-content" class="MainContent">
+      <div id="search-results">
+        <h3>Matching pages</h3>
+     </div>
+    </article>
+    {{ if .Params.aside }}
+    <aside>
+      {{ markdownify .Params.aside }}
+    </aside>
+    {{ end }}
+  </div>
+  {{ partial "sidebar" . }}
 </main>
 <!-- this template is sucked in by search.js and appended to the search-results div above. So editing here will adjust style -->
 <script id="search-result-template" type="text/x-js-template">

@@ -1,0 +1,112 @@
+/*! Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@thecshore.com>
+ *  Released under the Creative Commons BY (Attribution) 4.0 License
+ */
+
+.not-found-block {
+  margin-bottom: 1em;
+}
+
+.search-form-404 {
+  align-content: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 100%;
+
+  & label {
+    flex: 0 1 auto;
+    margin-right: 1em;
+  }
+
+  & input {
+    &[type='search'] {
+      flex: 5 1 auto;
+    }
+
+    &[type='button'] {
+      flex: 0 1 auto;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+@mixin four-oh-four-main {
+  & .title {
+    display: block;
+    flex: 1 1 100%;
+    font-size: 1.3em;
+    margin-top: 0;
+    padding: 1em;
+  }
+
+  & .not-found-box {
+    align-content: stretch;
+    align-items: flex-start;
+    display: flex;
+    flex: 0 1 60%;
+    flex-flow: row wrap;
+    justify-content: stretch;
+    text-align: left;
+
+    & div {
+      display: block;
+      flex: 1 2 100%;
+      padding-bottom: .5em;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: .5em;
+      text-align: left;
+    }
+  }
+}
+
+.four-oh-four {
+  display: block;
+  text-align: center;
+
+  & .main {
+    @include four-oh-four-main;
+
+    align-content: stretch;
+    align-items: stretch;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-bottom: 4em;
+    padding-top: 2em;
+  }
+}
+
+@mixin contact-question {
+  .question-comment-wrapper {
+    height: 100%;
+    width: 100%;
+
+    & .question-comment {
+      height: 8em;
+      width: 100%;
+    }
+  }
+}
+
+@mixin contact-info {
+  & .contact-information-wrapper {
+    height: 100%;
+    width: 100%;
+
+    & .contact-information {
+      height: 6em;
+      width: 100%;
+    }
+  }
+}
+
+.contact-form {
+  @include contact-info;
+  @include contact-question;
+
+  height: 100%;
+  width: 100%;
+}

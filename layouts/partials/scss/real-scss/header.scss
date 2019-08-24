@@ -1,0 +1,112 @@
+/*! Copyright 2007-2009,2017-2019 Daniel F. Dickinson <cshored@thecshore.com>
+ *  Released under the Creative Commons BY (Attribution) 4.0 License
+ */
+// OldNew Mashup Theme CSS3 Header Elements
+
+.graphics-row {
+  background-color: $site-badge-graphic-background-color;
+  border-bottom-left-radius: 12px;
+  border-top-left-radius: 12px;
+}
+
+.site-badge {
+  align-content: stretch;
+  align-items: center;
+  background-color: $default-top-bar-background-color;
+  border: 2px solid $default-top-bar-border-color;
+  border-radius: 12px;
+  box-shadow: 4px 4px 4px $default-top-bar-box-shadow-color;
+  color: $default-link-color;
+  display: inline-flex;
+  flex: 1 1 9em;
+  justify-content: flex-start;
+  opacity: 1;
+  padding-right: .4em;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    border-radius: 12px;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:active {
+    border: 2px inset $default-top-bar-hover-border-color;
+    box-shadow: 4px 4px 4px $default-top-bar-hover-box-shadow-color inset;
+
+    .graphics-row {
+      background: transparent;
+    }
+  }
+
+  & .graphics-row {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 37px;
+    justify-content: space-between;
+  }
+
+  & .site-id {
+    display: inline-block;
+    font-family: Georgia, serif;
+    padding-left: .3em;
+  }
+}
+
+.top-bar {
+  align-content: stretch;
+  align-items: center;
+  background-color: transparent;
+  border-bottom: 0 none;
+  border-left: 0 none;
+  border-right: 0 none;
+  border-top: 0 none;
+  display: inline-flex;
+  flex: 1 1 100%;
+  flex-flow: row wrap;
+  height: initial;
+  justify-content: space-between;
+  left: 0;
+  margin-bottom: .6em;
+  overflow: visible;
+  padding: .3em;
+  position: sticky;
+  top: 0;
+  width: 99.7%;
+  z-index: 40;
+
+  .notice {
+    display: block;
+    flex: 1 1 100%;
+    float: none;
+    margin-top: .2em;
+  }
+}
+
+@media screen {
+  .top-bar {
+    position: relative;
+  }
+}
+
+@media screen and (min-height: 28em) {
+  .top-bar {
+    position: fixed;
+    // sass-lint:disable no-duplicate-properties
+    position: sticky;
+  }
+}
+
+@media screen and (min-width: 28em) {
+  .graphics-row {
+    flex: 0 0 48px;
+  }
+}
+
+@media (hover: none) {
+  .top-bar {
+    position: relative;
+  }
+}

@@ -1,12 +1,12 @@
-<article class="PageSummary">
-<!-- Copyright 2018 Daniel F. Dickinson
+<article class="recent-change">
+<!-- Copyright 2018-2019 Daniel F. Dickinson
      Released under the Creative Commons BY (Attribution) 4.0 License) -->
-  <header class="SummaryHeader">
+  <header class="recent-changes-header">
     <h3><a href='{{ .Permalink }}'>{{ if .Title }}{{ .Title }}{{ else }}{{ $.Site.Title }}{{ end }}</a></h3>
-    <div class="PageMetadata">{{ .Lastmod.Format "Jan 2, 2006 15:04 MST" }}</div>
+    <div class="page-metadata">{{ .Lastmod.Format "Jan 2, 2006 15:04 MST" }}</div>
   </header>
   <div>{{ .Summary }}</div>
-  <footer class="SummaryFooter">
+  <footer class="recent-changes-footer">
   {{ if .Truncated }}
     <a href='{{ .RelPermalink }}'>Read full article for "{{ if .Title }}{{ .Title }}{{ else }}{{ $.Site.Title }}{{ end }}"</a>
   {{ end }}

@@ -1,12 +1,12 @@
-<div class="SitemapMain">
-<ul class="SitemapList">
+<div class="sitemap-main">
+<ul class="sitemap-main-list">
   <!-- Copyright 2018-2019 Daniel F. Dickinson,
        Released under the Creative Commons 4.0 BY (Attribution) License -->
 {{ range $.Site.Sections }}
-  <li class="MenuItem">
-    {{ partial "menuitem" . }}
-    <ul class="MenuParent">
-      {{ partial "menusectionhtml" . }}
+  <li class="menu-item">
+    {{ partial "generic-site-menu/menu-item" . }}
+    <ul class="menu-parent">
+      {{ partial "generic-site-menu/menu-section" . }}
     </ul>
   </li>
 {{ end }}

@@ -7,20 +7,25 @@
      Released under the Create Commons BY (Attribution) 4.0 License -->
 {{ end }}
 {{ define "main" }}
-    <main class="SectionPageMain">
-      <article id="MainContent" class="MainContent">
+  <main aria-label="Page Body" class="section-page-main">
+    <div aria-labelledby="main-content" class="main-body">
+      <article aria-label="Main Content" id="main-content" class="MainContent">
         {{ .Content }}
-        {{ if (or .Data.Pages .Sections) }}
-        <ol>
-        {{ end }}
-          {{ partial "section-nesting" . }}
-          {{ range .Sections }}
-            {{ partial "section-listing" . }}
-          {{ end }}
-        {{ if (or .Data.Pages .Sections) }}
-        </ol>
-        {{ end }}
       </article>
-      {{ partial "sidebar-right" . }}
-   </main>
+      {{ if (or .Data.Pages .Sections) }}
+        <section aria-labelledby="section-contents-heading" class="section-toc">
+          <h2 id="section-contents-heading" class="section-contents-heading">Section Contents</h2>
+          <ol class="section-contents">
+      {{ end }}
+            {{ partial "layout-helpers/section/nesting" . }}
+            {{ range .Sections }}
+              {{ partial "layout-helpers/section/listing" . }}
+            {{ end }}
+      {{ if (or .Data.Pages .Sections) }}
+          </ol>
+        </section>
+      {{ end }}
+    </div>
+    {{ partial "sidebar" . }}
+  </main>
 {{ end }}

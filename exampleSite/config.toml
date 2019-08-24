@@ -16,9 +16,9 @@ summaryLength = 30
 disableKinds = ['taxonomy', 'taxonomyTerm']
 
 [params]
-  siteid = 'OldNew Theme'
+  siteid = 'OldNew Mashup'
   license = 'CC-BY-4.0'
-  copyright = '2018 Daniel F. Dickinson'
+  copyright = '© 2018 Daniel F. Dickinson'
   GitHubRepo = 'cshoredaniel/hugo-oldnew-mashup'
   pygmentsUsesClasses = true
   pygmentsCodeFences = true
@@ -29,7 +29,7 @@ disableKinds = ['taxonomy', 'taxonomyTerm']
   home = ["HTML", "JSON", "RSS"]
 
 [frontmatter]
-lastmod = ["lastmod",":git","date","publishDate"]
+  lastmod = ["lastmod",":git","date","publishDate"]
 
 [privacy]
   [privacy.disqus]

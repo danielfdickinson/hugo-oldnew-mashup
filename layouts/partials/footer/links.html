@@ -1,0 +1,34 @@
+{{/* Footer Links for OldNew Mashup Theme */}}
+<div aria-label="Various links in page footer" class="footer-links">
+  {{ block "contact" . }}
+    {{ if not (or .Site.Params.nocontact .Params.nocontact) }}
+      {{ partial "footer/footer-links/contact" . }}
+    {{ end }}
+  {{ end }}
+  {{ block "sitemap" . }}
+    {{ if not (or .Site.Params.nositemap .Params.nositemap) }}
+      {{ partial "footer/footer-links/sitemap" . }}
+    {{ end }}
+  {{ end }}
+  {{ block "privacy" . }}
+    {{ if not (or .Site.Params.noprivacy .Params.noprivacy) }}
+      {{ partial "footer/footer-links/privacy" . }}
+    {{ end }}
+  {{ end }}
+  {{ block "accessibility" . }}
+    {{ if not (or .Site.Params.noaccessibility .Params.noaccessibility) }}
+      {{ partial "footer/footer-links/accessibility" . }}
+    {{ end }}
+  {{ end }}
+  {{ block "feedlink" . }}
+    {{ if not (or .Site.Params.nofeedlink .Params.nofeedlink) }}
+      {{ partial "footer/footer-links/feed-link" . }}
+    {{ end }}
+  {{ end }}
+  {{ block "validator" . }}
+    {{ if not (or .Site.Params.novalidator .Params.novalidator) }}
+      {{ partial "footer/footer-links/validator" . }}
+    {{ end }}
+  {{ end }}
+</div>
+{{/* end Footer Links for OldNew Mashup Theme */}}

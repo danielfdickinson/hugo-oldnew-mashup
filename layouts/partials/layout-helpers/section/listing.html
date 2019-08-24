@@ -1,0 +1,10 @@
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ if (or .Sections .Pages) }}
+            <ol>
+            {{ partial "layout-helpers/section/nesting" . }}
+            {{ range .Sections }}
+              {{ partial "layout-helpers/section/listing" . }}
+            {{ end }}
+            </ol>
+          {{ end }}
+        </li>

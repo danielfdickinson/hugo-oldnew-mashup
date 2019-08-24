@@ -1,1 +1,0 @@
-<nav class="LocalNavBar">{{ .Scratch.Set "lnfpCurPage" . }}{{ partial "localnav-prevrecurse" . }} {{ if .Parent.RelPermalink }}<a href="{{ .Parent.RelPermalink }}">Up</a>{{ else }}Up{{ end }} {{ .Scratch.Set "lnfpCurPage" .}}{{ partial "localnav-nextrecurse" . }}</nav>

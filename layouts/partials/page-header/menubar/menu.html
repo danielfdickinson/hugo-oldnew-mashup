@@ -1,0 +1,16 @@
+<nav aria-labelledby="menubar-site-menu-list" id="menu-bar" class="menubar-site-menu">
+<ul id="menubar-site-menu-list" aria-label="Site Menu Bar" class="menubar-site-menu-list">
+  <!-- Copyright 2018-2019 Daniel F. Dickinson,
+       Released under the Creative Commons 4.0 BY (Attribution) License -->
+{{ range $.Site.Sections }}
+  <li class="menu-item">
+    {{ partial "generic-site-menu/menu-item" . }}
+    <ul class="menu-parent">
+      {{ partial "generic-site-menu/menu-section" . }}
+    </ul>
+  </li>
+{{ end }}
+<li aria-labelledby="search-query" class="top-search"><form action="{{ "/siteentry/search" | relURL }}">
+  <input id="search-query" aria-label="Search box" type="search" name="s" size="4" /><input id="search-button" type="submit" value="Search" size="3" />
+</form></li>
+</ul></nav>

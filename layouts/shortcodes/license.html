@@ -1,10 +1,10 @@
-<section class="LicenseSection">
+<section class="license-section">
 <h2>License Text</h2>
-  <pre class="LicenseBlock">{{ $license := .Page.Params.licenseFile }}{{ $licenseFile := resources.Get (print "licenses/" $license) }}{{ with $license }}{{ $licenseFile.Content }}{{ else }}{{ with .Page.Params.licenseFile }}{{ .Page.Params.licenseFile | readFile }}{{ else }}{{ print $licenseFile }}{{ end }}{{ end }}</pre>
+  <pre class="license-block chroma">{{ $license := .Page.Params.licenseFile }}{{ $licenseFile := resources.Get (print "licenses/" $license) }}{{ with $license }}{{ $licenseFile.Content }}{{ else }}{{ with .Page.Params.licenseFile }}{{ .Page.Params.licenseFile | readFile }}{{ else }}{{ print $licenseFile }}{{ end }}{{ end }}</pre>
 </section>
-<section class="LicensePagesSection">
+<section class="license-pages-section">
   <h2>Pages with {{ $license }} license</h2>
-  <ul class="PageLicenseList">
+  <ul class="page-license-list">
    {{ range .Site.Pages }}
      {{ if in .Params.license $license }}
        <li><a href="{{ .RelPermalink }}">{{ if not .Title}}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}</a></li>

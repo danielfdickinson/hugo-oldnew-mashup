@@ -1,0 +1,50 @@
+{{ $curPage := .Scratch.Get "lnfpCurPage" }}
+{{ $curPage.Scratch.Set "lnfpNextPage" nil }}
+{{ $curPage.Scratch.Set "lnfpFoundPage" false }}
+<!-- find whether we're a leaf section -->
+{{ if .Parent }}
+  {{ with .Parent }}
+    {{ if (last 1 (where .Sections ".Params.notinmenu" "ne" true) ) }}
+      {{ range (last 1 (where .Sections ".Params.notinmenu" "ne" true ))  }}
+        {{ if eq . $curPage }}
+          {{ $curPage.Scratch.Set "lnfpFoundPage" true }}
+          {{ if .Parent }}
+            <!-- We need to go up another level -->
+            {{ .Parent.Scratch.Set "lnfpCurPage" .Parent }}
+            {{ partial "sidebar/local-nav/generate/findnextsection" .Parent }}
+          {{ else }}
+            <!-- If there is no higher level then we are done -->
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ else }}
+      <!-- We need to go up another level -->
+      {{ .Scratch.Set "lnfpCurPage" . }}
+      {{ partial "sidebar/local-nav/generate/findnextsection" . }}
+    {{ end }}
+    {{ if not ($curPage.Scratch.Get "lnfpFoundPage") }}
+      <!-- Let's find the next section in our parent -->
+      {{ range (where .Sections ".Params.notinmenu" "ne" true) }}
+        {{ if eq . $curPage }}
+          {{ $curPage.Scratch.Set "lnfpFoundPage" true }}
+        {{ else if (and ($curPage.Scratch.Get "lnfpFoundPage") (not ($curPage.Scratch.Get "lnfpNextPage") ) ) }}
+          {{ $curPage.Scratch.Set "lnfpNextPage" . }}
+        {{ end }}
+      {{ end }}
+      {{ if $curPage.Scratch.Get "lnfpFoundPage" }}
+        {{ if $curPage.Scratch.Get "lnfpNextPage" }}
+          <a href="{{ ($curPage.Scratch.Get "lnfpNextPage").RelPermalink }}">Next</a>
+        {{ else }}
+          <!-- We need to go up another level -->
+          {{ .Scratch.Set "lnfpCurPage" . }}
+          {{ partial "sidebar/local-nav/generate/findnextsection" . }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ else }}
+ <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+{{ end }}
+{{ $curPage.Scratch.Delete "lnfpNextPage" }}
+{{ $curPage.Scratch.Delete "lnfpFoundPage" }}

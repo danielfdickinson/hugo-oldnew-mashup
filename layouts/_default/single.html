@@ -2,15 +2,17 @@
   {{.Title}}
 {{ end }}
 {{ define "main" }}
-  <main class="Main">
-    <article id="MainContent" class="MainContent">
-    {{ .Content }}
-    </article>
-  {{ if .Params.aside }}
-  <aside>
-    {{ markdownify .Params.aside }}
-  </aside>
-  {{ end }}
-  {{ partial "sidebar-right" . }}
+  <main class="main">
+    <div aria-labelledby="main-content" class="main-body">
+      <article aria-label="Main Content" id="main-content" class="MainContent">
+        {{ .Content }}
+      </article>
+     {{ if .Params.aside }}
+      <aside>
+        {{ markdownify .Params.aside }}
+      </aside>
+      {{ end }}
+    </div>
+    {{ partial "sidebar" . }}
   </main>
 {{ end }}

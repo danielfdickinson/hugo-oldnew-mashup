@@ -1,0 +1,101 @@
+/*! Copyright 2007-2009,2017-2018 Daniel F. Dickinson <cshored@thecshore.com>
+ *  Released under the Creative Commons BY (Attribution) 4.0 License
+ */
+
+// OldNew Mashup Theme Main Elements Stylesheet
+// Remember, for the level of specifity last rule wins
+
+.default-body-wrapper {
+  align-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  left: 0;
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.main,
+.section-page-main {
+  display: inline-flex;
+  flex: 1 1 100%;
+  flex-flow: row wrap;
+  line-height: 1.5;
+  margin: 0;
+  order: 2;
+  padding: 0;
+  text-align: left;
+}
+
+.main-body {
+  display: block;
+  flex: 3 1 50%;
+  order: 1;
+  padding-left: .8em;
+  padding-right: .8em;
+
+  & h1 {
+    border-bottom: 6px ridge;
+    border-top: 6px ridge;
+    margin-top: 0;
+  }
+
+  & .section-toc {
+    display: block;
+    width: auto;
+  }
+
+  & .main-content {
+    display: block;
+    width: auto;
+
+    & .title {
+      display: block;
+      margin-bottom: .2em;
+      margin-top: 0;
+    }
+  }
+
+  & h2 {
+    font-family: $serif-font-stack;
+  }
+}
+
+.license-pages-section {
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+
+  & h2 {
+    flex: 1 1 100%;
+    order: 1;
+  }
+
+  & .page-license-list {
+    flex: 0 1 60%;
+    order: 2;
+    text-align: left;
+  }
+}
+
+.side-by-side {
+  display: inline-block;
+  margin-left: .1em;
+  margin-right: .3em;
+  padding-left: 0;
+  padding-right: 0;
+  width: 45%;
+}
+
+.sitemap-main {
+  & .menu-item {
+    & .menu-link {
+      display: block;
+    }
+  }
+}

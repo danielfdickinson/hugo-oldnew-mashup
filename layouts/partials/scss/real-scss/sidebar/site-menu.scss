@@ -1,0 +1,59 @@
+.sidebar-sitemap {
+  & .sitemap-list {
+    list-style: none inside;
+    margin: 0;
+    padding: 0;
+
+    & .menu-link {
+      padding-bottom: .2em;
+      padding-top: .2em;
+    }
+
+    & > .menu-item {
+      @include menu-item-contents(inline-block, inline-block, inherit) {
+        text-align: left;
+
+        & .menu-entry-wrapper {
+          display: inline-block;
+          padding-left: 12px;
+        }
+      }
+
+      @include list-menu-parent-parent(inline-block, none, inline-block);
+
+      margin-bottom: .2em;
+    }
+
+    & .menu-item {
+      padding-bottom: 0;
+
+      & .menu-entry-wrapper.current-page { // sass-lint:disable-line force-element-nesting
+        border-left-color: $default-text-color;
+        padding-left: 12px;
+      }
+
+      & .menu-entry-wrapper {
+        background-color: $sidebar-menu-entry-row-background-color;
+      }
+
+      &:active,
+      &:hover {
+        & > .menu-entry-wrapper {
+          background-color: $default-hover-background-color;
+          color: $default-hover-color;
+        }
+      }
+
+    }
+  }
+}
+
+.sidebar-sitemap > .sitemap-list > .menu-item > .menu-parent { // sass-lint:disable-line force-element-nesting
+  display: inline-block;
+  margin-top: .2em;
+  width: 80%;
+}
+
+.sidebar-sitemap > .sitemap-list > .menu-item > .menu-parent > .menu-item > .menu-parent { // sass-lint:disable-line force-element-nesting
+  display: none;
+}

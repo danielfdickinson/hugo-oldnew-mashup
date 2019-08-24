@@ -1,0 +1,6 @@
+{{ $footerPage := "/siteentry/privacy" }}
+{{ if .Params.footersection }}
+{{ $footerPage = printf "/%s/privacy" .Params.footersection }}
+{{ else if .Site.Params.footersection }}
+{{ $footerPage = printf "/%s/privacy" .Site.Params.footersection }}
+{{ end }}{{ if .Site.GetPage $footerPage }}<span class="privacy"><a href="{{ $footerPage | relURL }}" title="Privacy / GDPR Statement">Privacy</a></span>{{ end }}
