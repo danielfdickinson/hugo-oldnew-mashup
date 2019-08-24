@@ -1,5 +1,5 @@
 {{ if not (or .Params.norbar .Site.Params.norbar) }}
-<div aria-label="Sidebar" class="sidebar">
+<div class="sidebar">
   {{ if not (or .Params.nornav .Site.Params.nornav) }}
     {{ partial "sidebar/local-nav/bar" .Page }}
   {{ end }}

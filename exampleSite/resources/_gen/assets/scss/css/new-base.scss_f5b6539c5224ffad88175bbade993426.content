@@ -8,17 +8,17 @@ body {
   background-color: #333;
   background-image: url("");
   color: #eee;
-  font-family: Lucida Sans Unicode, Lucida Granda, sans-serif; }
+  font-family: "Lucida Sans Unicode", "Lucida Granda", sans-serif; }
 
 pre,
 samp {
   border: dashed 1px;
-  font-family: Lucida Console, Monaco, monospace; }
+  font-family: "Lucida Console", Monaco, monospace; }
 
 kbd,
 var,
 code {
-  font-family: Lucida Console, Monaco, monospace; }
+  font-family: "Lucida Console", Monaco, monospace; }
 
 ABBR,
 DFN {
@@ -357,10 +357,6 @@ input[type='text'] {
 @media screen and (min-width: 28em) {
   .graphics-row {
     flex: 0 0 48px; } }
-
-@media (hover: none) {
-  .top-bar {
-    position: relative; } }
 
 .footer {
   flex: 1 1 100%;
