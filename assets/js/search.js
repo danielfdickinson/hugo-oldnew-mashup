@@ -45,12 +45,16 @@ var searchQuery = param("s");
 
 function doSearch() {
   if (searchQuery) {
-    document.getElementById("search-query").value = searchQuery;
-    executeSearch(searchQuery);
+    if (document.getElementById("search-query")) {
+      document.getElementById("search-query").value = searchQuery;
+      executeSearch(searchQuery);
+    }
   } else {
     var para = document.createElement("P");
     para.innerText = "Please enter a word or phrase above";
-    document.getElementById("search-results").appendChild(para);
+    if (document.getElementById("search-results")) {
+      document.getElementById("search-results").appendChild(para);
+    }
   }
 }
 
