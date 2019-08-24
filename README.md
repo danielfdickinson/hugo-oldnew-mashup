@@ -1,5 +1,8 @@
 # Hugo OldNew Mashup
 
+**NB** This has been reverted to the old version of hugo-oldnew-mashup.
+The new version it at https://github.com/cshoredaniel/new-oldnew-mashup.
+
 Version 0.6.0
 
 [Hugo](https://gohugo.io) theme mixing old school design elements
