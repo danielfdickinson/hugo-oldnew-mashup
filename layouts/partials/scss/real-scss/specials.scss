@@ -2,137 +2,111 @@
  *  Released under the Creative Commons BY (Attribution) 4.0 License
  */
 
-/*  The C Shore Homepage Elements Stylesheet */
+.not-found-block {
+  margin-bottom: 1em;
+}
 
-/* Remember, for the level of specifity last rule wins, hence
- *   most important rules are last
-*/
+.search-form-404 {
+  align-content: stretch;
+  align-items: stretch;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  width: 100%;
 
-.FourOhFour {
-  width: 99.5%;
+  & label {
+    flex: 0 1 auto;
+    margin-right: 1em;
+  }
 
-  & .Main {
-    position: relative;
-    top: 7.4em;
+  & input {
+    &[type='search'] {
+      flex: 5 1 auto;
+    }
 
-    & .Title {
-      text-align: center;
-      font-family: Georgia, serif;
-      width: 69%;
-      padding: 1em;
-      margin-top: 0;
-      margin-left: 12%;
-      margin-right: 12%;
+    &[type='button'] {
+      flex: 0 1 auto;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+@mixin four-oh-four-main {
+  & .title {
+    display: block;
+    flex: 1 1 100%;
+    font-size: 1.3em;
+    margin-top: 0;
+    padding: 1em;
+  }
+
+  & .not-found-box {
+    align-content: stretch;
+    align-items: flex-start;
+    display: flex;
+    flex: 0 1 60%;
+    flex-flow: row wrap;
+    justify-content: stretch;
+    text-align: left;
+
+    & div {
       display: block;
-      font-size: 1.3em;
-    }
-
-    & .TextBlockSpacingBefore {
-      width: 20%;
-      display: inline-block;
-    }
-
-    & .TextBlockSpacingAfter {
-      width: 19%;
-      display: inline-block;
-    }
-
-    & .TextBlock {
-      text-align: center;
-      padding: 0;
-      padding-top: 1em;
-      padding-bottom: 1em;
-      display: inline-block;
-      width: 60%;
-    }
-
-    & .Footer {
-      position: relative;
-      top: 7.4em;
-    }
-  }
-}
-/*! Copyright 2018 Daniel F. Dickinson <cshored@cshore.theshore.com>
- *  Released under the Creative Commons BY (Attribution) 4.0 License
- */
-
-
-@media  screen {
-  .FourOhFour {
-    & .Main {
-      flex: 1 1 100%;
-      display: inline-flex;
-      align-content: space-between;
-      justify-content: space-between;
-      flex-flow: row wrap;
-      position: static;
-      padding-bottom: 8em;
-      margin-top: .4em;
-
-      & .Title {
-        flex: 1 1 100%;
-        width: auto;
-      }
-
-      & .TextBox {
-        flex: 1 1 100%;
-        display: inline-flex;
-        align-content: center;
-        justify-content: flex-start;
-        width: auto;
-
-        & .TextBlockSpacingBefore,
-        & .TextBlockSpacingAfter {
-          flex: 1 1 17%;
-          display: block;
-          width: initial;
-        }
-
-        & .TextBlock {
-          flex: 1 1 60%;
-          display: inline-block;
-          align-content: flex-start;
-          justify-content: flex-start;
-          flex-flow: row wrap;
-          padding-top: .5em;
-          padding-bottom: .5em;
-          width: auto;
-        }
-      }
-    }
-
-    & .Footer {
-      position: static;
-      margin-top: .4em;
-      flex: 1 1 100%;
+      flex: 1 2 100%;
+      padding-bottom: .5em;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: .5em;
+      text-align: left;
     }
   }
 }
 
-input[type=text] {
-  width: 100%;
+.four-oh-four {
+  display: block;
+  text-align: center;
+
+  & .main {
+    @include four-oh-four-main;
+
+    align-content: stretch;
+    align-items: stretch;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding-bottom: 4em;
+    padding-top: 2em;
+  }
 }
 
-.QuestionCommentWrapper {
-  width: 100%;
-  height: 100%;
-  & .QuestionComment {
+@mixin contact-question {
+  .question-comment-wrapper {
+    height: 100%;
     width: 100%;
-    height: 8em;
+
+    & .question-comment {
+      height: 8em;
+      width: 100%;
+    }
   }
 }
 
-.ContactForm {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-.ContactInformationWrapper {
-  width: 100%;
-  height: 100%;
-  & .ContactInformation {
+@mixin contact-info {
+  & .contact-information-wrapper {
+    height: 100%;
     width: 100%;
-    height: 6em;
+
+    & .contact-information {
+      height: 6em;
+      width: 100%;
+    }
   }
+}
+
+.contact-form {
+  @include contact-info;
+  @include contact-question;
+
+  height: 100%;
+  width: 100%;
 }

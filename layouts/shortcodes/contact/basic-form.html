@@ -3,16 +3,16 @@
 {{ $bURL := urls.Parse $.Site.BaseURL }}
 {{ $hostOnly := delimit (first 1 (split $bURL.Host ":")) ""}}
 {{ $port := .Get 0 }}
-<form class="ContactForm" action="{{ printf "%s://%s:%s" $bURL.Scheme $hostOnly $port }}" method="post" enctype="multipart/form-data" accept-charset="utf-8">
-<p><label for="Name">Name:</label> <input type="text" name="Name" id="Name" /></p>
-<p><label for="Subject">Subject:</label> <input type="text" name="Subject" id="Subject" /></p>
-<div class="ContactInformationWrapper">
-<label for="ContactInformation">Contact Information:</label>
-<textarea class="ContactInformation" name="ContactInformation" id="ContactInformation"></textarea>
-</div>
-<div class="QuestionCommentWrapper">
-<label for="QuestionComment">Question or Comment:</label>
-<textarea class="QuestionComment" name="QuestionComment" id="QuestionComment"></textarea>
-</div>
-<p><input type="submit" value="Send" size="6" /> <input type="reset" value="Reset" size="6" /></p>
+<form class="contact-form" action="{{ printf "%s://%s:%s" $bURL.Scheme $hostOnly $port }}" method="post" enctype="multipart/form-data" accept-charset="utf-8">
+  <p><label for="name">Name:</label> <input type="text" name="name" id="name" /></p>
+  <p><label for="subject">Subject:</label> <input type="text" name="subject" id="subject" /></p>
+  <div class="contact-information-wrapper">
+    <label for="contact-information">Contact Information:</label>
+    <textarea class="contact-information" name="contact-information" id="contact-information"></textarea>
+  </div>
+  <div class="question-comment-wrapper">
+    <label for="question-comment">Question or Comment:</label>
+    <textarea class="question-comment" name="question-comment" id="question-comment"></textarea>
+  </div>
+  <p><input type="submit" value="Send" size="6" /> <input type="reset" value="Reset" size="6" /></p>
 </form>

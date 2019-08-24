@@ -134,6 +134,13 @@ h1 {
   text-align: center;
 }
 
+// We always surround input by divs if we want to contain the size
+input {
+  &[type='text'] {
+    width: 100%;
+  }
+}
+
 @media not speech {
   html {
     font-size: 16px;
