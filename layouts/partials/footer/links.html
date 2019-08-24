@@ -1,5 +1,4 @@
-{{/* Footer Links for OldNew Mashup Theme */}}
-<div aria-label="Various links in page footer" class="footer-links">
+<div class="footer-links">
   {{ block "contact" . }}
     {{ if not (or .Site.Params.nocontact .Params.nocontact) }}
       {{ partial "footer/footer-links/contact" . }}
