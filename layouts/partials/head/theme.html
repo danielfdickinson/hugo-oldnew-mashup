@@ -8,7 +8,7 @@
     {{ if $.Site.BaseURL }}<base href="{{ $.Site.BaseURL }}">{{ end }}
     {{ $options := (dict "enableSourceMap" true "compress" true) }}
     {{ $nm := resources.Get "css/modules/necolas-normalize.css/normalize.css" | resources.ToCSS $options }}
-    {{ $nb := resources.Get "scss/hugo-templates/new-base.scss" }}
+    {{ $nb := resources.Get "css/new-base.scss" }}
     {{ $nbstyle := $nb | resources.ExecuteAsTemplate "css/new-base.scss" . | resources.ToCSS $options }}
     {{ $ghf := resources.Get "css/modules/simonwhitaker-github-fork-ribbon-css/gh-fork-ribbon.css" | resources.ToCSS $options }}
     <link rel="stylesheet" href="{{ $nm.Permalink }}"/>
